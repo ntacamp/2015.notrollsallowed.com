@@ -1,0 +1,58 @@
+.animation(@animation) {
+    -webkit-animation: @animation;
+    -moz-animation: @animation;
+    -ms-animation: @animation;
+    -o-animation: @animation;
+    animation: @animation;
+}
+
+.animation-swing-frames() {
+    0% {
+      .rotate(0deg);
+    }
+    25% {
+      .rotate(45deg);
+    }
+    50% {
+      .rotate(0deg);
+    }
+    75% {
+      .rotate(-45deg);
+    }
+    100% {
+      .rotate(0deg);
+    }
+}
+
+.animation-spin-frames() {
+    from { .rotate(0deg); }
+    to { .rotate(360deg); }
+}
+
+.animation-author-name-frames() {
+    0% { right: 0px; }
+    30% { right: 50px; }
+    60% { right: 20px; }
+    100% { right: 0px; }
+}
+
+
+@-webkit-keyframes animation_swing { .animation-swing-frames() }
+@keyframes animation_swing { .animation-swing-frames() }
+
+@-webkit-keyframes animation_spin { .animation-spin-frames() }
+@keyframes animation_spin { .animation-spin-frames() }
+
+@-webkit-keyframes animation_author_name { .animation-author-name-frames() }
+@keyframes animation_author_name { .animation-author-name-frames() }
+
+.animation-swing() {
+    .animation(animation_swing 0.5s linear 2);
+}
+.animation-spin() {
+    .animation(animation_spin 0.3s ease-in-out 1);
+}
+
+.animation-author-name() {
+    .animation(animation_author_name 0.3s ease 1);   
+}

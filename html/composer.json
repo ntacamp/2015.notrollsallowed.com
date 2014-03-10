@@ -1,0 +1,12 @@
+{
+    "name": "notrollsallowed/html",
+    "require": {
+        "twitter/bootstrap": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Zilvinas Kuusas",
+            "email": "zilvinas.k@estina.lt"
+        }
+    ]
+}

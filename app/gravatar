@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Generates gravatar hash from email
+ * 
+ * Command line usage: 
+ * ./app/gravatar email@gmail.com
+ */
+$email = $argv[1];
+
+$hash = md5(strtolower(trim($email)));
+
+echo "Gravatar hash: " . $hash . PHP_EOL;
