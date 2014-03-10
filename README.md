@@ -1,10 +1,8 @@
-notrollsallowed.com
-===================
+# 2014.notrollsallowed.com
 
-[No Trolls Allowed 2014](http://2014.notrollsallowed.com/) website.
+Website for [No Trolls Allowed 2014](http://2014.notrollsallowed.com/) event.
 
-Build & Run
-===========
+## Build & Run
 Website is based on PHP static site generator [Sculpin](https://github.com/sculpin/sculpin).
 
 To run it you need type following commands:
@@ -15,4 +13,4 @@ cd 2014.notrollsallowed.com
 make
 ```
 
-Static files will be converted to HTML files and local dev server will be running on localhost:8000.
+## Static files will be converted to HTML files and local dev server will be running on localhost:8000.
