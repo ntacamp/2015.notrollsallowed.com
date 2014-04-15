@@ -1,10 +1,7 @@
 .PHONY: build
 
-SCULPIN = vendor/bin/sculpin
-
 build: vendor
-	$(SCULPIN) generate --watch --server
-
+	app/console server:run
 
 composer.phar:
 	curl -s https://getcomposer.org/installer | php
@@ -13,8 +10,3 @@ composer.phar:
 vendor: composer.phar
 	./composer.phar install
 	touch vendor
-
-clean:
-	rm composer.phar
-	rm -rf vendor
-	rm -rf $(OUTPUT_DIR)/*
