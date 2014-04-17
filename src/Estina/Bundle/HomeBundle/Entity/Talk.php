@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Talk
  *
- * @ORM\Table()
+ * @ORM\Table(name="talk")
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\TalkRepository")
  */
 class Talk
@@ -69,6 +69,13 @@ class Talk
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
 
 
     /**
@@ -240,5 +247,28 @@ class Talk
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set active
+     *
+     * @param bool $active
+     * @return Talk
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return bool 
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }
