@@ -187,113 +187,6 @@
 </section>
 <!--==========-->
 
-
-
-<!--===============================-->
-<!--== Speakers ===================-->
-<!--===============================-->
-<section id="speakers" class="row separated">
-    <div class="col-sm-12">
-        <div class="section-header text-center">
-            <h2>Speakers</h2>
-            <h4>Awesome section description goes here.</h4>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-01.jpg" alt="Speaker 1">
-                </div>								
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Jane Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-02.jpg" alt="Speaker 2">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Michele Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-03.jpg" alt="Speaker 3">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>John Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-04.jpg" alt="Speaker 4">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Nick Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-05.jpg" alt="Speaker 5">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Valerie Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed do eiusmod tempor</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-06.jpg" alt="Speaker 6">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Mike Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-</section>
-<!--==========-->
-
-
-
 <!--===============================-->
 <!--== FAQ ========================-->
 <!--===============================-->
@@ -359,8 +252,8 @@
 <section id="partners" class="row">
     <div class="col-sm-12">
         <div class="section-header text-center">
-            <h2>Partners</h2>
-            <h4>Awesome section description goes here.</h4>
+            <h2>Rėmėjai</h2>
+            <h4>Renginio rėmėjų sąrašas, be kurių No Trolls Allowed 2014 nebūtų įvykęs</h4>
         </div>
     </div>
     <div class="col-sm-12">
@@ -380,40 +273,6 @@
 </section>
 <!--==========-->
 
-<!--===============================-->
-<!--== Register ===================-->
-<!--===============================-->
-<section id="register" class="row">
-    <div class="col-sm-12">
-        <div class="section-header text-center">
-            <h2>Register</h2>
-            <h4>Awesome section description goes here.</h4>
-        </div>
-    </div>
-    <div class="col-sm-12">
-        <form id="register-form" method="post" class="form">
-            <div class="col-md-2 col-sm-6">
-                <input name="name" id="name" type="text" placeholder="Name" required>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <input name="email" id="email" type="email" placeholder="Email" required>
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <input name="telephone" id="telephone" type="tel" placeholder="Telephone">
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <select name="ticket" id="ticket">
-                    <option value="Silver">Silver</option>
-                    <option value="Gold">Gold</option>
-                    <option value="Platinum">Platinum</option>
-                </select>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <input type="submit" value="Register" name="submit">
-            </div>
-            <p class="form-notification" style="display: none;">Registration Complete</p>
-        </form>
-    </div>
-</section>
-<!--==========-->
+{{ render(controller('EstinaHomeBundle:Default:register', {})) }}
+
 {% endblock %}

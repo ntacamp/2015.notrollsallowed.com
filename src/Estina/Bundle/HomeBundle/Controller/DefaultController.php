@@ -16,4 +16,28 @@ class DefaultController extends Controller
     {
         return [];
     }
+
+    /**
+     * Register user 
+     * 
+     * @param Request $request 
+     *
+     * @Route("/register")
+     * @Template()
+     */
+    public function registerAction()
+    {
+        return [];
+    }
+
+    /**
+     * Speakers list 
+     * 
+     * @Route("/pranesejai", name="speakers")
+     * @Template()
+     */
+    public function speakersAction()
+    {
+        return [];
+    }
 }
