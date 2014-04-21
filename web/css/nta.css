@@ -1,5 +1,10 @@
-.navbar-brand.logo > img {
+.fixed .navbar-brand.logo > img {
     max-height: 88px;
     margin-top: -25px;
     margin-left: -35px;
+}
+
+.sticky .navbar-brand.logo > img {
+    margin-left: -35px;
+    margin-top: -5px;
 }
