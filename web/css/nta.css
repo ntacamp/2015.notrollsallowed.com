@@ -1,0 +1,5 @@
+.navbar-brand.logo > img {
+    max-height: 88px;
+    margin-top: -25px;
+    margin-left: -35px;
+}
