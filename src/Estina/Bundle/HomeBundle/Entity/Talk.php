@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="talk")
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\TalkRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Talk
 {
@@ -24,9 +25,9 @@ class Talk
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $name;
+    private $title;
 
     /**
      * @var string
@@ -66,7 +67,7 @@ class Talk
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -75,7 +76,7 @@ class Talk
      *
      * @ORM\Column(name="active", type="boolean")
      */
-    private $active;
+    private $active = 0;
 
 
     /**
@@ -89,26 +90,26 @@ class Talk
     }
 
     /**
-     * Set name
+     * Set title
      *
-     * @param string $name
+     * @param string $title
      * @return Talk
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get title
      *
      * @return string 
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
@@ -270,5 +271,17 @@ class Talk
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * @ORM\PreFlush 
+     */
+    public function preFlush()
+    {
+        if ($this->id) {
+            $this->updatedAt = new \DateTime;
+        } else {
+            $this->createdOn = new \DateTime;
+        }
     }
 }

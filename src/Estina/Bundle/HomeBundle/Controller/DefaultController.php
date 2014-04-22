@@ -2,9 +2,10 @@
 
 namespace Estina\Bundle\HomeBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Estina\Bundle\HomeBundle\Form\TalkType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
@@ -22,12 +23,31 @@ class DefaultController extends Controller
      * 
      * @param Request $request 
      *
-     * @Route("/register")
+     * @Route("/register", name="register")
      * @Template()
      */
     public function registerAction()
     {
-        return [];
+        $form = $this->createForm(new TalkType, null, [
+            'action' => $this->generateUrl('register')
+        ]);
+
+        $request = $this->get('request');
+
+        if ('POST' === $request->getMethod()) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                $talk = $form->getData();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($talk);
+                $em->flush();
+            }
+        }
+
+        return [
+            'form' => $form->createView()
+        ];
     }
 
     /**

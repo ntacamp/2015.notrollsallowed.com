@@ -10,26 +10,27 @@
         </div>
     </div>
     <div class="col-sm-12">
-        <form id="register-form" method="post" class="form">
+        <form id="register-form" method="post" class="form" action="{{ path('register') }}">
             <div class="col-md-6 col-sm-6">
-                <input name="name" id="name" type="text" placeholder="Pranešimo pavadinimas" required>
+                {{ form_widget(form.title) }}
             </div>
             <div class="col-md-6 col-sm-6">
-                <input description="description" id="description" type="text" placeholder="Aprašymas" required>
+                {{ form_widget(form.description) }}
             </div>
             <div class="col-md-3 col-sm-6">
-                <input speaker="speaker" id="speaker" type="text" placeholder="Vardas, pavardė" required>
+                {{ form_widget(form.speaker) }}
             </div>
             <div class="col-md-3 col-sm-6">
-                <input name="email" id="email" type="email" placeholder="El. paštas" required>
+                {{ form_widget(form.email) }}
             </div>
             <div class="col-md-3 col-sm-6">
-                <input name="telephone" id="telephone" type="tel" placeholder="Telefono nr.">
+                {{ form_widget(form.phone) }}
             </div>
             <div class="col-md-3 col-sm-12">
                 <input type="submit" value="Registruotis" name="submit">
             </div>
-            <p class="form-notification" style="display: none;">Registration Complete</p>
+            <p class="form-notification" style="display: none;">Registracija baigta<br>Jūsų pranešimas netrukus bus patvirtintas.</p>
+            {{ form_widget(form._token) }}
         </form>
     </div>
 </section>
