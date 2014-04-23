@@ -60,4 +60,24 @@ class DefaultController extends Controller
     {
         return [];
     }
+
+    /**
+     * Partners block 
+     * 
+     * @Template()
+     */
+    public function partnersAction()
+    {
+        return [];
+    }
+
+    /**
+     * FAQ block 
+     * 
+     * @Template()
+     */
+    public function faqAction()
+    {
+        return [];
+    }
 }
