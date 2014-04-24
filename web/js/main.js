@@ -2,7 +2,8 @@
     "use strict";
 
     ///////////////////////////////////////////////////// Your
-    var venueAddress = "Grand Place, 1000, Brussels"; // Venue
+    var venueAddress = "Stovyklavietė \"Verubė\""; // Venue
+    var coordinates = [54.656948, 24.982314];
     /////////////////////////////////////////////////// Adress
 
     var fn = {
@@ -41,18 +42,19 @@
                             style: google.maps.ZoomControlStyle.LARGE,
                             position: google.maps.ControlPosition.LEFT_CENTER
                         },
+                        mapTypeId: google.maps.MapTypeId.HYBRID,
                         mapTypeControl: false
-
                     }
                 },
                 infowindow: {
-                    address: venueAddress,
+                    // address: venueAddress,
+                    latLng: coordinates, 
                     options: {
                         content: markerInfo
                     }
                 },
                 marker: {
-                    address: venueAddress
+                    latLng: coordinates
                 }
             },
                 "autofit");
