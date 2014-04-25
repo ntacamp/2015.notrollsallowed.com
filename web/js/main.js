@@ -15,7 +15,7 @@
             fn.MainSlider();
             fn.MainSliderAlign();
             fn.Navigation();
-            fn.Carousel();
+            // fn.Carousel();
             // fn.Slider();
             fn.RegisterForm();
             fn.SubscribeForm();
