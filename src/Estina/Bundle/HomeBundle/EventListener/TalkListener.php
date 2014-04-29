@@ -27,6 +27,10 @@ class TalkListener
     {
         $talk = $event->getTalk();
 
+        if (null === $this->adminEmail) {
+            return;
+        }
+
         $subject = 'Registracija: ' . $talk->getSpeaker();
         $body = <<<EOT
 ====================
