@@ -179,8 +179,10 @@
                         type: "POST",
                         url: $('#register-form').attr('action'),
                         data: $('#register-form').serialize(),
-                        success: function () {
-                            $('#register-form .form-notification').fadeIn(500);
+                        success: function (response) {
+                            if (response.success) {
+                                $('#register-form .form-notification').fadeIn(500);
+                            }
                         }
                     });
                 } else {

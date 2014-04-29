@@ -9,6 +9,7 @@ use Estina\Bundle\HomeBundle\TalkEvents;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * DefaultController 
@@ -53,6 +54,8 @@ class DefaultController extends Controller
                 $this->get('event_dispatcher')
                     ->dispatch(TalkEvents::CREATE, $event);
             }
+
+            return new JsonResponse(['success' => true]);
         }
 
         return [
