@@ -3,10 +3,16 @@
 namespace Estina\Bundle\HomeBundle\Controller;
 
 use Estina\Bundle\HomeBundle\Form\TalkType;
+use Estina\Bundle\HomeBundle\Event\TalkEvent;
+use Estina\Bundle\HomeBundle\EventListener\TalkListener;
+use Estina\Bundle\HomeBundle\TalkEvents;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * DefaultController 
+ */
 class DefaultController extends Controller
 {
     /**
@@ -42,6 +48,10 @@ class DefaultController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($talk);
                 $em->flush();
+
+                $event = new TalkEvent($talk);
+                $this->get('debug.event_dispatcher')
+                    ->dispatch(TalkEvents::CREATE, $event);
             }
         }
 

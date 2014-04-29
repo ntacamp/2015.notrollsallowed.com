@@ -4,17 +4,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
-    <parameters>
-        <parameter key="estina_home.example.class">Estina\Bundle\HomeBundle\Example</parameter>
-    </parameters>
-
     <services>
-        <service id="estina_home.example" class="%estina_home.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="home.talk_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkListener">
+            <argument type="service" id="mailer" />
+            <argument>%admin_email%</argument>
+            <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
         </service>
     </services>
-    -->
+
 </container>

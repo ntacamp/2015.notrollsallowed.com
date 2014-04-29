@@ -34,3 +34,10 @@
     margin: auto;
     display: block;
 }
+#register-form .form-notification {
+    background-color: #91CA89;
+    line-height: 5rem;
+}
+.accordion-group li.accordion {
+    cursor: pointer;
+}
