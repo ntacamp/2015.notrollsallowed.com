@@ -50,7 +50,7 @@ class DefaultController extends Controller
                 $em->flush();
 
                 $event = new TalkEvent($talk);
-                $this->get('debug.event_dispatcher')
+                $this->get('event_dispatcher')
                     ->dispatch(TalkEvents::CREATE, $event);
             }
         }
