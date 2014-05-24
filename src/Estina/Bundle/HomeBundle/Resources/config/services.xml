@@ -10,6 +10,10 @@
             <argument>%admin_email%</argument>
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
         </service>
+
+        <service id="home.twig.gravatar_extension" class="Estina\Bundle\HomeBundle\Twig\GravatarExtension">
+            <tag name="twig.extension" />
+        </service>
     </services>
 
 </container>

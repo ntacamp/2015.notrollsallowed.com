@@ -71,7 +71,12 @@ class DefaultController extends Controller
      */
     public function speakersAction()
     {
-        return [];
+        $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Talk');
+        $talks = $repo->findActiveTalks();
+
+        return [
+            'talks' => $talks
+        ];
     }
 
     /**

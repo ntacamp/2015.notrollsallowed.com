@@ -8,97 +8,24 @@
             <h4>Bus papildyta</h4>
         </div>
     </div>
-    {#
+    {% for talk in talks %}
     <div class="col-md-4 col-sm-6">
         <div class="speaker">
             <div class="speaker-info">
                 <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-01.jpg" alt="Speaker 1">
+                    <img src="{{ talk.email|gravatar }}" alt="{{ talk.speaker }}">
                 </div>								
+                {#
                 <div class="speaker-contacts">
                     <a href="#" class="contact pull-left fa fa-facebook"></a>
                     <a href="#" class="contact pull-right fa fa-twitter"></a>
                 </div>
+                #}
             </div>
-            <h3>Jane Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h3>{{ talk.speaker }}</h3>
+            <p>{{ talk.title }}</p>
         </div>
     </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-02.jpg" alt="Speaker 2">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Michele Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-03.jpg" alt="Speaker 3">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>John Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-04.jpg" alt="Speaker 4">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Nick Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-05.jpg" alt="Speaker 5">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Valerie Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed do eiusmod tempor</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <div class="speaker">
-            <div class="speaker-info">
-                <div class="speaker-photo">
-                    <img src="images/demo/speakers/speaker-06.jpg" alt="Speaker 6">
-                </div>
-                <div class="speaker-contacts">
-                    <a href="#" class="contact pull-left fa fa-facebook"></a>
-                    <a href="#" class="contact pull-right fa fa-twitter"></a>
-                </div>
-            </div>
-            <h3>Mike Doe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    #}
+    {% endfor %}
 </section>
 <!--==========-->

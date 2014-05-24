@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class TalkRepository extends EntityRepository
 {
+    public function findActiveTalks()
+    {
+        $qb = $this->_em->createQueryBuilder();
+        $qb
+            ->select('t')
+            ->from('Estina\Bundle\HomeBundle\Entity\Talk', 't')
+            ->where('t.active = 1')
+            ->orderBy('t.createdOn', 'DESC');
+
+        return $qb->getQuery()->getResult();
+    }
 }
