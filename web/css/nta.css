@@ -59,3 +59,16 @@
 .accordion-group li.accordion {
     cursor: pointer;
 }
+.speaker-photo {
+    width: 150px;
+    margin: 0 auto;
+}
+.speaker {
+    height: 300px;
+}
+#speakers .tooltip-inner {
+    font-size: 1.3rem;
+}
+.tooltip-inner {
+    max-width: 400px;
+}

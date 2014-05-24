@@ -258,6 +258,9 @@
             // Fancy Select
             $('#ticket').fancySelect();
 
+            $('.js-tooltip').tooltip({
+                placement: 'top'
+            });
         }
 
 
