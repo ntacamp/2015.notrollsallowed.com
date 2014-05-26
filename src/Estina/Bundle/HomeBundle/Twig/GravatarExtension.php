@@ -22,7 +22,7 @@ class GravatarExtension extends \Twig_Extension
     /**
      * Generate url for image. 
      */
-    public function getGravatarImage($email, $size = 80, $defaultImage = 'http://2014.notrollsallowed.com/images/demo/speakers/speaker-01.jpg', $rating = 'G')
+    public function getGravatarImage($email, $size = 150, $defaultImage = 'http://2014.notrollsallowed.com/images/demo/speakers/speaker-01.jpg', $rating = 'G')
     {
         return  $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
             . "?d=" . urlencode( $defaultImage ) . "&s=" . $size . '&r=' . $rating;
