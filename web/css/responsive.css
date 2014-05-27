@@ -22,7 +22,7 @@
 	.navbar-nav > li > a { width: 100%; }
 	.navbar-nav > li + li { margin: 0; }
 	.navbar-brand { padding: 1.5rem 0; }
-
+	.navbar-brand.logo { font-size: 29px;}
 	.accordion { padding: 10px 20px; }
 
 	.pricing-features { display: none; }
