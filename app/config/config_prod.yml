@@ -1,7 +1,10 @@
 imports:
     - { resource: config.yml }
 
-#framework:
+framework:
+    templating:
+        assets_base_urls:
+            http: ['http://2014.notrollsallowed.com']
 #    validation:
 #        cache: apc
 
