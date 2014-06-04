@@ -2,8 +2,9 @@
     "use strict";
 
     ///////////////////////////////////////////////////// Your
-    var venueAddress = "Stovyklavietė \"Verubė\""; // Venue
     var coordinates = [54.656948, 24.982314];
+    var venueAddress = "Stovyklavietė \"Verubė\"<br>("
+        + coordinates[0] + ', ' + coordinates[1] + ")"; // Venue
     /////////////////////////////////////////////////// Adress
 
     var fn = {
