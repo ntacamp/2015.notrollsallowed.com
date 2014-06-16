@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      * @Template()
      */
     public function indexAction()
