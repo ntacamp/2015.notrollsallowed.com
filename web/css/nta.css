@@ -35,7 +35,7 @@
 #partners ul li {
     text-align: center;
     padding: 15px;
-    display: inline;
+    display: inline-block;
     float: none;
 }
 
