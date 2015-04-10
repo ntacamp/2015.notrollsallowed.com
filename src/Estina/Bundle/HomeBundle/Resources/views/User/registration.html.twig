@@ -1,0 +1,8 @@
+<form action="{{ path('user_registration') }}" method="post">
+
+    {{ form_row(registrationFrom.name) }}
+    {{ form_row(registrationFrom.email) }}
+    {{ form_row(registrationFrom.plainPassword) }}
+    {{ form_rest(registrationFrom) }}
+    <button type="submit">Register</button>
+</form>

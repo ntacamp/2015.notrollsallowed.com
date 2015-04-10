@@ -1,0 +1,7 @@
+<form action="{{ path('user_password_reset') }}" method="post">
+
+    {{ form_row(resetForm.email) }}
+    {{ form_rest(loginForm) }}
+
+    <button type="submit">login</button>
+</form>

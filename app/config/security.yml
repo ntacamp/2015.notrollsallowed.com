@@ -9,7 +9,7 @@ security:
 
     providers:
         nta_users:
-            entity: { class: Estina\Bundle\HomeBundle\Entity\User, property: username }
+            entity: { class: Estina\Bundle\HomeBundle\Entity\User, property: email }
 
     firewalls:
         dev:
@@ -24,6 +24,7 @@ security:
                 login_path: /login
                 check_path: /login_check
                 default_target_path: user_profile
+                csrf_parameter: _token
 
 
     access_control:

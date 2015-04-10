@@ -4,6 +4,8 @@ namespace Estina\Bundle\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
@@ -11,6 +13,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\UserRepository")
  * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity("email")
+ * @UniqueEntity("nickname")
+ * @UniqueEntity("facebook")
+ * @UniqueEntity("twitter")
  */
 class User implements UserInterface, \Serializable
 {
@@ -26,9 +32,10 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", unique=true, length=25)
+     * @ORM\Column(name="nickname", type="string", unique=true, length=25, nullable=true)
+     * @Assert\Length(max="25")
      */
-    private $username;
+    private $nickname;
 
     /**
      * @var string
@@ -40,14 +47,19 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=64)
+     * @Assert\NotBlank()
+     * @Assert\Length(max="32")
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=64, unique=true)
+     * @Assert\Email()
+     * @Assert\NotBlank()
+     * @Assert\Length(max="64")
      */
     private $email;
 
@@ -55,6 +67,7 @@ class User implements UserInterface, \Serializable
      * @var string
      *
      * @ORM\Column(name="phone", type="string", length=20, nullable=true)
+     * @Assert\Length(max="32")
      */
     private $phone;
 
@@ -71,6 +84,13 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
     private $twitter;
+
+    /**
+     * @var string
+     *
+     * @Assert\Length(min="4", max="24")
+     */
+    private $plainPassword;
 
     /**
      * @var \DateTime
@@ -93,6 +113,12 @@ class User implements UserInterface, \Serializable
      */
     private $active = 0;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_reset_time", type="datetime", nullable=true)
+     */
+    private $lastResetTime;
 
     /**
      * Get id
@@ -105,19 +131,29 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return string
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
      */
     public function getUsername()
     {
-        return $this->username;
+        return $this->email;
     }
 
     /**
-     * @param string $username
+     * @return string
      */
-    public function setUsername($username)
+    public function getNickname()
     {
-        $this->username = $username;
+        return $this->nickname;
+    }
+
+    /**
+     * @param string $nickname
+     */
+    public function setNickname($nickname)
+    {
+        $this->nickname = $nickname;
     }
 
     /**
@@ -324,6 +360,22 @@ class User implements UserInterface, \Serializable
      */
     public function eraseCredentials()
     {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param $password
+     */
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 
     /** @see \Serializable::serialize() */

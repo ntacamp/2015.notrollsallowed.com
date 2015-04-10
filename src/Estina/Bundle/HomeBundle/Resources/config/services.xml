@@ -11,6 +11,11 @@
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
         </service>
 
+        <service id="home.user_service" class="Estina\Bundle\HomeBundle\Service\UserService">
+            <argument type="service" id="security.password_encoder"/>
+            <argument type="service" id="doctrine.orm.entity_manager"/>
+        </service>
+
         <service id="home.twig.gravatar_extension" class="Estina\Bundle\HomeBundle\Twig\GravatarExtension">
             <tag name="twig.extension" />
         </service>
