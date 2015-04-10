@@ -39,7 +39,7 @@ class TalkType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Estina\Bundle\HomeBundle\Entity\Talk'
+            'data_class' => 'Estina\Bundle\HomeBundle\Entity\User'
         ));
     }
 
