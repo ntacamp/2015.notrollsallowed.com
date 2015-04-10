@@ -26,44 +26,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * Register user 
-     * 
-     * @param Request $request 
-     *
-     * @Route("/register", name="register")
-     * @Template()
-     */
-    public function registerAction()
-    {
-        $form = $this->createForm(new TalkType, null, [
-            'action' => $this->generateUrl('register')
-        ]);
-
-        $request = $this->get('request');
-
-        if ('POST' === $request->getMethod()) {
-            $form->bind($request);
-
-            if ($form->isValid()) {
-                $talk = $form->getData();
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($talk);
-                $em->flush();
-
-                $event = new TalkEvent($talk);
-                $this->get('event_dispatcher')
-                    ->dispatch(TalkEvents::CREATE, $event);
-            }
-
-            return new JsonResponse(['success' => true]);
-        }
-
-        return [
-            'form' => $form->createView()
-        ];
-    }
-
-    /**
      * Speakers list 
      * 
      * @Route("/pranesejai", name="speakers")
