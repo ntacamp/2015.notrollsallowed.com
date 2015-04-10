@@ -11,6 +11,12 @@
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
         </service>
 
+        <service id="home.user_listener" class="Estina\Bundle\HomeBundle\EventListener\UserListener">
+            <argument type="service" id="mailer" />
+            <tag name="kernel.event_listener" event="user.passwordReset" method="onPasswordReset" />
+            <tag name="kernel.event_listener" event="user.registrationFinished" method="onRegistrationFinished" />
+        </service>
+
         <service id="home.user_service" class="Estina\Bundle\HomeBundle\Service\UserService">
             <argument type="service" id="security.password_encoder"/>
             <argument type="service" id="doctrine.orm.entity_manager"/>

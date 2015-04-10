@@ -107,14 +107,14 @@ class User implements UserInterface, \Serializable
     private $updatedAt;
 
     /**
-     * @var \DateTime
+     * @var boolean
      *
      * @ORM\Column(name="active", type="boolean")
      */
     private $active = 0;
 
     /**
-     * @var string
+     * @var \DateTime
      *
      * @ORM\Column(name="last_reset_time", type="datetime", nullable=true)
      */
@@ -267,6 +267,22 @@ class User implements UserInterface, \Serializable
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getLastResetTime()
+    {
+        return $this->lastResetTime;
+    }
+
+    /**
+     * @param \DateTime $lastResetTime
+     */
+    public function setLastResetTime(\DateTime $lastResetTime)
+    {
+        $this->lastResetTime = $lastResetTime;
+    }
+
+    /**
      * Returns the salt that was originally used to encode the password.
      *
      * This can return null if the password was not encoded using a salt.
@@ -383,7 +399,7 @@ class User implements UserInterface, \Serializable
     {
         return serialize(array(
             $this->id,
-            $this->username,
+            $this->email,
             $this->password,
         ));
     }
@@ -393,7 +409,7 @@ class User implements UserInterface, \Serializable
     {
         list (
             $this->id,
-            $this->username,
+            $this->email,
             $this->password,
             ) = unserialize($serialized);
     }
