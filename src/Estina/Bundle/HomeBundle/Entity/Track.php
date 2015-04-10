@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Track
 {
+    const TYPE_TALK = 'TALK';
+    const TYPE_WORKSHOP = 'WORKSHOP';
+
     /**
      * @var integer
      *
@@ -49,6 +52,12 @@ class Track
      */
     private $position;
 
+    /**
+     * @var string 
+     * 
+     * @ORM\Column(name="position", type="string", length=20)
+     */
+    private $type;
 
     /**
      * Get id
@@ -154,6 +163,14 @@ class Track
     public function getPosition()
     {
         return $this->position;
+    }
+
+    public function setType($type)
+    {
+        if (!in_array($type, array(self::TYPE_WORKSHOP, self::TYPE_TALK))) {
+            throw new \InvalidArgumentException("Invalid type");
+        }
+        $this->type = $type;
     }
 }
 
