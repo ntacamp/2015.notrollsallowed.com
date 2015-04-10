@@ -5,13 +5,13 @@ namespace Estina\Bundle\HomeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Talk
+ * User
  *
- * @ORM\Table(name="talk")
- * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\TalkRepository")
+ * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\UserRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Talk
+class User
 {
     /**
      * @var integer
@@ -46,7 +46,7 @@ class Talk
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=20)
+     * @ORM\Column(name="phone", type="string", length=20, nullable=true)
      */
     private $phone;
 
@@ -56,6 +56,13 @@ class Talk
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="category", type="integer")
+     */
+    private $category;
 
     /**
      * @var \DateTime
@@ -93,7 +100,7 @@ class Talk
      * Set title
      *
      * @param string $title
-     * @return Talk
+     * @return User
      */
     public function setTitle($title)
     {
@@ -116,7 +123,7 @@ class Talk
      * Set speaker
      *
      * @param string $speaker
-     * @return Talk
+     * @return User
      */
     public function setSpeaker($speaker)
     {
@@ -139,7 +146,7 @@ class Talk
      * Set email
      *
      * @param string $email
-     * @return Talk
+     * @return User
      */
     public function setEmail($email)
     {
@@ -162,7 +169,7 @@ class Talk
      * Set phone
      *
      * @param string $phone
-     * @return Talk
+     * @return User
      */
     public function setPhone($phone)
     {
@@ -185,7 +192,7 @@ class Talk
      * Set description
      *
      * @param string $description
-     * @return Talk
+     * @return User
      */
     public function setDescription($description)
     {
@@ -205,10 +212,26 @@ class Talk
     }
 
     /**
+     * @return int
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param int $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
      * Set createdOn
      *
      * @param \DateTime $createdOn
-     * @return Talk
+     * @return User
      */
     public function setCreatedOn($createdOn)
     {
@@ -231,7 +254,7 @@ class Talk
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
-     * @return Talk
+     * @return User
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -254,7 +277,7 @@ class Talk
      * Set active
      *
      * @param bool $active
-     * @return Talk
+     * @return User
      */
     public function setActive($active)
     {
