@@ -78,24 +78,4 @@ class DefaultController extends Controller
             'talks' => $talks
         ];
     }
-
-    /**
-     * Partners block 
-     * 
-     * @Template()
-     */
-    public function partnersAction()
-    {
-        return [];
-    }
-
-    /**
-     * FAQ block 
-     * 
-     * @Template()
-     */
-    public function faqAction()
-    {
-        return [];
-    }
 }
