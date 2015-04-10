@@ -3,6 +3,7 @@
 namespace Estina\Bundle\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\UserRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @var integer
@@ -25,21 +26,28 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="username", type="string", unique=true, length=25)
      */
-    private $title;
+    private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="speaker", type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=64)
      */
-    private $speaker;
+    private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
@@ -51,18 +59,18 @@ class User
     private $phone;
 
     /**
-     * @var string
+     * @var
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
      */
-    private $description;
+    private $facebook;
 
     /**
-     * @var integer
+     * @var
      *
-     * @ORM\Column(name="category", type="integer")
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
      */
-    private $category;
+    private $twitter;
 
     /**
      * @var \DateTime
@@ -97,49 +105,35 @@ class User
     }
 
     /**
-     * Set title
-     *
-     * @param string $title
-     * @return User
+     * @return string
      */
-    public function setTitle($title)
+    public function getUsername()
     {
-        $this->title = $title;
-
-        return $this;
+        return $this->username;
     }
 
     /**
-     * Get title
-     *
-     * @return string 
+     * @param string $username
      */
-    public function getTitle()
+    public function setUsername($username)
     {
-        return $this->title;
+        $this->username = $username;
     }
 
     /**
-     * Set speaker
-     *
-     * @param string $speaker
-     * @return User
+     * @return string
      */
-    public function setSpeaker($speaker)
+    public function getPassword()
     {
-        $this->speaker = $speaker;
-
-        return $this;
+        return $this->password;
     }
 
     /**
-     * Get speaker
-     *
-     * @return string 
+     * @param string $password
      */
-    public function getSpeaker()
+    public function setPassword($password)
     {
-        return $this->speaker;
+        $this->password = $password;
     }
 
     /**
@@ -189,42 +183,63 @@ class User
     }
 
     /**
-     * Set description
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param mixed $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param mixed $twitter
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
      *
-     * @param string $description
-     * @return User
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
+     * This can return null if the password was not encoded using a salt.
      *
-     * @return string 
+     * @return string|null The salt
      */
-    public function getDescription()
+    public function getSalt()
     {
-        return $this->description;
-    }
-
-    /**
-     * @return int
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * @param int $category
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
+        // NOT REQUIRED BECAUSE OF BCRYPT
     }
 
     /**
@@ -294,6 +309,41 @@ class User
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    /**
+     *
+     */
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            ) = unserialize($serialized);
     }
 
     /**
