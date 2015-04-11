@@ -19,7 +19,12 @@ class ScheduleController extends Controller
      */
     public function workshopsAction()
     {
-        return [];
+        $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Track');
+        $tracks = $repo->findWorkshopTracks();
+
+        return [
+            'tracks' => $tracks
+        ];
     }
 
     /**

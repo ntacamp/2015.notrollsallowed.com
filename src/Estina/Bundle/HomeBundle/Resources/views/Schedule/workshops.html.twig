@@ -1,5 +1,9 @@
 {% extends "EstinaHomeBundle::layout.html.twig" %}
 
-{% block body  %}
-WORKSHOPAI
+{% block body %}
+<h1>Workshopai</h1>
+{% for track in tracks  %}
+    <h2>{{ track.title }}</h2>
+    <p>{{ track.description }}</p>
+{% endfor %}
 {% endblock %}
