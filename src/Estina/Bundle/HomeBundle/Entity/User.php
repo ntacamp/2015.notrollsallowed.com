@@ -425,4 +425,9 @@ class User implements UserInterface, \Serializable
             $this->createdOn = new \DateTime;
         }
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

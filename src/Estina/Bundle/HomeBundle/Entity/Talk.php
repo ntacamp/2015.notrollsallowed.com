@@ -230,4 +230,14 @@ class Talk
 
         return $this;
     }
+
+    /**
+     * getTrack 
+     * 
+     * @return Track
+     */
+    public function getTrack()
+    {
+        return $this->track;
+    }
 }

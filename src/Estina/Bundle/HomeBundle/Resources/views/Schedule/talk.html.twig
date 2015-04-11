@@ -2,7 +2,12 @@
 
 {% block body %}
 <h1>{{ talk.title }}</h1>
+<h2>{{ talk.track.title }}</h2>
 <p>
-{{ talk.description }}
+{{ talk.description|markdown }}
 </p>
+
+<div>
+    {{ talk.user }}
+</div>
 {% endblock %}
