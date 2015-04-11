@@ -7,13 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Track
  *
- * @ORM\Table(name="track")
+ * @ORM\Table(name="track", indexes={@ORM\Index(name="track_type", columns={"type", "position"})})
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\TrackRepository")
  */
 class Track
 {
     const TYPE_TALK = 'TALK';
-    const TYPE_WORKSHOP = 'WORKSHOP';
+    const TYPE_WORKSHOP = 'WORK';
 
     /**
      * @var integer
@@ -55,9 +55,9 @@ class Track
     /**
      * @var string 
      * 
-     * @ORM\Column(name="position", type="string", length=20)
+     * @ORM\Column(name="type", type="string", length=4, options={"fixed"=true})
      */
-    private $type;
+    private $type = self::TYPE_TALK;
 
     /**
      * Get id
@@ -165,12 +165,31 @@ class Track
         return $this->position;
     }
 
+    /**
+     * Set track type 
+     * 
+     * @param string $type 
+     *
+     * @return Track
+     */
     public function setType($type)
     {
         if (!in_array($type, array(self::TYPE_WORKSHOP, self::TYPE_TALK))) {
             throw new \InvalidArgumentException("Invalid type");
         }
         $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get track type 
+     * 
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }
 

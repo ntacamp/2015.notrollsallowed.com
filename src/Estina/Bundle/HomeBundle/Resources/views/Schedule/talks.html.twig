@@ -1,5 +1,8 @@
 {% extends "EstinaHomeBundle::layout.html.twig" %}
 
-{% block body  %}
-PRANEŠIMAI
+{% block body %}
+{% for track in tracks  %}
+    <h2>{{ track.title }}</h2>
+    <p>{{ track.description }}</p>
+{% endfor %}
 {% endblock %}

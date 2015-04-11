@@ -30,6 +30,11 @@ class ScheduleController extends Controller
      */
     public function talksAction()
     {
-        return [];
+        $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Track');
+        $tracks = $repo->findTalkTracks();
+
+        return [
+            'tracks' => $tracks
+        ];
     }
 }

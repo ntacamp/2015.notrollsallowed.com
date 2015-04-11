@@ -10,4 +10,26 @@ namespace Estina\Bundle\HomeBundle\Entity;
  */
 class TrackRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTalkTracks()
+    {
+        return $this->findTracksByType(Track::TYPE_TALK);
+    }
+
+    public function findWorkshopTracks()
+    {
+        return $this->findTracksByType(Track::TYPE_WORKSHOP);
+    }
+
+    public function findTracksByType($type)
+    {
+        $qb = $this->_em->createQueryBuilder();
+        $qb
+            ->select('t')
+            ->from('Estina\Bundle\HomeBundle\Entity\Track', 't')
+            ->where('t.type = :type')
+            ->setParameter('type', $type)
+            ->orderBy('t.position', 'ASC');
+
+        return $qb->getQuery()->getResult();
+    }
 }
