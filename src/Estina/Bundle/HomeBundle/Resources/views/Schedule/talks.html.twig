@@ -9,8 +9,8 @@
     {% if track.talks %}
     <ul>
         {% for talk in track.talks %}
-            <li>{{ talk.title }}
-            ({{ talk.user.name }})
+            <li>
+                <a href="{{ url('talk', {id: talk.id}) }}">{{ talk.title }}</a> ({{ talk.user.name }})
             </li>
         {% endfor %}
     </ul>

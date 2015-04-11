@@ -5,5 +5,16 @@
 {% for track in tracks  %}
     <h2>{{ track.title }}</h2>
     <p>{{ track.description }}</p>
+
+    {% if track.talks %}
+    <ul>
+        {% for talk in track.talks %}
+            <li>
+                <a href="{{ url('talk', {id: talk.id}) }}">{{ talk.title }}</a> ({{ talk.user.name }})
+                {# @todo add workshop start time #}
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 {% endfor %}
 {% endblock %}

@@ -5,6 +5,7 @@ namespace Estina\Bundle\HomeBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Schedule, workshops and talks.
@@ -41,5 +42,23 @@ class ScheduleController extends Controller
         return [
             'tracks' => $tracks
         ];
+    }
+
+    /**
+     * talkAction 
+     * 
+     * @Route("/pranesimai/{id}", name="talk")
+     * @Template()
+     */
+    public function talkAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('EstinaHomeBundle:Talk');
+        $talk = $repo->findOneById($id);
+
+        if (!$talk) {
+            throw new NotFoundHttpException;
+        }
+
+        return ['talk' => $talk];
     }
 }
