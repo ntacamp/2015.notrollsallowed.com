@@ -5,5 +5,15 @@
 {% for track in tracks  %}
     <h2>{{ track.title }}</h2>
     <p>{{ track.description }}</p>
+
+    {% if track.talks %}
+    <ul>
+        {% for talk in track.talks %}
+            <li>{{ talk.title }}
+            ({{ talk.user.name }})
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 {% endfor %}
 {% endblock %}

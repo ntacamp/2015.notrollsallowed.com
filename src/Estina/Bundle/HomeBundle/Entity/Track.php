@@ -2,6 +2,7 @@
 
 namespace Estina\Bundle\HomeBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -58,6 +59,18 @@ class Track
      * @ORM\Column(name="type", type="string", length=4, options={"fixed"=true})
      */
     private $type = self::TYPE_TALK;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Talk", mappedBy="track")
+     * 
+     * @var array<Talk>
+     */
+    private $talks;
+
+    public function __construct()
+    {
+        $this->talks = new ArrayCollection;
+    }
 
     /**
      * Get id
@@ -190,6 +203,16 @@ class Track
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * getTalks 
+     * 
+     * @return ArrayCollection<Talks>
+     */
+    public function getTalks()
+    {
+        return $this->talks;
     }
 }
 

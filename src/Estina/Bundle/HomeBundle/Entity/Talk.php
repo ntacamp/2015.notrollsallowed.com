@@ -54,7 +54,7 @@ class Talk
      *
      * @ORM\Column(name="active", type="boolean")
      */
-    private $active;
+    private $active = false;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
@@ -63,7 +63,7 @@ class Talk
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Track")
+     * @ORM\ManyToOne(targetEntity="Track", inversedBy="talks")
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id")
      **/
     private $track;
@@ -210,6 +210,11 @@ class Talk
         $this->user = $user;
 
         return $this;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**
