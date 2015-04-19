@@ -1,3 +1,6 @@
+{% extends "EstinaHomeBundle::layout.html.twig" %}
+
+{% block body %}
 <form action="{{ path('user_registration') }}" method="post">
 
     {{ form_row(registrationFrom.name) }}
@@ -6,3 +9,4 @@
     {{ form_rest(registrationFrom) }}
     <button type="submit">Register</button>
 </form>
+{% endblock %}
