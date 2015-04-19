@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Estina\Bundle\HomeBundle\Entity\Talk;
 use Estina\Bundle\HomeBundle\Form\TalkType;
 
@@ -21,7 +22,8 @@ class TalkController extends Controller
     /**
      * Lists all Talk entities.
      *
-     * @Route("/", name="talk")
+     * @Route("/", name="talk_list")
+     * @Security("has_role('ROLE_ADMIN')")
      * @Method("GET")
      * @Template()
      */
@@ -35,6 +37,21 @@ class TalkController extends Controller
             'entities' => $entities,
         );
     }
+
+    /**
+     * List personal talks.
+     * 
+     * @Template()
+     */
+    public function personalTalksAction()
+    {
+        $user = $this->get('security.context')->getToken()->getUser();
+        $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Talk');
+        $talks = $repo->findTalksByUser($user);
+
+        return ['talks' => $talks];
+    }
+
     /**
      * Creates a new Talk entity.
      *
@@ -49,11 +66,13 @@ class TalkController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $user = $this->get('security.context')->getToken()->getUser();
+            $entity->setUser($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('talk_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('user_profile'));
         }
 
         return array(
@@ -99,30 +118,6 @@ class TalkController extends Controller
         );
     }
 
-    /**
-     * Finds and displays a Talk entity.
-     *
-     * @Route("/{id}", name="talk_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Talk entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
 
     /**
      * Displays a form to edit an existing Talk entity.
@@ -133,12 +128,19 @@ class TalkController extends Controller
      */
     public function editAction($id)
     {
+        //@todo add file upload
+        //@todo allow user mark if he'll not be able to participate.
+        //@todo validate if there are enough place for new talks on selected track.
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();   
         }
 
         $editForm = $this->createEditForm($entity);
@@ -149,6 +151,20 @@ class TalkController extends Controller
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
+    }
+
+    /**
+     * Check if user is allowed edit entity. 
+     *
+     * @param Talk $entity
+     * 
+     * @return bool
+     */
+    private function isAllowedUpdate(Talk $entity)
+    {
+        $security = $this->get('security.context');
+        $user = $security->getToken()->getUser();
+        return ($entity->getUser() == $user || $security->isGranted('ROLE_ADMIN'));
     }
 
     /**
@@ -186,6 +202,10 @@ class TalkController extends Controller
             throw $this->createNotFoundException('Unable to find Talk entity.');
         }
 
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();   
+        }
+
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
@@ -217,6 +237,10 @@ class TalkController extends Controller
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
+            if (!$this->isAllowedUpdate($entity)) {
+                throw $this->createAccessDeniedException();   
+            }
+
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Talk entity.');
             }
@@ -225,7 +249,7 @@ class TalkController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('talk'));
+        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
     }
 
     /**

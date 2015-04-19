@@ -17,10 +17,6 @@ class TalkType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('createdOn')
-            ->add('updatedAt')
-            ->add('active')
-            ->add('user')
             ->add('track')
         ;
     }

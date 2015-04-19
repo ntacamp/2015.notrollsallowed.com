@@ -3,6 +3,7 @@
 namespace Estina\Bundle\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Talk
@@ -24,6 +25,7 @@ class Talk
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -31,6 +33,7 @@ class Talk
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -45,9 +48,9 @@ class Talk
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    private $updatedAt;
+    private $updatedAt = null;
 
     /**
      * @var boolean
@@ -57,16 +60,23 @@ class Talk
     private $active = false;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      **/
     private $user;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="Track", inversedBy="talks")
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id")
      **/
     private $track;
+
+    public function __construct()
+    {
+        $this->createdOn = new \DateTime;
+    }
 
     /**
      * Get id

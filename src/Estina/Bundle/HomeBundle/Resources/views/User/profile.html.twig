@@ -1,5 +1,5 @@
-{% extends "EstinaHomeBundle::layout.html.twig" %}
+{% extends "EstinaHomeBundle::profile.html.twig" %}
 
-{% block body %}
-<h1>PROFILE {{ app.user.username }}</h1>
+{% block content %}
+    {{ render(controller('EstinaHomeBundle:Talk:personalTalks'))}}
 {% endblock %}
