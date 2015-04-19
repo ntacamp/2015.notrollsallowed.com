@@ -214,5 +214,9 @@ class Track
     {
         return $this->talks;
     }
+    public function __toString()
+    {
+      return $this->title;
+    }
 }
 
