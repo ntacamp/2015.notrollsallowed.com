@@ -20,7 +20,7 @@ class TalkType extends AbstractType
             ->add('track')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

@@ -3,7 +3,7 @@
 namespace Estina\Bundle\HomeBundle;
 
 /**
- * TalkEvents 
+ * TalkEvents
  */
 class TalkEvents
 {

@@ -13,8 +13,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ScheduleController extends Controller
 {
     /**
-     * workshopsAction 
-     * 
+     * workshopsAction
+     *
      * @Route("/dirbtuves", name="workshops")
      * @Template()
      */
@@ -29,8 +29,8 @@ class ScheduleController extends Controller
     }
 
     /**
-     * talksAction 
-     * 
+     * talksAction
+     *
      * @Route("/pranesimai", name="talks")
      * @Template()
      */
@@ -45,8 +45,8 @@ class ScheduleController extends Controller
     }
 
     /**
-     * talkAction 
-     * 
+     * talkAction
+     *
      * @Route("/pranesimai/{id}", name="talk")
      * @Template()
      */

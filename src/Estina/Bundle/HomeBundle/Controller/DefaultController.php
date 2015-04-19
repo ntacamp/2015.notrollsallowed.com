@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
- * DefaultController 
+ * DefaultController
  */
 class DefaultController extends Controller
 {
@@ -26,8 +26,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * Speakers list 
-     * 
+     * Speakers list
+     *
      * @Route("/pranesejai", name="speakers")
      * @Template()
      */

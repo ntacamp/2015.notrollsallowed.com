@@ -16,8 +16,8 @@ class RegistrationEvent extends Event
     protected $user;
 
     /**
-     * __construct 
-     * 
+     * __construct
+     *
      * @param User $user
      */
     public function __construct(User $user)
@@ -27,7 +27,7 @@ class RegistrationEvent extends Event
 
     /**
      * getUser
-     * 
+     *
      * @return User
      */
     public function getUser()

@@ -5,16 +5,16 @@ namespace Estina\Bundle\HomeBundle\Event;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
- * TalkEvent 
+ * TalkEvent
  */
 class TalkEvent extends Event
 {
     protected $talk;
 
     /**
-     * __construct 
-     * 
-     * @param Talk $talk 
+     * __construct
+     *
+     * @param Talk $talk
      */
     public function __construct($talk)
     {
@@ -22,8 +22,8 @@ class TalkEvent extends Event
     }
 
     /**
-     * getTalk 
-     * 
+     * getTalk
+     *
      * @return Talk
      */
     public function getTalk()

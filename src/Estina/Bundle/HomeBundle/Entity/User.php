@@ -123,7 +123,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -188,7 +188,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -211,7 +211,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get phone
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -310,7 +310,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get createdOn
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedOn()
     {
@@ -333,7 +333,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -356,7 +356,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get active
      *
-     * @return bool 
+     * @return bool
      */
     public function getActive()
     {
@@ -415,7 +415,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @ORM\PreFlush 
+     * @ORM\PreFlush
      */
     public function preFlush()
     {

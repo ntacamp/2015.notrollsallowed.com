@@ -8,13 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
- * Static pages 
+ * Static pages
  */
 class PagesController extends Controller
 {
     /**
-     * About page 
-     * 
+     * About page
+     *
      * @Route("/apie", name="about")
      * @Template()
      */
@@ -24,8 +24,8 @@ class PagesController extends Controller
     }
 
     /**
-     * Partners 
-     * 
+     * Partners
+     *
      * @Route("/remejai", name="partners")
      * @Template()
      */
@@ -35,8 +35,8 @@ class PagesController extends Controller
     }
 
     /**
-     * FAQ 
-     * 
+     * FAQ
+     *
      * @Route("/duk", name="faq")
      * @Template()
      */
@@ -47,7 +47,7 @@ class PagesController extends Controller
 
     /**
      * Kontaktai
-     * 
+     *
      * @Route("/kontaktai", name="contacts")
      * @Template()
      */

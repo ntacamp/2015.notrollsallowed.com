@@ -209,9 +209,9 @@ class Talk
     }
 
     /**
-     * Set user 
-     * 
-     * @param User $user 
+     * Set user
+     *
+     * @param User $user
      *
      * @return Talk
      */
@@ -228,9 +228,9 @@ class Talk
     }
 
     /**
-     * Set track 
-     * 
-     * @param Track $track 
+     * Set track
+     *
+     * @param Track $track
      *
      * @return Talk
      */
@@ -242,8 +242,8 @@ class Talk
     }
 
     /**
-     * getTrack 
-     * 
+     * getTrack
+     *
      * @return Track
      */
     public function getTrack()

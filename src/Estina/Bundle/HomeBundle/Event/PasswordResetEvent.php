@@ -13,8 +13,8 @@ class PasswordResetEvent extends Event
     protected $user;
 
     /**
-     * __construct 
-     * 
+     * __construct
+     *
      * @param User $user
      */
     public function __construct(User $user)
@@ -24,7 +24,7 @@ class PasswordResetEvent extends Event
 
     /**
      * getUser
-     * 
+     *
      * @return User
      */
     public function getUser()

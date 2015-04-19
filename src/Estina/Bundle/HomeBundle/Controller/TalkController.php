@@ -40,7 +40,7 @@ class TalkController extends Controller
 
     /**
      * List personal talks.
-     * 
+     *
      * @Template()
      */
     public function personalTalksAction()
@@ -140,7 +140,7 @@ class TalkController extends Controller
         }
 
         if (!$this->isAllowedUpdate($entity)) {
-            throw $this->createAccessDeniedException();   
+            throw $this->createAccessDeniedException();
         }
 
         $editForm = $this->createEditForm($entity);
@@ -154,10 +154,10 @@ class TalkController extends Controller
     }
 
     /**
-     * Check if user is allowed edit entity. 
+     * Check if user is allowed edit entity.
      *
      * @param Talk $entity
-     * 
+     *
      * @return bool
      */
     private function isAllowedUpdate(Talk $entity)
@@ -203,7 +203,7 @@ class TalkController extends Controller
         }
 
         if (!$this->isAllowedUpdate($entity)) {
-            throw $this->createAccessDeniedException();   
+            throw $this->createAccessDeniedException();
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -238,7 +238,7 @@ class TalkController extends Controller
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
             if (!$this->isAllowedUpdate($entity)) {
-                throw $this->createAccessDeniedException();   
+                throw $this->createAccessDeniedException();
             }
 
             if (!$entity) {

@@ -3,13 +3,13 @@
 namespace Estina\Bundle\HomeBundle\Twig;
 
 /**
- * Gravatar 
+ * Gravatar
  */
 class GravatarExtension extends \Twig_Extension
 {
     /**
-     * Return registered filters 
-     * 
+     * Return registered filters
+     *
      * @return array
      */
     public function getFilters()
@@ -20,7 +20,7 @@ class GravatarExtension extends \Twig_Extension
     }
 
     /**
-     * Generate url for image. 
+     * Generate url for image.
      */
     public function getGravatarImage($email, $size = 150, $defaultImage = 'http://2014.notrollsallowed.com/images/demo/speakers/speaker-01.jpg', $rating = 'G')
     {
@@ -29,8 +29,8 @@ class GravatarExtension extends \Twig_Extension
     }
 
     /**
-     * Name 
-     * 
+     * Name
+     *
      * @return string
      */
     public function getName()

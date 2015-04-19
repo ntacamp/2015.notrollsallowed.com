@@ -54,15 +54,15 @@ class Track
     private $position;
 
     /**
-     * @var string 
-     * 
+     * @var string
+     *
      * @ORM\Column(name="type", type="string", length=4, options={"fixed"=true})
      */
     private $type = self::TYPE_TALK;
 
     /**
      * @ORM\OneToMany(targetEntity="Talk", mappedBy="track")
-     * 
+     *
      * @var array<Talk>
      */
     private $talks;
@@ -179,9 +179,9 @@ class Track
     }
 
     /**
-     * Set track type 
-     * 
-     * @param string $type 
+     * Set track type
+     *
+     * @param string $type
      *
      * @return Track
      */
@@ -196,8 +196,8 @@ class Track
     }
 
     /**
-     * Get track type 
-     * 
+     * Get track type
+     *
      * @return string
      */
     public function getType()
@@ -206,8 +206,8 @@ class Track
     }
 
     /**
-     * getTalks 
-     * 
+     * getTalks
+     *
      * @return ArrayCollection<Talks>
      */
     public function getTalks()
@@ -219,4 +219,3 @@ class Track
       return $this->title;
     }
 }
-

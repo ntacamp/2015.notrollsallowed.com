@@ -1,0 +1,60 @@
+{
+  "exclude": [
+    "(^vendor)",
+    "(^app)",
+    "(^public)"
+  ],
+  "linters": {
+    "nolint": {
+      "type": "nolint"
+    },
+    "filename": {
+      "type": "filename",
+      "include": [
+        "(.php)",
+        "(.css)",
+        "(.js)",
+        "(.twig)"
+      ]
+    },
+    "generated": {
+      "type": "generated",
+      "include": [
+        "(.php)",
+        "(.css)",
+        "(.js)",
+        "(.twig)"
+      ]
+    },
+    "merge-conflict": {
+      "type": "merge-conflict",
+      "include": [
+        "(.php)",
+        "(.css)",
+        "(.js)",
+        "(.twig)"
+      ]
+    },
+    "text": {
+      "type": "text",
+      "text.max-line-length": 130,
+      "include": [
+        "(.php)"
+      ],
+      "exclude": [
+        "(.html.php)",
+        "(.json.php)",
+        "(.twig)"
+      ]
+    },
+    "spelling": {
+      "type": "spelling",
+      "include": [
+        "(.php)",
+        "(.css)",
+        "(.js)",
+        "(.twig)"
+      ]
+    }
+  }
+}
