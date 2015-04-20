@@ -46,15 +46,6 @@
         "(.json.php)",
         "(.twig)"
       ]
-    },
-    "spelling": {
-      "type": "spelling",
-      "include": [
-        "(.php)",
-        "(.css)",
-        "(.js)",
-        "(.twig)"
-      ]
     }
   }
 }
