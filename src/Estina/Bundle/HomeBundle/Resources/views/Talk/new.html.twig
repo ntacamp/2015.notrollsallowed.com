@@ -1,8 +1,17 @@
-{% extends '::base.html.twig' %}
+{% extends 'EstinaHomeBundle::layout.html.twig' %}
 
 {% block body -%}
     <h1>Talk creation</h1>
+    {% for flashMessage in app.session.flashbag.get('error') %}
 
+        {{ flashMessage }}
+
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+
+        {{ flashMessage }}
+
+    {% endfor %}
     {{ form(form) }}
 </ul>
 {% endblock %}

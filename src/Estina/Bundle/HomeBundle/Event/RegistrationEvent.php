@@ -10,6 +10,8 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class RegistrationEvent extends Event
 {
+    const NAME = 'registration_event';
+
     /**
      * @var User
      */

@@ -71,8 +71,11 @@ class TalkController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
-            return $this->redirect($this->generateUrl('user_profile'));
+            $this->get('session')->getFlashBag()->set(
+                'success',
+                'Sėkmingai užregistravome Jūsų pranešimą.'
+            );
+            return $this->redirect($this->generateUrl('talk_new'));
         }
 
         return array(
@@ -95,7 +98,7 @@ class TalkController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Registruotis'));
 
         return $form;
     }

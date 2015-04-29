@@ -61,7 +61,7 @@ class Talk
 
     /**
      * @Assert\NotBlank()
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", cascade={"persist"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      **/
     private $user;

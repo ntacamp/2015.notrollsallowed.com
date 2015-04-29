@@ -43,6 +43,7 @@ PRANEŠĖJAS
 ====================
 PRANEŠIMAS
 ====================
+{$talk->getTrack()}
 {$talk->getTitle()}
 {$talk->getDescription()}
 EOT;
