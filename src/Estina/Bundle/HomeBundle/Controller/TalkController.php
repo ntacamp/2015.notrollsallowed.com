@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Estina\Bundle\HomeBundle\Entity\Talk;
 use Estina\Bundle\HomeBundle\Form\TalkType;
+use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
 
 /**
  * Talk controller.
@@ -18,6 +19,85 @@ use Estina\Bundle\HomeBundle\Form\TalkType;
  */
 class TalkController extends Controller
 {
+    /**
+     * Register talk. 
+     * 
+     * @Route("/pranesimo-registracija", name="talk_register")
+     * @Template()
+     */
+    public function registerAction(Request $request)
+    {
+        $entity = new Talk();
+        $form   = $this->createRegistrationForm($entity);
+
+        if ('POST' === $request->getMethod()) {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $userService = $this->get('home.user_service');
+                try {
+                    $userService->createUser($entity->getUser());
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($entity);
+                    $em->flush();
+
+                    return $this->redirect(
+                        $this->generateUrl('talk_success'));
+                } catch (Exteptoin\UniqueConstraintViolationException $e) {
+                    // @todo add error on email field.
+                }
+            }
+        }
+        // if ($form->isValid()) {
+        //     $user = $this->get('security.context')->getToken()->getUser();
+        //     $entity->setUser($user);
+        //     $em = $this->getDoctrine()->getManager();
+        //     $em->persist($entity);
+        //     $em->flush();
+        //     $this->get('session')->getFlashBag()->set(
+        //         'success',
+        //         'Sėkmingai užregistravome Jūsų pranešimą.'
+        //     );
+        //     return $this->redirect($this->generateUrl('talk_new'));
+        // }
+        //
+        // return array
+        //     'entity' => $entity,
+        //     'form'   => $form->createView(),
+        // );
+
+        return array(
+            'form' => $form->createView(),
+        );
+    }
+
+    /**
+     * Display info after sucessful registration. 
+     * 
+     * @Route("/registracija-sekminga", name="talk_success")
+     * @Template()
+     */
+    public function successAction()
+    {
+        return [];
+    }
+    
+    /**
+     * @param Talk $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createRegistrationForm(Talk $entity)
+    {
+        $form = $this->createForm(new RegisterTalkType(), $entity, [
+            'action' => $this->generateUrl('talk_register'),
+            'method' => 'POST',
+        ]);
+
+        $form->add('submit', 'submit', array('label' => 'Registruotis'));
+
+        return $form;
+    }
 
     /**
      * Lists all Talk entities.
