@@ -2,9 +2,24 @@
 
 {% block body -%}
     <h1>Pranešimas sėkmingai užregistruotas</h1>
-    Sveikiname!
+    <p>Sveikiname!</p>
 
-    Jūsų panešimas buvo sėkmingai užregistruotas.
+    <p>
+        Jūsų panešimas buvo sėkmingai užregistruotas. Netrukus jis bus
+        peržiūrėtas administratorių ir patvirtintas. Patvirtinus pranešimą,
+        gausite apie tai informuojantį elektroninį laišką. Būkite kantrūs :-)
+    </p>
+
+    <p>
+        Norėdami peržiūrėti pranešimo statusą ar keisti jo aprašymą,
+        <a href="{{ url('login_route') }}">prisijunkite</a> 
+        prie sistemos. Tam jums slaptažodžio, kurį gausite užpildę
+        <a href="{{ url('user_password_reset') }}">priminimo formą</a>.
+    </p>
+
+    <p>
+        Jei turite klausimų, rašykite 
+        <a href="mailto:{{ admin_email }}">{{ admin_email }}</a>.
+    </p>
 </ul>
 {% endblock %}
-

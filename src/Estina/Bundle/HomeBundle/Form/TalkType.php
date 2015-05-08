@@ -16,8 +16,8 @@ class TalkType extends AbstractType
     {
         $builder
             ->add('user', new UserType(), ['label' => false])
-            ->add('title','text', ['label' => 'Pranešimas'])
-            ->add('description', 'textarea', ['label' => 'Trumpas pranešimo aprašymas'])
+            ->add('title','text', ['label' => 'Pranešimo pavadinimas'])
+            ->add('description', 'textarea', ['label' => 'Trumpas aprašymas'])
             ->add('track', null, ['label' => 'Scena'])
         ;
     }

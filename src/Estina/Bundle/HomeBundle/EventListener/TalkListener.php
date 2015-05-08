@@ -21,7 +21,7 @@ class TalkListener
     /**
      * Item created 
      * 
-     * @param GetResponseForExceptionEvent $event 
+     * @param TalkEvent $event 
      */
     public function onCreate(TalkEvent $event)
     {
@@ -31,14 +31,14 @@ class TalkListener
             return;
         }
 
-        $subject = 'Registracija: ' . $talk->getSpeaker();
+        $subject = sprintf('Registracija: %s [%s]', $talk, $talk->getUser());
         $body = <<<EOT
 ====================
 PRANEŠĖJAS
 ====================
-{$talk->getSpeaker()}
-{$talk->getEmail()}
-{$talk->getPhone()}
+{$talk->getUser()}
+{$talk->getUser()->getEmail()}
+{$talk->getUser()->getPhone()}
 
 ====================
 PRANEŠIMAS

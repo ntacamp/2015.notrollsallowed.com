@@ -250,4 +250,9 @@ class Talk
     {
         return $this->track;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

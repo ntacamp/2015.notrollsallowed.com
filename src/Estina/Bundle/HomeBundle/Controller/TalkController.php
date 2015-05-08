@@ -2,15 +2,19 @@
 
 namespace Estina\Bundle\HomeBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use Estina\Bundle\HomeBundle\Entity\Talk;
+use Estina\Bundle\HomeBundle\Event\TalkEvent;
+use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
+use Estina\Bundle\HomeBundle\Form\TalkType;
+use Estina\Bundle\HomeBundle\TalkEvents;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Estina\Bundle\HomeBundle\Entity\Talk;
-use Estina\Bundle\HomeBundle\Form\TalkType;
-use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Talk controller.
@@ -41,30 +45,19 @@ class TalkController extends Controller
                     $em->persist($entity);
                     $em->flush();
 
+                    $event = new TalkEvent($entity);
+                    $this->get('event_dispatcher')
+                        ->dispatch(TalkEvents::CREATE, $event);
+
                     return $this->redirect(
                         $this->generateUrl('talk_success'));
-                } catch (Exteptoin\UniqueConstraintViolationException $e) {
+                } catch (UniqueConstraintViolationException $e) {
                     // @todo add error on email field.
+                    $error = new FormError("Toks vartotojas jau egzistuoja");
+                    $form->addError($error);
                 }
             }
         }
-        // if ($form->isValid()) {
-        //     $user = $this->get('security.context')->getToken()->getUser();
-        //     $entity->setUser($user);
-        //     $em = $this->getDoctrine()->getManager();
-        //     $em->persist($entity);
-        //     $em->flush();
-        //     $this->get('session')->getFlashBag()->set(
-        //         'success',
-        //         'Sėkmingai užregistravome Jūsų pranešimą.'
-        //     );
-        //     return $this->redirect($this->generateUrl('talk_new'));
-        // }
-        //
-        // return array
-        //     'entity' => $entity,
-        //     'form'   => $form->createView(),
-        // );
 
         return array(
             'form' => $form->createView(),
