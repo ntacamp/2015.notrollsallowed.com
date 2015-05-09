@@ -7,8 +7,16 @@ namespace Estina\Bundle\HomeBundle\Entity;
  */
 class TalkRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findTalksByUser(User $user)
+    public function findByUser(User $user)
     {
         return $this->findBy(['user' => $user]);
+    }
+
+    public function findActiveByTrack(Track $track)
+    {
+        return $this->findBy([
+            'track'  => $track,
+            'active' => 1,
+        ]);
     }
 }

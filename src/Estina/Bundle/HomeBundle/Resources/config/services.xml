@@ -22,6 +22,10 @@
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>
 
+        <service id="home.track_service" class="Estina\Bundle\HomeBundle\Service\TrackService">
+            <argument type="service" id="doctrine.orm.entity_manager"/>
+        </service>
+
         <service id="home.twig.gravatar_extension" class="Estina\Bundle\HomeBundle\Twig\GravatarExtension">
             <tag name="twig.extension" />
         </service>

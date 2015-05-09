@@ -2,7 +2,6 @@
 
 namespace Estina\Bundle\HomeBundle\EventListener;
 
-
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
 
 /**

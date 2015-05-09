@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="constraint.track_not_full" class="Estina\Bundle\HomeBundle\Validator\Constraints\TrackNotFullValidator">
+            <argument type="service" id="home.track_service" />
+            <tag name="validator.constraint_validator" alias="tracknotfull_validator" />
+        </service>
+    </services>
+
+</container>

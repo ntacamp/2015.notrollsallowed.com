@@ -4,6 +4,7 @@ namespace Estina\Bundle\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Estina\Bundle\HomeBundle\Validator\Constraints as EstinaAssert;
 
 /**
  * Talk
@@ -68,6 +69,7 @@ class Talk
 
     /**
      * @Assert\NotBlank()
+     * @EstinaAssert\TrackNotFull()
      * @ORM\ManyToOne(targetEntity="Track", inversedBy="talks")
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id")
      **/

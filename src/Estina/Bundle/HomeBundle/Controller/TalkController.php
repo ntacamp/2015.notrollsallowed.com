@@ -120,7 +120,7 @@ class TalkController extends Controller
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Talk');
-        $talks = $repo->findTalksByUser($user);
+        $talks = $repo->findByUser($user);
 
         return ['talks' => $talks];
     }
