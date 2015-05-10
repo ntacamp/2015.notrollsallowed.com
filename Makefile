@@ -1,7 +1,6 @@
-.PHONY: build
+.PHONY: dev
 
-build: vendor
-	app/console server:run
+all: vendor web/assets/vendor
 
 composer.phar:
 	curl -s https://getcomposer.org/installer | php
@@ -10,3 +9,9 @@ composer.phar:
 vendor: composer.phar
 	./composer.phar install
 	touch vendor
+
+dev: all
+	app/console server:run
+
+web/assets/vendor:
+	bower install

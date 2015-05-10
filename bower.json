@@ -1,0 +1,20 @@
+{
+  "name": "2015.notrollsallowed.com",
+  "version": "1.0.0",
+  "homepage": "http://2015.notrollsallowed.com",
+  "authors": [
+    "Povilas Balzaravicius Pawka <povilas@uber.com>"
+  ],
+  "description": "No Trolls Allowed website of course.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "markdown": "0.5.0"
+  }
+}
