@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="lt">
 	<head>
-		<title>No Trolls Allowed 2014</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>No Trolls Allowed 2015</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
 
 		<!--== Google Fonts ==-->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-        <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+        <link rel="bookmark" type="image/png" href="{{ asset('images/favicon.png') }}">
+
 		<!--== CSS Files ==-->
-		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="/css/style.css" rel="stylesheet" media="screen">
+        {% stylesheets
+            'assets/vendor/bootflatv2/css/bootstrap.min.css'
+            'assets/vendor/bootflatv2/bootflat/css/bootflat.min.css'
+            filter='cssrewrite' output='css/compiled/all.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
 		<!--== FB meta ==-->
         <meta property="og:url" content="{{ url('home') }}">
@@ -20,85 +27,122 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="310">
         <meta property="og:image:height" content="300">
-	</head>
+    </head>
 	<body>
-		<header id="header">
-			<div id="menu" class="header-menu fixed">
-				<div class="container box">
-					<div class="row">
-						<nav role="navigation" class="col-sm-12">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url('home') }}"><img src="bootflat/img/logo.png"><span>No Trolls Allowed</span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-default navbar-nav">
+                        <li class="active"><a href="{{ url('about') }}">Apie</i></a></li>
+                        <li><a href="{{ url('talk_register') }}">Registracija</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programa <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Pranešimai</a></li>
+                                <li><a href="#">Dirbtuvės</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ url('faq') }}">DUK</a></li>
+                        <li><a href="#">Kontaktai</a></li>
+                        <li><a href="http://blog.notrollsallowed.com/">BLOGas</a></li>
+                        <li><a href="#login" class="btn">Prisijungti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-								<!--== Logo ==-->
-								<span class="navbar-brand logo">
-									<img src="images/logo.png" alt=""> NTA 2014
-								</span>
+        {% block body %}{% endblock %}
 
-							</div>
-							<div class="navbar-collapse collapse">
+        <footer class="footer">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="footer-logo">
+                        <a href="{{ url('home') }}"><img src="bootflat/img/logo.png"><br>No Trolls Allowed</a>
+                    </div>
 
-								<!--== Navigation Menu ==-->
-								<ul class="nav navbar-nav">
-									<li class="current"><a href="/">Pradžia</a></li>
-                                    <li><a href="{{ url('talk_register') }}">Registracija</a></li>
-                                    <li><a href="/pranesimai">Pranešimai</a></li>
-									<li><a href="/dirbtuves">Dirbtuvės</a></li>
-									<li><a href="/duk">DUK</a></li>
-									<li><a href="/remejai">Rėmėjai</a></li>
-									<li><a href="/apie">Apie</a></li>
-									<li><a href="/kontaktai">Kontaktai</a></li>
-									<li><a href="http://wiki.notrollsallowed.com/" class="external">Wiki</a></li>
-									<li><a href="http://2013.notrollsallowed.com/" class="external">NTA 2013</a></li>
-								</ul>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">#ntacamp</dt>
+                        <dd class="nav-item">
+                            <a href="#apie-hacker-camp">Apie <em>Hacker Camp</em></a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#vieta">Vieta</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#registracija">Registracija</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#duk">DUK</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#blog">BLOGas</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#kontaktai">Kontaktai</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#prisijungti">Prisijungti</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Renginio programa</dt>
+                        <dd class="nav-item">
+                            <a href="#programa/pranesimai">Pranešimai</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#programa/dirbtuves">Dirbtuvės</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Sekite mus</dt>
+                        
+                        <dd class="nav-item">
+                            <a href="https://github.com/ntacamp">GitHub</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="https://twitter.com/ntacamp">Twitter</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#ntacamp-feed-page">#ntacamp feed</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Turite idėjų? Rašykite!</dt>
+                        <dd class="nav-item">
+                            <a href="mailto:info@notrollsallowed.com">hi@notrollsallowed.com</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="footer-copyright text-center">No Trolls Allowed &copy; {{ "now"|date("Y") }}</div>
+            </div>
+        </footer>
 
-			<div class="header-bg">
-			</div>
-		</header>
+        {% javascripts
+            'assets/vendor/jquery/dist/jquery.min.js'
+            'js/bootstrap.min.js'
+            output='js/compiled/all.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 
-		<div class="content">
-			<div class="container box">
-                {% block body %}{% endblock %}
-				<div id="gotop" class="gotop fa fa-arrow-up"></div>
-			</div>
-		</div>
-		<footer id="footer">
-			<div id="map_canvas"></div>
+        <!-- Bootstrap -->
+        <script src="vendor/js/jquery-1.11.0.min.js"></script>
+        <script src="vendor/js/bootstrap.min.js"></script>
 
-			<div class="footer">
-				<div class="container box">
-
-					<section id="info" class="row">
-						<div class="col-sm-8">
-							<!--== Social Icons ==-->
-							<ul class="social-icons">
-								<li><a href="https://www.facebook.com/NoTrollsAllowed" class="fa fa-facebook"></a></li>
-								<li><a href="https://twitter.com/ntacamp" class="fa fa-twitter"></a></li>
-							</ul>
-						</div>
-						<div class="col-sm-4 text-right">
-							<div class="copyrights">
-                                Visos teisės saugomos. © {{ "now"|date("Y") }}
-							</div>
-						</div>
-					</section>
-
-				</div>
-			</div>
-		</footer>
+        <!-- Bootflat's JS files.-->
+        <script src="bootflat/js/icheck.min.js"></script>
+        <script src="bootflat/js/jquery.fs.selecter.min.js"></script>
+        <script src="bootflat/js/jquery.fs.stepper.min.js"></script>
 
 		<!--== Javascript Files ==-->
-
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-41181062-1']);
