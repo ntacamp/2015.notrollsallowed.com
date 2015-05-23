@@ -20,38 +20,12 @@
     {{ form_start(form) }}
         {{ form_errors(form) }}
         <div id="estina_bundle_homebundle_registertalk">
-            <div>
-                <div id="estina_bundle_homebundle_registertalk_user">
-                    <div class="form-group">
-                        <label for="estina_bundle_homebundle_registertalk_user_name" class="required">Vardas/Pavardė</label>
-                        <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_user_name" name="estina_bundle_homebundle_registertalk[user][name]" required="required">
-                    </div>
-                    <div class="form-group">
-                        <label for="estina_bundle_homebundle_registertalk_user_email" class="required">El. Paštas</label>
-                        <input type="email" class="form-control" id="estina_bundle_homebundle_registertalk_user_email" name="estina_bundle_homebundle_registertalk[user][email]" required="required">
-                    </div>
-                    <div class="form-group">
-                        <label for="estina_bundle_homebundle_registertalk_user_phone" class="required">Telefonas</label>
-                        <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_user_phone" name="estina_bundle_homebundle_registertalk[user][phone]" required="required">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="estina_bundle_homebundle_registertalk_title" class="required">Pranešimas</label>
-                <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_title" name="estina_bundle_homebundle_registertalk[title]" required="required">
-            </div>
-            <div class="form-group">
-                <label for="estina_bundle_homebundle_registertalk_description" class="required">Pranešimo aprašymas (Markdown)</label>
-                <textarea  class="form-control" id="estina_bundle_homebundle_registertalk_description" name="estina_bundle_homebundle_registertalk[description]" required="required"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="estina_bundle_homebundle_registertalk_track" class="required">Scena</label>
-                <select class="form-control" id="estina_bundle_homebundle_registertalk_track" name="estina_bundle_homebundle_registertalk[track]"></select>
-            </div>
-            <div>
-                <button type="submit" id="estina_bundle_homebundle_registertalk_submit" name="estina_bundle_homebundle_registertalk[submit]" class="btn btn-info btn-register">Registruotis</button>
-            </div>
-            <input type="hidden" id="estina_bundle_homebundle_registertalk__token" name="estina_bundle_homebundle_registertalk[_token]" value="Lh7Eiw7RUh7HOdO3oGTIBRjaYekZzlSAVtyYvTlo8DA">
+            {{ form_row(form.user) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.track) }}
+            {{ form_row(form.submit, {'label': 'Registruotis'}) }}
+            {{ form_rest(form) }}
         </div>
     {{ form_end(form) }}
 </ul>

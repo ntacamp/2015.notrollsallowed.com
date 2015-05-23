@@ -30,6 +30,8 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         admin_email:  "%admin_email%"
+    form:
+        resources: ['bootstrap_3_layout.html.twig']
 
 # Assetic Configuration
 assetic:
