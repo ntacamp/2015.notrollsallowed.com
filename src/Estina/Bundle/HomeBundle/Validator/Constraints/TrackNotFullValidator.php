@@ -19,11 +19,8 @@ class TrackNotFullValidator extends ConstraintValidator
 
     public function validate($value, Constraint $constraint)
     {
-        if (!$value instanceof Track) {
-            throw new \UnexpectedTypeException('Track entity must be provided.');
-        }
-
-        if ($this->trackService->isTrackFull($value)) {
+        if ($value instanceof Track
+            && $this->trackService->isTrackFull($value)) {
             $this->context->buildViolation($constraint->message)
                 ->setParameter('%track%', $value)
                 ->addViolation();
