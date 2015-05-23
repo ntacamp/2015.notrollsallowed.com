@@ -1,5 +1,6 @@
 /web/bundles/
 /web/assets/
+/web/bootflat
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml

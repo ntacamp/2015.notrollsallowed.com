@@ -15,3 +15,7 @@ dev: all
 
 web/assets/vendor:
 	bower install
+
+web/bootflat: web/assets/vendor
+	ln -s assets/vendor/bootflat/bootflat/ web/bootflat
+
