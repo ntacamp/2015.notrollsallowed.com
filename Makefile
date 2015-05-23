@@ -1,6 +1,6 @@
 .PHONY: dev
 
-all: vendor web/assets/vendor
+all: vendor web/bootflat
 
 composer.phar:
 	curl -s https://getcomposer.org/installer | php
