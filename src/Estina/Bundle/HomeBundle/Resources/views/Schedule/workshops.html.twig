@@ -6,21 +6,25 @@
         <h2>Dirbtuvės</h2>
 
         <div class="row">
-                {% for track in tracks %}
-            <div class="col-md-3 track">
+            {% for track in tracks %}
+                <div class="col-md-3 track">
                     {% if track.talks %}
                         {% for talk in track.talks %}
                             <div class="events">
                                 <img src="{{ talk.user.email | gravatar }}" class="avatar">
+
                                 <div class="events-body">
                                     <h4>{{ talk.user.name }}</h4>
+
                                     <p>{{ talk.title }}</p>
                                 </div>
                             </div>
                         {% endfor %}
                     {% endif %}
-            </div>
-                {% endfor %}
+                </div>
+            {% else %}
+                <p>Dirbtuvių dar nėra. Jau greitai!</p>
+            {% endfor %}
         </div>
     </div>
 
