@@ -1,3 +1,6 @@
+{% extends 'EstinaHomeBundle::page.html.twig' %}
+
+{% block content -%}
 <h2>Mano pranešimai</h2>
 
 
@@ -10,4 +13,4 @@
 {% endfor %}
 </ul>
 
-<a href="{{ url('talk_new') }}">Naujas pranešimas</a>
+{% endblock %}

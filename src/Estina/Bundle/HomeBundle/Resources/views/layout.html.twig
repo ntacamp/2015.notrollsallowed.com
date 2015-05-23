@@ -39,7 +39,11 @@
                     <a class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('bootflat/img/logo.png')}}"><span>No Trolls Allowed</span></a>
                 </div>
                 <div class="pull-right">
-                    <a href="{{ url('login_route') }}" class="navbar-btn btn">Prisijungti</a>
+                    {% if not is_granted("ROLE_USER") %}
+                        <a href="{{ url('login_route') }}" class="navbar-btn btn">Prisijungti</a>
+                    {% else %}
+                        <a href="{{ url('logout') }}" class="navbar-btn btn">Atsijungti</a>
+                    {% endif %}
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-default navbar-nav">

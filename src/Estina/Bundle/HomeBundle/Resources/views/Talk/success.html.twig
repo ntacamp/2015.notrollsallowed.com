@@ -1,6 +1,6 @@
-{% extends 'EstinaHomeBundle::layout.html.twig' %}
+{% extends 'EstinaHomeBundle::page.html.twig' %}
 
-{% block body -%}
+{% block content -%}
     <h1>Pranešimas sėkmingai užregistruotas</h1>
     <p>Sveikiname!</p>
 
@@ -13,7 +13,7 @@
     <p>
         Norėdami peržiūrėti pranešimo statusą ar keisti jo aprašymą,
         <a href="{{ url('login_route') }}">prisijunkite</a> 
-        prie sistemos. Tam jums slaptažodžio, kurį gausite užpildę
+        prie sistemos. Jeigu neturite slaptažodžio, gausite užpildę
         <a href="{{ url('user_password_reset') }}">priminimo formą</a>.
     </p>
 

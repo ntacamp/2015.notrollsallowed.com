@@ -2,4 +2,5 @@ estina_home:
     resource: "@EstinaHomeBundle/Controller/"
     type:     annotation
     prefix:   /
-
+logout:
+    path:   /logout

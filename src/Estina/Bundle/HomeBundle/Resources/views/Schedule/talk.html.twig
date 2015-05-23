@@ -1,13 +1,16 @@
-{% extends "EstinaHomeBundle::layout.html.twig" %}
+{% extends "EstinaHomeBundle::page.html.twig" %}
 
-{% block body %}
-<h1>{{ talk.title }}</h1>
-<h2>{{ talk.track.title }}</h2>
-<p>
-{{ talk.description|markdown }}
-</p>
+{% block content %}
+    <h1>{{ talk.title }}</h1>
+    <p>
+        {{ talk.description|markdown }}
+    </p>
+    <p>Scena: {{ talk.track.title }}</p>
+    <div class="events">
+        <img src="{{ talk.user.email | gravatar }}" class="avatar">
 
-<div>
-    {{ talk.user }}
-</div>
+        <div class="events-body">
+            <h4>{{ talk.user.name }}</h4>
+        </div>
+    </div>
 {% endblock %}

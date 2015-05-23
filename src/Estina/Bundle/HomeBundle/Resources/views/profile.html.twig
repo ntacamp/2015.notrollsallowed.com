@@ -1,12 +1,8 @@
-{% extends "EstinaHomeBundle::layout.html.twig" %}
-
 {% block body %}
-    <h1>{{ app.user.username }}</h1>
-
-    Varototojo meniu
-    <ul>
-        <li><a href="#">Some user menu</a></li>
-        <li><a href="#">Some user menu #2</a></li>
-    </ul>
+        <div class="container">
+            <div class="row pull-right">
+                Prisijungęs <a href="{{ url('user_profile') }}">{{ app.user}}</a>
+            </div>
+        </div>
     {% block content %}{% endblock %}
 {% endblock %}
