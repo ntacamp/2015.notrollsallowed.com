@@ -20,7 +20,7 @@ class RegisterTalkType extends AbstractType
         $builder
             ->add('user', new UserType(), ['label' => false])
             ->add('title', 'text', ['label' => 'Pranešimas'])
-            ->add('description', 'textarea', ['label' => 'Pranešimo aprašymas (Markdown)'])
+            ->add('description', 'textarea', ['label' => 'Pranešimo aprašymas'])
             ->add('track', null, ['label' => 'Scena', 'required' => false])
         ;
     }

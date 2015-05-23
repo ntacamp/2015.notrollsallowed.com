@@ -130,12 +130,14 @@
             </div>
         </footer>
 
+        {% block javascripts %}{% endblock %}
         {% javascripts
             'assets/vendor/jquery/dist/jquery.min.js'
             'assets/js/site.js'
             output='js/compiled/all.js' %}
             <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
+
 
         {#}
         <!-- Bootstrap -->

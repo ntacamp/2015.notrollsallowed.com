@@ -2,6 +2,14 @@
 
 {% block title %}Pranešimo registracija{% endblock %}
 
+{% block javascripts %}
+    {% javascripts
+        'assets/vendor/markdown/lib/markdown.js'
+        output='js/compiled/md.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block content %}
     <h1>Pranešimo registracija</h1>
 
@@ -24,11 +32,28 @@
         <div id="estina_bundle_homebundle_registertalk">
             {{ form_row(form.user) }}
             {{ form_row(form.title) }}
-            {{ form_row(form.description) }}
+            <div class="form-group">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description)}}
+                {{ form_errors(form.description) }}
+                <span class="text-note">Aprašymui galite naudoti
+                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
+                </span>
+                
+            </div>
             {{ form_row(form.track) }}
-            {{ form_row(form.submit, {'label': 'Registruotis'}) }}
+            <div class="form-group">
+                <hr class="dashed">
+                <div id="preview"></div>
+                <hr class="dashed">
+            </div>
+            {{ form_row(form.submit, {
+                'label': 'Registruotis',
+                'attr': {'class': 'btn btn-info btn-register'}
+            })}}
             {{ form_rest(form) }}
         </div>
     {{ form_end(form) }}
+
 </ul>
 {% endblock %}
