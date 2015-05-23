@@ -25,19 +25,4 @@ class DefaultController extends Controller
         return [];
     }
 
-    /**
-     * Speakers list
-     *
-     * @Route("/pranesejai", name="speakers")
-     * @Template()
-     */
-    public function speakersAction()
-    {
-        $repo = $this->getDoctrine()->getRepository('Estina\Bundle\HomeBundle\Entity\Talk');
-        $talks = $repo->findActiveTalks();
-
-        return [
-            'talks' => $talks
-        ];
-    }
 }

@@ -21,7 +21,7 @@
 
 		<!--== FB meta ==-->
         <meta property="og:url" content="{{ url('home') }}">
-        <meta property="og:title" content="No Trolls Allowed 2014">
+        <meta property="og:title" content="No Trolls Allowed 2015">
         <meta property="og:description" content="Pirmas ir vienintelis hackercamp'as Lietuvoje! Po atviru dangumi vykstantis renginys, siekiantis suburti įvairių pomėgių turinčius žmones. Čia laukiami progamuotojai, įvairaus plauko geek'ai, mokslininkai, konstruktoriai, artistai, menininkai ir kitų sričių specialistai, galintys ir norintys pasidalinti savo žiniomis. Norite sudalyvauti? Pasiimkite savo šeimyną, maisto, gėrimų, bei palapinę viskam sutalpinti ir atvažiuokite!">
         <meta property="og:image" content="{{ asset('images/troll-medium.png') }}"/>
         <meta property="og:image:type" content="image/png">
@@ -37,7 +37,10 @@
                     </button>
                     <a class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('bootflat/img/logo.png')}}"><span>No Trolls Allowed</span></a>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="pull-right">
+                    <a href="{{ url('login_route') }}" class="navbar-btn btn">Prisijungti</a>
+                </div>
+                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-default navbar-nav">
                         <li><a href="{{ url('about') }}">Apie</i></a></li>
                         <li><a href="{{ url('talk_register') }}">Registracija</a></li>
@@ -51,7 +54,6 @@
                         <li><a href="{{ url('faq') }}">DUK</a></li>
                         <li><a href="{{ url('contacts') }}">Kontaktai</a></li>
                         <li><a href="http://blog.notrollsallowed.com/">BLOGas</a></li>
-                        <li><a href="#login" class="btn">Prisijungti</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,7 +89,7 @@
                             <a href="{{ url('contacts') }}">Kontaktai</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#prisijungti">Prisijungti</a>
+                            <a href="{{ url('login_route') }}">Prisijungti</a>
                         </dd>
                     </dl>
                     <dl class="footer-nav">
