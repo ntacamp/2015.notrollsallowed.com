@@ -39,17 +39,17 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-default navbar-nav">
-                        <li class="active"><a href="{{ url('about') }}">Apie</i></a></li>
+                        <li><a href="{{ url('about') }}">Apie</i></a></li>
                         <li><a href="{{ url('talk_register') }}">Registracija</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programa <b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Pranešimai</a></li>
-                                <li><a href="#">Dirbtuvės</a></li>
+                                <li><a href="{{ url('talks') }}">Pranešimai</a></li>
+                                <li><a href="{{ url('workshops') }}">Dirbtuvės</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ url('faq') }}">DUK</a></li>
-                        <li><a href="#">Kontaktai</a></li>
+                        <li><a href="{{ url('contacts') }}">Kontaktai</a></li>
                         <li><a href="http://blog.notrollsallowed.com/">BLOGas</a></li>
                         <li><a href="#login" class="btn">Prisijungti</a></li>
                     </ul>
@@ -69,22 +69,22 @@
                     <dl class="footer-nav">
                         <dt class="nav-title">#ntacamp</dt>
                         <dd class="nav-item">
-                            <a href="#apie-hacker-camp">Apie <em>Hacker Camp</em></a>
+                            <a href="{{ url('about') }}">Apie <em>Hacker Camp</em></a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#vieta">Vieta</a>
+                            <a href="{{ url('home') }}#vieta">Vieta</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#registracija">Registracija</a>
+                            <a href="{{ url('talk_register') }}">Registracija</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#duk">DUK</a>
+                            <a href="{{ url('faq') }}">DUK</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#blog">BLOGas</a>
+                            <a href="http://blog.notrollsallowed.com/">BLOGas</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#kontaktai">Kontaktai</a>
+                            <a href="{{ url('contacts') }}">Kontaktai</a>
                         </dd>
                         <dd class="nav-item">
                             <a href="#prisijungti">Prisijungti</a>
@@ -93,10 +93,10 @@
                     <dl class="footer-nav">
                         <dt class="nav-title">Renginio programa</dt>
                         <dd class="nav-item">
-                            <a href="#programa/pranesimai">Pranešimai</a>
+                            <a href="{{ url('talks') }}">Pranešimai</a>
                         </dd>
                         <dd class="nav-item">
-                            <a href="#programa/dirbtuves">Dirbtuvės</a>
+                            <a href="{{ url('workshops') }}">Dirbtuvės</a>
                         </dd>
                     </dl>
                     <dl class="footer-nav">
@@ -110,9 +110,6 @@
                         </dd>
                         <dd class="nav-item">
                             <a href="https://twitter.com/ntacamp">Twitter</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="#ntacamp-feed-page">#ntacamp feed</a>
                         </dd>
                     </dl>
                     <dl class="footer-nav">
