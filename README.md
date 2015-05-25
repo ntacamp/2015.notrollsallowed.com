@@ -30,5 +30,10 @@ To run devserver type:
 make dev
 ```
 
+Update static files from layout repo:
+``` sh
+make update
+```
+
 ## TL;DR
 I know nobody will contribute to this site. But if you will - I'll promise send you a sticker :-)

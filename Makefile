@@ -19,3 +19,7 @@ web/assets/vendor:
 web/bootflat: web/assets/vendor
 	ln -s assets/vendor/bootflat/bootflat/ web/bootflat
 
+.PHONY: update
+update: web/bootflat
+	bower update
+
