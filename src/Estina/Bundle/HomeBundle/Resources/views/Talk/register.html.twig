@@ -32,16 +32,17 @@
         <div id="estina_bundle_homebundle_registertalk">
             {{ form_row(form.user) }}
             {{ form_row(form.title) }}
+            {{ form_row(form.track) }}
             <div class="form-group">
                 {{ form_label(form.description) }}
-                {{ form_widget(form.description)}}
+                {{ form_widget(form.description, {
+                    'attr': {'rows': 8}
+                })}}
                 {{ form_errors(form.description) }}
                 <span class="text-note">Aprašymui galite naudoti
                     <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
                 </span>
-                
             </div>
-            {{ form_row(form.track) }}
             <div class="form-group">
                 <hr class="dashed">
                 <div id="preview"></div>
