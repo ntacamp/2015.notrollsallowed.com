@@ -15,12 +15,16 @@ class UserListener
      */
     protected $mailer;
 
+    protected $templating;
+
     /**
      * @param $mailer
+     * @param $templating
      */
-    public function __construct($mailer)
+    public function __construct($mailer, $templating)
     {
         $this->mailer = $mailer;
+        $this->templating = $templating;
     }
 
     /**
@@ -30,19 +34,16 @@ class UserListener
     {
         $user = $event->getUser();
 
-        $subject = 'Slaptažodžio priminimas: ' . $user->getName();
-        $body = <<<EOT
-====================
-Prisijungimas vardas: {$user->getEmail()}
-Slaptažodis: {$user->getPlainPassword()}
-====================
-EOT;
+        $template = $this->templating->render('email_password.html.twig', [
+            'email' => $user->getEmail(),
+            'password' => $user->getPlainPassword()
+        ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject($subject)
-            ->setFrom('no-reply@notrollsallowed.com')
+            ->setSubject('Slaptažodžio priminimas')
+            ->setFrom('hi@notrollsallowed.com')
             ->setTo($user->getEmail())
-            ->setBody($body)
+            ->setBody($template)
         ;
 
         $this->mailer->send($message);
@@ -53,7 +54,21 @@ EOT;
      */
     public function onRegistrationFinished(RegistrationEvent $event)
     {
-        //TODO IMPLEMENT MAIL SENDING
+        $user = $event->getUser();
+
+        $template = $this->templating->render('email_register.html.twig', [
+            'email' => $user->getEmail(),
+            'password' => $user->getPlainPassword()
+        ]);
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('NoTrollsAllowed registracija')
+            ->setFrom('hi@notrollsallowed.com')
+            ->setTo($user->getEmail())
+            ->setBody($template)
+        ;
+
+        $this->mailer->send($message);
     }
 
 }

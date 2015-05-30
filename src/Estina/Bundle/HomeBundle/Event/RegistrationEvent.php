@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class RegistrationEvent extends Event
 {
-    const NAME = 'registration_event';
+    const NAME = 'user.registrationFinished';
 
     /**
      * @var User

@@ -8,6 +8,7 @@ use Estina\Bundle\HomeBundle\Event\TalkEvent;
 use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
 use Estina\Bundle\HomeBundle\Form\TalkType;
 use Estina\Bundle\HomeBundle\TalkEvents;
+use Estina\Bundle\HomeBundle\Event\RegistrationEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -46,8 +47,13 @@ class TalkController extends Controller
                     $em->flush();
 
                     $event = new TalkEvent($entity);
+                    $registrationEvent = new RegistrationEvent($entity->getUser());
+
                     $this->get('event_dispatcher')
                         ->dispatch(TalkEvents::CREATE, $event);
+
+                    $this->get('event_dispatcher')
+                        ->dispatch(RegistrationEvent::NAME, $registrationEvent);
 
                     return $this->redirect(
                         $this->generateUrl('talk_success'));
