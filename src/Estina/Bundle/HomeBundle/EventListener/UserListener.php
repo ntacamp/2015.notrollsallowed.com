@@ -43,7 +43,7 @@ class UserListener
             ->setSubject('Slaptažodžio priminimas')
             ->setFrom('hi@notrollsallowed.com')
             ->setTo($user->getEmail())
-            ->setBody($template)
+            ->setBody($template, 'text/html')
         ;
 
         $this->mailer->send($message);
@@ -65,7 +65,7 @@ class UserListener
             ->setSubject('NoTrollsAllowed registracija')
             ->setFrom('hi@notrollsallowed.com')
             ->setTo($user->getEmail())
-            ->setBody($template)
+            ->setBody($template, 'text/html')
         ;
 
         $this->mailer->send($message);

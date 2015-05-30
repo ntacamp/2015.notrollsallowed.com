@@ -35,6 +35,12 @@ class UserService
      */
     public function encodePassword(User $entity)
     {
+
+        if (null == $entity->getPlainPassword()) {
+            $newPassword = $this->randomPassword();
+            $entity->setPlainPassword($newPassword);
+        }
+
         $encodedPassword = $this->encoder->encodePassword($entity, $entity->getPlainPassword());
         $entity->setPassword($encodedPassword);
     }
