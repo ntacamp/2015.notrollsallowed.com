@@ -14,7 +14,7 @@
 		<!--== CSS Files ==-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
         {% stylesheets
-            'assets/vendor/bootflat/bootflat/css/bootflat.css'
+            'css/site.min.css'
             filter='cssrewrite' output='css/compiled/all.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -36,7 +36,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('bootflat/img/logo.png')}}"><span>No Trolls Allowed</span></a>
+                    <a class="navbar-brand" href="{{ url('home') }}"><img src="{{ asset('images/logo.png')}}"><span>No Trolls Allowed</span></a>
                 </div>
                 <div class="pull-right">
                     {% if not is_granted("ROLE_USER") %}
@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="clearfix">
                     <div class="footer-logo">
-                        <a href="{{ url('home') }}"><img src="{{ asset('bootflat/img/logo.png') }}"><br>No Trolls Allowed</a>
+                        <a href="{{ url('home') }}"><img src="{{ asset('images/logo.png') }}"><br>No Trolls Allowed</a>
                     </div>
 
                     <dl class="footer-nav">
