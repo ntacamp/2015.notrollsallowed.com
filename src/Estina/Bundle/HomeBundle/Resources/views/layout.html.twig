@@ -133,24 +133,14 @@
         {% block javascripts %}{% endblock %}
         {% javascripts
             'assets/vendor/jquery/dist/jquery.min.js'
+            'js/site.min.js'
             'js/site.js'
             output='js/compiled/all.js' %}
             <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
 
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-        {#}
-        <!-- Bootstrap -->
-        <script src="vendor/js/jquery-1.11.0.min.js"></script>
-        <script src="vendor/js/bootstrap.min.js"></script>
-
-        <!-- Bootflat's JS files.-->
-        <script src="bootflat/js/icheck.min.js"></script>
-        <script src="bootflat/js/jquery.fs.selecter.min.js"></script>
-        <script src="bootflat/js/jquery.fs.stepper.min.js"></script>
-        {#}
-
-		<!--== Javascript Files ==-->
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-41181062-1']);
