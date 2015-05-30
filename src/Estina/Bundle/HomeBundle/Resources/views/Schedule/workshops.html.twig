@@ -1,30 +1,31 @@
-{% extends "EstinaHomeBundle::layout.html.twig" %}
+{% extends "EstinaHomeBundle::page.html.twig" %}
 
-{% block body %}
+{% block content %}
+    <h1>Dirbtuvės</h1>
 
-    <div class="container">
-        <h2>Dirbtuvės</h2>
+    <div class="schedule">
+        <div class="container">
+            <div class="row">
+                {% for track in tracks %}
+                    <div class="col-md-3 track">
+                        {% if track.talks %}
+                            {% for talk in track.talks %}
+                                <div class="events">
+                                    <img src="{{ talk.user.email | gravatar }}" class="avatar">
 
-        <div class="row">
-            {% for track in tracks %}
-                <div class="col-md-3 track">
-                    {% if track.talks %}
-                        {% for talk in track.talks %}
-                            <div class="events">
-                                <img src="{{ talk.user.email | gravatar }}" class="avatar">
+                                    <div class="events-body">
+                                        <h4>{{ talk.user.name }}</h4>
 
-                                <div class="events-body">
-                                    <h4>{{ talk.user.name }}</h4>
-
-                                    <p>{{ talk.title }}</p>
+                                        <p>{{ talk.title }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            {% else %}
-                <p>Dirbtuvių dar nėra. Jau greitai!</p>
-            {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <p>Paskelbtų dirbtuvių dar nėra. Bet jau greitai!</p>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
