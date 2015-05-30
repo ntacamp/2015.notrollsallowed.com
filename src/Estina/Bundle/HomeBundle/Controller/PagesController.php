@@ -15,7 +15,7 @@ class PagesController extends Controller
     /**
      * About page
      *
-     * @Route("/apie", name="about")
+     * @Route("/apie", name="page_about")
      * @Template()
      */
     public function aboutAction()
@@ -26,7 +26,7 @@ class PagesController extends Controller
     /**
      * Partners
      *
-     * @Route("/remejai", name="partners")
+     * @Route("/remejai", name="page_partners")
      * @Template()
      */
     public function partnersAction()
@@ -37,7 +37,7 @@ class PagesController extends Controller
     /**
      * FAQ
      *
-     * @Route("/duk", name="faq")
+     * @Route("/duk", name="page_faq")
      * @Template()
      */
     public function faqAction()
@@ -48,7 +48,7 @@ class PagesController extends Controller
     /**
      * Kontaktai
      *
-     * @Route("/kontaktai", name="contacts")
+     * @Route("/kontaktai", name="page_contacts")
      * @Template()
      */
     public function contactsAction()
