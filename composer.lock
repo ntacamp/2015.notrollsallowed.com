@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "864bc6b464a00129517c8c913229bdeb",
@@ -528,7 +528,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/6a1bd731dbdd4ad952a3b246a8f38c9c12f52e62",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMigrationsBundle/zipball/1e8cd4415bd2f893eb828216b529a75e8b61d579",
                 "reference": "6a1bd731dbdd4ad952a3b246a8f38c9c12f52e62",
                 "shasum": ""
             },
@@ -761,7 +761,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/efb77c10dfb75485998a843154bbc44d8124c4d1",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/abb87d84ed21fd30c27bd3b52252a495a36d32fb",
                 "reference": "efb77c10dfb75485998a843154bbc44d8124c4d1",
                 "shasum": ""
             },
@@ -1726,16 +1726,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.6",
+            "version": "v2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "48c9e835a877adfb023b8b6d033d9dd14f342b4b"
+                "reference": "b06539573ccf64dd3a62852685f052553d02c5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/48c9e835a877adfb023b8b6d033d9dd14f342b4b",
-                "reference": "48c9e835a877adfb023b8b6d033d9dd14f342b4b",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/b06539573ccf64dd3a62852685f052553d02c5ba",
+                "reference": "b06539573ccf64dd3a62852685f052553d02c5ba",
                 "shasum": ""
             },
             "require": {
@@ -1826,20 +1826,20 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "The Symfony PHP framework",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "framework"
             ],
-            "time": "2015-04-01 16:55:26"
+            "time": "2015-05-29 22:55:07"
         },
         {
             "name": "twig/extensions",
