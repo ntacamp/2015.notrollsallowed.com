@@ -47,32 +47,6 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/registracija", name="user_registration")
-     * @Template()
-     */
-    public function registrationAction(Request $request)
-    {
-        $entity = new User();
-        $form = $this->createForm(new RegistrationType(), $entity);
-        $service = $this->container->get('home.user_service');
-
-        if($request->isMethod('POST')) {
-            $form->handleRequest($request);
-            if($form->isValid()) {
-                $user = $service->createUser($entity);
-
-                $event = new RegistrationEvent($user);
-                $this->get('event_dispatcher')
-                    ->dispatch(UserEvents::REGISTRATION_FINISHED, $event);
-
-                return new RedirectResponse($this->generateUrl('user_registration_finish'));
-            }
-        }
-
-        return ['registrationFrom' => $form->createView()];
-    }
-
-    /**
      * @Route("/slaptazodzio-priminimas", name="user_password_reset")
      * @Template()
      */
@@ -95,15 +69,6 @@ class UserController extends Controller
         }
 
         return ['resetForm' => $form->createView()];
-    }
-
-    /**
-     * @Route("/registracija-baigta", name="user_registration_finish")
-     * @Template()
-     */
-    public function registrationFinishAction()
-    {
-        return [];
     }
 
     /**
