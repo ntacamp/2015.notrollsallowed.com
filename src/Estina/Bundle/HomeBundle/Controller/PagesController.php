@@ -42,7 +42,13 @@ class PagesController extends Controller
      */
     public function faqAction()
     {
-        return [];
+        $repo = $this->getDoctrine()->getRepository(
+            'Estina\Bundle\HomeBundle\Entity\Track');
+        $tracks = $repo->findTracks();
+
+        return [
+            'tracks' => $tracks
+        ];
     }
 
     /**

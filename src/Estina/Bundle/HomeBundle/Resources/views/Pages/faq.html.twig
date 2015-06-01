@@ -11,6 +11,7 @@
     <li><a href="#kokios-galimos-pranesimu-temos">Kokios galimos pranešimo temos?</a></li>
     <li><a href="#kokia-turi-buti-pransimo-trukme">Kokia turi būti pranešimo trukmė?</a></li>
     <li><a href="#ar-pranesimas-turi-buti-susijes-su-programavimu">Ar pranešimas turi būti susijęs su programavimu?</a></li>
+    <li><a href="#kuo-skiriasi-scenos">Kuo skiriasi scenos?</a></li>
     <li><a href="#ar-galima-atsivezti-seimyna">Ar galima atsivežti šeimyną?</a></li>
     <li><a href="#ar-seimyna-irgi-privales-ruosti-pranesimus">Ar šeimyna irgi privalės ruošti pranešimus?</a></li>
     <li><a href="#ar-bus-internetas">Ar bus internetas?</a></li>
@@ -44,6 +45,24 @@
 
 <h2 id="ar-pranesimas-turi-buti-susijes-su-programavimu">Ar pranešimas turi būti susijęs su programavimu?</h2>
 <p>Ne. Pranešimas neprivalo būti susijęs su programavimu. Netgi rekomenduojama neapsiriboti siaura sritimi. Pavyzdžiui nerekomenduojama tema būtų konkrečios programavimo kalbos naujos versijos galimybės, nes tema bus aktuali palyginti siauram dalyvių ratui.</p>
+
+<h2 id="kuo-skiriasi-scenos">Kuo skiriasi scenos?</h2>
+<p>
+Registruodami pranešimą turėsite pasirinkti, kuriai scenai priskiriate savo
+pranešimą. Scenos suskirstytos pagal temas, kad klausytojui būtų paprasčiau
+pasirinkti kur eiti klausyti pranešimo. Kiekviena scena turi limitą, kuris
+nurodo, kiek pranešėjų galima sutalpinti. Šis limitas sukurtas tam, kad
+skirtingos tematikos pranešimų būtų panašus kiekis. Žemiau pateikiam kiekvienos
+scenos aprašymus:
+</p>
+
+{% for track in tracks %}
+<h3>{{ track.title }}</h3>
+<p>
+{{ track.description|markdown }}
+</p>
+{% endfor %}
+
 
 <h2 id="ar-galima-atsivezti-seimyna">Ar galima atsivežti šeimyną?</h2>
 <p>Netgi rekomenduojama! Pranešėjui leidžiama atsivežti šeimą arba vieną draugą. Apie renginį galvokite taip, kad lyg važiuotumėte į išvyką prie ežero. Žinoma, jei jūsų šeimos narys turi keturias kojas ir aštrius dantis, pasirūpinkite, kad kiti dalyviai galėtų jaustis patogiai.</p>
