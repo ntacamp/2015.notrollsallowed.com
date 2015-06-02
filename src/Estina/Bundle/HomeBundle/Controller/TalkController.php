@@ -258,7 +258,7 @@ class TalkController extends Controller
     */
     private function createEditForm(Talk $entity)
     {
-        $form = $this->createForm(new TalkType(), $entity, array(
+        $form = $this->createForm(new TalkType(TalkType::NO_USER_FIELDS), $entity, array(
             'action' => $this->generateUrl('talk_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
