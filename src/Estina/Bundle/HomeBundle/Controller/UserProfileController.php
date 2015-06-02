@@ -22,6 +22,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * UserProfileController
  * @Route("/profilis")
+ * @Security("has_role('ROLE_USER')")
  */
 class UserProfileController extends Controller
 {
@@ -38,7 +39,6 @@ class UserProfileController extends Controller
      * Displays a form to edit user
      *
      * @Route("/redagavimas", name="user_profile_edit")
-     * @Security("has_role('ROLE_USER')")
      * @Method("GET")
      * @Template()
      */

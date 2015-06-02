@@ -1,16 +1,34 @@
-{% extends "EstinaHomeBundle::page.html.twig" %}
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
-    <h1>{{ talk.title }}</h1>
-    <p>
-        {{ talk.description|markdown }}
-    </p>
-    <p>Scena: {{ talk.track.title }}</p>
-    <div class="events">
-        <img src="{{ talk.user.email | gravatar }}" class="avatar">
-
-        <div class="events-body">
-            <h4>{{ talk.user.name }}</h4>
+    <h1>
+        {{ talk.title }}
+        {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
+    </h1>
+    <p>Scena: <span class="badge badge-primary">{{ talk.track.title }}</span></p>
+    <div class="row" >
+        <div class="col-md-8">
+            {{ talk.description|markdown }}
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                <p class="text-center">
+                    <img src="{{ talk.user.email | gravatar }}" alt="" class="media-object img-rounded">
+                </p>
+                <p class="text-center">
+                    {{ talk.user.name }}
+                </p>
+                <p class="text-center">
+                    {% if talk.user.twitter %}
+                        <a href="http://twitter.com/{{ talk.user.twitter }}"><img src="{{ asset('images/icon_twitter.png') }}" alt="{{ talk.user.twitter }}"></a>
+                    {% endif %}
+                    {% if talk.user.github %}
+                        <a href="http://github.com/{{ talk.user.github }}"><img src="{{ asset('images/icon_github.png') }}" alt="{{ talk.user.github }}"></a>
+                    {% endif %}
+                </p>
+            </div>
         </div>
     </div>
 {% endblock %}
+
+
