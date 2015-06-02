@@ -152,7 +152,7 @@ class TalkController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Sėkmingai užregistravome Jūsų pranešimą.'
+                'Jūsų pranešimas buvo sėkmindai užregistruotas!'
             );
             return $this->redirect($this->generateUrl('talk_new'));
         }
@@ -295,7 +295,12 @@ class TalkController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('talk_edit', array('id' => $id)));
+            $this->get('session')->getFlashBag()->set(
+                'success',
+                'Jūsų pranešimas buvo sėkmindai atnaujintas!'
+            );
+
+            return $this->redirect($this->generateUrl('user_profile'));
         }
 
         return array(
