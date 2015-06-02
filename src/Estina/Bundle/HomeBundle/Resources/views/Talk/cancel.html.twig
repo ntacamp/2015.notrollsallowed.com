@@ -1,0 +1,15 @@
+{% extends 'EstinaHomeBundle::page-wide.html.twig' %}
+
+{% block content -%}
+    <h1>{{ entity }}</h1>
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Ar tikrai norite atšaukti šį pranešimą?</h3>
+        </div>
+        <div class="panel-body">
+            {{ form(form) }}
+            <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
+        </div>
+    </div>
+{% endblock %}

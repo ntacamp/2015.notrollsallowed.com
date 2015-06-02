@@ -6,4 +6,6 @@
     {{ form(edit_form) }}
 
     <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
+
+    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
 {% endblock %}

@@ -324,13 +324,13 @@ class TalkController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+            
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Talk entity.');
+            }
 
             if (!$this->isAllowedUpdate($entity)) {
                 throw $this->createAccessDeniedException();
-            }
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Talk entity.');
             }
 
             $em->remove($entity);
@@ -353,6 +353,82 @@ class TalkController extends Controller
             ->setAction($this->generateUrl('talk_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
+            ->getForm()
+        ;
+    }
+
+    /**
+     * @Route("/cancel/{id}", name="talk_cancel")
+     * @Method("GET")
+     * @Template()
+     */
+    public function cancelAction($id)
+    {
+        $form = $this->createCancelForm($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        return array(
+            'entity'      => $entity,
+            'form'  => $form->createView(),
+        );
+    }
+
+    /**
+     * @Route("/cancel/{id}/confirm", name="talk_cancel_confirm")
+     * @Method("PUT")
+     */
+    public function cancelConfirmAction($id, Request $request)
+    {
+        $form = $this->createCancelForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Talk entity.');
+            }
+
+            if (!$this->isAllowedUpdate($entity)) {
+                throw $this->createAccessDeniedException();
+            }
+
+            $entity->cancel();
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->set(
+                'success',
+                'Jūsų pranešimas atšauktas. Tikimės, kad dar persigalvosit ;-)'
+            );
+        }
+
+        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
+    }
+
+    /**
+     * Creates a form to delete a Talk entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCancelForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('talk_cancel_confirm', array('id' => $id)))
+            ->setMethod('PUT')
+            ->add('submit', 'submit', array('label' => 'Atšaukti pranešimą'))
             ->getForm()
         ;
     }

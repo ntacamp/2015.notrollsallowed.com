@@ -14,6 +14,18 @@ use Estina\Bundle\HomeBundle\Validator\Constraints as EstinaAssert;
  */
 class Talk
 {
+    /** New talk submitted */
+    const STATUS_NEW = 'new';
+    
+    /** Talk has been accepted by admins */
+    const STATUS_ACCEPTED = 'accepted';
+    
+    /** Talk has been rejected by admins */
+    const STATUS_REJECTED = 'rejected';
+
+    /** Speaker changed his mind */
+    const STATUS_CANCELLED = 'cancelled';
+    
     /**
      * @var integer
      *
@@ -56,9 +68,9 @@ class Talk
     /**
      * @var boolean
      *
-     * @ORM\Column(name="active", type="boolean")
+     * @ORM\Column(name="status", type="string", length=20)
      */
-    private $active = false;
+    private $status = self::STATUS_NEW;
 
     /**
      * @Assert\NotBlank()
@@ -187,30 +199,6 @@ class Talk
     }
 
     /**
-     * Set active
-     *
-     * @param boolean $active
-     *
-     * @return Talk
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-
-        return $this;
-    }
-
-    /**
-     * Get active
-     *
-     * @return boolean
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
      * Set user
      *
      * @param User $user
@@ -256,5 +244,35 @@ class Talk
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return Talk
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function cancel()
+    {
+        $this->setUpdatedAt(new \DateTime());
+        $this->setStatus(self::STATUS_CANCELLED);
     }
 }
