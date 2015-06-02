@@ -70,14 +70,4 @@ class UserController extends Controller
 
         return ['resetForm' => $form->createView()];
     }
-
-    /**
-     * @Route("/profilis", name="user_profile")
-     * @Template()
-     */
-    public function profileAction()
-    {
-        return [];
-    }
-
 }

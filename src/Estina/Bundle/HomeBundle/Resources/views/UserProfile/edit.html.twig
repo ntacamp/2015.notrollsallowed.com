@@ -1,0 +1,9 @@
+{% extends 'EstinaHomeBundle::page.html.twig' %}
+
+{% block content -%}
+    <h1>Profilio redagavimas</h1>
+
+    {{ form(edit_form) }}
+
+    <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
+{% endblock %}

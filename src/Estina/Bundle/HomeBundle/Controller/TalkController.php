@@ -309,6 +309,7 @@ class TalkController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+    
     /**
      * Deletes a Talk entity.
      *
