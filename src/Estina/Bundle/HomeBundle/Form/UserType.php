@@ -47,15 +47,15 @@ class UserType extends AbstractType
                 'required' => false
             ]
         );
+        $builder->add(
+            'facebook', 
+            'text', 
+            [
+                'label' => 'Facebook URL',
+                'required' => false
+            ]
+        );
         if ($this->addAdditionalFields) {
-            $builder->add(
-                'facebook', 
-                'text', 
-                [
-                    'label' => 'Facebook URL',
-                    'required' => false
-                ]
-            );
             $builder->add(
                 'gplus', 
                 'text', 
