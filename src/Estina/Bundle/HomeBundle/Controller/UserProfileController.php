@@ -69,7 +69,7 @@ class UserProfileController extends Controller
     */
     private function createEditForm(User $entity)
     {
-        $form = $this->createForm(new UserType(), $entity, array(
+        $form = $this->createForm(new UserType(UserType::ADD_ADDITIONAL_FIELDS), $entity, array(
             'action' => $this->generateUrl('user_profile_update'),
             'method' => 'PUT',
         ));

@@ -8,6 +8,20 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
+    const ADD_ADDITIONAL_FIELDS = true;
+    const NO_ADDITIONAL_FIELDS = false;
+
+    /** @var boolean should additional fields be included in form? */
+    private $addAdditionalFields;
+
+    /**
+     * @param boolean $addAdditionalFields should additional fields be included in form?
+     */
+    public function __construct($addAdditionalFields = self::NO_ADDITIONAL_FIELDS)
+    {
+        $this->addAdditionalFields = $addAdditionalFields;
+    }
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -17,6 +31,64 @@ class UserType extends AbstractType
         $builder->add('name', 'text', ['label' => 'Vardas/Pavardė']);
         $builder->add('email', 'email', ['label' => 'El. Paštas']);
         $builder->add('phone', 'text', ['label' => 'Telefonas']);
+        $builder->add(
+            'twitter', 
+            'text', 
+            [
+                'label' => 'Twitter name',
+                'required' => false
+            ]
+        );
+        $builder->add(
+            'github', 
+            'text', 
+            [
+                'label' => 'GitHub name',
+                'required' => false
+            ]
+        );
+        if ($this->addAdditionalFields) {
+            $builder->add(
+                'facebook', 
+                'text', 
+                [
+                    'label' => 'Facebook URL',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'gplus', 
+                'text', 
+                [
+                    'label' => 'Google+ URL',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'linkedin', 
+                'text', 
+                [
+                    'label' => 'Linkedin URL',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'blog', 
+                'text', 
+                [
+                    'label' => 'Blog URL',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'homepage', 
+                'text', 
+                [
+                    'label' => 'Asmeninio puslapio URL',
+                    'required' => false
+                ]
+            );
+        }
     }
 
     /**
