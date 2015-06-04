@@ -119,7 +119,7 @@ class TalkController extends Controller
 
     /**
      * List personal talks.
-     *
+     * @Security("has_role('ROLE_USER')")
      * @Template()
      */
     public function personalTalksAction()
