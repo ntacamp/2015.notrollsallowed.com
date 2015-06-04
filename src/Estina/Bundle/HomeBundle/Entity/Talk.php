@@ -275,4 +275,15 @@ class Talk
         $this->setUpdatedAt(new \DateTime());
         $this->setStatus(self::STATUS_CANCELLED);
     }
+
+    public function isCancelled()
+    {
+        return $this->status == self::STATUS_CANCELLED;
+    }
+
+    public function restore()
+    {
+        $this->setUpdatedAt(new \DateTime());
+        $this->setStatus(self::STATUS_NEW);
+    }
 }

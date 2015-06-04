@@ -432,4 +432,87 @@ class TalkController extends Controller
             ->getForm()
         ;
     }
+
+
+
+    /**
+     * @Route("/restore/{id}", name="talk_restore")
+     * @Method("GET")
+     * @Template()
+     */
+    public function restoreAction($id)
+    {
+        $form = $this->createRestoreForm($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        return array(
+            'entity'      => $entity,
+            'form'  => $form->createView(),
+        );
+    }
+
+    /**
+     * @Route("/restore/{id}/confirm", name="talk_restore_confirm")
+     * @Method("PUT")
+     */
+    public function restoreConfirmAction($id, Request $request)
+    {
+        $form = $this->createRestoreForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Talk entity.');
+            }
+
+            if (!$this->isAllowedUpdate($entity)) {
+                throw $this->createAccessDeniedException();
+            }
+
+            $entity->restore();
+            $em->flush();
+
+            // @TODO create new event, separate from registration
+            $event = new TalkEvent($entity);
+            $this->get('event_dispatcher')
+                ->dispatch(TalkEvents::CREATE, $event);
+
+            $this->get('session')->getFlashBag()->set(
+                'success',
+                'Jūsų sugrąžintas ir laukia administratorių patvirtinimo'
+            );
+        }
+
+        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
+    }
+
+    /**
+     * Creates a form to delete a Talk entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createRestoreForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('talk_restore_confirm', array('id' => $id)))
+            ->setMethod('PUT')
+            ->add('submit', 'submit', array('label' => 'Sugrąžinti pranešimą'))
+            ->getForm()
+        ;
+    }
 }

@@ -3,9 +3,15 @@
 {% block content -%}
     <h1>Pranešimo redagavimas</h1>
 
+    <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
+
     {{ form(edit_form) }}
 
     <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
 
-    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
+    {% if entity.isCancelled %}
+        <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Sugrąžinti pranešimą, noriu dalyvauti!</a>
+    {% else %}
+        <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
+    {% endif %}
 {% endblock %}
