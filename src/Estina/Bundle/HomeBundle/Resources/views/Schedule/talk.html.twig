@@ -3,6 +3,7 @@
 {% block content %}
     <h1>
         {{ talk.title }}
+        {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
         {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
     </h1>
     <p>Scena: <span class="badge badge-primary">{{ talk.track.title }}</span></p>
