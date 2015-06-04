@@ -6,6 +6,7 @@
     <div class="schedule">
         <div class="container">
             <div class="row">
+                {#
                 {% for track in tracks %}
                     <div class="col-md-3 track">
                         {% if track.talks %}
@@ -23,8 +24,9 @@
                         {% endif %}
                     </div>
                 {% else %}
+                #}
                     <p>Paskelbtų dirbtuvių dar nėra. Bet jau greitai!</p>
-                {% endfor %}
+                {# {% endfor %} #}
             </div>
         </div>
     </div>

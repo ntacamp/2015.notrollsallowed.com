@@ -6,6 +6,7 @@
     <div class="schedule">
         <div class="container">
             <div class="row">
+                {#
                 {% for track in tracks  %}
                     <div class="col-md-3 track">
                         <h2>{{ track.title }}</h2>
@@ -26,8 +27,9 @@
                         {% endif %}
                     </div>
                 {% else %}
+                #}
                     <p>Paskelbtų pranešimų dar nėra. Bet jau greitai!</p>
-                {% endfor %}
+                {# {% endfor %} #}
             </div>
         </div>
     </div>
