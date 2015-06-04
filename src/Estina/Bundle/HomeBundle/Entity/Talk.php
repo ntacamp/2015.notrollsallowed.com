@@ -286,4 +286,9 @@ class Talk
         $this->setUpdatedAt(new \DateTime());
         $this->setStatus(self::STATUS_NEW);
     }
+
+    public function isAccepted()
+    {
+        return $this->status == self::STATUS_ACCEPTED;
+    }
 }
