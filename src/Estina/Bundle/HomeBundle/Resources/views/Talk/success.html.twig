@@ -2,22 +2,22 @@
 
 {% block content -%}
     <h1>Sveikiname!</h1>
-    <h2>Jūsų panešimas buvo sėkmingai užregistruotas</h2>
+    <h2>Jūsų pranešimas buvo sėkmingai užregistruotas</h2>
     <p>
-        Netrukus jis bus peržiūrėtas administratorių ir patvirtintas.<br> 
-        Apie pranešimo patvirtinimą mes jus informuosime elektroniniu laišku. 
+        Netrukus jis bus peržiūrėtas administratorių ir patvirtintas.<br>
+        Apie pranešimo patvirtinimą mes jus informuosime elektroniniu laišku.
         <br>Būkite kantrūs :-)
     </p>
 
     <p>
         Norėdami peržiūrėti pranešimo statusą ar keisti jo aprašymą,
-        <a href="{{ path('login_route') }}">prisijunkite</a> 
+        <a href="{{ path('login_route') }}">prisijunkite</a>
         prie sistemos. Jeigu neturite slaptažodžio, jį galite gauti užpildę
         <a href="{{ path('user_password_reset') }}">slaptažodžio priminimo formą</a>.
     </p>
 
     <p>
-        Jeigu turite klausimų, rašykite 
+        Jeigu turite klausimų, rašykite
         <a href="mailto:{{ admin_email }}">{{ admin_email }}</a>.
     </p>
 </ul>
