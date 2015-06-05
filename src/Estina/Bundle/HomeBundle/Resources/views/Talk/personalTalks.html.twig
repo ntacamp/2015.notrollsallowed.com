@@ -10,7 +10,7 @@
             <div class="col-md-10">
                 <h3>
                     <a href="{{ path('talk', {id: talk.id}) }}">{{ talk.title }}</a>
-                    
+
                     {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
                     {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
                 </h3>
