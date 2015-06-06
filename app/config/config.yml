@@ -30,8 +30,7 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         admin_email:  "%admin_email%"
-    form:
-        resources: ['bootstrap_3_layout.html.twig']
+    form_themes: ['bootstrap_3_layout.html.twig']
 
 # Assetic Configuration
 assetic:
@@ -71,3 +70,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+cl_slack:
+    api_token: %slack_api_token%
+    test:      false

@@ -10,6 +10,11 @@
             <argument>%admin_email%</argument>
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
         </service>
+        <service id="home.talk_slack_notification_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkSlackNotificationListener">
+            <argument type="service" id="cl_slack.api_client" />
+            <argument type="service" id="router" />
+            <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
+        </service>
 
         <service id="home.user_listener" class="Estina\Bundle\HomeBundle\EventListener\UserListener">
             <argument type="service" id="mailer" />
