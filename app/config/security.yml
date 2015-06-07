@@ -25,6 +25,9 @@ security:
                 check_path: /login_check
                 default_target_path: user_profile
                 csrf_parameter: _token
+            logout:
+                path:   /logout
+                target: /
 
 
     access_control:
