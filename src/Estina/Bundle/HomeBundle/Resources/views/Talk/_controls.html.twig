@@ -1,0 +1,6 @@
+{% if is_granted("ROLE_USER") and app.user.id == talk.user.id %}
+<div class="btn-group">
+    <a href="{{ path('talk_edit', {id: talk.id}) }}" class="btn"><i class="glyphicon glyphicon-pencil"></i></a>
+    {# <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a> #}
+</div>
+{% endif %}

@@ -1,16 +1,28 @@
-{% extends 'EstinaHomeBundle::page.html.twig' %}
+{% extends 'EstinaHomeBundle::page-wide.html.twig' %}
 
 {% block content -%}
-<h2>Mano pranešimai</h2>
+<h1>Mano pranešimai</h1>
 
-
-<ul>
+<div class="talk-group">
 {% for talk in talks %}
-<li>
-    <a href="{{ path('talk', {id: talk.id}) }}">{{ talk.title }}</a> ({{ talk.track }})
-    <a href="{{ path('talk_edit', {id: talk.id}) }}">Redaguoti</a>
-</li>
+    <div class="talk">
+        <div class="row">
+            <div class="col-md-10">
+                <h3>
+                    <a href="{{ path('talk', {id: talk.id}) }}">{{ talk.title }}</a>
+
+                    {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
+                    {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <p class="list-group-item-text">{{ talk.description|markdown }}</p>
+            </div>
+        </div>
+    </div>
 {% endfor %}
-</ul>
+</div>
 
 {% endblock %}

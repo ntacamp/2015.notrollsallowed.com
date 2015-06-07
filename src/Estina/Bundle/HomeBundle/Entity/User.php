@@ -86,6 +86,41 @@ class User implements UserInterface, \Serializable
     private $twitter;
 
     /**
+     * @var
+     *
+     * @ORM\Column(name="github", type="string", length=255, nullable=true)
+     */
+    private $github;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="gplus", type="string", length=255, nullable=true)
+     */
+    private $gplus;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="linkedin", type="string", length=255, nullable=true)
+     */
+    private $linkedin;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="blog", type="string", length=255, nullable=true)
+     */
+    private $blog;
+    
+    /**
+     * @var
+     *
+     * @ORM\Column(name="homepage", type="string", length=255, nullable=true)
+     */
+    private $homepage;
+
+    /**
      * @var string
      *
      * @Assert\Length(min="4", max="24")
@@ -429,5 +464,125 @@ class User implements UserInterface, \Serializable
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * Set github
+     *
+     * @param string $github
+     *
+     * @return User
+     */
+    public function setGithub($github)
+    {
+        $this->github = $github;
+
+        return $this;
+    }
+
+    /**
+     * Get github
+     *
+     * @return string
+     */
+    public function getGithub()
+    {
+        return $this->github;
+    }
+
+    /**
+     * Set gplus
+     *
+     * @param string $gplus
+     *
+     * @return User
+     */
+    public function setGplus($gplus)
+    {
+        $this->gplus = $gplus;
+
+        return $this;
+    }
+
+    /**
+     * Get gplus
+     *
+     * @return string
+     */
+    public function getGplus()
+    {
+        return $this->gplus;
+    }
+
+    /**
+     * Set linkedin
+     *
+     * @param string $linkedin
+     *
+     * @return User
+     */
+    public function setLinkedin($linkedin)
+    {
+        $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+    /**
+     * Get linkedin
+     *
+     * @return string
+     */
+    public function getLinkedin()
+    {
+        return $this->linkedin;
+    }
+
+    /**
+     * Set blog
+     *
+     * @param string $blog
+     *
+     * @return User
+     */
+    public function setBlog($blog)
+    {
+        $this->blog = $blog;
+
+        return $this;
+    }
+
+    /**
+     * Get blog
+     *
+     * @return string
+     */
+    public function getBlog()
+    {
+        return $this->blog;
+    }
+
+    /**
+     * Set homepage
+     *
+     * @param string $homepage
+     *
+     * @return User
+     */
+    public function setHomepage($homepage)
+    {
+        $this->homepage = $homepage;
+
+        return $this;
+    }
+
+    /**
+     * Get homepage
+     *
+     * @return string
+     */
+    public function getHomepage()
+    {
+        return $this->homepage;
     }
 }

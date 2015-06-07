@@ -16,7 +16,7 @@ class TalkRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->findBy([
             'track'  => $track,
-            'active' => 1,
+            'status' => Talk::STATUS_ACCEPTED,
         ]);
     }
 }

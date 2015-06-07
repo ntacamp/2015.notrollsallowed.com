@@ -1,24 +1,23 @@
 {% extends 'EstinaHomeBundle::page.html.twig' %}
 
 {% block content -%}
-    <h1>Pranešimas sėkmingai užregistruotas</h1>
-    <p>Sveikiname!</p>
-
+    <h1>Sveikiname!</h1>
+    <h2>Jūsų pranešimas buvo sėkmingai užregistruotas</h2>
     <p>
-        Jūsų panešimas buvo sėkmingai užregistruotas. Netrukus jis bus
-        peržiūrėtas administratorių ir patvirtintas. Patvirtinus pranešimą,
-        gausite apie tai informuojantį elektroninį laišką. Būkite kantrūs :-)
+        Netrukus jis bus peržiūrėtas administratorių ir patvirtintas.<br>
+        Apie pranešimo patvirtinimą mes jus informuosime elektroniniu laišku.
+        <br>Būkite kantrūs :-)
     </p>
 
     <p>
         Norėdami peržiūrėti pranešimo statusą ar keisti jo aprašymą,
-        <a href="{{ path('login_route') }}">prisijunkite</a> 
-        prie sistemos. Jeigu neturite slaptažodžio, gausite užpildę
-        <a href="{{ path('user_password_reset') }}">priminimo formą</a>.
+        <a href="{{ path('login_route') }}">prisijunkite</a>
+        prie sistemos. Jeigu neturite slaptažodžio, jį galite gauti užpildę
+        <a href="{{ path('user_password_reset') }}">slaptažodžio priminimo formą</a>.
     </p>
 
     <p>
-        Jei turite klausimų, rašykite 
+        Jeigu turite klausimų, rašykite
         <a href="mailto:{{ admin_email }}">{{ admin_email }}</a>.
     </p>
 </ul>

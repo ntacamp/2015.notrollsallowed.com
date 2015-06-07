@@ -32,4 +32,15 @@ class TrackRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findTracks()
+    {
+        $qb = $this->_em->createQueryBuilder();
+        $qb
+            ->select('t')
+            ->from('Estina\Bundle\HomeBundle\Entity\Track', 't')
+            ->orderBy('t.position', 'ASC');
+
+        return $qb->getQuery()->getResult();
+    }
 }

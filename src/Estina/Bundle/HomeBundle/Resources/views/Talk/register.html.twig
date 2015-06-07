@@ -20,19 +20,26 @@
     </p>
     <p>
         <strong>I etapo</strong> metu užregistruojate savo pranešimo temą, taip iš anksto rezervuodami sau vietą renginyje.<br>
-        <strong>II etapo</strong> metu, iki renginio <strong>likus 2 savaitėm</strong>, turėsite patvirtinti savo dalyvavimą įkeldami 
+        <strong>II etapo</strong> metu, iki renginio <strong>likus 2 savaitėm</strong>, turėsite patvirtinti savo dalyvavimą įkeldami
         savo prezentaciją (ar dalį jos) ir pasirinkdami savo pranešimo pristatymo laiką.
     </p>
     #}
 
     <hr>
-    
+
     {{ form_start(form) }}
         {{ form_errors(form) }}
         <div id="estina_bundle_homebundle_registertalk">
             {{ form_row(form.user) }}
             {{ form_row(form.title) }}
-            {{ form_row(form.track) }}
+            <div class="form-group">
+                {{ form_label(form.track) }}
+                {{ form_widget(form.track) }}
+                {{ form_errors(form.track) }}
+                <span class="text-note">
+                    <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
+                </span>
+            </div>
             <div class="form-group">
                 {{ form_label(form.description) }}
                 {{ form_widget(form.description, {
