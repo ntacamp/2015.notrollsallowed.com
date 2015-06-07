@@ -1,36 +1,41 @@
-{% extends "EstinaHomeBundle::page.html.twig" %}
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
+
+{% macro track_class(index) -%}
+    {%- if index == 0 -%}
+        first
+    {%- elseif index == 1 -%}
+        second
+    {%- elseif index == 2 -%}
+        third
+    {%- elseif index == 3 -%}
+        fourth
+    {%- endif %}
+{%- endmacro %}
 
 {% block content %}
     <h1>Pranešimai</h1>
 
-    <div class="schedule">
-        <div class="container">
-            <div class="row">
-                {#
-                {% for track in tracks  %}
-                    <div class="col-md-3 track">
-                        <h2>{{ track.title }}</h2>
-                        {% if track.talks %}
-                            {% for talk in track.talks %}
-                                {% if talk.status == 'accepted' %}
-                                <div class="events">
-                                    <a href="{{ path('talk', {'id': talk.id}) }}">
-                                        <img src="{{ talk.user.email | gravatar }}" class="avatar">
-                                    </a>
-                                    <div class="events-body">
-                                        <h3><a href="{{ path('talk', {'id': talk.id}) }}">{{ talk.title }}</a></h3>
-                                        <h4>{{ talk.user.name }}</h4>
-                                    </div>
-                                </div>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                {% else %}
-                #}
-                    <p>Paskelbtų pranešimų dar nėra. Bet jau greitai!</p>
-                {# {% endfor %} #}
+    <div class="row schedule">
+        {% for index, track in tracks  %}
+            <div class="col-md-3 track {{ _self.track_class(index) }}">
+                <h2>{{ track.title }}</h2>
+            
+                {% set count = 0 %}
+                {% for talk in track.talks %}
+                    {% if talk.status == 'accepted' %}
+                        {% set count = count+1 %}
+                        <div class="talk">
+                            <img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded">
+                            <h4><a href="{{ path('talk', {'id': talk.id}) }}" title="{{ talk.title }}">{{ talk.title }}</a></h4>
+                            <p><strong>{{ talk.user.name }}</strong></p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% if count == 0 %}
+                    <p>Patvirtintų pranešimų šioje scenoje dar nėra.</p>
+                {% endif %}
             </div>
+        {% endfor %}
         </div>
     </div>
 {% endblock %}
