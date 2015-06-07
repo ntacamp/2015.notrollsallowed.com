@@ -11,7 +11,7 @@
                     {% set count = count+1 %}
                     <div class="col-md-3">
                         <div class="talk">
-                            <img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded">
+                            <a href="{{ path('talk', {'id': talk.id}) }}"><img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded"></a>
                             <h4><a href="{{ path('talk', {'id': talk.id}) }}" title="{{ talk.title }}">{{ talk.title }}</a></h4>
                             <p><strong>{{ talk.user.name }}</strong></p>
                         </div>
