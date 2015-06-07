@@ -6,7 +6,6 @@
         {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
         {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
     </h1>
-    <p>Scena: <span class="badge badge-primary">{{ talk.track.title }}</span></p>
     <div class="row" >
         <div class="col-md-8">
             {{ talk.description|markdown }}
