@@ -54,9 +54,10 @@ class ScheduleController extends Controller
     {
         $repo = $this->getDoctrine()->getRepository('EstinaHomeBundle:Talk');
         $talk = $repo->findOneById($id);
+        $security = $this->get('security.context');
 
         if (!$talk 
-            || (!$talk->isAccepted() && $talk->getUser() != $this->getUser())
+            || (!$talk->isAccepted() && ($talk->getUser() != $this->getUser() || !$security->isGranted('ROLE_ADMIN')))
         ) {
             throw new NotFoundHttpException;
         }
