@@ -56,8 +56,9 @@ class ScheduleController extends Controller
         $talk = $repo->findOneById($id);
         $security = $this->get('security.context');
 
-        if (!$talk 
-            || (!$talk->isAccepted() && ($talk->getUser() != $this->getUser() || !$security->isGranted('ROLE_ADMIN')))
+        if (!$talk
+            || (!$talk->isAccepted() && !$security->isGranted('ROLE_ADMIN'))
+            || ($talk->getUser() != $this->getUser() && !$security->isGranted('ROLE_ADMIN'))
         ) {
             throw new NotFoundHttpException;
         }
