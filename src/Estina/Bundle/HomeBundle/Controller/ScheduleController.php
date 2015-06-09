@@ -58,7 +58,6 @@ class ScheduleController extends Controller
 
         if (!$talk
             || (!$talk->isAccepted() && !$security->isGranted('ROLE_ADMIN'))
-            || ($talk->getUser() != $this->getUser() && !$security->isGranted('ROLE_ADMIN'))
         ) {
             throw new NotFoundHttpException;
         }
