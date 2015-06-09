@@ -156,6 +156,13 @@ class User implements UserInterface, \Serializable
     private $lastResetTime;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=64)
+     */
+    private $role = 'ROLE_USER';
+
+    /**
      * Get id
      *
      * @return integer
@@ -403,7 +410,7 @@ class User implements UserInterface, \Serializable
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return array($this->role);
     }
 
     /**
@@ -584,5 +591,29 @@ class User implements UserInterface, \Serializable
     public function getHomepage()
     {
         return $this->homepage;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 }

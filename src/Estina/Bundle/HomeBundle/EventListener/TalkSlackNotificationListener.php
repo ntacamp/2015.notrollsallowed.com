@@ -3,7 +3,7 @@
 namespace Estina\Bundle\HomeBundle\EventListener;
 
 use CL\Slack\Payload\ChatPostMessagePayload;
-use CL\Slack\Transport\ApiClient;
+use CL\Slack\Transport\ApiClientInterface;
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -18,7 +18,7 @@ class TalkSlackNotificationListener
     /** @var RouterInterface */
     protected $router;
 
-    public function __construct(ApiClient $api, RouterInterface $router)
+    public function __construct(ApiClientInterface $api, RouterInterface $router)
     {
         $this->api = $api;
         $this->router = $router;

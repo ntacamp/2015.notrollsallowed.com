@@ -73,8 +73,8 @@ swiftmailer:
 
 cl_slack:
     api_token: %slack_api_token%
-    test:      false
-
+    test: %kernel.debug%
+    
 lsw_memcache:
     session:
         client: default

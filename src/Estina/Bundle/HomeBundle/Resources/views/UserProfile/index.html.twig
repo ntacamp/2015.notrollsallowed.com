@@ -1,2 +1,10 @@
-{{ render(controller('EstinaHomeBundle:Talk:personalTalks'))}}
+{% extends 'EstinaHomeBundle::page-wide.html.twig' %}
+
+{% block content %}
+    {% if is_granted("ROLE_ADMIN") %}
+        {{ render(controller('EstinaHomeBundle:Admin:stats'))}}
+    {% endif %}
+
+    {{ render(controller('EstinaHomeBundle:Talk:personalTalks'))}}
+{% endblock %}
 

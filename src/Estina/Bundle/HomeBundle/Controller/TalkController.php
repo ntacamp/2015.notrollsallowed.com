@@ -433,6 +433,84 @@ class TalkController extends Controller
         ;
     }
 
+    /**
+     * @Route("/accept/{id}", name="talk_accept")
+     * @Method("GET")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Template()
+     */
+    public function acceptAction($id)
+    {
+        $form = $this->createAcceptForm($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        return array(
+            'entity'      => $entity,
+            'form'  => $form->createView(),
+        );
+    }
+
+    /**
+     * @Route("/accept/{id}/confirm", name="talk_accept_confirm")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("PUT")
+     */
+    public function acceptConfirmAction($id, Request $request)
+    {
+        $form = $this->createAcceptForm($id);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Talk entity.');
+            }
+
+            if (!$this->isAllowedUpdate($entity)) {
+                throw $this->createAccessDeniedException();
+            }
+
+            $entity->accept();
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->set(
+                'success',
+                'Pranešimas patvirtintas'
+            );
+        }
+
+        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
+    }
+
+    /**
+     * Creates a form to accept a Talk entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createAcceptForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('talk_accept_confirm', array('id' => $id)))
+            ->setMethod('PUT')
+            ->add('submit', 'submit', array('label' => 'Patvirtinti pranešimą'))
+            ->getForm()
+            ;
+    }
+
 
 
     /**

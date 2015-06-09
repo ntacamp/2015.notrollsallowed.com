@@ -1,0 +1,42 @@
+<h1>Statistika</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge badge-primary">{{ total.total }}</span>
+                Viso
+            </li>
+            <li class="list-group-item">
+                <span class="badge badge-success">{{ total.accepted }}</span>
+                Patvirtinti pranešimai
+            </li>
+            <li class="list-group-item">
+                <span class="badge badge-warning">{{ total.new }}</span>
+                Nepatvirtinti
+            </li>
+            <li class="list-group-item">
+                <span class="badge badge-danger">{{ total.rejected }}</span>
+                Atmesti
+            </li>
+            <li class="list-group-item">
+                <span class="badge badge-default">{{ total.cancelled }}</span>
+                Nedalyvaus
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group">
+            {% for entry in tracks %}
+            <li class="list-group-item">
+                <span class="badge badge-primary">{{ entry.total }}</span>
+                <span class="badge badge-success">{{ entry.accepted }}</span>
+                <span class="badge badge-warning">{{ entry.new }}</span>
+                <span class="badge badge-danger">{{ entry.rejected }}</span>
+                <span class="badge badge-default">{{ entry.cancelled }}</span>
+                {{ entry.track }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

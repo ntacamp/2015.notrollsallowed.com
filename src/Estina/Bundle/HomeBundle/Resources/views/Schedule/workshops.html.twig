@@ -1,34 +1,33 @@
-{% extends "EstinaHomeBundle::page.html.twig" %}
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
     <h1>Dirbtuvės</h1>
 
-    <div class="schedule">
-        <div class="container">
-            <div class="row">
-                {#
-                {% for track in tracks %}
-                    <div class="col-md-3 track">
-                        {% if track.talks %}
-                            {% for talk in track.talks %}
-                                <div class="events">
-                                    <img src="{{ talk.user.email | gravatar }}" class="avatar">
-
-                                    <div class="events-body">
-                                        <h4>{{ talk.user.name }}</h4>
-
-                                        <p>{{ talk.title }}</p>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
+    <div class="row schedule">
+        {% set count = 0 %}
+        {% for index, track in tracks  %}
+            {% for talk in track.talks %}
+                {% if talk.status == 'accepted' %}
+                    {% set count = count+1 %}
+                    <div class="col-md-3">
+                        <div class="talk">
+                            <a href="{{ path('talk', {'id': talk.id}) }}"><img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded"></a>
+                            <h4><a href="{{ path('talk', {'id': talk.id}) }}" title="{{ talk.title }}">{{ talk.title }}</a></h4>
+                            <p><strong>{{ talk.user.name }}</strong></p>
+                        </div>
                     </div>
-                {% else %}
-                #}
-                    <p>Paskelbtų dirbtuvių dar nėra. Bet jau greitai!</p>
-                {# {% endfor %} #}
+                {% endif %}
+            {% endfor %}
+            {% if count % 4 == 0 %}
+            </div><div class="row schedule">
+            {% endif %}
+        {% endfor %}
+
+        {% if count == 0 %}
+            <div class="col-md-12">
+                <p>Patvirtintų dirbtuvių dar nėra.</p>
             </div>
-        </div>
+        {% endif %}
     </div>
 
 
