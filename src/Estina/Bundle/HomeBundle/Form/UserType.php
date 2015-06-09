@@ -49,7 +49,7 @@ class UserType extends AbstractType
         );
         $builder->add(
             'facebook', 
-            'text', 
+            'url',
             [
                 'label' => 'Facebook URL',
                 'required' => false
@@ -58,7 +58,7 @@ class UserType extends AbstractType
         if ($this->addAdditionalFields) {
             $builder->add(
                 'gplus', 
-                'text', 
+                'url',
                 [
                     'label' => 'Google+ URL',
                     'required' => false
@@ -66,7 +66,7 @@ class UserType extends AbstractType
             );
             $builder->add(
                 'linkedin', 
-                'text', 
+                'url',
                 [
                     'label' => 'Linkedin URL',
                     'required' => false
@@ -74,7 +74,7 @@ class UserType extends AbstractType
             );
             $builder->add(
                 'blog', 
-                'text', 
+                'url',
                 [
                     'label' => 'Blog URL',
                     'required' => false
@@ -82,7 +82,7 @@ class UserType extends AbstractType
             );
             $builder->add(
                 'homepage', 
-                'text', 
+                'url',
                 [
                     'label' => 'Asmeninio puslapio URL',
                     'required' => false
