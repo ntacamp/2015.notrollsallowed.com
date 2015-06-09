@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Estina\Bundle\HomeBundle\EstinaHomeBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new CL\Bundle\SlackBundle\CLSlackBundle(),
+            new Lsw\MemcacheBundle\LswMemcacheBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

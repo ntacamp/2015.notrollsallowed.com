@@ -18,3 +18,9 @@ parameters:
     dev_email:         ~
 
     slack_api_token:   ~
+
+    twitter_oauth_access_token: ~
+    twitter_oauth_access_token_secret: ~
+    twitter_consumer_key: ~
+    twitter_consumer_secret: ~
+    instagram_client_id: ~

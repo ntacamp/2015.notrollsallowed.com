@@ -74,3 +74,11 @@ swiftmailer:
 cl_slack:
     api_token: %slack_api_token%
     test:      false
+
+lsw_memcache:
+    session:
+        client: default
+    clients:
+        default:
+            hosts:
+              - { dsn: localhost, port: 11211 }
