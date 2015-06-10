@@ -8,4 +8,5 @@ namespace Estina\Bundle\HomeBundle;
 class TalkEvents
 {
     const CREATE = 'talk.create';
+    const CONFIRM = 'talk.confirm';
 }

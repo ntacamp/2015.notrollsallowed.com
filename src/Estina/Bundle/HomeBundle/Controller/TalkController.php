@@ -489,6 +489,10 @@ class TalkController extends Controller
                 'success',
                 'Pranešimas patvirtintas'
             );
+
+            $event = new TalkEvent($entity);
+            $this->get('event_dispatcher')
+                ->dispatch(TalkEvents::CONFIRM, $event);
         }
 
         return $this->redirect($this->generateUrl('talk', ['id' => $id]));
