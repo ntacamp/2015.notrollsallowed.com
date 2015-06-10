@@ -1,17 +1,62 @@
 {% extends 'EstinaHomeBundle::page.html.twig' %}
 
+{% block javascripts %}
+    {% javascripts
+        'assets/vendor/markdown/lib/markdown.js'
+        output='js/compiled/md.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block content -%}
     <h1>Pranešimo redagavimas</h1>
 
     <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
 
-    {{ form(edit_form) }}
+
+    {{ form_start(edit_form) }}
+        {{ form_errors(edit_form) }}
+        <div id="estina_bundle_homebundle_talk">
+            {{ form_row(edit_form.title) }}
+            <div class="form-group">
+                {{ form_label(edit_form.track) }}
+                {{ form_widget(edit_form.track) }}
+                {{ form_errors(edit_form.track) }}
+                <span class="text-note">
+                    <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
+                </span>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.description) }}
+                {{ form_widget(edit_form.description, {
+                    'attr': {'rows': 8}
+                })}}
+                {{ form_errors(edit_form.description) }}
+                <span class="text-note">Aprašymui galite naudoti
+                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
+                </span>
+            </div>
+            <div class="form-group">
+                <hr class="dashed">
+                <div id="preview"></div>
+                <hr class="dashed">
+            </div>
+            <div class="form-group">
+                {{ form_widget(edit_form.submit, {
+                    'label': 'Išsaugoti',
+                    'attr': {'class': 'btn btn-default'}
+                })}}
+                {% if entity.isCancelled %}
+                    <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Sugrąžinti pranešimą, noriu dalyvauti!</a>
+                {% else %}
+                    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
+                {% endif %}
+            </div>
+            {{ form_rest(edit_form) }}
+        </div>
+    {{ form_end(edit_form) }}
+
 
     <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
 
-    {% if entity.isCancelled %}
-        <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Sugrąžinti pranešimą, noriu dalyvauti!</a>
-    {% else %}
-        <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
-    {% endif %}
 {% endblock %}
