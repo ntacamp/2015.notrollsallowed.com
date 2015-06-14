@@ -14,9 +14,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\UserRepository")
  * @ORM\HasLifecycleCallbacks
  * @UniqueEntity("email")
- * @UniqueEntity("nickname")
- * @UniqueEntity("facebook")
- * @UniqueEntity("twitter")
  */
 class User implements UserInterface, \Serializable
 {
@@ -32,7 +29,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="nickname", type="string", unique=true, length=25, nullable=true)
+     * @ORM\Column(name="nickname", type="string", length=25, nullable=true)
      * @Assert\Length(max="25")
      */
     private $nickname;
