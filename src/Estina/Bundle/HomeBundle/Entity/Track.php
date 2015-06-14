@@ -62,6 +62,7 @@ class Track
 
     /**
      * @ORM\OneToMany(targetEntity="Talk", mappedBy="track")
+     * @ORM\OrderBy({"acceptedAt" = "DESC"})
      *
      * @var array<Talk>
      */
