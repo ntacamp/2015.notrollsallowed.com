@@ -18,6 +18,7 @@
         {{ form_errors(edit_form) }}
         <div id="estina_bundle_homebundle_talk">
             {{ form_row(edit_form.title) }}
+            {% if is_granted("ROLE_ADMIN") %}
             <div class="form-group">
                 {{ form_label(edit_form.track) }}
                 {{ form_widget(edit_form.track) }}
@@ -26,6 +27,7 @@
                     <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
                 </span>
             </div>
+            {% endif %}
             <div class="form-group">
                 {{ form_label(edit_form.description) }}
                 {{ form_widget(edit_form.description, {

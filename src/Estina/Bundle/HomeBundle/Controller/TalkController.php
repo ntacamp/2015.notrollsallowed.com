@@ -258,7 +258,10 @@ class TalkController extends Controller
     */
     private function createEditForm(Talk $entity)
     {
-        $form = $this->createForm(new TalkType(TalkType::NO_USER_FIELDS), $entity, array(
+        $showTrackField = $this->isGranted('ROLE_ADMIN');
+        $type = new TalkType(TalkType::NO_USER_FIELDS, $showTrackField);
+
+        $form = $this->createForm($type, $entity, array(
             'action' => $this->generateUrl('talk_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
