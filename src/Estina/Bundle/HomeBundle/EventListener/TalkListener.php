@@ -52,7 +52,7 @@ EOT;
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setFrom($this->adminEmail)
+            ->setFrom($talk->getUser()->getEmail())
             ->setTo($this->adminEmail)
             ->setBody($body)
         ;
