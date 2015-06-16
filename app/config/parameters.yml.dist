@@ -18,3 +18,4 @@ parameters:
     dev_email:         ~
 
     slack_api_token:   ~
+    registration_deadline: '2015-06-19 00:00:00'
