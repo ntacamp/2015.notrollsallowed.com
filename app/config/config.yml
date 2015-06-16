@@ -14,7 +14,8 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        assets_version: v1
+    assets:
+        version: v1
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
