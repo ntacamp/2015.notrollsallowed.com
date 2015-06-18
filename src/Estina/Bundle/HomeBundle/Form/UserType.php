@@ -31,31 +31,31 @@ class UserType extends AbstractType
         $builder->add('name', 'text', ['label' => 'Vardas/Pavardė']);
         $builder->add('email', 'email', ['label' => 'El. Paštas']);
         $builder->add('phone', 'text', ['label' => 'Telefonas']);
-        $builder->add(
-            'twitter', 
-            'text', 
-            [
-                'label' => 'Twitter name',
-                'required' => false
-            ]
-        );
-        $builder->add(
-            'github', 
-            'text', 
-            [
-                'label' => 'GitHub name',
-                'required' => false
-            ]
-        );
-        $builder->add(
-            'facebook', 
-            'url',
-            [
-                'label' => 'Facebook URL',
-                'required' => false
-            ]
-        );
         if ($this->addAdditionalFields) {
+            $builder->add(
+                'twitter', 
+                'text', 
+                [
+                    'label' => 'Twitter name',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'github', 
+                'text', 
+                [
+                    'label' => 'GitHub name',
+                    'required' => false
+                ]
+            );
+            $builder->add(
+                'facebook', 
+                'url',
+                [
+                    'label' => 'Facebook URL',
+                    'required' => false
+                ]
+            );
             $builder->add(
                 'gplus', 
                 'url',
