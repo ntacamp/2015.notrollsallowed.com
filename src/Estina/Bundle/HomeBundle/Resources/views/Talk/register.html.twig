@@ -13,6 +13,11 @@
 {% block content %}
     <h1>Pranešimo registracija</h1>
 
+    <p>
+        Pranešimų registracija vyksta iki
+        {{ registration_deadline|date("Y-m-d") }}. 
+    </p>
+
     <hr>
     {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
         {{ form_start(form) }}
@@ -51,7 +56,9 @@
             </div>
         {{ form_end(form) }}
     {% else %}
-        NoTrollsAllowed dalyvių kiekis yra ribotas, todėl naujos registracijos nebepriimamos.
+    <p>
+    Pranešimų registracija pasibaigė. Jei turite klasimų,
+    <a href="{{ path('page_contacts') }}">susisiekite</a> su mumis.
+    </p>
     {% endif %}
-</ul>
 {% endblock %}
