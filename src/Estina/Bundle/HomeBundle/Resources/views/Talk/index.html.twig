@@ -22,8 +22,9 @@
                 <td>
                     <a href="{{ path('talk', { 'id': entity.id }) }}">{{ entity.title }}</a>
                     <br>{{ entity.user }}
+                    <br><a href="mailto:{{ entity.user.email}}">{{ entity.user.email }}</a>
                 </td>
-                <td>{{ entity.description }}</td>
+                <td>{{ entity.description[:100] ~ "..." }}</td>
                 <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>

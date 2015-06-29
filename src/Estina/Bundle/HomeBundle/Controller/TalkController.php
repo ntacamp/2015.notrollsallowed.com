@@ -110,7 +110,8 @@ class TalkController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstinaHomeBundle:Talk')->findAll();
+        $entities = $em->getRepository('EstinaHomeBundle:Talk')
+            ->findBy([], ['updatedAt' => 'DESC', 'createdOn' => 'DESC']);
 
         return array(
             'entities' => $entities,
