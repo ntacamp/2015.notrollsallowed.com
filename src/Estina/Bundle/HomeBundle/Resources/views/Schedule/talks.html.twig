@@ -21,7 +21,7 @@
                 <h2>{{ track.title }}</h2>
             
                 {% set count = 0 %}
-                {% for talk in track.talks %}
+                {% for talk in track.talks|reverse %}
                     {% if talk.status == 'accepted' %}
                         {% set count = count+1 %}
                         <div class="talk">

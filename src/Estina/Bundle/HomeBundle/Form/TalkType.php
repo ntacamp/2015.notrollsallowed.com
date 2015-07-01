@@ -10,16 +10,25 @@ class TalkType extends AbstractType
 {
     const ADD_USER_FIELDS = true;
     const NO_USER_FIELDS = false;
+
+    const SHOW_TRACK_FIELD = true;
+    const HIDE_TRACK_FIELD = false;
     
     /** @var boolean should user fields be included in form? */
     private $includeUserFields;
 
+    /** @var boolean show track field? */
+    private $showTrackField;
+
     /**
      * @param boolean $includeUserFields should user fields be included in form?
      */
-    public function __construct($includeUserFields = self::ADD_USER_FIELDS)
-    {
+    public function __construct(
+        $includeUserFields = self::ADD_USER_FIELDS,
+        $showTrackField = self::SHOW_TRACK_FIELD
+    ) {
         $this->includeUserFields = $includeUserFields;
+        $this->showTrackField = $showTrackField;
     }
 
     /**
@@ -37,8 +46,10 @@ class TalkType extends AbstractType
         $builder
             ->add('title','text', ['label' => 'Pranešimo pavadinimas'])
             ->add('description', 'textarea', ['label' => 'Trumpas aprašymas'])
-            ->add('track', null, ['label' => 'Scena'])
         ;
+        if ($this->showTrackField) {
+            $builder->add('track', null, ['label' => 'Scena']);
+        }
     }
 
     /**

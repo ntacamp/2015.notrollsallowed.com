@@ -33,14 +33,23 @@ var App = App || {};
 
     App.Talk = {
         register: function() {
-            var $preview = $('#preview'),
-                $ta = $("#estina_bundle_homebundle_registertalk_description");
+            App.Talk.markdownPreview(
+                    $("#estina_bundle_homebundle_registertalk_description"));
+        },
+
+        edit: function() {
+            App.Talk.markdownPreview(
+                    $("#estina_bundle_homebundle_talk_description"));
+        },
+
+        markdownPreview: function($textarea) {
+            var $preview = $('#preview');
 
             var empty = function() {
                 $preview.html('<em>Čia bus aprašymo peržiūra.</em>');
             };
 
-            $ta.bind('input propertychange', function() {
+            $textarea.bind('input propertychange', function() {
                 var html = $.trim($(this).val());
                 if (0 === html.length) {
                     empty();
@@ -48,7 +57,7 @@ var App = App || {};
                     $preview.html(markdown.toHTML($(this).val()));
                 }
             });
-            empty();
+            $textarea.trigger('input');
         }
     };
 

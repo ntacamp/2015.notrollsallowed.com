@@ -8,7 +8,9 @@
         <service id="home.talk_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkListener">
             <argument type="service" id="mailer" />
             <argument>%admin_email%</argument>
+            <argument type="service" id="templating" />
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
+            <tag name="kernel.event_listener" event="talk.confirm" method="onConfirm" />
         </service>
         <service id="home.talk_slack_notification_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkSlackNotificationListener">
             <argument type="service" id="cl_slack.api_client" />

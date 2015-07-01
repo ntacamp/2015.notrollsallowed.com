@@ -13,55 +13,52 @@
 {% block content %}
     <h1>Pranešimo registracija</h1>
 
-    {#
-    <p class="lead">
-        <span class="label label-warning">Dėmesio!</span>
-        Šiais metais turėsite galimybę iš anksto pasirinkti savo pranešimo pristatymo laiką, tad registracija sudaryta iš dviejų etapų.
-    </p>
     <p>
-        <strong>I etapo</strong> metu užregistruojate savo pranešimo temą, taip iš anksto rezervuodami sau vietą renginyje.<br>
-        <strong>II etapo</strong> metu, iki renginio <strong>likus 2 savaitėm</strong>, turėsite patvirtinti savo dalyvavimą įkeldami
-        savo prezentaciją (ar dalį jos) ir pasirinkdami savo pranešimo pristatymo laiką.
+        Pranešimų registracija vyksta iki
+        {{ registration_deadline|date("Y-m-d") }}. 
     </p>
-    #}
 
     <hr>
-
-    {{ form_start(form) }}
-        {{ form_errors(form) }}
-        <div id="estina_bundle_homebundle_registertalk">
-            {{ form_row(form.user) }}
-            {{ form_row(form.title) }}
-            <div class="form-group">
-                {{ form_label(form.track) }}
-                {{ form_widget(form.track) }}
-                {{ form_errors(form.track) }}
-                <span class="text-note">
-                    <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
-                </span>
-            </div>
-            <div class="form-group">
-                {{ form_label(form.description) }}
-                {{ form_widget(form.description, {
-                    'attr': {'rows': 8}
+    {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div id="estina_bundle_homebundle_registertalk">
+                {{ form_row(form.user) }}
+                {{ form_row(form.title) }}
+                <div class="form-group">
+                    {{ form_label(form.track) }}
+                    {{ form_widget(form.track) }}
+                    {{ form_errors(form.track) }}
+                    <span class="text-note">
+                        <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
+                    </span>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description, {
+                        'attr': {'rows': 8}
+                    })}}
+                    {{ form_errors(form.description) }}
+                    <span class="text-note">Aprašymui galite naudoti
+                        <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
+                    </span>
+                </div>
+                <div class="form-group">
+                    <hr class="dashed">
+                    <div id="preview"></div>
+                    <hr class="dashed">
+                </div>
+                {{ form_row(form.submit, {
+                    'label': 'Registruotis',
+                    'attr': {'class': 'btn btn-info btn-register'}
                 })}}
-                {{ form_errors(form.description) }}
-                <span class="text-note">Aprašymui galite naudoti
-                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
-                </span>
+                {{ form_rest(form) }}
             </div>
-            <div class="form-group">
-                <hr class="dashed">
-                <div id="preview"></div>
-                <hr class="dashed">
-            </div>
-            {{ form_row(form.submit, {
-                'label': 'Registruotis',
-                'attr': {'class': 'btn btn-info btn-register'}
-            })}}
-            {{ form_rest(form) }}
-        </div>
-    {{ form_end(form) }}
-
-</ul>
+        {{ form_end(form) }}
+    {% else %}
+    <p>
+    Pranešimų registracija pasibaigė. Jeigu turite klausimų ar pasiūlymų,
+    <a href="{{ path('page_contacts') }}">susisiekite</a> su mumis.
+    </p>
+    {% endif %}
 {% endblock %}

@@ -10,11 +10,14 @@ use Estina\Bundle\HomeBundle\Event\TalkEvent;
 class TalkListener
 {
     protected $mailer;
+    protected $adminEmail;
+    protected $templating;
 
-    public function __construct($mailer, $adminEmail)
+    public function __construct($mailer, $adminEmail, $templating)
     {
         $this->mailer = $mailer;
         $this->adminEmail = $adminEmail;
+        $this->templating = $templating;
     }
 
     /**
@@ -49,11 +52,37 @@ EOT;
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
-            ->setFrom($this->adminEmail)
+            ->setFrom($talk->getUser()->getEmail())
             ->setTo($this->adminEmail)
             ->setBody($body)
         ;
 
         $this->mailer->send($message);
     }
+
+    /**
+     * @param TalkEvent $event
+     */
+    public function onConfirm(TalkEvent $event)
+    {
+        $talk = $event->getTalk();
+
+        if (null === $this->adminEmail) {
+            return;
+        }
+
+        $subject = 'NTA2015 pranešimo patvirtinimas';
+
+        $template = $this->templating->render('email_confirmation.html.twig');
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject($subject)
+            ->setFrom($this->adminEmail)
+            ->setTo($talk->getUser()->getEmail())
+            ->setBody($template, 'text/html')
+        ;
+
+        $this->mailer->send($message);
+    }
+
 }

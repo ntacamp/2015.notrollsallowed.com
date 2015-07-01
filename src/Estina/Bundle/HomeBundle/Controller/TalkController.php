@@ -110,7 +110,8 @@ class TalkController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstinaHomeBundle:Talk')->findAll();
+        $entities = $em->getRepository('EstinaHomeBundle:Talk')
+            ->findBy([], ['updatedAt' => 'DESC', 'createdOn' => 'DESC']);
 
         return array(
             'entities' => $entities,
@@ -258,7 +259,10 @@ class TalkController extends Controller
     */
     private function createEditForm(Talk $entity)
     {
-        $form = $this->createForm(new TalkType(TalkType::NO_USER_FIELDS), $entity, array(
+        $showTrackField = $this->isGranted('ROLE_ADMIN');
+        $type = new TalkType(TalkType::NO_USER_FIELDS, $showTrackField);
+
+        $form = $this->createForm($type, $entity, array(
             'action' => $this->generateUrl('talk_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -489,6 +493,10 @@ class TalkController extends Controller
                 'success',
                 'Pranešimas patvirtintas'
             );
+
+            $event = new TalkEvent($entity);
+            $this->get('event_dispatcher')
+                ->dispatch(TalkEvents::CONFIRM, $event);
         }
 
         return $this->redirect($this->generateUrl('talk', ['id' => $id]));

@@ -11,37 +11,35 @@
             {{ talk.description|markdown }}
         </div>
         <div class="col-md-3">
-            <div class="well">
-                <p class="text-center">
-                    <img src="{{ talk.user.email | gravatar }}" alt="" class="media-object img-rounded">
-                </p>
-                <p class="text-center">
-                    {{ talk.user.name }}
-                </p>
-                <p class="text-center">
-                    {% if talk.user.twitter %}
-                        <a href="http://twitter.com/{{ talk.user.twitter }}"><img src="{{ asset('images/icon_twitter.png') }}" alt="{{ talk.user.twitter }}"></a>
-                    {% endif %}
-                    {% if talk.user.github %}
-                        <a href="http://github.com/{{ talk.user.github }}"><img src="{{ asset('images/icon_github.png') }}" alt="{{ talk.user.github }}"></a>
-                    {% endif %}
-                    {% if talk.user.facebook %}
-                        <a href="{{ talk.user.facebook }}"><img src="{{ asset('images/icon_facebook.png') }}" alt=""></a>
-                    {% endif %}
-                    {% if talk.user.gplus %}
-                        <a href="{{ talk.user.gplus }}"><img src="{{ asset('images/icon_gplus.png') }}" alt=""></a>
-                    {% endif %}
-                    {% if talk.user.linkedin %}
-                        <a href="{{ talk.user.linkedin }}"><img src="{{ asset('images/icon_linkedin.png') }}" alt=""></a>
-                    {% endif %}
-                    {% if talk.user.blog %}
-                        <a href="{{ talk.user.blog }}"><img src="{{ asset('images/icon_blog.png') }}" alt=""></a>
-                    {% endif %}
-                    {% if talk.user.homepage %}
-                        <a href="{{ talk.user.homepage }}"><img src="{{ asset('images/icon_homepage.png') }}" alt=""></a>
-                    {% endif %}
-                </p>
-            </div>
+            <p class="text-center">
+                <img src="{{ talk.user.email | gravatar }}" alt="" class="media-object img-rounded talk-img">
+            </p>
+            <p class="text-center">
+                {{ talk.user.name }}
+            </p>
+            <p class="text-center">
+                {% if talk.user.twitter %}
+                    <a href="http://twitter.com/{{ talk.user.twitter }}"><img src="{{ asset('images/icon_twitter.png') }}" alt="{{ talk.user.twitter }}"></a>
+                {% endif %}
+                {% if talk.user.github %}
+                    <a href="http://github.com/{{ talk.user.github }}"><img src="{{ asset('images/icon_github.png') }}" alt="{{ talk.user.github }}"></a>
+                {% endif %}
+                {% if talk.user.facebook %}
+                    <a href="{{ talk.user.facebook }}"><img src="{{ asset('images/icon_facebook.png') }}" alt=""></a>
+                {% endif %}
+                {% if talk.user.gplus %}
+                    <a href="{{ talk.user.gplus }}"><img src="{{ asset('images/icon_gplus.png') }}" alt=""></a>
+                {% endif %}
+                {% if talk.user.linkedin %}
+                    <a href="{{ talk.user.linkedin }}"><img src="{{ asset('images/icon_linkedin.png') }}" alt=""></a>
+                {% endif %}
+                {% if talk.user.blog %}
+                    <a href="{{ talk.user.blog }}"><img src="{{ asset('images/icon_blog.png') }}" alt=""></a>
+                {% endif %}
+                {% if talk.user.homepage %}
+                    <a href="{{ talk.user.homepage }}"><img src="{{ asset('images/icon_homepage.png') }}" alt=""></a>
+                {% endif %}
+            </p>
         </div>
     </div>
 {% endblock %}

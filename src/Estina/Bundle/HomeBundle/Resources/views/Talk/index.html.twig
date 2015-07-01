@@ -11,7 +11,7 @@
                 <th>Description</th>
                 <th>Createdon</th>
                 <th>Updatedat</th>
-                <th>Active</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,23 +19,22 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('talk', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.title }}</td>
-                <td>{{ entity.description }}</td>
+                <td>
+                    <a href="{{ path('talk', { 'id': entity.id }) }}">{{ entity.title }}</a>
+                    <br>{{ entity.user }}
+                    <br><a href="mailto:{{ entity.user.email}}">{{ entity.user.email }}</a>
+                </td>
+                <td>{{ entity.description[:100] ~ "..." }}</td>
                 <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.status }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('talk', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('talk_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}
+                </td>
+                <td>
+                    {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': entity} %}
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    {% endblock %}
+{% endblock %}

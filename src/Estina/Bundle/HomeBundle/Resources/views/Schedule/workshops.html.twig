@@ -1,12 +1,12 @@
 {% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
-    <h1>Dirbtuvės</h1>
+    <h1>Dirbtuvės ir užsiėmimai</h1>
 
     <div class="row schedule">
         {% set count = 0 %}
         {% for index, track in tracks  %}
-            {% for talk in track.talks %}
+            {% for talk in track.talks|reverse %}
                 {% if talk.status == 'accepted' %}
                     {% set count = count+1 %}
                     <div class="col-md-3">

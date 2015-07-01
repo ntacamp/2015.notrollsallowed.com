@@ -66,6 +66,13 @@ class Talk
     private $updatedAt = null;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="accepted_at", type="datetime", nullable=true)
+     */
+    private $acceptedAt = null;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="status", type="string", length=20)
@@ -270,6 +277,30 @@ class Talk
         return $this->status;
     }
 
+    /**
+     * Set acceptedAt
+     *
+     * @param \DateTime $acceptedAt
+     *
+     * @return Talk
+     */
+    public function setAcceptedAt($acceptedAt)
+    {
+        $this->acceptedAt = $acceptedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get acceptedAt
+     *
+     * @return \DateTime
+     */
+    public function getAcceptedAt()
+    {
+        return $this->acceptedAt;
+    }
+
     public function cancel()
     {
         $this->setUpdatedAt(new \DateTime());
@@ -290,6 +321,7 @@ class Talk
     public function accept()
     {
         $this->setUpdatedAt(new \DateTime());
+        $this->setAcceptedAt(new \DateTime());
         $this->setStatus(self::STATUS_ACCEPTED);
     }
 
