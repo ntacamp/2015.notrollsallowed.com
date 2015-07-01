@@ -25,8 +25,7 @@
         "cleentfaar/slack-bundle": "^0.15.4",
         "guzzlehttp/guzzle": "5.*",
         "php-instagram-api/php-instagram-api": "dev-master",
-        "ntacamp/social-hashtag": "dev-master",
-        "leaseweb/memcache-bundle": "^1.2"
+        "ntacamp/social-hashtag": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

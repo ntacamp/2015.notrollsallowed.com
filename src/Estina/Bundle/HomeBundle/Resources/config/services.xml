@@ -32,7 +32,6 @@
 
 
         <service id="home.social_feed_service" class="Estina\Bundle\HomeBundle\Service\SocialFeedService">
-            <argument type="service" id="memcache.default"></argument>
             <argument>%twitter_oauth_access_token%</argument>
             <argument>%twitter_oauth_access_token_secret%</argument>
             <argument>%twitter_consumer_key%</argument>

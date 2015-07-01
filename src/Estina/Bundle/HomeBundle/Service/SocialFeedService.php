@@ -14,17 +14,13 @@ class SocialFeedService
 {
     private $socialHashtag;
 
-    private $memcached;
-
     public function __construct(
-        $memcached,
         $twitterOauthAccessToken,
         $twitterOauthAccessTokenSecret,
         $twitterConsumerKey,
         $twitterConsumerSecret,
         $instagramClientId
     ) {
-        $this->memcached = $memcached;
         $this->socialHashtag = new SocialHashtag('ntacamp');
         $this->socialHashtag->addFeed(new TwitterFeed(new \TwitterAPIExchange([
             'oauth_access_token' => $twitterOauthAccessToken,
@@ -42,12 +38,12 @@ class SocialFeedService
      */
     public function getFeed()
     {
-        if ($feed = $this->memcached->get('feed')) {
+        if ($feed = apc_fetch('feed')) {
             return $feed;
         } else {
             $result = $this->socialHashtag->getResults();
             $result = array_merge($result['twitter'], $result['instagram']);
-            $this->memcached->set('feed', $result, 120);
+            apc_store('feed', $result, 120);
 
             return $result;
         }
