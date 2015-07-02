@@ -90,33 +90,6 @@
             {% endif %}
         </div>
     </div>
-    <div class="event-details social-feed">
-        <div class="container">
-            <div class="row feed-list">
-                {% for post in feed %}
-                    <div class="col-xs-6 col-sm-3 feed-element">
-                            {% if post.media and post.media.type == 'video' %}
-                            <video width="100%" src="{{ post.media.url }}" controls>
-                            </video>
-                            {% elseif post.media and post.media.type == 'image' %}
-                            <img src="{{ post.media.url }}" class="main-img"/>
-                            {% endif %}
-                        <div class="caption">
-                            <a href="#" class="pull-left"><img src="{{ post.profileImageUrl }}"/></a>
-                        <span class="author-name">
-                            {{ post.username }}
-                            <span>{{ post.date|date('Y-m-d H:i') }}</span>
-                        </span>
-                            <div class="clearfix"></div>
-                            <p class="message">
-                                {{ post.content }}
-                            </p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
     <div class="event-details where" id="vieta">
         <div class="container">
             <div class="row">
@@ -184,5 +157,32 @@
         </div>
     </div>
 
+    <div class="event-details social-feed">
+        <div class="container">
+            <div class="row feed-list">
+                {% for post in feed %}
+                    <div class="col-xs-6 col-sm-3 feed-element">
+                        {% if post.media and post.media.type == 'video' %}
+                            <video width="100%" src="{{ post.media.url }}" controls>
+                            </video>
+                        {% elseif post.media and post.media.type == 'image' %}
+                            <img src="{{ post.media.url }}" class="main-img"/>
+                        {% endif %}
+                        <div class="caption">
+                            <a href="#" class="pull-left"><img src="{{ post.profileImageUrl }}"/></a>
+                        <span class="author-name">
+                            {{ post.username }}
+                            <span>{{ post.date|date('Y-m-d H:i') }}</span>
+                        </span>
+                            <div class="clearfix"></div>
+                            <p class="message">
+                                {{ post.content }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
