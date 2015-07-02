@@ -22,7 +22,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        return [
+            'feed' => $this->get('home.social_feed_service')->getFeed()
+        ];
     }
 
 }

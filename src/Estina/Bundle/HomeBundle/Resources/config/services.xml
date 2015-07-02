@@ -30,6 +30,15 @@
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>
 
+
+        <service id="home.social_feed_service" class="Estina\Bundle\HomeBundle\Service\SocialFeedService">
+            <argument>%twitter_oauth_access_token%</argument>
+            <argument>%twitter_oauth_access_token_secret%</argument>
+            <argument>%twitter_consumer_key%</argument>
+            <argument>%twitter_consumer_secret%</argument>
+            <argument>%instagram_client_id%</argument>
+        </service>
+
         <service id="home.track_service" class="Estina\Bundle\HomeBundle\Service\TrackService">
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>

@@ -23,7 +23,9 @@
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "knplabs/knp-markdown-bundle": "~1.3",
         "cleentfaar/slack-bundle": "^0.15.4",
-        "guzzlehttp/guzzle": "5.*"
+        "guzzlehttp/guzzle": "5.*",
+        "php-instagram-api/php-instagram-api": "dev-master",
+        "ntacamp/social-hashtag": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

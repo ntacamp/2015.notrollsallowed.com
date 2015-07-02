@@ -20,7 +20,16 @@ var App = App || {};
             App.Main.exec(controller);
             App.Main.exec(controller, action);
         }
-    }; 
+    };
+
+    App.Default = {
+        index: function() {
+                var masonry = new Masonry( $('.feed-list')[0], {
+                    itemSelector: '.feed-element',
+                    percentPosition: true
+                });
+        }
+    };
 
     App.Talk = {
         register: function() {
