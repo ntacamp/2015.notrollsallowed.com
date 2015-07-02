@@ -38,6 +38,15 @@ class SocialFeedService
      */
     public function getFeed()
     {
+        if (function_exists('apc_fetch') == false) {
+            function apc_fetch($key) {
+                return  false;
+            }
+            function apc_store($key, $value, $ttl) {
+                return  false;
+            }
+        }
+
         if ($feed = apc_fetch('feed')) {
             return $feed;
         } else {
