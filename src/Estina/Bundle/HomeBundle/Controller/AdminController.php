@@ -24,7 +24,8 @@ class AdminController extends Controller
 
         return [
             'total' => $data['total'],
-            'tracks' => $data['tracks']
+            'tracks' => $data['tracks'],
+            'talks' => $data['talks']
         ];
     }
 
@@ -53,6 +54,7 @@ class AdminController extends Controller
                 $data['total']['total']++;
                 $data['tracks'][$id][$status]++;
                 $data['tracks'][$id]['total']++;
+                $data['talks'][] = $talk;
             }
         }
 
