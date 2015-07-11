@@ -16,6 +16,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * Talk controller.
@@ -25,8 +27,8 @@ use Symfony\Component\HttpFoundation\Request;
 class TalkController extends Controller
 {
     /**
-     * Register talk. 
-     * 
+     * Register talk.
+     *
      * @Route("/pranesimo-registracija", name="talk_register")
      * @Template()
      */
@@ -71,8 +73,8 @@ class TalkController extends Controller
     }
 
     /**
-     * Display info after sucessful registration. 
-     * 
+     * Display info after sucessful registration.
+     *
      * @Route("/registracija-sekminga", name="talk_success")
      * @Template()
      */
@@ -80,7 +82,7 @@ class TalkController extends Controller
     {
         return [];
     }
-    
+
     /**
      * @param Talk $entity The entity
      *
@@ -297,6 +299,15 @@ class TalkController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+
+            if (null !== $editForm['slides']->getData()) {
+                // Let`s do slides upload
+                $editForm['slides']->getData()->move(
+                    $this->getParameter('uploads_dir').$entity->getUser()->getId().'/',
+                    $editForm['slides']->getData()->getClientOriginalName()
+                );
+                $entity->setSlides($editForm['slides']->getData()->getClientOriginalName());
+            }
             $em->flush();
 
             $this->get('session')->getFlashBag()->set(
@@ -313,7 +324,7 @@ class TalkController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
-    
+
     /**
      * Deletes a Talk entity.
      *
@@ -328,7 +339,7 @@ class TalkController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
-            
+
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Talk entity.');
             }

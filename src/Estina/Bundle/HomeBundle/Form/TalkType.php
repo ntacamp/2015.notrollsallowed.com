@@ -46,6 +46,11 @@ class TalkType extends AbstractType
         $builder
             ->add('title','text', ['label' => 'Pranešimo pavadinimas'])
             ->add('description', 'textarea', ['label' => 'Trumpas aprašymas'])
+            ->add('slides', 'file', [
+                'label' => 'Prezentacijos skaidrės',
+                'required' => false,
+                'data_class' => null
+            ])
         ;
         if ($this->showTrackField) {
             $builder->add('track', null, ['label' => 'Scena']);

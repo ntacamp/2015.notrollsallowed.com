@@ -94,6 +94,14 @@ class Talk
      **/
     private $track;
 
+    /**
+     * @var string
+     *
+     *
+     * @ORM\Column(name="slides", type="text", nullable=true)
+     */
+    private $slides;
+
     public function __construct()
     {
         $this->createdOn = new \DateTime;
@@ -329,4 +337,21 @@ class Talk
     {
         return $this->status == self::STATUS_ACCEPTED;
     }
+
+    /**
+     * @param string $slides
+     */
+    public function setSlides($slides)
+    {
+        $this->slides = $slides;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlides()
+    {
+        return $this->slides;
+    }
+
 }

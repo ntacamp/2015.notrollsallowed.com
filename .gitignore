@@ -13,3 +13,4 @@ app/logs/.gitkeep
 /composer.phar
 /web/css/compiled
 /web/js/compiled
+/uploads

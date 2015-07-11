@@ -25,3 +25,4 @@ parameters:
     twitter_consumer_key: ~
     twitter_consumer_secret: ~
     instagram_client_id: ~
+    uploads_dir: '%kernel.root_dir%/../uploads/'
