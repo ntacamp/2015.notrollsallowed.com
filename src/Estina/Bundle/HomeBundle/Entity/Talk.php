@@ -94,9 +94,18 @@ class Talk
      **/
     private $track;
 
+    /**
+     * If speaker/organizer is not the same unit as author, this field can be
+     * used to override author.
+     *
+     * @ORM\Column(name="organizer", type="string", length=64, nullable=true)
+     * @Assert\Length(max="64")
+     **/
+    private $organizer;
+
     public function __construct()
     {
-        $this->createdOn = new \DateTime;
+        $this->createdOn = $this->updatedAt = new \DateTime;
     }
 
     /**
@@ -299,6 +308,18 @@ class Talk
     public function getAcceptedAt()
     {
         return $this->acceptedAt;
+    }
+
+    public function setOrganized($organizer)
+    {
+        $this->organizer = $organizer;
+
+        return $this;
+    }
+
+    public function getOrganizer()
+    {
+        return $this->organizer;
     }
 
     public function cancel()

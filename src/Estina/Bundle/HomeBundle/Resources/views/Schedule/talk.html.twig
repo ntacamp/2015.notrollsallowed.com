@@ -15,7 +15,11 @@
                 <img src="{{ talk.user.email | gravatar }}" alt="" class="media-object img-rounded talk-img">
             </p>
             <p class="text-center">
+                {% if talk.organizer %}
+                {{ talk.organizer }} 
+                {% else %}
                 {{ talk.user.name }}
+                {% endif %}
             </p>
             <p class="text-center">
                 {% if talk.user.twitter %}
