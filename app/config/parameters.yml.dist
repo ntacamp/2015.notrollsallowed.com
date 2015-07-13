@@ -20,6 +20,7 @@ parameters:
     slack_api_token:   ~
     registration_deadline: '2015-07-19 23:59:59'
 
+    social_hashtag_enabled: true
     twitter_oauth_access_token: ~
     twitter_oauth_access_token_secret: ~
     twitter_consumer_key: ~

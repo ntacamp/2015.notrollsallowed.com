@@ -19,18 +19,36 @@ class SocialFeedService
         $twitterOauthAccessTokenSecret,
         $twitterConsumerKey,
         $twitterConsumerSecret,
-        $instagramClientId
+        $instagramClientId,
+        $enabled
     ) {
-        $this->socialHashtag = new SocialHashtag('ntacamp');
-        $this->socialHashtag->addFeed(new TwitterFeed(new \TwitterAPIExchange([
-            'oauth_access_token' => $twitterOauthAccessToken,
-            'oauth_access_token_secret' => $twitterOauthAccessTokenSecret,
-            'consumer_key' => $twitterConsumerKey,
-            'consumer_secret' => $twitterConsumerSecret,
-        ]), new TwitterDataFormatter()));
-        $instagram = new Instagram();
-        $instagram->setClientID($instagramClientId);
-        $this->socialHashtag->addFeed(new InstagramFeed($instagram, new InstagramDataFormatter()));
+        $this->twitterOauthAccessToken = $twitterOauthAccessToken;
+        $this->twitterOauthAccessTokenSecret = $twitterOauthAccessTokenSecret;
+        $this->twitterConsumerKey = $twitterConsumerKey;
+        $this->twitterConsumerSecret = $twitterConsumerSecret;
+        $this->instagramClientId = $instagramClientId;
+        $this->enabled = $enabled;
+    }
+
+    /**
+     * @return socialHashtag
+     */
+    private function getService()
+    {
+        if (null === $this->socialHashtag) {
+            $this->socialHashtag = new SocialHashtag('ntacamp');
+            $this->socialHashtag->addFeed(new TwitterFeed(new \TwitterAPIExchange([
+                'oauth_access_token' => $this->twitterOauthAccessToken,
+                'oauth_access_token_secret' => $this->twitterOauthAccessTokenSecret,
+                'consumer_key' => $this->twitterConsumerKey,
+                'consumer_secret' => $this->twitterConsumerSecret,
+            ]), new TwitterDataFormatter()));
+            $instagram = new Instagram();
+            $instagram->setClientID($this->instagramClientId);
+            $this->socialHashtag->addFeed(new InstagramFeed($instagram, new InstagramDataFormatter()));
+        }
+
+        return $this->socialHashtag;
     }
 
     /**
@@ -38,6 +56,10 @@ class SocialFeedService
      */
     public function getFeed()
     {
+        if (false === $this->enabled) {
+            return false;
+        }
+
         if (function_exists('apc_fetch') == false) {
             function apc_fetch($key) {
                 return  false;
@@ -50,7 +72,7 @@ class SocialFeedService
         if ($feed = apc_fetch('feed')) {
             return $feed;
         } else {
-            $result = $this->socialHashtag->getResults();
+            $result = $this->getService()->getResults();
             $result = array_merge($result['twitter'], $result['instagram']);
             apc_store('feed', $result, 120);
 
