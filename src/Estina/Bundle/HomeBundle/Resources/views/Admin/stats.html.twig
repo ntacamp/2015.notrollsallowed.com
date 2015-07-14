@@ -40,6 +40,10 @@
         </ul>
     </div>
 </div>
-<h1>Pranešimai</h1>
 
-{% include "EstinaHomeBundle:Talk:personalTalks.html.twig" with {'talks': talks} %}
+<h2>Nuorodos</h2>
+<div class="row">
+    <ul>
+        <li><a href="{{ path('talk_list') }}">Pranešimų sąrašas</a></li>
+    </ul>
+</div>
