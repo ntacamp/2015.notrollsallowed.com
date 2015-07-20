@@ -33,6 +33,9 @@ class TalkController extends Controller
     public function registerAction(Request $request)
     {
         $entity = new Talk();
+        if ($user = $this->getUser()) {
+            $entity->setUser($user);
+        }
         $form   = $this->createRegistrationForm($entity);
 
         if ('POST' === $request->getMethod()) {
@@ -41,7 +44,10 @@ class TalkController extends Controller
             if ($form->isValid()) {
                 $userService = $this->get('home.user_service');
                 try {
-                    $userService->createUser($entity->getUser());
+                    if (!$this->getUser()) {
+                        $userService->createUser($entity->getUser());
+                    }
+
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($entity);
                     $em->flush();
@@ -88,7 +94,8 @@ class TalkController extends Controller
      */
     private function createRegistrationForm(Talk $entity)
     {
-        $form = $this->createForm(new RegisterTalkType(), $entity, [
+        $showUserField = $this->getUser() ? false : true;
+        $form = $this->createForm(new RegisterTalkType($showUserField), $entity, [
             'action' => $this->generateUrl('talk_register'),
             'method' => 'POST',
         ]);

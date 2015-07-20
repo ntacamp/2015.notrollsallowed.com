@@ -11,14 +11,23 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  */
 class RegisterTalkType extends AbstractType
 {
+    private $addUser = true;
+
+    public function __construct($addUser = true)
+    {
+        $this->addUser = $addUser;
+    }
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        if ($this->addUser) {
+            $builder->add('user', new UserType(), ['label' => false]);
+        }
         $builder
-            ->add('user', new UserType(), ['label' => false])
             ->add('title', 'text', ['label' => 'Pranešimas'])
             ->add('description', 'textarea', ['label' => 'Pranešimo aprašymas'])
             ->add('track', null, ['label' => 'Scena', 'required' => false])

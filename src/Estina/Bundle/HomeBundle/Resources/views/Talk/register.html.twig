@@ -23,7 +23,9 @@
         {{ form_start(form) }}
             {{ form_errors(form) }}
             <div id="estina_bundle_homebundle_registertalk">
-                {{ form_row(form.user) }}
+                {% if form.user is defined %}
+                    {{ form_row(form.user) }}
+                {% endif %}
                 {{ form_row(form.title) }}
                 <div class="form-group">
                     {{ form_label(form.track) }}
