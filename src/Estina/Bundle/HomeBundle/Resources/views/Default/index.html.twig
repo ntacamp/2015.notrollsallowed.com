@@ -30,9 +30,6 @@
                 <h2><strong>hackercamp'as</strong> Lietuvoje!</h2>
                 <h1>No Trolls Allowed</h1>
                 <p>2015 m. Liepos 31 - Rugpjūčio 2 d.</p>
-                {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
-                <p><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Registruotis &raquo;</a></p>
-                {% endif %}
             </div>
         </div>
     </div>

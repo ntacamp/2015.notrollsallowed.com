@@ -94,11 +94,6 @@
                         <dd class="nav-item">
                             <a href="{{ path('home') }}#vieta">Vieta</a>
                         </dd>
-                        {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
-                        <dd class="nav-item">
-                            <a href="{{ path('talk_register') }}">Registracija</a>
-                        </dd>
-                        {% endif %}
                         <dd class="nav-item">
                             <a href="{{ path('page_faq') }}">DUK</a>
                         </dd>
