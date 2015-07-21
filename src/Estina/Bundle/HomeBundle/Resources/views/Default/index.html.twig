@@ -78,13 +78,6 @@
                     <iframe width="100%" height="420" src="https://www.youtube.com/embed/YkdNLsY7xhw" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
-            <div class="row cta">
-                <div class="col-md-12 text-center">
-                    <p><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Registruotis &raquo;</a></p>
-                </div>
-            </div>
-            {% endif %}
         </div>
     </div>
     <div class="event-details where" id="vieta">
