@@ -42,7 +42,7 @@ class SocialFeedService
                 'oauth_access_token_secret' => $this->twitterOauthAccessTokenSecret,
                 'consumer_key' => $this->twitterConsumerKey,
                 'consumer_secret' => $this->twitterConsumerSecret,
-            ]), new TwitterDataFormatter()));
+            ]), new TwitterDataFormatter(['includeRetweets' => false])));
             $instagram = new Instagram();
             $instagram->setClientID($this->instagramClientId);
             $this->socialHashtag->addFeed(new InstagramFeed($instagram, new InstagramDataFormatter()));
