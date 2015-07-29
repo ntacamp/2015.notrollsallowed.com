@@ -201,10 +201,10 @@
                             <video width="100%" src="{{ post.media.url }}" controls>
                             </video>
                         {% elseif post.media and post.media.type == 'image' %}
-                            <img src="{{ post.media.url }}" class="main-img"/>
+                            <a href="{{ post.url }}"><img src="{{ post.media.url }}" class="main-img"/></a>
                         {% endif %}
                         <div class="caption">
-                            <a href="#" class="pull-left"><img src="{{ post.profileImageUrl }}"/></a>
+                            <a href="{{ post.userUrl }}" class="pull-left"><img src="{{ post.profileImageUrl }}"/></a>
                         <span class="author-name">
                             {{ post.username }}
                             <span>{{ post.date|date('Y-m-d H:i') }}</span>
