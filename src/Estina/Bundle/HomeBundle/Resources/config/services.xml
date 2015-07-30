@@ -38,6 +38,7 @@
             <argument>%twitter_consumer_secret%</argument>
             <argument>%instagram_client_id%</argument>
             <argument>%social_hashtag_enabled%</argument>
+            <argument>%social_hashtag_exclude_users%</argument>
         </service>
 
         <service id="home.track_service" class="Estina\Bundle\HomeBundle\Service\TrackService">

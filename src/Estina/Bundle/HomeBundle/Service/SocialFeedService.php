@@ -20,7 +20,8 @@ class SocialFeedService
         $twitterConsumerKey,
         $twitterConsumerSecret,
         $instagramClientId,
-        $enabled
+        $enabled,
+        array $excludeUsers
     ) {
         $this->twitterOauthAccessToken = $twitterOauthAccessToken;
         $this->twitterOauthAccessTokenSecret = $twitterOauthAccessTokenSecret;
@@ -28,6 +29,7 @@ class SocialFeedService
         $this->twitterConsumerSecret = $twitterConsumerSecret;
         $this->instagramClientId = $instagramClientId;
         $this->enabled = $enabled;
+        $this->excludeUsers = $excludeUsers;
     }
 
     /**
@@ -74,6 +76,12 @@ class SocialFeedService
         } else {
             $result = $this->getService()->getResults();
             $result = array_merge($result['twitter'], $result['instagram']);
+            $result = array_filter($result, function(Post $post){
+               return !in_array($post->getUsername(), $this->excludeUsers);
+            });
+            usort($result, function(Post $first, Post $second){
+                return $first->getDate() > $second->getDate() ? -1 : 1;
+            });
             apc_store('feed', $result, 120);
 
             return $result;
