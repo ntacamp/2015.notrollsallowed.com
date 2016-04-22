@@ -1,6 +1,6 @@
-# 2015.notrollsallowed.com
+# 2016.notrollsallowed.com
 
-Website for [No Trolls Allowed 2015](http://2015.notrollsallowed.com/) event.
+Website for [No Trolls Allowed 2016](http://2016.notrollsallowed.com/) event.
 
 ## Requirements
 
@@ -20,8 +20,8 @@ npm install -g bower
 To install all required dependencies type following commands:
 
 ``` sh
-git clone git@github.com:ntacamp/2015.notrollsallowed.com.git
-cd 2015.notrollsallowed.com
+git clone git@github.com:ntacamp/notrollsallowed.com-event.git
+cd notrollsallowed.com-event
 make
 ```
 
