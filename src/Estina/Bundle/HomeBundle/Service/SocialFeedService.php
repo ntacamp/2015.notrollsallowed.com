@@ -39,15 +39,20 @@ class SocialFeedService
     {
         if (null === $this->socialHashtag) {
             $this->socialHashtag = new SocialHashtag('ntacamp');
-            $this->socialHashtag->addFeed(new TwitterFeed(new \TwitterAPIExchange([
-                'oauth_access_token' => $this->twitterOauthAccessToken,
-                'oauth_access_token_secret' => $this->twitterOauthAccessTokenSecret,
-                'consumer_key' => $this->twitterConsumerKey,
-                'consumer_secret' => $this->twitterConsumerSecret,
-            ]), new TwitterDataFormatter(['includeRetweets' => false])));
-            $instagram = new Instagram();
-            $instagram->setClientID($this->instagramClientId);
-            $this->socialHashtag->addFeed(new InstagramFeed($instagram, new InstagramDataFormatter()));
+
+            if ($this->twitterOauthAccessToken !== null) {
+                $this->socialHashtag->addFeed(new TwitterFeed(new \TwitterAPIExchange([
+                    'oauth_access_token' => $this->twitterOauthAccessToken,
+                    'oauth_access_token_secret' => $this->twitterOauthAccessTokenSecret,
+                    'consumer_key' => $this->twitterConsumerKey,
+                    'consumer_secret' => $this->twitterConsumerSecret,
+                ]), new TwitterDataFormatter(['includeRetweets' => false])));
+            }
+            if ($this->instagramClientId !== null) {
+                $instagram = new Instagram();
+                $instagram->setClientID($this->instagramClientId);
+                $this->socialHashtag->addFeed(new InstagramFeed($instagram, new InstagramDataFormatter()));
+            }
         }
 
         return $this->socialHashtag;
@@ -74,8 +79,14 @@ class SocialFeedService
         if ($feed = apc_fetch('feed')) {
             return $feed;
         } else {
-            $result = $this->getService()->getResults();
-            $result = array_merge($result['twitter'], $result['instagram']);
+            $result = [];
+            $data = $this->getService()->getResults();
+            if (!empty($data['twitter'])) {
+                $result = array_merge($result, $data['twitter']);
+            }
+            if (!empty($data['instagram'])) {
+                $result = array_merge($result, $data['instagram']);
+            }
             $result = array_filter($result, function(Post $post){
                return !in_array($post->getUsername(), $this->excludeUsers);
             });
