@@ -219,4 +219,28 @@ class Track
     {
       return $this->title;
     }
+
+    /**
+     * Add talk
+     *
+     * @param \Estina\Bundle\HomeBundle\Entity\Talk $talk
+     *
+     * @return Track
+     */
+    public function addTalk(\Estina\Bundle\HomeBundle\Entity\Talk $talk)
+    {
+        $this->talks[] = $talk;
+
+        return $this;
+    }
+
+    /**
+     * Remove talk
+     *
+     * @param \Estina\Bundle\HomeBundle\Entity\Talk $talk
+     */
+    public function removeTalk(\Estina\Bundle\HomeBundle\Entity\Talk $talk)
+    {
+        $this->talks->removeElement($talk);
+    }
 }

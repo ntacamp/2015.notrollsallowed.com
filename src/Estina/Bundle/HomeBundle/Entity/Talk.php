@@ -80,6 +80,13 @@ class Talk
     private $status = self::STATUS_NEW;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="language", type="string", length=20)
+     */
+    private $language;
+
+    /**
      * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="User", cascade={"persist"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
@@ -349,5 +356,43 @@ class Talk
     public function isAccepted()
     {
         return $this->status == self::STATUS_ACCEPTED;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return Talk
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Set organizer
+     *
+     * @param string $organizer
+     *
+     * @return Talk
+     */
+    public function setOrganizer($organizer)
+    {
+        $this->organizer = $organizer;
+
+        return $this;
     }
 }

@@ -17,6 +17,7 @@
     {{ form_start(edit_form) }}
         {{ form_errors(edit_form) }}
         <div id="estina_bundle_homebundle_talk">
+            {{ form_row(edit_form.language) }}
             {{ form_row(edit_form.title) }}
             {% if is_granted("ROLE_ADMIN") %}
             <div class="form-group">

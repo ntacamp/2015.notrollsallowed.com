@@ -28,6 +28,7 @@ class RegisterTalkType extends AbstractType
             $builder->add('user', new UserType(), ['label' => false]);
         }
         $builder
+        ->add('language','choice', ['label' => 'Pranešimo kalba', 'choices' => ['LT' => 'LT', 'EN' => 'EN']])
             ->add('title', 'text', ['label' => 'Pranešimas'])
             ->add('description', 'textarea', ['label' => 'Pranešimo aprašymas'])
             ->add('track', null, ['label' => 'Scena', 'required' => false])
