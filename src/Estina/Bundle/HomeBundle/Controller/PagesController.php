@@ -13,6 +13,17 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class PagesController extends Controller
 {
     /**
+     * English page
+     *
+     * @Route("/en", name="page_en")
+     * @Template()
+     */
+    public function enAction()
+    {
+        return [];
+    }
+
+    /**
      * About page
      *
      * @Route("/apie", name="page_about")
