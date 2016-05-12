@@ -1,5 +1,29 @@
 {% extends "EstinaHomeBundle::page.html.twig" %}
 
+{% form_theme form _self %}
+
+{%- block form_label -%}
+    {% if label is not sameas(false) -%}
+        {% if not compound -%}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {%- endif %}
+        {% if required -%}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {%- endif %}
+        {% if label is empty -%}
+            {%- if label_format is not empty -%}
+                {% set label = label_format|replace({
+                    '%name%': name,
+                    '%id%': id,
+                }) %}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ translation_domain is sameas(false) ? label : label|trans({}, translation_domain) }} {% if label_attr.text_en is defined %}<em>({{label_attr.text_en}})</em>{% endif %}</label>
+    {%- endif -%}
+{%- endblock form_label -%}
+
 {% block title %}Pranešimo registracija{% endblock %}
 
 {% block javascripts %}
@@ -24,7 +48,10 @@
             {{ form_errors(form) }}
             <div id="estina_bundle_homebundle_registertalk">
                 {% if form.user is defined %}
-                    {{ form_row(form.user) }}
+                    {{ form_row(form.user.name) }}
+                    {{ form_row(form.user.email) }}
+                    {{ form_row(form.user.phone) }}
+                    {{ form_rest(form.user) }}
                 {% endif %}
                 {{ form_row(form.language) }}
                 {{ form_row(form.title) }}

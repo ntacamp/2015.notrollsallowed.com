@@ -28,10 +28,24 @@ class RegisterTalkType extends AbstractType
             $builder->add('user', new UserType(), ['label' => false]);
         }
         $builder
-        ->add('language','choice', ['label' => 'Pranešimo kalba', 'choices' => ['LT' => 'LT', 'EN' => 'EN']])
-            ->add('title', 'text', ['label' => 'Pranešimas'])
-            ->add('description', 'textarea', ['label' => 'Pranešimo aprašymas'])
-            ->add('track', null, ['label' => 'Scena', 'required' => false])
+            ->add('language', 'choice', [
+                'label' => 'Pranešimo kalba',
+                'choices' => ['LT' => 'LT', 'EN' => 'EN'],
+                'label_attr' => ['text_en' => 'presentation language']
+            ])
+            ->add('title', 'text', [
+                'label' => 'Pranešimo tema',
+                'label_attr' => ['text_en' => 'talk title']
+            ])
+            ->add('description', 'textarea', [
+                'label' => 'Pranešimo aprašymas',
+                'label_attr' => ['text_en' => 'talk description']
+            ])
+            ->add('track', null, [
+                'label' => 'Scena', 
+                'required' => false,
+                'label_attr' => ['text_en' => 'scene']
+            ])
         ;
     }
 
