@@ -37,10 +37,10 @@
 {% block content %}
     <h1>Pranešimo registracija</h1>
 
-    <p>
-        Pranešimų registracija vyksta iki
+    <blockquote>No Trolls Allowed vyks <b>2016 m. liepos 21-24 d.</b>,<br>
+        pranešimų registracija vyksta iki
         {{ registration_deadline|date("Y-m-d") }}. 
-    </p>
+    </blockquote>
 
     <hr>
     {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
