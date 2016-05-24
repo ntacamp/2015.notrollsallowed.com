@@ -1,11 +1,12 @@
 <?php
 namespace Estina\Bundle\HomeBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Estina\Bundle\HomeBundle\Entity\Track;
 
-class LoadTrackData implements FixtureInterface
+class LoadTrackData extends AbstractFixture implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -15,6 +16,7 @@ class LoadTrackData implements FixtureInterface
         $track->setSize(30);
         $track->setPosition(1);
         $track->setType($track::TYPE_TALK);
+        $this->addReference('track.digital', $track);
         $manager->persist($track);
 
         $track = new Track();
@@ -50,5 +52,10 @@ class LoadTrackData implements FixtureInterface
         $manager->persist($track);
 
         $manager->flush();
+    }
+
+    public function getOrder()
+    {
+        return 1;
     }
 }
