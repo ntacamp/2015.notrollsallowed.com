@@ -39,7 +39,7 @@ class TalkSlackNotificationListener
         $payload->setIconEmoji('space_invader'); // check out emoji.list-payload for a list of available emojis
         
         $url = $this->router->generate('talk', ['id' => $talk->getId()], true);
-        $message = sprintf('[%s]: <%s|%s> %s', $talk->getTrack(), $url, $talk, $talk->getUser());
+        $message = sprintf('[%s]: <%s|%s> [%s] %s', $talk->getTrack(), $url, $talk, $talk->getLanguage(), $talk->getUser());
         $message .= "\n";
         $message .= $talk->getDescription();
 
