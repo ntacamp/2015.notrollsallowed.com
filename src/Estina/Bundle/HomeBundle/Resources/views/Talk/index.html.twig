@@ -20,7 +20,7 @@
             <tr>
                 <td><a href="{{ path('talk', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>
-                    <a href="{{ path('talk', { 'id': entity.id }) }}">{{ entity.title }}</a>
+                    <a href="{{ path('talk', { 'id': entity.id }) }}">[{{ entity.language }}] {{ entity.title }}</a>
                     <br>{{ entity.user }}
                     <br><a href="mailto:{{ entity.user.email}}">{{ entity.user.email }}</a>
                 </td>

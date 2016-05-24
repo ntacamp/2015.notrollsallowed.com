@@ -25,8 +25,14 @@
                     {% if talk.status == 'accepted' %}
                         {% set count = count+1 %}
                         <div class="talk">
-                            <a href="{{ path('talk', {'id': talk.id}) }}"><img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded"></a>
-                            <h4><a href="{{ path('talk', {'id': talk.id}) }}" title="{{ talk.title }}">{{ talk.title }}</a></h4>
+                            <a href="{{ path('talk', {'id': talk.id}) }}">
+                                <img src="{{ talk.user.email | gravatar }}" alt="{{ talk.user.name }}" class="media-object img-rounded">
+                            </a>
+                            <h4>
+                                <a href="{{ path('talk', {'id': talk.id}) }}" title="{{ talk.title }}">
+                                    {{ talk.title }} [{{ talk.language }}]
+                                </a>
+                            </h4>
                             <p><strong>
                                 {% if talk.organizer %}
                                 {{ talk.organizer }} 
