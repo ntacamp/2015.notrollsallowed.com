@@ -82,7 +82,7 @@ class Talk
     /**
      * @var boolean
      *
-     * @ORM\Column(name="language", type="string", length=20)
+     * @ORM\Column(name="language", type="string", length=20, nullable=true)
      */
     private $language;
 
