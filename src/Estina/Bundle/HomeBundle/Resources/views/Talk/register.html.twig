@@ -1,4 +1,4 @@
-{% extends "EstinaHomeBundle::page.html.twig" %}
+{% extends "EstinaHomeBundle::page-liquid.html.twig" %}
 
 {% form_theme form _self %}
 
@@ -35,60 +35,99 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Pranešimo registracija</h1>
 
-    <blockquote>No Trolls Allowed vyks <b>2016 m. liepos 21-24 d.</b>,<br>
-        pranešimų registracija vyksta iki
-        {{ registration_deadline|date("Y-m-d") }}. 
-    </blockquote>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        
+        <h1>Registracija į No Trolls Allowed</h1>
 
-    <hr>
-    {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
-        {{ form_start(form) }}
-            {{ form_errors(form) }}
-            <div id="estina_bundle_homebundle_registertalk">
-                {% if form.user is defined %}
-                    {{ form_row(form.user.name) }}
-                    {{ form_row(form.user.email) }}
-                    {{ form_row(form.user.phone) }}
-                    {{ form_rest(form.user) }}
-                {% endif %}
-                {{ form_row(form.language) }}
-                {{ form_row(form.title) }}
-                <div class="form-group">
-                    {{ form_label(form.track) }}
-                    {{ form_widget(form.track) }}
-                    {{ form_errors(form.track) }}
-                    <span class="text-note">
-                        <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
-                    </span>
-                </div>
-                <div class="form-group">
-                    {{ form_label(form.description) }}
-                    {{ form_widget(form.description, {
-                        'attr': {'rows': 8}
-                    })}}
-                    {{ form_errors(form.description) }}
-                    <span class="text-note">Aprašymui galite naudoti
-                        <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
-                    </span>
-                </div>
-                <div class="form-group">
-                    <hr class="dashed">
-                    <div id="preview"></div>
-                    <hr class="dashed">
-                </div>
-                {{ form_row(form.submit, {
-                    'label': 'Registruotis',
-                    'attr': {'class': 'btn btn-info btn-register'}
-                })}}
-                {{ form_rest(form) }}
+        <h3>Pagrindinė renginio taisyklė - visi norintys dalyvauti renginyje turi prisidėti prie jo savo asmeninėmis super-galiomis.</h3>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <p>Tai galima padaryti dviem būdais:</p>
+                <ol>
+                    <li>Paprasčiausias kelias yra pasiruošti skaityti pranešimą vienoje iš NTA scenų.<br/>
+                    Tai gali būti bet kokia prezentacija, demonstracija ar pasakojimas. Mes skatiname tave pasakoti apie tai ką išmanai geriausiai - tavo asmeninius projektus, hobius, keliones, tyrimus ir pan. Tiesiog norime, jog papasakotum apie tai kas tave veža ir taip išmokytum kažką naujo.</li>
+                    <li>Jeigu pranešimo skaitymas atrodo neįdomus, gali organizuoti dirbtuves. (a.k.a. workshop'ą). Turi talentą mokyti piešti, kepti blynus ar konstruoti robotus? Puiku! Laukiam to stovykloje!</li>
+                </ol>
+                
             </div>
-        {{ form_end(form) }}
-    {% else %}
-    <p>
-    Pranešimų registracija pasibaigė. Jeigu turite klausimų ar pasiūlymų,
-    <a href="{{ path('page_contacts') }}">susisiekite</a> su mumis.
-    </p>
-    {% endif %}
+            <div class="col-md-4">
+                <blockquote>
+                    No Trolls Allowed vyks <br/>
+                    <b>2016 m. liepos 21-24 d.</b><br>
+                    Pranešimų registracija vyksta iki
+                    {{ registration_deadline|date("Y-m-d") }}. 
+                </blockquote>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+                    {{ form_start(form) }}
+                        {{ form_errors(form) }}
+                        <div id="estina_bundle_homebundle_registertalk">
+                            {% if form.user is defined %}
+                                {{ form_row(form.user.name) }}
+                                {{ form_row(form.user.email) }}
+                                {{ form_row(form.user.phone) }}
+                                {{ form_rest(form.user) }}
+                            {% endif %}
+                            {{ form_row(form.language) }}
+                            <div class="form-group">
+                                {{ form_label(form.title) }}
+                                {{ form_widget(form.title) }}
+                                {{ form_errors(form.title) }}
+                                <span class="text-node">
+                                    <small>Jeigu dar nesugalvojai ką nori daryti, tuomet gali nurodyti preliminarią temą arba tiesiog nurodyti TBA (To Be Announced). </small>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.track) }}
+                                {{ form_widget(form.track) }}
+                                {{ form_errors(form.track) }}
+                                <span class="text-note">
+                                    <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.description) }}
+                                {{ form_widget(form.description, {
+                                    'attr': {'rows': 8}
+                                })}}
+                                {{ form_errors(form.description) }}
+                                <span class="text-note">Aprašymui galite naudoti
+                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <hr class="dashed">
+                                <div id="preview"></div>
+                                <hr class="dashed">
+                            </div>
+                            {{ form_row(form.submit, {
+                                'label': 'Registruotis',
+                                'attr': {'class': 'btn btn-info btn-register pull-right'}
+                            })}}
+                            {{ form_rest(form) }}
+                        </div>
+                    {{ form_end(form) }}
+                {% else %}
+                <p>
+                Pranešimų registracija pasibaigė. Jeigu turite klausimų ar pasiūlymų,
+                <a href="{{ path('page_contacts') }}">susisiekite</a> su mumis.
+                </p>
+
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
 {% endblock %}

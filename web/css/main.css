@@ -1,0 +1,114 @@
+body {
+  margin-top: 0px;
+  text-rendering: optimizeLegibility;
+  overflow-y: scroll;
+  -ms-overflow-style: scrollbar;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body * {
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.navbar-default .navbar-brand .logo-title {
+  height: 30px;
+  margin: -5px 0;
+}
+.page {
+  margin-top: 50px;
+}
+.jumbotron {
+  position: relative;
+  text-align: center;
+  margin-top: 0px;
+  max-height: 100vh;
+}
+.jumbotron .container {
+  padding-left: 50px;
+}
+.jumbotron h1 {
+  background: none;
+  opacity: 1;
+  padding: 0;
+  margin: 0;
+}
+.jumbotron h2 {
+  font-size: 2.5em;
+  font-weight: 300;
+  background: none;
+  color: white;
+  opacity: 1;
+  margin: 15px 0 0;
+  padding: 0;
+}
+.jumbotron .jumbotron-contents {
+  padding: 100px 50px;
+}
+.jumbotron .date {
+  margin: 50px 0;
+}
+.jumbotron .carousel:before {
+  background: black;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5;
+}
+.jumbotron .about-jumper {
+  color: white;
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+}
+.jumbotron .about-jumper span {
+  display: block;
+  font-weight: 300;
+  margin: 5px;
+}
+.jumbotron .about-jumper .glyphicon {
+  font-size: 25px;
+}
+.event-details .cta {
+  margin-top: 40px;
+}
+.what h1 {
+  margin: 0 0 40px;
+}
+.what p {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+@media only screen and (max-width: 768px) {
+  .navbar-default .navbar-brand .logo-title {
+    margin: -2px 0;
+    width: 200px;
+    height: auto;
+  }
+  .jumbotron {
+    padding-top: 50px;
+  }
+  .jumbotron .carousel:before {
+    display: none;
+  }
+  .jumbotron .jumbotron-contents {
+    padding: 0 0 50px;
+  }
+  .jumbotron .container {
+    padding-left: 0;
+  }
+  .jumbotron h1 {
+    display: none;
+  }
+  .jumbotron h2,
+  .jumbotron p {
+    color: inherit;
+  }
+}

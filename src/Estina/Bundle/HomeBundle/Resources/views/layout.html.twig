@@ -19,32 +19,43 @@
             filter='cssrewrite' output='css/compiled/all.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
+        {% stylesheets
+            'css/main.css'
+            filter='cssrewrite' output='css/compiled/main.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
 		<!--== FB meta ==-->
         <meta property="og:url" content="{{ url('home') }}">
-        <meta property="og:title" content="No Trolls Allowed 2016">
-        <meta property="og:description" content="Pirmas ir vienintelis hackercamp'as Lietuvoje! Po atviru dangumi vykstantis renginys, siekiantis suburti įvairių pomėgių turinčius žmones. Čia laukiami progamuotojai, įvairaus plauko geek'ai, mokslininkai, konstruktoriai, artistai, menininkai ir kitų sričių specialistai, galintys ir norintys pasidalinti savo žiniomis. Norite sudalyvauti? Pasiimkite savo šeimyną, maisto, gėrimų, bei palapinę viskam sutalpinti ir atvažiuokite!">
-        <meta property="og:image" content="{{ asset('images/troll-medium.png') }}"/>
+        <meta property="og:title" content="No Trolls Allowed 2016 | Didžiausias Hackercamp'as Lietuvoje">
+        <meta property="og:description" content="Po atviru dangumi vykstantis renginys, siekiantis suburti įvairių pomėgių turinčius žmones. Čia laukiami progamuotojai, įvairaus plauko geek'ai, mokslininkai, konstruktoriai, artistai, menininkai ir kitų sričių specialistai, galintys ir norintys pasidalinti savo žiniomis. Norite sudalyvauti? Pasiimkite savo šeimyną, maisto, gėrimų, bei palapinę viskam sutalpinti ir atvažiuokite!">
+        <meta property="og:image" content="{{ asset('images/basic-sticker.png') }}"/>
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="310">
         <meta property="og:image:height" content="300">
     </head>
+
     {% set _template = app.request.get('_template')|split(':') %}
     {% set controller = _template[1] %}
     {% set _view = _template[2]|split('.') %}
     {% set action = _view[0] %}
+    
     <body data-controller="{{ controller }}"
           data-action="{{ action }}">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
+
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nta-navbar">
                         <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('images/logo.png')}}"><span>No Trolls Allowed</span></a>
+                    <a class="navbar-brand" href="{{ path('home') }}">
+                        <img src="{{ asset('images/logo.png')}}">
+                        <img class="logo-title" src="{{ asset('images/nta_logo.png')}}">
+                    </a>
                 </div>
-                <div class="pull-right">
-                    
+
+                <div class="pull-right hidden-xs">
                     {% if not is_granted("ROLE_USER") %}
                         <a href="{{ path('login_route') }}" class="navbar-btn btn">Prisijungti</a>
                     {% else %}
@@ -62,10 +73,19 @@
                             </li>
                         </ul>
                     {% endif %}
-
                 </div>
+
                 <div class="collapse navbar-collapse" id="nta-navbar">
                     <ul class="nav navbar-default navbar-nav">
+                        {% if not is_granted("ROLE_USER") %}
+                            <li><a href="{{ path('login_route') }}">Prisijungti</a></li>
+                        {% else %}
+                            <li><a href="{{ path('user_profile') }}">Mano pranešimai</a></li>
+                            <li><a href="{{ path('user_profile_edit') }}">Redaguoti profilį</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ path('logout') }}"><em>Atsijungti</em></a></li>
+                        {% endif %}
+                        <li class="divider"></li>
                         <li><a href="{{ path('page_about') }}">Apie</i></a></li>
                         {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
                         <li><a href="{{ path('talk_register') }}">Registracija</a></li>

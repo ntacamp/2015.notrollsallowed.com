@@ -13,12 +13,29 @@ var App = App || {};
             }
         },
 
+        setSmoothScrolling: function() {
+            $('a.scroll').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        },
+
         init: function() {
             var body = document.body,
                 controller = body.getAttribute("data-controller"),
                 action = body.getAttribute("data-action");
+            
             App.Main.exec(controller);
             App.Main.exec(controller, action);
+            App.Main.setSmoothScrolling();
         }
     };
 

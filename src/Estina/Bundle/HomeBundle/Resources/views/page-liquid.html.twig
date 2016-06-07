@@ -1,0 +1,16 @@
+{% extends "EstinaHomeBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="page">
+        <div class="container">
+            
+            {% block breadcrumb %}{% endblock %}
+            {% include "EstinaHomeBundle::flash-messages.html.twig" %}
+
+            <article>
+                {% block content %}{% endblock %}
+            </article>
+        </div>
+    </div>
+{% endblock %}
+
