@@ -55,7 +55,7 @@
                     </a>
                 </div>
 
-                <div class="pull-right hidden-xs">
+                <div class="pull-right hidden-xs hidden-sm">
                     {% if not is_granted("ROLE_USER") %}
                         <a href="{{ path('login_route') }}" class="navbar-btn btn">Prisijungti</a>
                     {% else %}
@@ -78,12 +78,12 @@
                 <div class="collapse navbar-collapse" id="nta-navbar">
                     <ul class="nav navbar-default navbar-nav">
                         {% if not is_granted("ROLE_USER") %}
-                            <li><a href="{{ path('login_route') }}">Prisijungti</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('login_route') }}">Prisijungti</a></li>
                         {% else %}
-                            <li><a href="{{ path('user_profile') }}">Mano pranešimai</a></li>
-                            <li><a href="{{ path('user_profile_edit') }}">Redaguoti profilį</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile') }}">Mano pranešimai</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile_edit') }}">Redaguoti profilį</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{ path('logout') }}"><em>Atsijungti</em></a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>Atsijungti</em></a></li>
                         {% endif %}
                         <li class="divider"></li>
                         <li><a href="{{ path('page_about') }}">Apie</i></a></li>
