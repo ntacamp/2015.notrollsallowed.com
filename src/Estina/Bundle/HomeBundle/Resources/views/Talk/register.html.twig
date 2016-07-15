@@ -67,7 +67,7 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+                {% if display %}
                     {{ form_start(form) }}
                         {{ form_errors(form) }}
                         <div id="estina_bundle_homebundle_registertalk">

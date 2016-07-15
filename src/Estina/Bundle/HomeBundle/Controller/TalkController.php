@@ -36,8 +36,8 @@ class TalkController extends Controller
         if ($user = $this->getUser()) {
             $entity->setUser($user);
         }
-        $form   = $this->createRegistrationForm($entity);
 
+        $form = $this->createRegistrationForm( $entity );
         if ('POST' === $request->getMethod()) {
             $form->handleRequest($request);
 
@@ -73,7 +73,20 @@ class TalkController extends Controller
 
         return array(
             'form' => $form->createView(),
+            'display' => $this->shouldDisplayForm($request),
         );
+    }
+
+    private function shouldDisplayForm(Request $request)
+    {
+        $lazy_registration = $request->query->has('iamlazystudent');
+        $deadline = $this->getParameter('registration_deadline');
+
+        if (time() - strtotime($deadline) < 0 || $lazy_registration) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
