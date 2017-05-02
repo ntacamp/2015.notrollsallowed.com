@@ -18,7 +18,7 @@ parameters:
     dev_email:         ~
 
     slack_api_token:   ~
-    registration_deadline: '2016-07-17 23:59:59'
+    registration_deadline: '2017-07-17 23:59:59'
 
     social_hashtag_enabled: true
     social_hashtag_exclude_users: ['detstriathlon', 'matt_hauser', '']
