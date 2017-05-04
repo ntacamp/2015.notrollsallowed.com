@@ -90,7 +90,7 @@
                         {% endif %}
                         <li class="divider"></li>
                         <li><a href="{{ path('page_about') }}">Apie</i></a></li>
-                        {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+                        {% if "now"|date("Y-m-d") <= registration_deadline %}
                         <li><a href="{{ path('talk_register') }}">Registracija</a></li>
                         {% endif %}
                         <li class="dropdown">
@@ -126,7 +126,7 @@
                         <dd class="nav-item">
                             <a href="{{ path('home') }}#vieta">Vieta</a>
                         </dd>
-                        {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+                        {% if "now"|date("Y-m-d") <= registration_deadline %}
                         <dd class="nav-item">
                             <a href="{{ path('talk_register') }}">Registracija</a>
                         </dd>

@@ -23,7 +23,7 @@
                 <h1><img alt="No Trolls Allowed" src="{{ asset('images/nta_logo.png')}}"></h1>
                 <h2>Didžiausias hackercamp'as Lietuvoje!</h2>
                 <p class="date">2017 m. Liepos 21 - 24 d.</p>
-                {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+                {% if "now"|date("Y-m-d") <= registration_deadline %}
                     <p><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Registruokis &raquo;</a></p>
                 {% endif %}
             </div>
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-            {% if "now"|date("Y-m-d H:i:s") < registration_deadline %}
+            {% if "now"|date("Y-m-d") <= registration_deadline %}
             <div class="row cta">
                 <div class="col-md-12 text-center">
                     <p><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Registruokis &raquo;</a></p>
