@@ -45,7 +45,10 @@
         "(.html.php)",
         "(.json.php)",
         "(.twig)"
-      ]
+      ],
+      "severity": {
+        "TXT5": "disabled"
+      }
     }
   }
 }
