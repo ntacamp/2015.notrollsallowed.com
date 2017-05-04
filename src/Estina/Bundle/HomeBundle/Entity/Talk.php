@@ -52,6 +52,32 @@ class Talk
     private $description;
 
     /**
+     * @var string
+     *
+     * Optional pre-requirements for talk attendees.
+     *
+     * @ORM\Column(name="requirements", type="text", nullable=true)
+     */
+    private $requirements;
+
+    /**
+     * @var string
+     *
+     * Comments, special requests for organizers.
+     *
+     * @ORM\Column(name="comments", type="text")
+     */
+    private $comments;
+
+    /**
+     * Requested duration for the talk.
+     *
+     * @ORM\Column(name="duration", type="string", length=64, nullable=true)
+     * @Assert\Length(max="64")
+     **/
+    private $durationRequest;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_on", type="datetime")
@@ -73,18 +99,45 @@ class Talk
     private $acceptedAt = null;
 
     /**
-     * @var boolean
+     * @var string
      *
      * @ORM\Column(name="status", type="string", length=20)
      */
     private $status = self::STATUS_NEW;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="language", type="string", length=20, nullable=true)
+     * @Assert\NotBlank()
+     * @ORM\Column(name="language", type="string", length=20, nullable=false)
      */
     private $language;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="tshirt_size", type="string", length=5, nullable=false)
+     */
+    private $tshirtSize;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="tshirt_model", type="string", length=10, nullable=false)
+     */
+    private $tshirtModel;
+
+    /**
+     * Talk type (workshop, presentation, etc.)
+     *
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="type", type="string", length=20, nullable=false)
+     */
+    private $type;
 
     /**
      * @Assert\NotBlank()
@@ -324,11 +377,6 @@ class Talk
         return $this;
     }
 
-    public function getOrganizer()
-    {
-        return $this->organizer;
-    }
-
     public function cancel()
     {
         $this->setUpdatedAt(new \DateTime());
@@ -382,6 +430,11 @@ class Talk
         return $this->language;
     }
 
+    public function getOrganizer()
+    {
+        return $this->organizer;
+    }
+
     /**
      * Set organizer
      *
@@ -392,6 +445,144 @@ class Talk
     public function setOrganizer($organizer)
     {
         $this->organizer = $organizer;
+
+        return $this;
+    }
+
+    /**
+     * Getter for type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * @param string $type
+     * @return Talk
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Getter for requirements
+     *
+     * @return string
+     */
+    public function getRequirements()
+    {
+        return $this->requirements;
+    }
+
+    /**
+     * Setter for requirements
+     *
+     * @param string $requirements
+     * @return Talk
+     */
+    public function setRequirements($requirements)
+    {
+        $this->requirements = $requirements;
+
+        return $this;
+    }
+
+    /**
+     * Getter for duration
+     *
+     * @return string
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * Setter for duration
+     *
+     * @param string $duration
+     * @return Talk
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Getter for comments
+     *
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Setter for comments
+     *
+     * @param string $comments
+     * @return Talk
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Getter for tshirtSize
+     *
+     * @return string
+     */
+    public function getTshirtSize()
+    {
+        return $this->tshirtSize;
+    }
+
+    /**
+     * Setter for tshirtSize
+     *
+     * @param string $tshirtSize
+     * @return Talk
+     */
+    public function setTshirtSize($tshirtSize)
+    {
+        $this->tshirtSize = $tshirtSize;
+
+        return $this;
+    }
+
+    /**
+     * Getter for tshirtModel
+     *
+     * @return string
+     */
+    public function getTshirtModel()
+    {
+        return $this->tshirtModel;
+    }
+
+    /**
+     * Setter for tshirtModel
+     *
+     * @param string $tshirtModel
+     * @return Talk
+     */
+    public function setTshirtModel($tshirtModel)
+    {
+        $this->tshirtModel = $tshirtModel;
 
         return $this;
     }
