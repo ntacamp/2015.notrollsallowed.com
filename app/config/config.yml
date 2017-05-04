@@ -32,6 +32,7 @@ twig:
     globals:
         admin_email:  "%admin_email%"
         registration_deadline: %registration_deadline%
+        ntacamp_date: %ntacamp_date%
     form_themes: ['bootstrap_3_layout.html.twig']
 
 # Assetic Configuration
