@@ -39,7 +39,7 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         
-        <h1>Registracija į No Trolls Allowed</h1>
+        <h1>No Trolls Allowed Registration</h1>
 
         <h3>Pagrindinė renginio taisyklė - visi norintys dalyvauti renginyje turi prisidėti prie jo savo asmeninėmis super-galiomis.</h3>
         
@@ -77,18 +77,16 @@
                                 {{ form_row(form.user.phone) }}
                                 {{ form_rest(form.user) }}
                             {% endif %}
+                            <hr class="dashed">
+                            {{ form_row(form.type) }}
+                            {{ form_row(form.title) }}
                             {{ form_row(form.language) }}
-                            <div class="form-group">
-                                {{ form_label(form.title) }}
-                                {{ form_widget(form.title) }}
-                                {{ form_errors(form.title) }}
-                            </div>
                             <div class="form-group">
                                 {{ form_label(form.track) }}
                                 {{ form_widget(form.track) }}
                                 {{ form_errors(form.track) }}
                                 <span class="text-note">
-                                    <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">Čia rasite scenų aprašymus.</a>
+                                    Stage descriptions are located <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">here</a>.
                                 </span>
                             </div>
                             <div class="form-group">
@@ -97,8 +95,8 @@
                                     'attr': {'rows': 8}
                                 })}}
                                 {{ form_errors(form.description) }}
-                                <span class="text-note">Aprašymui galite naudoti
-                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.
+                                <span class="text-note">
+                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> supported
                                 </span>
                             </div>
                             <div class="form-group">
@@ -106,10 +104,6 @@
                                 <div id="preview"></div>
                                 <hr class="dashed">
                             </div>
-                            {{ form_row(form.submit, {
-                                'label': 'Registruotis',
-                                'attr': {'class': 'btn btn-info btn-register pull-right'}
-                            })}}
                             {{ form_rest(form) }}
                         </div>
                     {{ form_end(form) }}

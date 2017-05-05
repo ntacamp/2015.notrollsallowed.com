@@ -25,6 +25,15 @@ class Talk
 
     /** Speaker changed his mind */
     const STATUS_CANCELLED = 'cancelled';
+
+    private static $types = ['presentation', 'discussion', 'workshop', 'other'];
+
+    /**
+     * @return array
+     */
+    public static function getTypesMap() {
+        return array_combine(self::$types, array_map("ucfirst", self::$types));
+    }
     
     /**
      * @var integer
@@ -39,7 +48,8 @@ class Talk
      * @var string
      *
      * @Assert\NotBlank()
-     * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\Length(max="300")
+     * @ORM\Column(name="title", type="string", length=300)
      */
     private $title;
 
@@ -50,6 +60,44 @@ class Talk
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var string
+     *
+     * Optional pre-requirements for talk attendees.
+     *
+     * @ORM\Column(name="requirements", type="text", nullable=true)
+     */
+    private $requirements;
+
+    /**
+     * @var string
+     *
+     * Comments, special requests for organizers.
+     *
+     * @ORM\Column(name="comments", type="text", nullable=true)
+     */
+    private $comments;
+
+    /**
+     * @var string
+     *
+     * Optional question #1
+     *
+     * @ORM\Column(name="question1", type="string", length=300, nullable=true)
+     * @Assert\Length(max="300")
+     */
+    private $question1;
+
+    /**
+     * @var string
+     *
+     * Optional question #2
+     *
+     * @ORM\Column(name="question2", type="string", length=300, nullable=true)
+     * @Assert\Length(max="300")
+     */
+    private $question2;
 
     /**
      * @var \DateTime
@@ -73,18 +121,45 @@ class Talk
     private $acceptedAt = null;
 
     /**
-     * @var boolean
+     * @var string
      *
      * @ORM\Column(name="status", type="string", length=20)
      */
     private $status = self::STATUS_NEW;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="language", type="string", length=20, nullable=true)
+     * @Assert\NotBlank()
+     * @ORM\Column(name="language", type="string", length=20, nullable=false)
      */
     private $language;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="tshirt_size", type="string", length=5, nullable=false)
+     */
+    private $tshirtSize;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="tshirt_model", type="string", length=10, nullable=false)
+     */
+    private $tshirtModel;
+
+    /**
+     * Talk type (workshop, presentation, etc.)
+     *
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="type", type="string", length=20, nullable=false)
+     */
+    private $type;
 
     /**
      * @Assert\NotBlank()
@@ -324,11 +399,6 @@ class Talk
         return $this;
     }
 
-    public function getOrganizer()
-    {
-        return $this->organizer;
-    }
-
     public function cancel()
     {
         $this->setUpdatedAt(new \DateTime());
@@ -382,6 +452,11 @@ class Talk
         return $this->language;
     }
 
+    public function getOrganizer()
+    {
+        return $this->organizer;
+    }
+
     /**
      * Set organizer
      *
@@ -393,6 +468,167 @@ class Talk
     {
         $this->organizer = $organizer;
 
+        return $this;
+    }
+
+    /**
+     * Getter for type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * @param string $type
+     * @return Talk
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Getter for requirements
+     *
+     * @return string
+     */
+    public function getRequirements()
+    {
+        return $this->requirements;
+    }
+
+    /**
+     * Setter for requirements
+     *
+     * @param string $requirements
+     * @return Talk
+     */
+    public function setRequirements($requirements)
+    {
+        $this->requirements = $requirements;
+
+        return $this;
+    }
+
+    /**
+     * Getter for comments
+     *
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Setter for comments
+     *
+     * @param string $comments
+     * @return Talk
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Getter for tshirtSize
+     *
+     * @return string
+     */
+    public function getTshirtSize()
+    {
+        return $this->tshirtSize;
+    }
+
+    /**
+     * Setter for tshirtSize
+     *
+     * @param string $tshirtSize
+     * @return Talk
+     */
+    public function setTshirtSize($tshirtSize)
+    {
+        $this->tshirtSize = $tshirtSize;
+
+        return $this;
+    }
+
+    /**
+     * Getter for tshirtModel
+     *
+     * @return string
+     */
+    public function getTshirtModel()
+    {
+        return $this->tshirtModel;
+    }
+
+    /**
+     * Setter for tshirtModel
+     *
+     * @param string $tshirtModel
+     * @return Talk
+     */
+    public function setTshirtModel($tshirtModel)
+    {
+        $this->tshirtModel = $tshirtModel;
+
+        return $this;
+    }
+
+    /**
+     * Getter for question1
+     *
+     * @return string
+     */
+    public function getQuestion1()
+    {
+        return $this->question1;
+    }
+    
+    /**
+     * Setter for question1
+     *
+     * @param string $question1
+     * @return Talk
+     */
+    public function setQuestion1($question1)
+    {
+        $this->question1 = $question1;
+    
+        return $this;
+    }
+
+    /**
+     * Getter for question2
+     *
+     * @return string
+     */
+    public function getQuestion2()
+    {
+        return $this->question2;
+    }
+    
+    /**
+     * Setter for question2
+     *
+     * @param string $question2
+     * @return Talk
+     */
+    public function setQuestion2($question2)
+    {
+        $this->question2 = $question2;
+    
         return $this;
     }
 }

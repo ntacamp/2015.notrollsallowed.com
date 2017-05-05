@@ -5,6 +5,7 @@ namespace Estina\Bundle\HomeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Estina\Bundle\HomeBundle\Entity\Talk;
 
 /**
  * Register talk.
@@ -12,6 +13,10 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class RegisterTalkType extends AbstractType
 {
     private $addUser = true;
+
+    private $tshirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+
+    private $tshirtModels = ['unisex', 'women'];
 
     public function __construct($addUser = true)
     {
@@ -28,23 +33,46 @@ class RegisterTalkType extends AbstractType
             $builder->add('user', new UserType(), ['label' => false]);
         }
         $builder
-            ->add('language', 'choice', [
-                'label' => 'Pranešimo kalba',
-                'choices' => ['LT' => 'LT', 'EN' => 'EN'],
-                'label_attr' => ['text_en' => 'presentation language']
+            ->add('type', 'choice', [
+                'label' => 'Type of presentation',
+                'choices' => Talk::getTypesMap(),
             ])
             ->add('title', 'text', [
-                'label' => 'Pranešimo tema',
-                'label_attr' => ['text_en' => 'talk title']
+                'label' => 'Complete title',
+            ])
+            ->add('language', 'choice', [
+                'label' => 'Presentation language',
+                'choices' => ['LT' => 'LT', 'EN' => 'EN'],
             ])
             ->add('description', 'textarea', [
-                'label' => 'Pranešimo aprašymas',
-                'label_attr' => ['text_en' => 'talk description']
+                'label' => 'Talk description',
+            ])
+            ->add('requirements', 'textarea', [
+                'label' => 'Requirements for attendees',
+                'required' => false,
             ])
             ->add('track', null, [
-                'label' => 'Scena', 
+                'label' => 'Stage', 
                 'required' => false,
-                'label_attr' => ['text_en' => 'scene']
+            ])
+            ->add('comments', 'textarea', [
+                'label' => 'Comments/special requests',
+                'required' => false,
+            ])
+            ->add('tshirtModel', 'choice', [
+                'label' => 'T-shirt model',
+                'choices' => array_combine(
+                    $this->tshirtModels, array_map("ucfirst", $this->tshirtModels)),
+            ])
+            ->add('tshirtSize', 'choice', [
+                'label' => 'T-shirt size',
+                'choices' => array_combine($this->tshirtSizes, $this->tshirtSizes),
+            ])
+            ->add('question1', 'text', [
+                'label' => 'What can you teach other No Trolls Allowed attendees in 5 minutes?',
+            ])
+            ->add('question2', 'text', [
+                'label' => 'How can you contribute to No Trolls Allowed event?',
             ])
         ;
     }

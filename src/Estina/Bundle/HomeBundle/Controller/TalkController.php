@@ -27,7 +27,7 @@ class TalkController extends Controller
     /**
      * Register talk. 
      * 
-     * @Route("/pranesimo-registracija", name="talk_register")
+     * @Route("/register", name="talk_register")
      * @Template()
      */
     public function registerAction(Request $request)
@@ -113,7 +113,7 @@ class TalkController extends Controller
             'method' => 'POST',
         ]);
 
-        $form->add('submit', 'submit', array('label' => 'Registruotis'));
+        $form->add('submit', 'submit', array('label' => 'Register'));
 
         return $form;
     }
@@ -198,7 +198,7 @@ class TalkController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Registruotis'));
+        $form->add('submit', 'submit', array('label' => 'Register'));
 
         return $form;
     }
