@@ -39,26 +39,29 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         
-        <h1>No Trolls Allowed Registration</h1>
+        <h1>Registration</h1>
 
-        <h3>Pagrindinė renginio taisyklė - visi norintys dalyvauti renginyje turi prisidėti prie jo savo asmeninėmis super-galiomis.</h3>
         
         <div class="row">
             <div class="col-md-8">
-                <p>Tai galima padaryti dviem būdais:</p>
-                <ol>
-                    <li>Paprasčiausias kelias yra pasiruošti skaityti pranešimą vienoje iš NTA scenų.<br/>
-                    Tai gali būti bet kokia prezentacija, demonstracija ar pasakojimas. Mes skatiname tave pasakoti apie tai ką išmanai geriausiai - tavo asmeninius projektus, hobius, keliones, tyrimus ir pan. Tiesiog norime, jog papasakotum apie tai kas tave veža ir taip išmokytum kažką naujo.</li>
-                    <li>Jeigu pranešimo skaitymas atrodo neįdomus, gali organizuoti dirbtuves. (a.k.a. workshop'ą). Turi talentą mokyti piešti, kepti blynus ar konstruoti robotus? Puiku! Laukiam to stovykloje!</li>
-                </ol>
-                
+        <h3>Main rule - every participant must contribute to the event.</h3>
+                <p>
+                Please register you presentation or workshop by filling the
+                form below. Organizers are going to review your submition in
+                near time and confirm the registration or contact you with
+                additional requests or recommendations. Please be patient.
+                </p>
+                <p>
+                "TBA" and similar registrations are forwarded to /dev/null.
+                </p>
             </div>
             <div class="col-md-4">
                 <blockquote>
-                    No Trolls Allowed vyks <br/>
+                    Event date:<br>
                     <b>{{ ntacamp_date }}</b><br>
-                    Pranešimų registracija vyksta iki
-                    {{ registration_deadline|date("Y-m-d") }}. 
+                    <br>
+                    Registration deadline:<br>
+                    <b>{{ registration_deadline|date("Y-m-d") }}</b> 
                 </blockquote>
             </div>
         </div>
