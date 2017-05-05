@@ -50,7 +50,7 @@ class RegisterTalkType extends AbstractType
                 'label_attr' => ['addition' => 'Gali būti lietuvių kalba']
             ])
             ->add('requirements', 'textarea', [
-                'label' => 'Requirements for attendees (optional)',
+                'label' => 'Requirements for Attendees',
                 'required' => false,
             ])
             ->add('track', null, [
@@ -67,7 +67,7 @@ class RegisterTalkType extends AbstractType
                     $this->tshirtModels, array_map("ucfirst", $this->tshirtModels)),
             ])
             ->add('tshirtSize', 'choice', [
-                'label' => 'T-Shirt Model',
+                'label' => 'T-Shirt size',
                 'choices' => array_combine($this->tshirtSizes, $this->tshirtSizes),
             ])
             ->add('question1', 'text', [

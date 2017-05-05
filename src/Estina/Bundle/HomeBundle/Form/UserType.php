@@ -29,23 +29,20 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', [
-            'label' => 'Vardas, pavardė',
-            'label_attr' => ['text_en' => 'name, surname']
+            'label' => 'First, Last Name',
         ]);
         $builder->add('email', 'email', [
-            'label' => 'El. Paštas',
-            'label_attr' => ['text_en' => 'email']
+            'label' => 'E-mail',
         ]);
         $builder->add('phone', 'text', [
-            'label' => 'Telefonas',
-            'label_attr' => ['text_en' => 'phone number']
+            'label' => 'Phone number',
         ]);
         if ($this->addAdditionalFields) {
             $builder->add(
                 'twitter', 
                 'text', 
                 [
-                    'label' => 'Twitter name',
+                    'label' => 'Twitter',
                     'required' => false
                 ]
             );
@@ -53,7 +50,7 @@ class UserType extends AbstractType
                 'github', 
                 'text', 
                 [
-                    'label' => 'GitHub name',
+                    'label' => 'GitHub',
                     'required' => false
                 ]
             );
