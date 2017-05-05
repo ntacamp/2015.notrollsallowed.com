@@ -34,23 +34,21 @@ class RegisterTalkType extends AbstractType
         }
         $builder
             ->add('type', 'choice', [
-                'label' => 'Type of Presentation',
+                'label' => 'Type of presentation',
                 'choices' => Talk::getTypesMap(),
             ])
             ->add('title', 'text', [
-                'label' => 'Complete Title',
-                'label_attr' => ['addition' => 'Gali būti lietuvių kalba']
+                'label' => 'Complete title',
             ])
             ->add('language', 'choice', [
-                'label' => 'Presentation Language',
+                'label' => 'Presentation language',
                 'choices' => ['LT' => 'LT', 'EN' => 'EN'],
             ])
             ->add('description', 'textarea', [
                 'label' => 'Talk description',
-                'label_attr' => ['addition' => 'Gali būti lietuvių kalba']
             ])
             ->add('requirements', 'textarea', [
-                'label' => 'Requirements for Attendees',
+                'label' => 'Requirements for attendees',
                 'required' => false,
             ])
             ->add('track', null, [
@@ -58,16 +56,16 @@ class RegisterTalkType extends AbstractType
                 'required' => false,
             ])
             ->add('comments', 'textarea', [
-                'label' => 'Comments/Special Requests',
+                'label' => 'Comments/special requests',
                 'required' => false,
             ])
             ->add('tshirtModel', 'choice', [
-                'label' => 'T-Shirt Model',
+                'label' => 'T-shirt model',
                 'choices' => array_combine(
                     $this->tshirtModels, array_map("ucfirst", $this->tshirtModels)),
             ])
             ->add('tshirtSize', 'choice', [
-                'label' => 'T-Shirt size',
+                'label' => 'T-shirt size',
                 'choices' => array_combine($this->tshirtSizes, $this->tshirtSizes),
             ])
             ->add('question1', 'text', [

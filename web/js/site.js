@@ -63,7 +63,7 @@ var App = App || {};
             var $preview = $('#preview');
 
             var empty = function() {
-                $preview.html('<em>Čia bus aprašymo peržiūra.</em>');
+                $preview.html('<em>Description preview</em>');
             };
 
             $textarea.bind('input propertychange', function() {
