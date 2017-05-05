@@ -25,6 +25,15 @@ class Talk
 
     /** Speaker changed his mind */
     const STATUS_CANCELLED = 'cancelled';
+
+    private static $types = ['presentation', 'discussion', 'workshop', 'other'];
+
+    /**
+     * @return array
+     */
+    public static function getTypesMap() {
+        return array_combine(self::$types, array_map("ucfirst", self::$types));
+    }
     
     /**
      * @var integer
@@ -39,7 +48,8 @@ class Talk
      * @var string
      *
      * @Assert\NotBlank()
-     * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\Length(max="300")
+     * @ORM\Column(name="title", type="string", length=300)
      */
     private $title;
 
@@ -65,17 +75,29 @@ class Talk
      *
      * Comments, special requests for organizers.
      *
-     * @ORM\Column(name="comments", type="text")
+     * @ORM\Column(name="comments", type="text", nullable=true)
      */
     private $comments;
 
     /**
-     * Requested duration for the talk.
+     * @var string
      *
-     * @ORM\Column(name="duration", type="string", length=64, nullable=true)
-     * @Assert\Length(max="64")
-     **/
-    private $durationRequest;
+     * Optional question #1
+     *
+     * @ORM\Column(name="question1", type="string", length=300, nullable=true)
+     * @Assert\Length(max="300")
+     */
+    private $question1;
+
+    /**
+     * @var string
+     *
+     * Optional question #2
+     *
+     * @ORM\Column(name="question2", type="string", length=300, nullable=true)
+     * @Assert\Length(max="300")
+     */
+    private $question2;
 
     /**
      * @var \DateTime
@@ -496,29 +518,6 @@ class Talk
     }
 
     /**
-     * Getter for duration
-     *
-     * @return string
-     */
-    public function getDuration()
-    {
-        return $this->duration;
-    }
-
-    /**
-     * Setter for duration
-     *
-     * @param string $duration
-     * @return Talk
-     */
-    public function setDuration($duration)
-    {
-        $this->duration = $duration;
-
-        return $this;
-    }
-
-    /**
      * Getter for comments
      *
      * @return string
@@ -584,6 +583,52 @@ class Talk
     {
         $this->tshirtModel = $tshirtModel;
 
+        return $this;
+    }
+
+    /**
+     * Getter for question1
+     *
+     * @return string
+     */
+    public function getQuestion1()
+    {
+        return $this->question1;
+    }
+    
+    /**
+     * Setter for question1
+     *
+     * @param string $question1
+     * @return Talk
+     */
+    public function setQuestion1($question1)
+    {
+        $this->question1 = $question1;
+    
+        return $this;
+    }
+
+    /**
+     * Getter for question2
+     *
+     * @return string
+     */
+    public function getQuestion2()
+    {
+        return $this->question2;
+    }
+    
+    /**
+     * Setter for question2
+     *
+     * @param string $question2
+     * @return Talk
+     */
+    public function setQuestion2($question2)
+    {
+        $this->question2 = $question2;
+    
         return $this;
     }
 }
