@@ -19,6 +19,14 @@ body * {
 .page {
   margin-top: 50px;
 }
+
+.hello h1 {
+  font-size: 64px;
+}
+.hello h2 {
+  text-align: center;
+  font-size: 48px;
+}
 .jumbotron {
   position: relative;
   text-align: center;
@@ -28,26 +36,28 @@ body * {
 .jumbotron .container {
   padding-left: 50px;
 }
+.jumbotron .btn-register {
+  float: none !important;
+}
 .jumbotron h1 {
   background: none;
   opacity: 1;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 .jumbotron h2 {
   font-size: 2.5em;
   font-weight: 300;
   background: none;
-  color: white;
+  font-size: 64px;
   opacity: 1;
   margin: 15px 0 0;
   padding: 0;
+  text-align: center;
 }
 .jumbotron .jumbotron-contents {
   padding: 100px 50px;
-}
-.jumbotron .date {
-  margin: 50px 0;
 }
 .jumbotron .carousel:before {
   background: black;
