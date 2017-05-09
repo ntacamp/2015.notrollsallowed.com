@@ -15,10 +15,10 @@ class PagesController extends Controller
     /**
      * English page
      *
-     * @Route("/en", name="page_en")
+     * @Route("/about", name="page_about_en")
      * @Template()
      */
-    public function enAction()
+    public function aboutEnAction()
     {
         return [];
     }

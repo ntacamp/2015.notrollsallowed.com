@@ -89,7 +89,14 @@
                             <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>Logout</em></a></li>
                         {% endif %}
                         <li class="divider"></li>
-                        <li><a href="{{ path('page_about') }}">Apie</i></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NTA<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('page_about') }}">Apie (LT)</i></a></li>
+                                <li><a href="{{ path('page_about_en') }}">About (EN)</a></li>
+                                <li><a href="{{ path('page_faq') }}">FAQ (LT)</a></li>
+                            </ul>
+                        </li>
                         {% if "now"|date("Y-m-d") <= registration_deadline %}
                         <li><a href="{{ path('talk_register') }}">Registration</a></li>
                         {% endif %}
@@ -100,10 +107,8 @@
                                 <li><a href="{{ path('workshops') }}">Workshops</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('page_faq') }}">FAQ</a></li>
-                        <li><a href="{{ path('page_contacts') }}">Contact us</a></li>
+                        <li><a href="{{ path('page_contacts') }}">Contact Us</a></li>
                         <li><a href="http://blog.notrollsallowed.com/">BLOG</a></li>
-                        <li><a href="{{ path('page_en') }}">English</a></li>
                     </ul>
                 </div>
             </div>
