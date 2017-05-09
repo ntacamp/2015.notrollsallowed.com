@@ -56,7 +56,7 @@
 
                 <div class="pull-right hidden-xs hidden-sm">
                     {% if not is_granted("ROLE_USER") %}
-                        <a href="{{ path('login_route') }}" class="navbar-btn btn">Prisijungti</a>
+                        <a href="{{ path('login_route') }}" class="navbar-btn btn">Login</a>
                     {% else %}
                         <ul class="nav navbar-default navbar-nav">
                             <li class="dropdown">
@@ -64,14 +64,14 @@
                                     <strong>{{ app.user }}</strong> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ path('user_profile') }}">Mano pranešimai</a></li>
-                                    <li><a href="{{ path('user_profile_edit') }}">Redaguoti profilį</a></li>
+                                    <li><a href="{{ path('user_profile') }}">My presentations</a></li>
+                                    <li><a href="{{ path('user_profile_edit') }}">Profile</a></li>
                                     {% if is_granted("ROLE_ADMIN") %}
                                     <li class="divider"></li>
                                         <li><a href="{{ path('talk_list') }}">Pranešimų administravimas</a></li>
                                     {% endif %}
                                     <li class="divider"></li>
-                                    <li><a href="{{ path('logout') }}"><em>Atsijungti</em></a></li>
+                                    <li><a href="{{ path('logout') }}"><em>Logout</em></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -81,27 +81,27 @@
                 <div class="collapse navbar-collapse" id="nta-navbar">
                     <ul class="nav navbar-default navbar-nav">
                         {% if not is_granted("ROLE_USER") %}
-                            <li class="visible-xs visible-sm"><a href="{{ path('login_route') }}">Prisijungti</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('login_route') }}">Login</a></li>
                         {% else %}
-                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile') }}">Mano pranešimai</a></li>
-                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile_edit') }}">Redaguoti profilį</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile') }}">My presentations</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile_edit') }}">Profile</a></li>
                             <li class="divider"></li>
-                            <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>Atsijungti</em></a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>Logout</em></a></li>
                         {% endif %}
                         <li class="divider"></li>
                         <li><a href="{{ path('page_about') }}">Apie</i></a></li>
                         {% if "now"|date("Y-m-d") <= registration_deadline %}
-                        <li><a href="{{ path('talk_register') }}">Registracija</a></li>
+                        <li><a href="{{ path('talk_register') }}">Registration</a></li>
                         {% endif %}
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programa <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedule<b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('talks') }}">Pranešimai</a></li>
-                                <li><a href="{{ path('workshops') }}">Dirbtuvės ir užsiėmimai</a></li>
+                                <li><a href="{{ path('talks') }}">Presentations</a></li>
+                                <li><a href="{{ path('workshops') }}">Workshops</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('page_faq') }}">DUK</a></li>
-                        <li><a href="{{ path('page_contacts') }}">Kontaktai</a></li>
+                        <li><a href="{{ path('page_faq') }}">FAQ</a></li>
+                        <li><a href="{{ path('page_contacts') }}">Contact us</a></li>
                         <li><a href="http://blog.notrollsallowed.com/">BLOG</a></li>
                         <li><a href="{{ path('page_en') }}">English</a></li>
                     </ul>
@@ -117,47 +117,8 @@
                     <div class="footer-logo">
                         <a href="{{ path('home') }}"><img src="{{ asset('images/logo.png') }}"><br>No Trolls Allowed</a>
                     </div>
-
                     <dl class="footer-nav">
-                        <dt class="nav-title">#ntacamp</dt>
-                        <dd class="nav-item">
-                            <a href="{{ path('page_about') }}">Apie <em>Hacker Camp</em></a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="{{ path('home') }}#vieta">Vieta</a>
-                        </dd>
-                        {% if "now"|date("Y-m-d") <= registration_deadline %}
-                        <dd class="nav-item">
-                            <a href="{{ path('talk_register') }}">Registracija</a>
-                        </dd>
-                        {% endif %}
-                        <dd class="nav-item">
-                            <a href="{{ path('page_faq') }}">DUK</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="http://blog.notrollsallowed.com/">BLOG</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="{{ path('page_contacts') }}">Kontaktai</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="{{ path('login_route') }}">Prisijungti</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="{{ path('page_en') }}">English</a>
-                        </dd>
-                    </dl>
-                    <dl class="footer-nav">
-                        <dt class="nav-title">Renginio programa</dt>
-                        <dd class="nav-item">
-                            <a href="{{ path('talks') }}">Pranešimai</a>
-                        </dd>
-                        <dd class="nav-item">
-                            <a href="{{ path('workshops') }}">Dirbtuvės ir užsiėmimai</a>
-                        </dd>
-                    </dl>
-                    <dl class="footer-nav">
-                        <dt class="nav-title">Sekite mus</dt>
+                        <dt class="nav-title">Follow us</dt>
                         
                         <dd class="nav-item">
                             <a href="https://github.com/ntacamp">GitHub</a>
@@ -170,7 +131,7 @@
                         </dd>
                     </dl>
                     <dl class="footer-nav">
-                        <dt class="nav-title">Turite idėjų? Rašykite!</dt>
+                        <dt class="nav-title">Contact us!</dt>
                         <dd class="nav-item">
                             <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>
                         </dd>
