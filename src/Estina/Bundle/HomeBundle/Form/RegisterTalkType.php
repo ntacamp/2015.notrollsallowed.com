@@ -51,10 +51,6 @@ class RegisterTalkType extends AbstractType
                 'label' => 'Requirements for attendees',
                 'required' => false,
             ])
-            ->add('track', null, [
-                'label' => 'Stage', 
-                'required' => false,
-            ])
             ->add('comments', 'textarea', [
                 'label' => 'Comments/special requests',
                 'required' => false,

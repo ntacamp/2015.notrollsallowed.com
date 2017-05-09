@@ -169,7 +169,6 @@ class Talk
     private $user;
 
     /**
-     * @Assert\NotBlank()
      * @EstinaAssert\TrackNotFull()
      * @ORM\ManyToOne(targetEntity="Track", inversedBy="talks")
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id")

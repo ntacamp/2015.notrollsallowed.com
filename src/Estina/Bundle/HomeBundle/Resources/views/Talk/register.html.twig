@@ -85,14 +85,6 @@
                             {{ form_row(form.title) }}
                             {{ form_row(form.language) }}
                             <div class="form-group">
-                                {{ form_label(form.track) }}
-                                {{ form_widget(form.track) }}
-                                {{ form_errors(form.track) }}
-                                <span class="text-note">
-                                    Stage descriptions are located <a href="{{ path('page_faq') }}#kuo-skiriasi-scenos" target="_blank">here</a>.
-                                </span>
-                            </div>
-                            <div class="form-group">
                                 {{ form_label(form.description) }}
                                 {{ form_widget(form.description, {
                                     'attr': {'rows': 8}
