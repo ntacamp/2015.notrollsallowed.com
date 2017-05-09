@@ -6,8 +6,8 @@
             <br>
             <br>
             <br>
-            <h1>No Trolls Allowed</h1>
-            <h2>The One And Only Hackercamp in Lithuania</h2>
+            <h1>No Trolls Allowed 2017</h1>
+            <h3>The One And Only Hackercamp in Lithuania</h3>
             <h2>{{ ntacamp_date }}</h2>
             {% if "now"|date("Y-m-d") <= registration_deadline %}
                 <br><br><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Register here &raquo;</a>
@@ -16,45 +16,35 @@
         </div>
     </div>
 
-    {#
     <div class="sponsors">
         <div class="container text-center">
-            <h1>Pagrindiniai rėmėjai</h1><br>
+            <h2>Main sponsors</h2><br>
             <div class="row">
+                <div class="col-md-6">
+                    <a href="http://www.seohelis.lt">
+                        <img src="images/seohelis.png" alt="SEO Helis">
+                    </a>
+                </div>
+            </div>
+            <br><br><br>
+            <h2>Sponsors</h2>
+            <br>
+            <div class="row">                
                 <div class="col-md-6">
                     <a href="http://www.visma.lt">
                         <img src="images/visma.png" alt="Visma">
                     </a>
                 </div>
-                <div class="col-md-6">
-                    <a href="http://www.nfq.lt">
-                        <img src="images/nfq.png" alt="NFQ">
-                    </a>
-                </div>
-            </div>
-            <br><br><br>
-            <h2>Rėmėjai</h2>
-            <br>
-            <div class="row">                
                 <div class="col-md-4">
-                    <a href="http://www.estina.com" style="line-height: 200px;">
+                    <a href="http://www.estina.com">
                         <img src="images/estina.png" alt="Estina - web development">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="http://www.uber.com" style="line-height: 200px;">
-                        <img src="images/uber_black.png" alt="Uber" style="width: 200px;">
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="https://www.vinted.lt" style="line-height: 200px;">
-                        <img src="images/vinted_new.png" alt="Vinted">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
+    {#
     <div id="about" class="event-details what">
         <div class="container">
             <div class="row">
