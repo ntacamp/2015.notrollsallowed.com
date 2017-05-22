@@ -1,4 +1,4 @@
-{% extends 'EstinaHomeBundle::page.html.twig' %}
+{% extends "EstinaHomeBundle::page-liquid.html.twig" %}
 
 {% block javascripts %}
     {% javascripts
@@ -9,52 +9,85 @@
 {% endblock %}
 
 {% block content -%}
-    <h1>Edit Presentation</h1>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Edit Presentation</h1>
 
-    <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
-
-
-    {{ form_start(edit_form) }}
-        {{ form_errors(edit_form) }}
-        <div id="estina_bundle_homebundle_talk">
-            {% if is_granted("ROLE_ADMIN") %}
-            {{ form_row(edit_form.track) }}
-            {% endif %}
-            {{ form_row(edit_form.type) }}
-            {{ form_row(edit_form.title) }}
-            {{ form_row(edit_form.language) }}
-            <div class="form-group">
-                {{ form_label(edit_form.description) }}
-                {{ form_widget(edit_form.description, {
-                    'attr': {'rows': 8}
-                })}}
-                {{ form_errors(edit_form.description) }}
-                <span class="text-note">
-                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> supported
-                </span>
+        <div class="row">
+            <div class="col-md-4">
+                <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
             </div>
-            <div class="form-group">
-                <hr class="dashed">
-                <div id="preview"></div>
-                <hr class="dashed">
+            <div class="col-md-4">
+                <blockquote>
+                    Speaker:<br>
+                    <b>{{ entity.user }}</b><br>
+                    <br>
+                    Email:<br>
+                    <b>{{ entity.user.email }}</b><br>
+                    <br>
+                </blockquote>
             </div>
-            {{ form_rest(edit_form) }}
-            <div class="form-group">
-                {{ form_widget(edit_form.submit, {
-                    'label': 'Išsaugoti',
-                    'attr': {'class': 'btn btn-default'}
-                })}}
-                {% if entity.isCancelled %}
-                    <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Restore talk. I want to participate!!!</a>
-                {% else %}
-                    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Cancel talk</a>
-                {% endif %}
+            <div class="col-md-4">
+                <blockquote>
+                    Created:<br>
+                    <b>{{ entity.createdon|date("Y-m-d H:i") }}</b><br>
+                    {% if entity.createdon != entity.updatedat %}
+                    <br>
+                    Updated:<br>
+                    <b>{{ entity.updatedat|date("Y-m-d H:i") }}</b> 
+                    {% endif %}
+                </blockquote>
             </div>
-            {{ form_rest(edit_form) }}
         </div>
-    {{ form_end(edit_form) }}
 
+        <hr>
 
-    <a href="{{ path('user_profile') }}" class="navbar-btn btn">Back</a>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            {{ form_start(edit_form) }}
+                {{ form_errors(edit_form) }}
+                <div id="estina_bundle_homebundle_talk">
+                    {% if is_granted("ROLE_ADMIN") %}
+                    {{ form_row(edit_form.track) }}
+                    {% endif %}
+                    {{ form_row(edit_form.type) }}
+                    {{ form_row(edit_form.title) }}
+                    {{ form_row(edit_form.language) }}
+                    <div class="form-group">
+                        {{ form_label(edit_form.description) }}
+                        {{ form_widget(edit_form.description, {
+                            'attr': {'rows': 8}
+                        })}}
+                        {{ form_errors(edit_form.description) }}
+                        <span class="text-note">
+                            <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> supported
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <hr class="dashed">
+                        <div id="preview"></div>
+                        <hr class="dashed">
+                    </div>
+                    {{ form_rest(edit_form) }}
+                    <div class="form-group">
+                        {{ form_widget(edit_form.submit, {
+                            'label': 'Išsaugoti',
+                            'attr': {'class': 'btn btn-default'}
+                        })}}
+                        {% if entity.isCancelled %}
+                            <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Restore talk. I want to participate!!!</a>
+                        {% else %}
+                            <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Cancel talk</a>
+                        {% endif %}
+                        <a href="{{ path('user_profile') }}" class="navbar-btn btn">Back</a>
+                    </div>
+                    {{ form_rest(edit_form) }}
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
+
