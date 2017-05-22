@@ -2,11 +2,9 @@
 
 namespace Estina\Bundle\HomeBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class TalkType extends AbstractType
+class TalkType extends AbstractTalkType
 {
     const ADD_USER_FIELDS = true;
     const NO_USER_FIELDS = false;
@@ -19,6 +17,7 @@ class TalkType extends AbstractType
 
     /** @var boolean show track field? */
     private $showTrackField;
+
 
     /**
      * @param boolean $includeUserFields should user fields be included in form?
@@ -37,44 +36,20 @@ class TalkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        parent::buildForm($builder, $options);
+
         if ($this->includeUserFields === self::ADD_USER_FIELDS) {
             $builder
                 ->add('user', new UserType(), ['label' => false])
             ;
         }
 
-        $builder
-            ->add('language', 'choice', [
-                'label' => 'Pranešimo kalba',
-                'choices' => ['LT' => 'LT', 'EN' => 'EN'],
-                'label_attr' => ['text_en' => 'presentation language']
-            ])
-            ->add('title', 'text', [
-                'label' => 'Pranešimo tema',
-                'label_attr' => ['text_en' => 'talk title']
-            ])
-            ->add('description', 'textarea', [
-                'label' => 'Pranešimo aprašymas',
-                'label_attr' => ['text_en' => 'talk description']
-            ])
-        ;
         if ($this->showTrackField) {
             $builder->add('track', null, [
-                'label' => 'Scena', 
+                'label' => 'Stage', 
                 'required' => false,
-                'label_attr' => ['text_en' => 'scene']
             ]);
         }
-    }
-
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Estina\Bundle\HomeBundle\Entity\Talk'
-        ));
     }
 
     /**
