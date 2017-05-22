@@ -45,9 +45,9 @@
                     'attr': {'class': 'btn btn-default'}
                 })}}
                 {% if entity.isCancelled %}
-                    <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Sugrąžinti pranešimą, noriu dalyvauti!</a>
+                    <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Restore talk. I want to participate!!!</a>
                 {% else %}
-                    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Atšaukti pranešimą</a>
+                    <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Cancel talk</a>
                 {% endif %}
             </div>
             {{ form_rest(edit_form) }}
@@ -55,6 +55,6 @@
     {{ form_end(edit_form) }}
 
 
-    <a href="{{ path('user_profile') }}" class="navbar-btn btn">Atgal</a>
+    <a href="{{ path('user_profile') }}" class="navbar-btn btn">Back</a>
 
 {% endblock %}

@@ -74,7 +74,7 @@ class UserProfileController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Atnaujinti'));
+        $form->add('submit', 'submit', array('label' => 'Save'));
 
         return $form;
     }
