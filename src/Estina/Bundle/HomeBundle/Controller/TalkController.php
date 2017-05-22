@@ -324,7 +324,7 @@ class TalkController extends Controller
                 'Your talk was updated!'
             );
 
-            return $this->redirect($this->generateUrl('user_profile'));
+            return $this->redirect($this->generateUrl('talk_edit', ['id' => $id]));
         }
 
         return array(
@@ -437,7 +437,7 @@ class TalkController extends Controller
             );
         }
 
-        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
+        return $this->redirect($this->generateUrl('talk_edit', ['id' => $id]));
     }
 
     /**
@@ -519,7 +519,7 @@ class TalkController extends Controller
                 ->dispatch(TalkEvents::CONFIRM, $event);
         }
 
-        return $this->redirect($this->generateUrl('talk', ['id' => $id]));
+        return $this->redirect($this->generateUrl('talk_list'));
     }
 
     /**
