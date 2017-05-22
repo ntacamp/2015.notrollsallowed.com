@@ -4,8 +4,8 @@
     <div class="page">
         <div class="container">
             {% block breadcrumb %}{% endblock %}
-            {% include "EstinaHomeBundle::flash-messages.html.twig" %}
             <div class="row">
+                {% include "EstinaHomeBundle::flash-messages.html.twig" %}
                 <article class="col-md-6 col-md-offset-1">
                     {% block content %}{% endblock %}
                 </article>

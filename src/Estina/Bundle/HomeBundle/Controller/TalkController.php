@@ -321,7 +321,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Your talk was updated!'
+                'Updated!'
             );
 
             return $this->redirect($this->generateUrl('talk_edit', ['id' => $id]));
