@@ -13,11 +13,11 @@
 {%- endmacro %}
 
 {% block content %}
-    <h1>Pranešimai</h1>
+    <h1>Presentations</h1>
 
     <div class="row schedule">
         {% for index, track in tracks  %}
-            <div class="col-md-3 track {{ _self.track_class(index) }}">
+            <div class="col-md-4 track {{ _self.track_class(index) }}">
                 <h2>{{ track.title }}</h2>
             
                 {% set count = 0 %}
@@ -44,7 +44,7 @@
                     {% endif %}
                 {% endfor %}
                 {% if count == 0 %}
-                    <p>Patvirtintų pranešimų šioje scenoje dar nėra.</p>
+                    <p>There are no confirmed presentations yet.</p>
                 {% endif %}
             </div>
         {% endfor %}
