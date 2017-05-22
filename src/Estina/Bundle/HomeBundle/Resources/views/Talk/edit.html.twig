@@ -16,6 +16,9 @@
         <div class="row">
             <div class="col-md-4">
                 <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
+                {% if is_granted("ROLE_ADMIN") and not entity.isAccepted and not entity.isCancelled %}
+                    <a href="{{ path('talk_accept', {'id': entity.id}) }}" class="btn btn-info">Approve</a>
+                {% endif %}
             </div>
             <div class="col-md-4">
                 <blockquote>
