@@ -65,7 +65,7 @@ class TalkController extends Controller
                         $this->generateUrl('talk_success'));
                 } catch (UniqueConstraintViolationException $e) {
                     // @todo add error on email field.
-                    $error = new FormError("Toks vartotojas jau egzistuoja");
+                    $error = new FormError("User already exists");
                     $form->addError($error);
                 }
             }
@@ -173,7 +173,7 @@ class TalkController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Jūsų pranešimas buvo sėkmingai užregistruotas!'
+                'The Talk was registered successfully!'
             );
             return $this->redirect($this->generateUrl('talk_new'));
         }
@@ -321,7 +321,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Jūsų pranešimas buvo sėkmingai atnaujintas!'
+                'Your talk was updated!'
             );
 
             return $this->redirect($this->generateUrl('user_profile'));
@@ -433,7 +433,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Jūsų pranešimas atšauktas. Tikimės, kad dar persigalvosit ;-)'
+                'The Talk was canceled.'
             );
         }
 
@@ -452,7 +452,7 @@ class TalkController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('talk_cancel_confirm', array('id' => $id)))
             ->setMethod('PUT')
-            ->add('submit', 'submit', array('label' => 'Atšaukti pranešimą'))
+            ->add('submit', 'submit', array('label' => 'Cancel the Talk'))
             ->getForm()
         ;
     }
@@ -511,7 +511,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Pranešimas patvirtintas'
+                'The Talk was approved'
             );
 
             $event = new TalkEvent($entity);
@@ -534,7 +534,7 @@ class TalkController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('talk_accept_confirm', array('id' => $id)))
             ->setMethod('PUT')
-            ->add('submit', 'submit', array('label' => 'Patvirtinti pranešimą'))
+            ->add('submit', 'submit', array('label' => 'Approve'))
             ->getForm()
             ;
     }
@@ -598,7 +598,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Jūsų sugrąžintas ir laukia administratorių patvirtinimo'
+                'The Talk was restored and waiting for confirmation'
             );
         }
 
@@ -617,7 +617,7 @@ class TalkController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('talk_restore_confirm', array('id' => $id)))
             ->setMethod('PUT')
-            ->add('submit', 'submit', array('label' => 'Sugrąžinti pranešimą'))
+            ->add('submit', 'submit', array('label' => 'Restore the talk'))
             ->getForm()
         ;
     }
