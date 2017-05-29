@@ -1,0 +1,26 @@
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
+
+{% block content %}
+    <h1>Schedule</h1>
+
+    <table>
+        <thead>
+            <td>Time</td>
+            {% for track in tracks %}
+                <td>{{ track }}</td>
+            {% endfor %}
+        </thead>
+        <tbody>
+        {% for index, rows in timetable  %}
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.time }}</td>
+                {% for talk in row.talks %}
+                    <td> {{ talk }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

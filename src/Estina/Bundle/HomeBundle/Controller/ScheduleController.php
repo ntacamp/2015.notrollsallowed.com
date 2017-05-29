@@ -61,10 +61,21 @@ class ScheduleController extends Controller
             || $talk->getUser() == $this->getUser()
             || $security->isGranted('ROLE_ADMIN')
         )) {
-
             return ['talk' => $talk];
         }
 
         throw new NotFoundHttpException;
+    }
+
+    /**
+     *
+     * @Route("/timetable", name="timetable")
+     * @Template()
+     */
+    public function timetableAction()
+    {
+        return [
+            'timetable' => $this->get('home.schedule_timetable_service')->generate()
+        ];
     }
 }
