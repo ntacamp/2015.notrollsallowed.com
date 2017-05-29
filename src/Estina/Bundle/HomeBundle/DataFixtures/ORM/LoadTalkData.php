@@ -17,6 +17,9 @@ class LoadTalkData extends AbstractFixture implements FixtureInterface, OrderedF
         $talk->setLanguage('LT');
         $talk->setTitle('Kaip aš keliavau');
         $talk->setDescription('Papasakosiu apie savo keliones.');
+        $talk->setTshirtSize('XL');
+        $talk->setTshirtModel('Male');
+        $talk->setType('presentation');
         $manager->persist($talk);
 
         $talk = new Talk();
@@ -26,6 +29,9 @@ class LoadTalkData extends AbstractFixture implements FixtureInterface, OrderedF
         $talk->setTitle('Esu keliautojas');
         $talk->setStatus($talk::STATUS_ACCEPTED);
         $talk->setDescription('Papasakosiu apie savo keliones irgi.');
+        $talk->setTshirtSize('XL');
+        $talk->setTshirtModel('Male');
+        $talk->setType('workshop');
         $manager->persist($talk);
 
         $manager->flush();
