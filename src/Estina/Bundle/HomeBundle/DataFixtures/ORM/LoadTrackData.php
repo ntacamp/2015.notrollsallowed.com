@@ -25,6 +25,7 @@ class LoadTrackData extends AbstractFixture implements FixtureInterface
         $track->setSize(30);
         $track->setPosition(2);
         $track->setType($track::TYPE_TALK);
+        $this->addReference('track.analog', $track);
         $manager->persist($track);
 
         $track = new Track();

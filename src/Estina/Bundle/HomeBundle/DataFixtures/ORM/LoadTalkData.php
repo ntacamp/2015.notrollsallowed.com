@@ -21,6 +21,7 @@ class LoadTalkData extends AbstractFixture implements FixtureInterface, OrderedF
         $talk->setTshirtModel('Male');
         $talk->setType('presentation');
         $manager->persist($talk);
+        $this->addReference('talk.1', $talk);
 
         $talk = new Talk();
         $talk->setUser($this->getReference('user.user'));
@@ -33,6 +34,7 @@ class LoadTalkData extends AbstractFixture implements FixtureInterface, OrderedF
         $talk->setTshirtModel('Male');
         $talk->setType('workshop');
         $manager->persist($talk);
+        $this->addReference('talk.2', $talk);
 
         $manager->flush();
     }

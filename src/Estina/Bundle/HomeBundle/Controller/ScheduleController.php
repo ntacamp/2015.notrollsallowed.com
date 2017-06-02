@@ -75,7 +75,7 @@ class ScheduleController extends Controller
     public function timetableAction()
     {
         return [
-            'timetable' => $this->get('home.schedule_timetable_service')->generate()
+            'timetable' => $this->get('home.schedule_service')->generate()
         ];
     }
 }

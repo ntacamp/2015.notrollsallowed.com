@@ -3,24 +3,25 @@
 {% block content %}
     <h1>Schedule</h1>
 
-    <table>
-        <thead>
-            <td>Time</td>
-            {% for track in tracks %}
-                <td>{{ track }}</td>
-            {% endfor %}
-        </thead>
-        <tbody>
-        {% for index, rows in timetable  %}
-            {% for row in rows %}
-            <tr>
-                <td>{{ row.time }}</td>
-                {% for talk in row.talks %}
-                    <td> {{ talk }}</td>
+    {% for day in timetable %}
+        <h2>Day #{{ day.title }}</h2>
+        <table border=1>
+            <thead>
+                <td>Time</td>
+                {% for track in day.tracks %}
+                    <td>{{ track }}</td>
                 {% endfor %}
-            </tr>
+            </thead>
+            <tbody>
+            {% for time, row in day.rows  %}
+                <tr>
+                    <td>{{ time }}</td>
+                    {% for talk in row %}
+                        <td> {{ talk.title }}</td>
+                    {% endfor %}
+                </tr>
             {% endfor %}
-        {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    {% endfor %}
 {% endblock %}

@@ -30,7 +30,7 @@
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>
 
-        <service id="home.schedule_timetable_service" class="Estina\Bundle\HomeBundle\Service\ScheduleTimetableService">
+        <service id="home.schedule_service" class="Estina\Bundle\HomeBundle\Service\ScheduleService">
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>
 
