@@ -1,0 +1,52 @@
+{% extends "EstinaHomeBundle::page-liquid.html.twig" %}
+
+{% block content -%}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h1>Schedule Presentation</h1>
+
+        <h2>{{entity}}</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>{% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': entity} %}</p>
+                {% if is_granted("ROLE_ADMIN") and not entity.isAccepted and not entity.isCancelled %}
+                    <a href="{{ path('talk_accept', {'id': entity.id}) }}" class="btn btn-info">Approve</a>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <blockquote>
+                    Title:<br>
+                    <b>{{ entity }}</b><br><br>
+                    Speaker:<br>
+                    <b>{{ entity.user }}</b><br>
+                    <br>
+                    Email:<br>
+                    <b>{{ entity.user.email }}</b><br>
+                    <br>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote>
+                    Created:<br>
+                    <b>{{ entity.createdon|date("Y-m-d H:i") }}</b><br>
+                    {% if entity.createdon != entity.updatedat %}
+                    <br>
+                    Updated:<br>
+                    <b>{{ entity.updatedat|date("Y-m-d H:i") }}</b> 
+                    {% endif %}
+                </blockquote>
+            </div>
+        </div>
+
+        {% for dayNo, slots in availableSlots %}
+            <h3>Day #{{ dayNo }}</h3>
+            {% for slot in slots %}
+                <a href="{{ path('talk_schedule_submit', {'id': entity.id, 'slot': slot}) }}">{{ slot }}</a>&nbsp; 
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

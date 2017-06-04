@@ -257,6 +257,66 @@ class TalkController extends Controller
     }
 
     /**
+     * Put talk on schedule
+     *
+     * @Route("/{id}/schedule", name="talk_schedule")
+     * @Method("GET")
+     * @Template()
+     */
+    public function scheduleAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        // $editForm = $this->createEditForm($entity);
+
+        return array(
+            'entity'      => $entity,
+            'availableSlots' => $this->get('home.schedule_service')->getAvailableSlots(),
+            // 'edit_form'   => $editForm->createView(),
+            // 'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
+     * Put talk on schedule
+     *
+     * @Route("/{id}/schedule/slot/{slot}", name="talk_schedule_submit")
+     * @Method("GET")
+     * @Template()
+     */
+    public function scheduleSubmitAction($id, $slot)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        // $editForm = $this->createEditForm($entity);
+
+        return array(
+            'entity'      => $entity,
+            'availableSlots' => $this->get('home.schedule_service')->getAvailableSlots(),
+            // 'edit_form'   => $editForm->createView(),
+            // 'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
      * Check if user is allowed edit entity.
      *
      * @param Talk $entity

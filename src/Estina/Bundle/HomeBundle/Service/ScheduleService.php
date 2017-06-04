@@ -56,7 +56,7 @@ class ScheduleService
                     if (empty($scheduleEntries) && empty($scheduleGlobalEntries)) {
                         $rows[$time->format('H:i')][$track->getId()] = ['title' => ' - ', 'track' => null];
                     }
-                    ksort($rows);      
+                    ksort($rows);                     
                 }
             }
             $timetable[] = [
@@ -67,6 +67,24 @@ class ScheduleService
         }
 
         return $timetable;
+    }
+
+    public function getAvailableSlots()
+    {
+        $days = Schedule::days();
+
+        $slots = [];
+        foreach ($days as $day) {
+            $begin = new DateTime('10:00');
+            $end = new DateTime('23:59');
+            $interval = new DateInterval('PT30M');
+            $range = new DatePeriod($begin, $interval, $end);
+            foreach ($range as $date) {
+                $slots[$day][] = $date->format('H:i');
+            }
+        }
+        // @TODO check non-empty slots
+        return $slots;
     }
 
     private function scheduleToRow(Schedule $schedule)
