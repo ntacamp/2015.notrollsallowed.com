@@ -3,12 +3,13 @@
 namespace Estina\Bundle\HomeBundle\Controller;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use Estina\Bundle\HomeBundle\Entity\Schedule;
 use Estina\Bundle\HomeBundle\Entity\Talk;
+use Estina\Bundle\HomeBundle\Event\RegistrationEvent;
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
 use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
 use Estina\Bundle\HomeBundle\Form\TalkType;
 use Estina\Bundle\HomeBundle\TalkEvents;
-use Estina\Bundle\HomeBundle\Event\RegistrationEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -276,24 +277,20 @@ class TalkController extends Controller
             throw $this->createAccessDeniedException();
         }
 
-        // $editForm = $this->createEditForm($entity);
-
         return array(
             'entity'      => $entity,
             'availableSlots' => $this->get('home.schedule_service')->getAvailableSlots(),
-            // 'edit_form'   => $editForm->createView(),
-            // 'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
      * Put talk on schedule
      *
-     * @Route("/{id}/schedule/slot/{slot}", name="talk_schedule_submit")
+     * @Route("/{id}/schedule/slot/{day}/{slot}", name="talk_schedule_submit")
      * @Method("GET")
      * @Template()
      */
-    public function scheduleSubmitAction($id, $slot)
+    public function scheduleSubmitAction($id, $day, $slot)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
@@ -306,14 +303,21 @@ class TalkController extends Controller
             throw $this->createAccessDeniedException();
         }
 
-        // $editForm = $this->createEditForm($entity);
+        $item = new Schedule();
+        $item->setDay($day);
+        $item->setTime(new \DateTime($slot));
+        $item->setType(Schedule::TYPE_TALK);
+        $item->setTrack($entity->getTrack());
+        $item->setTalk($entity);
+        $em->persist($item);
+        $em->flush();
 
-        return array(
-            'entity'      => $entity,
-            'availableSlots' => $this->get('home.schedule_service')->getAvailableSlots(),
-            // 'edit_form'   => $editForm->createView(),
-            // 'delete_form' => $deleteForm->createView(),
+        $this->get('session')->getFlashBag()->set(
+            'success',
+            sprintf('Talk has been scheduled to DAY #%s, %s', $day, $slot)
         );
+
+        return $this->redirect($this->generateUrl('talk_list'));
     }
 
     /**

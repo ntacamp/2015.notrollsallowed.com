@@ -42,7 +42,7 @@
         {% for dayNo, slots in availableSlots %}
             <h3>Day #{{ dayNo }}</h3>
             {% for slot in slots %}
-                <a href="{{ path('talk_schedule_submit', {'id': entity.id, 'slot': slot}) }}">{{ slot }}</a>&nbsp; 
+                <a href="{{ path('talk_schedule_submit', {'id': entity.id, 'day': dayNo, 'slot': slot}) }}">{{ slot }}</a>&nbsp; 
             {% endfor %}
         {% endfor %}
     </div>
