@@ -7,6 +7,7 @@ use DatePeriod;
 use DateTime;
 use Doctrine\ORM\EntityManager;
 use Estina\Bundle\HomeBundle\Entity\Schedule;
+use Estina\Bundle\HomeBundle\Entity\Track;
 
 class ScheduleService
 {
@@ -23,7 +24,7 @@ class ScheduleService
         $this->em = $em;
     }
 
-    public function generate()
+    public function generate(Track $trackArg = null)
     {
         $tracks = $this->getTrackRepository()->findTracks();
         $timetable = [];
@@ -35,6 +36,9 @@ class ScheduleService
             $rows = [];
             foreach ($times as $time) {
                 foreach ($tracks as $track) {
+                    if ($trackArg !== null && $trackArg != $track) {
+                        continue;
+                    }
                     $scheduleEntries = $repo->findBy(
                         ['day' => $day, 'track' => $track, 'time' => $time]
                     );
@@ -43,7 +47,6 @@ class ScheduleService
                     );
                     if (!empty($scheduleEntries)) {
                         foreach ($scheduleEntries as $entry) {
-                            // var_dump($entry);exit;
                             $rows[$time->format('H:i')][$track->getId()] = $this->scheduleToRow($entry);
                         }
                     }
@@ -59,7 +62,7 @@ class ScheduleService
                     ksort($rows);                     
                 }
             }
-            $timetable[] = [
+            $timetable[$day] = [
                 'title' => $day,
                 'tracks' => $tracks,
                 'rows' => $rows,
@@ -69,8 +72,9 @@ class ScheduleService
         return $timetable;
     }
 
-    public function getAvailableSlots()
+    public function getAvailableSlots(Track $track)
     {
+        $slotsInUse = $this->generate($track);
         $days = Schedule::days();
 
         $slots = [];
@@ -80,10 +84,17 @@ class ScheduleService
             $interval = new DateInterval('PT30M');
             $range = new DatePeriod($begin, $interval, $end);
             foreach ($range as $date) {
-                $slots[$day][] = $date->format('H:i');
+                $time = $date->format('H:i');
+                if (array_key_exists($time, $slotsInUse[$day]['rows'])) {
+                    continue;
+                }
+                if (array_key_exists($time . '!!', $slotsInUse[$day]['rows'])) {
+                    continue;
+                }
+                $slots[$day][] = $time;
             }
         }
-        // @TODO check non-empty slots
+        
         return $slots;
     }
 
