@@ -15,7 +15,7 @@ class GravatarExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'gravatar' => new \Twig_Filter_Method($this, 'getGravatarImage'),
+            new \Twig_SimpleFilter('gravatar', [$this, 'getGravatarImage']),
         );
     }
 
