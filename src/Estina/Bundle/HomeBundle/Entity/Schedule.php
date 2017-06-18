@@ -3,12 +3,23 @@
 namespace Estina\Bundle\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints as Assert;
 
 /**
  * Schedule
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\ScheduleRepository")
+ * @Assert\UniqueEntity(
+ *     fields={"day", "time", "track"},
+ *     errorPath="time",
+ *     message="This time is already in use"
+ * )
+ * @Assert\UniqueEntity(
+ *     fields={"talk"},
+ *     errorPath="talk",
+ *     message="This talk is already scheduled"
+ * )
  */
 class Schedule
 {

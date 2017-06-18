@@ -310,6 +310,18 @@ class TalkController extends Controller
         $item->setType(Schedule::TYPE_TALK);
         $item->setTrack($entity->getTrack());
         $item->setTalk($entity);
+
+        $errors = $this->get('validator')->validate($item);
+        if (count($errors) > 0) {
+            foreach ($errors as $e) {
+                $this->get('session')->getFlashBag()->add(
+                    'error',
+                    $e->getMessage()
+                );
+            }
+            return $this->redirect($this->generateUrl('talk_schedule', ['id' => $id]));
+        }
+
         $em->persist($item);
         $em->flush();
 
