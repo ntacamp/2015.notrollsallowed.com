@@ -34,10 +34,8 @@
         <meta property="og:image:height" content="300">
     </head>
 
-    {% set _template = app.request.get('_template')|split(':') %}
-    {% set controller = _template[1] %}
-    {% set _view = _template[2]|split('.') %}
-    {% set action = _view[0] %}
+    {% set controller = app.request.get('_template').template().get('controller') %}
+    {% set action = app.request.get('_template').template().get('name') %}
     
     <body data-controller="{{ controller }}"
           data-action="{{ action }}">
