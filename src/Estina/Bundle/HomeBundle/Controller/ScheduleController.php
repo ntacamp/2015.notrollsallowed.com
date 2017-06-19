@@ -2,6 +2,7 @@
 
 namespace Estina\Bundle\HomeBundle\Controller;
 
+use Estina\Bundle\HomeBundle\Entity\Schedule;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -69,13 +70,20 @@ class ScheduleController extends Controller
 
     /**
      *
-     * @Route("/timetable", name="timetable")
+     * @Route("/timetable/{day}", name="timetable", defaults={"day" = 1}, requirements={"day" = "\d+"})
      * @Template()
      */
-    public function timetableAction()
+    public function timetableAction($day)
     {
+        $days = Schedule::days();
+
+        if (!in_array($day, $days)) {
+            throw new NotFoundHttpException;
+        }
+
         return [
-            'timetable' => $this->get('home.schedule_service')->generate()
+            'timetable' => $this->get('home.schedule_service')->generate($day),
+            'days' => $days,
         ];
     }
 }

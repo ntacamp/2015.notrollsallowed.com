@@ -24,12 +24,15 @@ class ScheduleService
         $this->em = $em;
     }
 
-    public function generate(Track $trackArg = null)
+    public function generate($day = null, Track $trackArg = null)
     {
         $tracks = $this->getTrackRepository()->findTracks();
         $timetable = [];
         $days = Schedule::days();
-
+        if ($day) {
+            $days = [$day];
+        }
+        
         $repo = $this->getRepository();
         foreach ($days as $day) {
             $times = $repo->findTimesByDay($day);
@@ -74,7 +77,7 @@ class ScheduleService
 
     public function getAvailableSlots(Track $track)
     {
-        $slotsInUse = $this->generate($track);
+        $slotsInUse = $this->generate(null, $track);
         $days = Schedule::days();
 
         $slots = [];
