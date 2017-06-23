@@ -17,8 +17,8 @@ class TalkExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'talk_status' => new \Twig_Filter_Method($this, 'getTalkStatus'),
-            'talk_status_color' => new \Twig_Filter_Method($this, 'getTalkStatusColor'),
+            new \Twig_SimpleFilter('talk_status', [$this, 'getTalkStatus']),
+            new \Twig_SimpleFilter('talk_status_color', [$this, 'getTalkStatusColor']),
         );
     }
 

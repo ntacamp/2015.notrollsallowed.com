@@ -3,7 +3,7 @@
 {% form_theme form _self %}
 
 {%- block form_label -%}
-    {% if label is not sameas(false) -%}
+    {% if label is not same as(false) -%}
         {% if not compound -%}
             {% set label_attr = label_attr|merge({'for': id}) %}
         {%- endif %}
@@ -20,7 +20,7 @@
                 {% set label = name|humanize %}
             {%- endif -%}
         {%- endif -%}
-        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ translation_domain is sameas(false) ? label : label|trans({}, translation_domain) }} {% if label_attr.text_en is defined %}<em>({{label_attr.text_en}})</em>{% endif %}</label>
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }} {% if label_attr.text_en is defined %}<em>({{label_attr.text_en}})</em>{% endif %}</label>
     {%- endif -%}
 {%- endblock form_label -%}
 

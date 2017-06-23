@@ -3,12 +3,13 @@
 namespace Estina\Bundle\HomeBundle\Controller;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use Estina\Bundle\HomeBundle\Entity\Schedule;
 use Estina\Bundle\HomeBundle\Entity\Talk;
+use Estina\Bundle\HomeBundle\Event\RegistrationEvent;
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
 use Estina\Bundle\HomeBundle\Form\RegisterTalkType;
 use Estina\Bundle\HomeBundle\Form\TalkType;
 use Estina\Bundle\HomeBundle\TalkEvents;
-use Estina\Bundle\HomeBundle\Event\RegistrationEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -254,6 +255,86 @@ class TalkController extends Controller
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
+    }
+
+    /**
+     * Put talk on schedule
+     *
+     * @Route("/{id}/schedule", name="talk_schedule")
+     * @Method("GET")
+     * @Template()
+     */
+    public function scheduleAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        if (!$entity->getTrack()) {
+            return $this->error('Talk is not assigned to any track.');
+        }
+
+        return array(
+            'entity'      => $entity,
+            'availableSlots' => $this->get('home.schedule_service')
+                ->getAvailableSlots($entity->getTrack()),
+        );
+    }
+
+    /**
+     * Put talk on schedule
+     *
+     * @Route("/{id}/schedule/slot/{day}/{slot}", name="talk_schedule_submit")
+     * @Method("GET")
+     * @Template()
+     */
+    public function scheduleSubmitAction($id, $day, $slot)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        $item = new Schedule();
+        $item->setDay($day);
+        $item->setTime(new \DateTime($slot));
+        $item->setType(Schedule::TYPE_TALK);
+        $item->setTrack($entity->getTrack());
+        $item->setTalk($entity);
+
+        $errors = $this->get('validator')->validate($item);
+        if (count($errors) > 0) {
+            foreach ($errors as $e) {
+                $this->get('session')->getFlashBag()->add(
+                    'error',
+                    $e->getMessage()
+                );
+            }
+            return $this->redirect($this->generateUrl('talk_schedule', ['id' => $id]));
+        }
+
+        $em->persist($item);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->set(
+            'success',
+            sprintf('Talk has been scheduled to DAY #%s, %s', $day, $slot)
+        );
+
+        return $this->redirect($this->generateUrl('talk_list'));
     }
 
     /**
@@ -620,5 +701,11 @@ class TalkController extends Controller
             ->add('submit', 'submit', array('label' => 'Restore the talk'))
             ->getForm()
         ;
+    }
+
+    private function error($message)
+    {
+        $this->get('session')->getFlashBag()->set('error', $message);
+        return $this->redirect($this->generateUrl('talk_list'));
     }
 }

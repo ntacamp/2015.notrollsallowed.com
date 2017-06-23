@@ -1,0 +1,33 @@
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
+
+{% block content %}
+    <h1>Schedule</h1>
+
+    <ul>
+    {% for day in days %}
+        <li><a href="{{ path('timetable', {'day': day}) }}">Day {{ day }}</a></li>
+    {% endfor %}
+    </ul>
+
+    {% for day in timetable %}
+        <h2>Day #{{ day.title }}</h2>
+        <table border=1>
+            <thead>
+                <td>Time</td>
+                {% for track in day.tracks %}
+                    <td>{{ track }}</td>
+                {% endfor %}
+            </thead>
+            <tbody>
+            {% for time, row in day.rows  %}
+                <tr>
+                    <td>{{ time }}</td>
+                    {% for talk in row %}
+                        <td> {{ talk.title }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock %}

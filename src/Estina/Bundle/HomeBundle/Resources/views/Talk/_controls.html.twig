@@ -3,6 +3,7 @@
     {% if is_granted("ROLE_ADMIN") and not talk.isAccepted and not talk.isCancelled %}
         <a href="{{ path('talk_accept', {'id': talk.id}) }}" class="btn btn-info">Patvirtinti</a>
     {% endif %}
+    <a href="{{ path('talk_schedule', {id: talk.id}) }}" class="btn btn-warning"><i class="glyphicon glyphicon-time"></i></a>
     <a href="{{ path('talk_edit', {id: talk.id}) }}" class="btn"><i class="glyphicon glyphicon-pencil"></i></a>
     {# <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a> #}
 </div>

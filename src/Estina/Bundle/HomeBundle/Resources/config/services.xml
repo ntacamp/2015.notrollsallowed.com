@@ -30,6 +30,9 @@
             <argument type="service" id="doctrine.orm.entity_manager"/>
         </service>
 
+        <service id="home.schedule_service" class="Estina\Bundle\HomeBundle\Service\ScheduleService">
+            <argument type="service" id="doctrine.orm.entity_manager"/>
+        </service>
 
         <service id="home.social_feed_service" class="Estina\Bundle\HomeBundle\Service\SocialFeedService">
             <argument>%twitter_oauth_access_token%</argument>
