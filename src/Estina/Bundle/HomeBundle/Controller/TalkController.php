@@ -277,6 +277,10 @@ class TalkController extends Controller
             throw $this->createAccessDeniedException();
         }
 
+        if (!$entity->getTrack()) {
+            return $this->error('Talk is not assigned to any track.');
+        }
+
         return array(
             'entity'      => $entity,
             'availableSlots' => $this->get('home.schedule_service')
@@ -697,5 +701,11 @@ class TalkController extends Controller
             ->add('submit', 'submit', array('label' => 'Restore the talk'))
             ->getForm()
         ;
+    }
+
+    private function error($message)
+    {
+        $this->get('session')->getFlashBag()->set('error', $message);
+        return $this->redirect($this->generateUrl('talk_list'));
     }
 }
