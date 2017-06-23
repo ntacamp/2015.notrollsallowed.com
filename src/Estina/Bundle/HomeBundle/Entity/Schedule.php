@@ -8,7 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as Assert;
 /**
  * Schedule
  *
- * @ORM\Table()
+ * @ORM\Table(name="schedule")
  * @ORM\Entity(repositoryClass="Estina\Bundle\HomeBundle\Entity\ScheduleRepository")
  * @Assert\UniqueEntity(
  *     fields={"day", "time", "track"},
