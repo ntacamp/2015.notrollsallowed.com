@@ -26,7 +26,7 @@ class ScheduleService
 
     public function generate($day = null, Track $trackArg = null)
     {
-        $tracks = $this->getTrackRepository()->findTracks();
+        $tracks = $this->getTrackRepository()->findTracksByType(Track::TYPE_TALK);
         $timetable = [];
         $days = Schedule::days();
         if ($day) {
@@ -60,7 +60,7 @@ class ScheduleService
                     }
 
                     if (empty($scheduleEntries) && empty($scheduleGlobalEntries)) {
-                        $rows[$time->format('H:i')][$track->getId()] = ['title' => ' - ', 'track' => null];
+                        $rows[$time->format('H:i')][$track->getId()] = ['track' => null];
                     }
                     ksort($rows);                     
                 }
@@ -107,6 +107,7 @@ class ScheduleService
             'title' => $schedule->getTalk() ? $schedule->getTalk()->getTitle() : $schedule->getTitle(),
             'description' => $schedule->getTalk() ? $schedule->getTalk()->getDescription() : $schedule->getDescription(),
             'track' => $schedule->getTrack(),
+            'author' => $schedule->getTalk() ? $schedule->getTalk()->getUser()->getNickname() : '',
         ];
     }
 
