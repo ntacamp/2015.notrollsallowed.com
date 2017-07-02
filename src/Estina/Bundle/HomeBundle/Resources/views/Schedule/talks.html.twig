@@ -12,12 +12,14 @@
     {%- endif %}
 {%- endmacro %}
 
+{% import _self as macros %}
+
 {% block content %}
     <h1>Presentations</h1>
 
     <div class="row schedule">
         {% for index, track in tracks  %}
-            <div class="col-md-4 track {{ _self.track_class(index) }}">
+            <div class="col-md-4 track {{ macros.track_class(index) }}">
                 <h2>{{ track.title }}</h2>
             
                 {% set count = 0 %}
