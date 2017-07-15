@@ -6,9 +6,10 @@
           <!-- Default panel contents -->
           <div class="panel-heading">
             <h1>{{ talk.title }}</h1>
+            {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
+            {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
           </div>
 
-          {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
           <!-- Table -->
           <table class="table">
               <tr>
