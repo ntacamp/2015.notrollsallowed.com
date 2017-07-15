@@ -1,49 +1,73 @@
 {% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
-    <h1>
-        {{ talk.title }}
-        {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
-        {% include "EstinaHomeBundle:Talk:_controls.html.twig" with {'talk': talk} %}
-    </h1>
     <div class="row" >
-        <div class="col-md-8">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            <h1>{{ talk.title }}</h1>
+          </div>
+
+          {% include "EstinaHomeBundle:Talk:_badges.html.twig" with {'talk': talk} %}
+          <!-- Table -->
+          <table class="table">
+              <tr>
+                  <td><strong>Speaker</strong></td>
+                  <td>
+                    {% if talk.organizer %}
+                    {{ talk.organizer }} 
+                    {% else %}
+                    {{ talk.user.name }}
+                    {% endif %}
+                    &nbsp;
+                    {% if talk.user.twitter %}
+                        <a href="http://twitter.com/{{ talk.user.twitter }}"><img src="{{ asset('images/icon_twitter.png') }}" alt="{{ talk.user.twitter }}"></a>
+                    {% endif %}
+                    {% if talk.user.github %}
+                        <a href="http://github.com/{{ talk.user.github }}"><img src="{{ asset('images/icon_github.png') }}" alt="{{ talk.user.github }}"></a>
+                    {% endif %}
+                    {% if talk.user.facebook %}
+                        <a href="{{ talk.user.facebook }}"><img src="{{ asset('images/icon_facebook.png') }}" alt=""></a>
+                    {% endif %}
+                    {% if talk.user.gplus %}
+                        <a href="{{ talk.user.gplus }}"><img src="{{ asset('images/icon_gplus.png') }}" alt=""></a>
+                    {% endif %}
+                    {% if talk.user.linkedin %}
+                        <a href="{{ talk.user.linkedin }}"><img src="{{ asset('images/icon_linkedin.png') }}" alt=""></a>
+                    {% endif %}
+                    {% if talk.user.blog %}
+                        <a href="{{ talk.user.blog }}"><img src="{{ asset('images/icon_blog.png') }}" alt=""></a>
+                    {% endif %}
+                    {% if talk.user.homepage %}
+                        <a href="{{ talk.user.homepage }}"><img src="{{ asset('images/icon_homepage.png') }}" alt=""></a>
+                    {% endif %}
+                  </td>
+              </tr>
+              <tr>
+                  <td><strong>Language</strong></td>
+                  <td>{{ talk.language }}</td>
+              </tr>
+              <tr>
+                  <td><strong>Stage</strong></td>
+                  <td>{{ talk.track }}</td>
+              </tr>
+              <tr>
+                  <td><strong>Type</strong></td>
+                  <td>{{ talk.type|capitalize }}</td>
+              </tr>
+          </table>
+          <div class="panel-heading">Description</div>
+          <div class="panel-body">
             {{ talk.description|markdown }}
-        </div>
-        <div class="col-md-3">
-            <p class="text-center">
-                <img src="{{ talk.user.email | gravatar }}" alt="" class="media-object img-rounded talk-img">
-            </p>
-            <p class="text-center">
-                {% if talk.organizer %}
-                {{ talk.organizer }} 
-                {% else %}
-                {{ talk.user.name }}
-                {% endif %}
-            </p>
-            <p class="text-center">
-                {% if talk.user.twitter %}
-                    <a href="http://twitter.com/{{ talk.user.twitter }}"><img src="{{ asset('images/icon_twitter.png') }}" alt="{{ talk.user.twitter }}"></a>
-                {% endif %}
-                {% if talk.user.github %}
-                    <a href="http://github.com/{{ talk.user.github }}"><img src="{{ asset('images/icon_github.png') }}" alt="{{ talk.user.github }}"></a>
-                {% endif %}
-                {% if talk.user.facebook %}
-                    <a href="{{ talk.user.facebook }}"><img src="{{ asset('images/icon_facebook.png') }}" alt=""></a>
-                {% endif %}
-                {% if talk.user.gplus %}
-                    <a href="{{ talk.user.gplus }}"><img src="{{ asset('images/icon_gplus.png') }}" alt=""></a>
-                {% endif %}
-                {% if talk.user.linkedin %}
-                    <a href="{{ talk.user.linkedin }}"><img src="{{ asset('images/icon_linkedin.png') }}" alt=""></a>
-                {% endif %}
-                {% if talk.user.blog %}
-                    <a href="{{ talk.user.blog }}"><img src="{{ asset('images/icon_blog.png') }}" alt=""></a>
-                {% endif %}
-                {% if talk.user.homepage %}
-                    <a href="{{ talk.user.homepage }}"><img src="{{ asset('images/icon_homepage.png') }}" alt=""></a>
-                {% endif %}
-            </p>
+          </div>
+			{% if talk.requirements|trim|length > 10 %}
+			<div class="panel panel-default">
+			  <div class="panel-heading">Requirements for attendees</div>
+			  <div class="panel-body">
+				{{ talk.requirements|markdown }}
+			  </div>
+			</div>
+			{% endif %}
         </div>
     </div>
 {% endblock %}

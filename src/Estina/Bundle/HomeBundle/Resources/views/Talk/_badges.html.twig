@@ -1,4 +1,3 @@
-<span class="badge badge-primary">Scena: {{ talk.track }}</span>
 {% if (is_granted("ROLE_USER") and app.user.id == talk.user.id) or is_granted("ROLE_ADMIN") %}
-    <span class="badge badge-{{ talk|talk_status_color }}">Statusas: {{ talk|talk_status }}</span>
+    <span class="badge badge-{{ talk|talk_status_color }}">Status: {{ talk|talk_status }}</span>
 {% endif %}
