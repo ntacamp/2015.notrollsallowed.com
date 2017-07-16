@@ -1,7 +1,7 @@
 {% extends "EstinaHomeBundle::page.html.twig" %}
 
 {% block content %}
-    <h1>Prisijungimas dalyviams</h1>
+    <h1>Login</h1>
 
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData) }}</div>
@@ -9,13 +9,13 @@
 
     <form action="{{ path('login_check') }}" method="post">
 
-        {{ form_row(loginForm._username, { 'label': 'El.paštas' }) }}
-        {{ form_row(loginForm._password, { 'label': 'Slaptažodis' }) }}
+        {{ form_row(loginForm._username, { 'label': 'E-mail' }) }}
+        {{ form_row(loginForm._password, { 'label': 'Password' }) }}
         {{ form_rest(loginForm) }}
 
         <div>
-            <button type="submit" class="btn btn-info">Prisijungti</button>
-            <small><a href="{{ path('user_password_reset') }}">Priminti slažtažodį</a></small>
+            <button type="submit" class="btn btn-info">Login</button>
+            <small><a href="{{ path('user_password_reset') }}">Remind password</a></small>
         </div>
 
     </form>

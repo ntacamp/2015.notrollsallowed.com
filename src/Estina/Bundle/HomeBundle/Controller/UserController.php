@@ -47,7 +47,8 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/slaptazodzio-priminimas", name="user_password_reset")
+     * @Route("/slaptazodzio-priminimas")
+     * @Route("/password", name="user_password_reset")
      * @Template()
      */
     public function passwordResetAction(Request $request)
