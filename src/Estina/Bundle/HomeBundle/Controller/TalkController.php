@@ -261,6 +261,7 @@ class TalkController extends Controller
      * Put talk on schedule
      *
      * @Route("/{id}/schedule", name="talk_schedule")
+     * @Security("has_role('ROLE_ADMIN')")
      * @Method("GET")
      * @Template()
      */
@@ -292,6 +293,7 @@ class TalkController extends Controller
      * Put talk on schedule
      *
      * @Route("/{id}/schedule/slot/{day}/{slot}", name="talk_schedule_submit")
+     * @Security("has_role('ROLE_ADMIN')")
      * @Method("GET")
      * @Template()
      */
