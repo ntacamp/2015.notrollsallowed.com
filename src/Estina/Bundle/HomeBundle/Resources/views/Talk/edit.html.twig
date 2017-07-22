@@ -13,7 +13,11 @@
     <div class="col-md-10 col-md-offset-1">
 
         <h1>Edit Presentation</h1>
-        <a href="{{ path('talk_list') }}">&laquo; Back</a>
+        {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('talk_list') }}">&laquo; Back</a>
+        {% else %}
+            <a href="{{ path('user_profile') }}">&laquo; Back</a>
+        {% endif %}
 
         <div class="row">
             <div class="col-md-4">
