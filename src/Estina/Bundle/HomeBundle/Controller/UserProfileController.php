@@ -103,7 +103,7 @@ class UserProfileController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Jūsų profilis buvo sėkmingai atnaujintas!'
+                'Your profile has been successfully updated!'
             );
 
             return $this->redirect($this->generateUrl('user_profile'));
