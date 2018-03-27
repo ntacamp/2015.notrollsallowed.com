@@ -12,4 +12,5 @@ app/logs/.gitkeep
 /bin/
 /composer.phar
 /web/css/compiled
+.idea/
 /web/js/compiled
