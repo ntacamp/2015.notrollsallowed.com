@@ -71,7 +71,7 @@ EOT;
             return;
         }
 
-        $subject = 'NTA2017 pranešimo patvirtinimas';
+        $subject = 'NTA2018 pranešimo patvirtinimas';
 
         $template = $this->templating->render('email_confirmation.html.twig');
 

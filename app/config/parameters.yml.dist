@@ -18,8 +18,8 @@ parameters:
     dev_email:         ~
 
     slack_api_token:   ~
-    registration_deadline: '2017-07-17'
-    ntacamp_date: 'July 26-30'
+    registration_deadline: '2018-07-09'
+    ntacamp_date: 'July 25-29'
 
     social_hashtag_enabled: true
     social_hashtag_exclude_users: ['detstriathlon', 'matt_hauser', '']
