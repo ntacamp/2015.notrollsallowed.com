@@ -1,6 +1,6 @@
-# 2016.notrollsallowed.com
+# *.notrollsallowed.com
 
-Website for [No Trolls Allowed 2016](http://2016.notrollsallowed.com/) event.
+Website for [No Trolls Allowed](http://notrollsallowed.com/) yearly event.
 
 ## Requirements
 
@@ -36,4 +36,4 @@ make update
 ```
 
 ## TL;DR
-I know nobody will contribute to this site. But if you will - I'll promise send you a sticker :-)
+I know nobody will contribute to this site. But if you will - I'll promise send you a special t-shirt :-)
