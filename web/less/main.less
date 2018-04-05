@@ -21,6 +21,48 @@ body {
 	}
 }
 
+.hello {
+	position: relative;
+	background: url('/images/hero-bg.jpg');
+    background-size: cover;
+    height: 80vh;
+
+    &:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+		z-index: 0;
+    }
+
+    .container {
+		position: relative;
+		color: #fff;
+		text-shadow: 0px 0px 8px rgba(0,0,0, 0.8);
+
+	    h1 {
+	    	margin: 15vh 0 50px;
+	    }
+
+	    .btn-register {
+	    	text-shadow: none;
+			background: #da4d5b;
+			border: none;
+			font-size: 26px;
+			height: 60px;
+			line-height: 60px;
+			padding: 0 30px;
+			transition: background 0.35s ease-in;
+
+			&:hover {
+				background: darken(#da4d5b, 15%);
+			}
+	    }
+    }
+
+}
+
 .page {
 	margin-top: 50px;
 }
