@@ -22,6 +22,36 @@
         </div>
     </div>
 
+    <div id="about" class="event-details about">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 wrapper">
+
+                    <h2 class="text-center">What is No Trolls Allowed?</h2>
+
+                    <p>Have you ever been in a place where you can build an actual rocket, practice your cheese making skills and do a yoga class all at once? Well, NTA camp is the place.</p>
+                    
+                    <p>No Trolls Allowed is an annual open-air hackercamp where hobbies and arts meet technology and awesomeness. It does not matter if you are programmer, traveler, chef, musician or astronaut - we will find a spot for you. In our own eyes, everyone is a hacker.</p>
+
+                    <p>The camp is family friendly so bring everybody ;)</p>
+
+                    <p><a href="{{ path('page_about_en') }}" class="btn cta">Find out more &raquo;</a></p>
+
+                </div> 
+            </div>
+        </div>
+        
+        <div class="container gallery">
+            <div class="list">
+                {% for photo in photos %}
+                    <img src="/images/photos/{{ photo }}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
     <div class="sponsors">
         <div class="container text-center">
             <h2>Main sponsors</h2><br>
@@ -83,37 +113,8 @@
             <br><br>
         </div>
     </div>
+    
 
-    {#
-    <div id="about" class="event-details what">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12">
-                    <h1 class="text-center">Kas yra HackerCamp?</h1>
-                </div> 
-
-                <div class="col-md-5">
-                    <p>Hakeriu galime pavadinti bet kurį žmogų kuris taiko nestandartines idėjas savo hobiams, projektams ar tiesiog kasdieniniame gyvenime. Nesvarbu ar prie kompiuterio monitoriaus ar virtuvėje ar garaže. Jeigu ką nors kuri, eksperimentuoji ar tiesiog domiesi - laukiame tavęs No Trolls Allowed stovykloje.</p>
-                    <p>Čia kasmet gali sutikti įvairiausių sričių entuziastus. Mūsų stovykloje renkasi raketų specialistai, keliautojai, stalo žaidimų mėgėjai, viduramžių riteriai, modernaus šokio atlikėjai, bei bet kokių kitų sričių geek'ai, hakeriai, makeriai ir menininkai.</p>
-                    <p>Prisijunk prie bendraminčių! Atvyk su visa šeima!</p>
-                    <p><a href="{{ path('page_about') }}">Daugiau &raquo;</a></p>
-                </div>
-
-                <div class="col-md-7">
-                    <iframe width="100%" height="420" src="https://www.youtube.com/embed/YkdNLsY7xhw" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            {% if "now"|date("Y-m-d") <= registration_deadline %}
-            <div class="row cta">
-                <div class="col-md-12 text-center">
-                    <p><a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Registruokis &raquo;</a></p>
-                </div>
-            </div>
-            {% endif %}
-        </div>
-    </div>
     <div class="event-details where" id="vieta">
         <div class="container">
             <div class="row">
@@ -121,27 +122,27 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18965.232327832127!2d24.980722199999974!3d54.65658161250166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDM5JzIzLjciTiAyNMKwNTgnNTAuNiJF!5e1!3m2!1sen!2slt!4v1434653579012" width="100%" height="400" frameborder="0" style="border:0"></iframe>
                 </div>
                 <div class="col-md-5">
-                    <h1><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>Kur?</h1>
+                    <h2><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span> Where?</h2>
                     <p>
-                        Poilsiavietė "Verubė" prie Skaisčio ežero, Trakų raj.
+                        Camp "Verubė" by the Skaistis lake, near Trakai town.
                         <ul>
-                            <li>10 km nuo Trakų</li>
-                            <li>25 km nuo Vilniaus</li>
-                            <li>90 km nuo Kauno</li>
+                            <li>10 km from Trakai</li>
+                            <li>25 km from  Vilnius</li>
+                            <li>90 km from  Kaunas</li>
                             <li>54.656948, 24.982314</li>
                         </ul>
                     </p>
 
                     <br>
 
-                    <h1><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Kada?</h1>
+                    <h2><span class="glyphicon glyphicon-time" aria-hidden="true"></span> When?</h2>
                     <p>
                         {{ ntacamp_date }}<br>
-                        <small><span class="text-muted">Atvykstame ketvirtadienį, o vietą paliekame sekmadienio vakarą!</span></small>
+                        <small><span class="text-muted">We arrive on Thursday, and leave on Sunday evening</span></small>
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    #}
+    
 {% endblock %}
