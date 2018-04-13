@@ -21,21 +21,21 @@ abstract class AbstractTalkType extends AbstractType
     {
         $builder
             ->add('type', 'choice', [
-                'label' => 'Type of presentation',
+                'label' => 'What do you want to do?',
                 'choices' => Talk::getTypesMap(),
             ])
             ->add('title', 'text', [
-                'label' => 'Complete title',
+                'label' => 'Name of your activity',
             ])
             ->add('language', 'choice', [
-                'label' => 'Presentation language',
+                'label' => 'Activity language',
                 'choices' => ['LT' => 'LT', 'EN' => 'EN'],
             ])
             ->add('description', 'textarea', [
-                'label' => 'Talk description',
+                'label' => 'Activity description',
             ])
             ->add('requirements', 'textarea', [
-                'label' => 'Requirements for attendees',
+                'label' => 'Requirements for attendees (if any)',
                 'required' => false,
             ])
             ->add('comments', 'textarea', [
@@ -52,11 +52,11 @@ abstract class AbstractTalkType extends AbstractType
                 'choices' => array_combine($this->tshirtSizes, $this->tshirtSizes),
             ])
             ->add('question1', 'text', [
-                'label' => 'What can you teach other No Trolls Allowed attendees in 5 minutes?',
+                'label' => 'Tell us something interesting about you',
             ])
-            ->add('question2', 'text', [
-                'label' => 'How can you contribute to No Trolls Allowed event?',
-            ])
+            // ->add('question2', 'text', [
+            //     'label' => 'How can you contribute to No Trolls Allowed event?',
+            // ])
         ;
     }
 

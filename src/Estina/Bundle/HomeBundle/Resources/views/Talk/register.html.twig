@@ -36,21 +36,15 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row registration">
     <div class="col-md-10 col-md-offset-1">
         <h1>Registration</h1>
 
         <div class="row">
             <div class="col-md-8">
-                <h3>Main rule - every participant must contribute to the event.</h3>
+                <h3>Register here to participate in the camp</h3>
                 <p>
-                Please register you presentation or workshop by filling the
-                form below. Organizers are going to review your submition in
-                near time and confirm the registration or contact you with
-                additional requests or recommendations. Please be patient.
-                </p>
-                <p>
-                "TBA" and similar registrations are forwarded to /dev/null.
+                NTA crew is reviewing your submissions within a few days. We will contact you with additional requests or recommendations if you need to clarify something, so please be patient.
                 </p>
             </div>
             <div class="col-md-4">
@@ -71,17 +65,27 @@
                 {% if display %}
                     {{ form_start(form) }}
                         {{ form_errors(form) }}
+
                         <div id="estina_bundle_homebundle_registertalk">
+
+                            <h4>Something about yourself</h4>
                             {% if form.user is defined %}
                                 {{ form_row(form.user.name) }}
                                 {{ form_row(form.user.email) }}
                                 {{ form_row(form.user.phone) }}
+                                {{ form_row(form.question1) }}
+                                <small>This will be your ice-breaker, so make it short, like <i>"I don't wear socks on Sundays"</i> or 
+                                <i>"I am huge Star Wars fan"</i></small>
                                 {{ form_rest(form.user) }}
                             {% endif %}
-                            <hr class="dashed">
+                            
+                            <h4>How do you want to participate?</h4>
+                            <p>Your participation is your commitment and ticket to the camp. It's easiest to take something you are passioned about and share that with everyone.</p>
                             {{ form_row(form.type) }}
                             {{ form_row(form.title) }}
+                            <small> "TBA" and similar registrations are forwarded to /dev/null track.</small>
                             {{ form_row(form.language) }}
+
                             <div class="form-group">
                                 {{ form_label(form.description) }}
                                 {{ form_widget(form.description, {
@@ -89,15 +93,23 @@
                                 })}}
                                 {{ form_errors(form.description) }}
                                 <span class="text-note">
-                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> supported
+                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> is supported
                                 </span>
                             </div>
+
                             <div class="form-group">
                                 <hr class="dashed">
                                 <div id="preview"></div>
                                 <hr class="dashed">
                             </div>
+
+                            {{ form_row(form.requirements) }}
+                            {{ form_row(form.comments) }}
+                            
+                            <h4>And bonus...</h4>
+                            <p>We will try to make awesome t-shirts that you will be proud to wear in every occasion.</p>
                             {{ form_rest(form) }}
+
                         </div>
                     {{ form_end(form) }}
                 {% else %}
