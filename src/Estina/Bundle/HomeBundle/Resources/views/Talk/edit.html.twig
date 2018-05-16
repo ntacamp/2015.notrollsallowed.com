@@ -12,7 +12,8 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
-        <h1>Edit Presentation</h1>
+        <h1>Edit Registration details</h1>
+
         {% if is_granted("ROLE_ADMIN") %}
             <a href="{{ path('talk_list') }}">&laquo; Back</a>
         {% else %}
@@ -81,7 +82,7 @@
                     <div class="form-group">
                         {{ form_widget(edit_form.submit, {
                             'label': 'Išsaugoti',
-                            'attr': {'class': 'btn btn-default'}
+                            'attr': {'class': 'btn btn-primary btn-lg pull-right'}
                         })}}
                         {% if entity.isCancelled %}
                             <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Restore talk. I want to participate!!!</a>

@@ -28,10 +28,10 @@ class TalkExtension extends \Twig_Extension
     public function getTalkStatus(Talk $talk)
     {
         $map = [
-            Talk::STATUS_NEW => 'Naujas',
-            Talk::STATUS_ACCEPTED => 'Patvirtintas',
-            Talk::STATUS_REJECTED => 'Atmestas',
-            Talk::STATUS_CANCELLED => 'Nedalyvausiu',
+            Talk::STATUS_NEW => 'New',
+            Talk::STATUS_ACCEPTED => 'Confirmed',
+            Talk::STATUS_REJECTED => 'Rejected',
+            Talk::STATUS_CANCELLED => 'Canceled',
         ];
 
         return $this->mapValue($talk->getStatus(), $map);;
