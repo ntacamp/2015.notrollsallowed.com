@@ -39,7 +39,9 @@ class TalkController extends Controller
         }
 
         $form = $this->createRegistrationForm( $entity );
+
         if ('POST' === $request->getMethod()) {
+
             $form->handleRequest($request);
 
             if ($form->isValid()) {
@@ -64,6 +66,7 @@ class TalkController extends Controller
 
                     return $this->redirect(
                         $this->generateUrl('talk_success'));
+
                 } catch (UniqueConstraintViolationException $e) {
                     // @todo add error on email field.
                     $error = new FormError("User already exists");
@@ -93,7 +96,7 @@ class TalkController extends Controller
     /**
      * Display info after sucessful registration. 
      * 
-     * @Route("/registracija-sekminga", name="talk_success")
+     * @Route("/welcome", name="talk_success")
      * @Template()
      */
     public function successAction()

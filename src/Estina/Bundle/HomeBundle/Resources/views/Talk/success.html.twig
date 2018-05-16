@@ -1,24 +1,36 @@
-{% extends 'EstinaHomeBundle::page.html.twig' %}
+{% extends 'EstinaHomeBundle::page-wide.html.twig' %}
 
 {% block content -%}
-    <h1>Sveikiname!</h1>
-    <h2>Jūsų pranešimas buvo sėkmingai užregistruotas</h2>
-    <p>
-        Netrukus jis bus peržiūrėtas administratorių ir patvirtintas.<br>
-        Apie pranešimo patvirtinimą mes jus informuosime elektroniniu laišku.
-        <br>Būkite kantrūs :-)
-    </p>
+    
+    <div class="welcome-page">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1>Welcome aboard!</h1>
+                <h2>We got all what we need for now, so you can relax open a cold one.</h2>
 
-    <p>
-        Norėdami peržiūrėti pranešimo statusą ar keisti jo aprašymą,
-        <a href="{{ path('login_route') }}">prisijunkite</a>
-        prie sistemos. Jeigu neturite slaptažodžio, jį galite gauti užpildę
-        <a href="{{ path('user_password_reset') }}">slaptažodžio priminimo formą</a>.
-    </p>
+                <p>
+                    Now we will review if your registration fits our community standards and let you know via email. 
+                    This could take a while, so please be patient.
+                </p>
 
-    <p>
-        Jeigu turite klausimų, rašykite
-        <a href="mailto:{{ admin_email }}">{{ admin_email }}</a>.
-    </p>
+                <p>
+                    You can log in to make changes or check status of your registration. The temporary password was sent to your email.
+                </p>
+
+                <p class="text-center">
+                    <br>
+                    <a href="{{ path('login_route') }}" class="btn btn-primary btn-lg">Log in</a>
+                    <br>
+                </p>
+
+                <p>
+                    <br>
+                    If you have any questions, don't be shy and drop us a line at
+                    <a href="mailto:{{ admin_email }}">{{ admin_email }}</a> or check out our <a href="https://www.facebook.com/NoTrollsAllowed/" target="_blank">Facebook page</a> for more info.
+                </p>
+            </div>
+        </div>
+    </div>
+
 </ul>
 {% endblock %}
