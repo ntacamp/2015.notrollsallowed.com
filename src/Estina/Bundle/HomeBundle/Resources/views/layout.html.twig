@@ -23,6 +23,11 @@
             filter='cssrewrite' output='css/compiled/main.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
+        {% stylesheets
+            'css/md-preview.css'
+            filter='cssrewrite' output='css/compiled/md-preview.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
 		<!--== FB meta ==-->
         <meta property="og:url" content="{{ url('home') }}">
