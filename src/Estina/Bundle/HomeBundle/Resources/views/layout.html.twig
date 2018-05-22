@@ -39,11 +39,8 @@
         <meta property="og:image:height" content="300">
     </head>
 
-    {% set controller = app.request.get('_template').template().get('controller') %}
-    {% set action = app.request.get('_template').template().get('name') %}
-    
-    <body data-controller="{{ controller }}"
-          data-action="{{ action }}">
+    <body data-controller="{{ getControllerName() }}"
+          data-action="{{ getActionName() }}">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
 
@@ -156,8 +153,8 @@
         
         {% block javascripts %}{% endblock %}
         {% javascripts
-            'assets/vendor/masonry/dist/masonry.pkgd.min.js'
             'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'
+            'assets/vendor/masonry/dist/masonry.pkgd.min.js'
             'js/site.min.js'
             'js/site.js'
             output='js/compiled/all.js' %}

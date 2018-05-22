@@ -50,13 +50,11 @@ var App = App || {};
 
     App.Talk = {
         register: function() {
-            App.Talk.markdownPreview(
-                    $("#estina_bundle_homebundle_registertalk_description"));
+            App.Talk.markdownPreview($("#estina_bundle_homebundle_registertalk_description"));
         },
 
         edit: function() {
-            App.Talk.markdownPreview(
-                    $("#estina_bundle_homebundle_talk_description"));
+            App.Talk.markdownPreview($("#estina_bundle_homebundle_talk_description"));
         },
 
         markdownPreview: function($textarea) {
