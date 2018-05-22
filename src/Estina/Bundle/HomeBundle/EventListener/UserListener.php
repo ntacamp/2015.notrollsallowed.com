@@ -40,8 +40,8 @@ class UserListener
         ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('Slaptažodžio priminimas')
-            ->setFrom('hi@notrollsallowed.com')
+            ->setSubject('Password reset')
+            ->setFrom('hi@notrollsallowed.com', 'No Trolls Allowed')
             ->setTo($user->getEmail())
             ->setBody($template, 'text/html')
         ;
@@ -62,8 +62,8 @@ class UserListener
         ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('NoTrollsAllowed registracija')
-            ->setFrom('hi@notrollsallowed.com')
+            ->setSubject('Congratulations! You just registered to No Trolls Allowed 2018')
+            ->setFrom('hi@notrollsallowed.com', 'No Trolls Allowed')
             ->setTo($user->getEmail())
             ->setBody($template, 'text/html')
         ;
