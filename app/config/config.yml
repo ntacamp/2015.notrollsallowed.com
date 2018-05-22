@@ -15,7 +15,7 @@ framework:
     templating:
         engines: ['twig']
     assets:
-        version: v2
+        version: v3
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
