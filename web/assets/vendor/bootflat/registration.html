@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+    <head>
+        <title>#ntacamp</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootflat/css/bootflat.css">
+
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon_16.ico"/>
+        <link rel="bookmark" href="favicon_16.ico"/>
+
+        <script src="//localhost:35729/livereload.js"></script>
+    </head>
+
+    <body class="home">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="bootflat/img/logo.png"><span>No Trolls Allowed</span></a>
+                </div>
+                <div class="pull-right">
+                    <a href="#login" class="navbar-btn btn">Prisijungti</a>
+                </div>
+                <div class="collapse navbar-collapse  pull-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Apie <i>Hacker Camp</i></a></li>
+                        <li><a href="#">Registracija</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programa <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Pranešimai</a></li>
+                                <li><a href="#">Dirbtuvės</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">DUK</a></li>
+                        <li><a href="#">BLOGas</a></li>
+                        <li><a href="#">Kontaktai</a></li>
+                    </ul>
+                    <!-- <a class="navbar-link" href="">Signed in as Mark Otto</a> -->
+                </div>
+            </div>
+        </nav>
+        
+        <div class="page">
+            <div class="container">
+                <div class="row">
+                    <article class="col-md-6 col-md-offset-1">
+                        <h1>Registracija</h1>
+
+                        <p class="lead">
+                            <span class="label label-warning">Dėmesio!</span>
+                            Šiais metais turėsite galimybę iš anksto pasirinkti savo pranešimo pristatymo laiką, tad registracija sudaryta iš dviejų etapų.
+                        </p>
+                        <p>
+                            <strong>I etapo</strong> metu užregistruojate savo pranešimo temą, taip iš anksto rezervuodami sau vietą renginyje.<br>
+                            <strong>II etapo</strong> metu, iki renginio <strong>likus 2 savaitėm</strong>, turėsite patvirtinti savo dalyvavimą įkeldami 
+                            savo prezentaciją (ar dalį jos) ir pasirinkdami savo pranešimo pristatymo laiką.
+                        </p>
+
+                        <hr>
+                        
+                        <form name="estina_bundle_homebundle_registertalk" method="post" action="/t/pranesimo-registracija">
+                            <div id="estina_bundle_homebundle_registertalk">
+                                <div>
+                                    <div id="estina_bundle_homebundle_registertalk_user">
+                                        <div class="form-group">
+                                            <label for="estina_bundle_homebundle_registertalk_user_name" class="required">Vardas/Pavardė</label>
+                                            <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_user_name" name="estina_bundle_homebundle_registertalk[user][name]" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="estina_bundle_homebundle_registertalk_user_email" class="required">El. Paštas</label>
+                                            <input type="email" class="form-control" id="estina_bundle_homebundle_registertalk_user_email" name="estina_bundle_homebundle_registertalk[user][email]" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="estina_bundle_homebundle_registertalk_user_phone" class="required">Telefonas</label>
+                                            <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_user_phone" name="estina_bundle_homebundle_registertalk[user][phone]" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="estina_bundle_homebundle_registertalk_title" class="required">Pranešimas</label>
+                                    <input type="text" class="form-control" id="estina_bundle_homebundle_registertalk_title" name="estina_bundle_homebundle_registertalk[title]" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="estina_bundle_homebundle_registertalk_description" class="required">Pranešimo aprašymas (Markdown)</label>
+                                    <textarea  class="form-control" id="estina_bundle_homebundle_registertalk_description" name="estina_bundle_homebundle_registertalk[description]" required="required"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="estina_bundle_homebundle_registertalk_track" class="required">Scena</label>
+                                    <select class="form-control" id="estina_bundle_homebundle_registertalk_track" name="estina_bundle_homebundle_registertalk[track]"></select>
+                                </div>
+                                <div>
+                                    <button type="submit" id="estina_bundle_homebundle_registertalk_submit" name="estina_bundle_homebundle_registertalk[submit]" class="btn btn-info btn-register">Registruotis</button>
+                                </div>
+                                <input type="hidden" id="estina_bundle_homebundle_registertalk__token" name="estina_bundle_homebundle_registertalk[_token]" value="Lh7Eiw7RUh7HOdO3oGTIBRjaYekZzlSAVtyYvTlo8DA">
+                            </div>
+                        </form>
+                    </article>
+                    <aside class="col-md-4 col-md-offset-1">
+                        
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+            
+        <footer class="footer">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="footer-logo">
+                        <a href="#"><img src="bootflat/img/logo.png"><br>No Trolls Allowed</a>
+                    </div>
+
+                    <dl class="footer-nav">
+                        <dt class="nav-title">#ntacamp</dt>
+                        <dd class="nav-item">
+                            <a href="#apie-hacker-camp">Apie <em>Hacker Camp</em></a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#vieta">Vieta</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#registracija">Registracija</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#duk">DUK</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#blog">BLOGas</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#kontaktai">Kontaktai</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#prisijungti">Prisijungti</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Renginio programa</dt>
+                        <dd class="nav-item">
+                            <a href="#programa/pranesimai">Pranešimai</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#programa/dirbtuves">Dirbtuvės</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Sekite mus</dt>
+                        
+                        <dd class="nav-item">
+                            <a href="https://github.com/ntacamp">GitHub</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="https://twitter.com/ntacamp">Twitter</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="#ntacamp-feed-page">#ntacamp feed</a>
+                        </dd>
+                    </dl>
+                    <dl class="footer-nav">
+                        <dt class="nav-title">Turite idėjų? Rašykite!</dt>
+                        <dd class="nav-item">
+                            <a href="mailto:info@notrollsallowed.com">e: hi@notrollsallowed.com</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="footer-copyright text-center">No Trolls Allowed &copy; 2015</div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        <!-- Bootflat's JS files.-->
+        <script src="bootflat/js/icheck.min.js"></script>
+        <script src="bootflat/js/jquery.fs.selecter.min.js"></script>
+        <script src="bootflat/js/jquery.fs.stepper.min.js"></script>
+
+    </body>
+</htm
