@@ -22,36 +22,6 @@
         </div>
     </div>
 
-    <div id="about" class="event-details about">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 wrapper">
-
-                    <h2 class="text-center">What is No Trolls Allowed?</h2>
-
-                    <p>Have you ever been in a place where you can build an actual rocket, practice your cheese making skills and do a yoga class all at once? Well, NTA camp is the place.</p>
-                    
-                    <p>No Trolls Allowed is an annual open-air hackercamp where hobbies and arts meet technology and awesomeness. It does not matter if you are programmer, traveler, chef, musician or astronaut - we will find a spot for you. In our own eyes, everyone is a hacker.</p>
-
-                    <p>The camp is family friendly so bring everybody ;)</p>
-
-                    <p><a href="{{ path('page_about_en') }}" class="btn cta">Find out more &raquo;</a></p>
-
-                </div> 
-            </div>
-        </div>
-        
-        <div class="container gallery">
-            <div class="list">
-                {% for photo in photos %}
-                    <img src="/images/photos/{{ photo }}" alt="">
-                {% endfor %}
-            </div>
-        </div>
-
-    </div>
-
     <div class="sponsors">
         <div class="container text-center">
             <h2>Main sponsors</h2><br>
@@ -146,6 +116,37 @@
         </div>
     </div>
     
+
+
+    <div id="about" class="event-details about">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 wrapper">
+
+                    <h2 class="text-center">What is No Trolls Allowed?</h2>
+
+                    <p>Have you ever been in a place where you can build an actual rocket, practice your cheese making skills and do a yoga class all at once? Well, NTA camp is the place.</p>
+                    
+                    <p>No Trolls Allowed is an annual open-air hackercamp where hobbies and arts meet technology and awesomeness. It does not matter if you are programmer, traveler, chef, musician or astronaut - we will find a spot for you. In our own eyes, everyone is a hacker.</p>
+
+                    <p>The camp is family friendly so bring everybody ;)</p>
+
+                    <p><a href="{{ path('page_about_en') }}" class="btn cta">Find out more &raquo;</a></p>
+
+                </div> 
+            </div>
+        </div>
+        
+        <div class="container gallery">
+            <div class="list">
+                {% for photo in photos %}
+                    <img src="/images/photos/{{ photo }}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
 
     <div class="event-details where" id="vieta">
         <div class="container">
