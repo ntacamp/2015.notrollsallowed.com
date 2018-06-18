@@ -5,6 +5,7 @@ namespace Estina\Bundle\HomeBundle\EventListener;
 use CL\Slack\Payload\ChatPostMessagePayload;
 use CL\Slack\Transport\ApiClientInterface;
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
+use Estina\Bundle\HomeBundle\TalkEvents;
 use Symfony\Component\Routing\RouterInterface;
 
 /**
@@ -48,17 +49,14 @@ class TalkSlackNotificationListener
         $payload->setUsername('Registratorius');
         $payload->setIconEmoji('space_invader');
         
+        $prefix = $event->getType() == TalkEvents::UPDATE ? "*UPDATED:*" : ":new:";
         $url = $this->router->generate('talk', ['id' => $talk->getId()], true);
-        $message = sprintf('[%s] <%s|%s> [%s] %s',
-            $event->getType(), $url, $talk, $talk->getLanguage(), $talk->getUser());
+        $message = sprintf('%s <%s|%s> [%s] %s',
+            $prefix, $url, $talk, $talk->getLanguage(), $talk->getUser());
         $message .= "\n";
-        $message .= $talk->getDescription();
+        $message .= "> " . $talk->getDescription();
 
         $payload->setText($message); // also supports Slack formatting
-
         $response = $this->api->send($payload);
-        if (!$response->isOk()) {
-            // log error? do smth?
-        }
     }
 }
