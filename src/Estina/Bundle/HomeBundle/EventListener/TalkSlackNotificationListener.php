@@ -31,15 +31,26 @@ class TalkSlackNotificationListener
      */
     public function onCreate(TalkEvent $event)
     {
+        $this->notify($event);
+    }
+
+    public function onUpdate(TalkEvent $event)
+    {
+        $this->notify($event);
+    }
+
+    private function notify(TalkEvent $event)
+    {
         $talk = $event->getTalk();
 
         $payload  = new ChatPostMessagePayload();
         $payload->setChannel('#pranesimai');
-        $payload->setUsername('Registratorius'); // can be anything you want
-        $payload->setIconEmoji('space_invader'); // check out emoji.list-payload for a list of available emojis
+        $payload->setUsername('Registratorius');
+        $payload->setIconEmoji('space_invader');
         
         $url = $this->router->generate('talk', ['id' => $talk->getId()], true);
-        $message = sprintf('<%s|%s> [%s] %s', $url, $talk, $talk->getLanguage(), $talk->getUser());
+        $message = sprintf('[%s] <%s|%s> [%s] %s',
+            $event->getType(), $url, $talk, $talk->getLanguage(), $talk->getUser());
         $message .= "\n";
         $message .= $talk->getDescription();
 

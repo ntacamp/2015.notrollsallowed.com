@@ -405,6 +405,10 @@ class TalkController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
+            $event = new TalkEvent($entity);
+            $this->get('event_dispatcher')
+                ->dispatch(TalkEvents::UPDATE, $event);
+
             $this->get('session')->getFlashBag()->set(
                 'success',
                 'Updated!'
