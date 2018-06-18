@@ -35,18 +35,22 @@ class TalkListener
 
         $subject = sprintf('Registracija: %s [%s]', $talk, $talk->getUser());
         $body = <<<EOT
-====================
+===============================================================================
 PRANEŠĖJAS
-====================
+===============================================================================
 {$talk->getUser()}
 {$talk->getUser()->getEmail()}
 {$talk->getUser()->getPhone()}
 
-====================
+===============================================================================
 PRANEŠIMAS
-====================
-{$talk->getTrack()}
-{$talk->getTitle()}
+===============================================================================
+TITLE:        {$talk->getTitle()} [{$talk->getLanguage()}]
+TYPE:         {$talk->getType()}
+REQUIREMENTS: {$talk->getRequirements()}
+COMMENTS:     {$talk->getComments()}
+QUESTION #1:  {$talk->getQuestion1()}
+
 {$talk->getDescription()}
 EOT;
 
@@ -71,7 +75,7 @@ EOT;
             return;
         }
 
-        $subject = 'NTA2018 pranešimo patvirtinimas';
+        $subject = 'NTA2018 confirmation';
 
         $template = $this->templating->render('email_confirmation.html.twig');
 
