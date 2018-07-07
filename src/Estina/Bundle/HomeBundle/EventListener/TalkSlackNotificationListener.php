@@ -80,7 +80,7 @@ class TalkSlackNotificationListener
         $message = sprintf('%s <%s|%s> [%s] %s',
             $prefix, $url, $talk, $talk->getLanguage(), $talk->getUser());
         $message .= "\n";
-        $message .= "> " . $talk->getDescription();
+        $message .= '> ' . str_replace("\n", "\n> ", $talk->getDescription());
 
         $payload->setText($message); // also supports Slack formatting
         $response = $this->api->send($payload);
