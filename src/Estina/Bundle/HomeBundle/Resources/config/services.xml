@@ -15,6 +15,7 @@
         <service id="home.talk_slack_notification_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkSlackNotificationListener">
             <argument type="service" id="cl_slack.api_client" />
             <argument type="service" id="router" />
+            <argument type="service" id="security.token_storage" />
             <tag name="kernel.event_listener" event="talk.create" method="onCreate" />
             <tag name="kernel.event_listener" event="talk.update" method="onUpdate" />
         </service>

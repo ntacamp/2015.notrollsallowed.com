@@ -7,6 +7,7 @@ use CL\Slack\Transport\ApiClientInterface;
 use Estina\Bundle\HomeBundle\Event\TalkEvent;
 use Estina\Bundle\HomeBundle\TalkEvents;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
  * TalkListener 
@@ -19,10 +20,17 @@ class TalkSlackNotificationListener
     /** @var RouterInterface */
     protected $router;
 
-    public function __construct(ApiClientInterface $api, RouterInterface $router)
+    protected $tokenStorage;
+
+    public function __construct(
+        ApiClientInterface $api,
+        RouterInterface $router,
+        TokenStorageInterface $tokenStorage
+    )
     {
         $this->api = $api;
         $this->router = $router;
+        $this->tokenStorage = $tokenStorage;
     }
 
     /**
@@ -40,6 +48,20 @@ class TalkSlackNotificationListener
         $this->notify($event);
     }
 
+    private function getUserName()
+    {
+        $token = $this->tokenStorage->getToken();
+        if (!$token) {
+            return null;
+        }
+        $user = $token->getUser();
+        if (!$user) {
+            return null;
+        }
+
+        return $user->getName();
+    }
+
     private function notify(TalkEvent $event)
     {
         $talk = $event->getTalk();
@@ -49,7 +71,11 @@ class TalkSlackNotificationListener
         $payload->setUsername('Registratorius');
         $payload->setIconEmoji('space_invader');
         
-        $prefix = $event->getType() == TalkEvents::UPDATE ? "*UPDATED:*" : ":new:";
+        $prefix = ":new:";
+        if ($event->getType() == TalkEvents::UPDATE) {
+            $userName = $this->getUserName();
+            $prefix = sprintf('*UPDATED*%s:', ($userName) ? sprintf(' by *%s*', $userName) : '');
+        }
         $url = $this->router->generate('talk', ['id' => $talk->getId()], true);
         $message = sprintf('%s <%s|%s> [%s] %s',
             $prefix, $url, $talk, $talk->getLanguage(), $talk->getUser());
