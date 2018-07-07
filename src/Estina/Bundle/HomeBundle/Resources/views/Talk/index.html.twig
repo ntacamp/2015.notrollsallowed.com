@@ -8,7 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Description</th>
+                <th>Stage</th>
                 <th>Createdon</th>
                 <th>Updatedat</th>
                 <th>Status</th>
@@ -24,7 +24,7 @@
                     <br>{{ entity.user }}
                     <br><a href="mailto:{{ entity.user.email}}">{{ entity.user.email }}</a>
                 </td>
-                <td>{{ entity.description[:100] ~ "..." }}</td>
+                <td>{{ entity.track }}</td>
                 <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
