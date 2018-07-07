@@ -531,6 +531,36 @@ class TalkController extends Controller
     }
 
     /**
+     * @Route("/request/{id}", name="talk_request")
+     * @Method("GET")
+     * @Template()
+     */
+    public function requestChangesAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        $entity->requestChanges();
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->set(
+            'success',
+            'The Talk was requested for changes.'
+        );
+
+        return $this->redirect($this->generateUrl('talk_edit', ['id' => $id]));
+    }
+
+
+    /**
      * Creates a form to delete a Talk entity by id.
      *
      * @param mixed $id The entity id

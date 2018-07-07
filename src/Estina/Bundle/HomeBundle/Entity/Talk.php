@@ -26,6 +26,9 @@ class Talk
     /** Speaker changed his mind */
     const STATUS_CANCELLED = 'cancelled';
 
+    /** Talk has been requested for changes by admins */
+    const STATUS_CHANGES_REQUESTED = 'requested';
+
     private static $types = ['presentation', 'discussion', 'workshop', 'other'];
 
     /**
@@ -396,6 +399,12 @@ class Talk
         $this->organizer = $organizer;
 
         return $this;
+    }
+
+    public function requestChanges()
+    {
+        $this->setUpdatedAt(new \DateTime());
+        $this->setStatus(self::STATUS_CHANGES_REQUESTED);
     }
 
     public function cancel()

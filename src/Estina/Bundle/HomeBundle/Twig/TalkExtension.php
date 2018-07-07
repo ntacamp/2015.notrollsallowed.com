@@ -32,6 +32,7 @@ class TalkExtension extends \Twig_Extension
             Talk::STATUS_ACCEPTED => 'Confirmed',
             Talk::STATUS_REJECTED => 'Rejected',
             Talk::STATUS_CANCELLED => 'Canceled',
+            Talk::STATUS_CHANGES_REQUESTED => 'Requested for Changes',
         ];
 
         return $this->mapValue($talk->getStatus(), $map);;
@@ -48,7 +49,8 @@ class TalkExtension extends \Twig_Extension
             Talk::STATUS_NEW => 'info',
             Talk::STATUS_ACCEPTED => 'success',
             Talk::STATUS_REJECTED => 'danger',
-            Talk::STATUS_CANCELLED => 'warning',
+            Talk::STATUS_CANCELLED => 'danger',
+            Talk::STATUS_CHANGES_REQUESTED => 'warning',
         ];
 
         return $this->mapValue($talk->getStatus(), $map);;
