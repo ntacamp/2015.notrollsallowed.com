@@ -26,7 +26,7 @@ class GravatarExtension extends \Twig_Extension
     {
 
         $defaultImage = 'https://robohash.org/' . $this->hashEmail($email) . '.png?size=' . sprintf('%sx%s', $size, $size);
-        return  $grav_url = "http://www.gravatar.com/avatar/" . $this->hashEmail($email)
+        return  $grav_url = "https://www.gravatar.com/avatar/" . $this->hashEmail($email)
             . "?s=" . $size . '&r=' . $rating . "&d=" . $defaultImage;
     }
 
