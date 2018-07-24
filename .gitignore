@@ -13,3 +13,4 @@ app/logs/.gitkeep
 /web/css/compiled
 .idea/
 /web/js/compiled
+tags
