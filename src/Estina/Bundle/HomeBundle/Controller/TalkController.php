@@ -521,6 +521,9 @@ class TalkController extends Controller
             $entity->cancel();
             $em->flush();
 
+            $this->get('event_dispatcher')
+                ->dispatch(TalkEvents::CANCEL, $entity);
+
             $this->get('session')->getFlashBag()->set(
                 'success',
                 'The Talk was canceled.'

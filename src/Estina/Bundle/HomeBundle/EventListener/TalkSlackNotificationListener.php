@@ -48,6 +48,11 @@ class TalkSlackNotificationListener
         $this->notify($event);
     }
 
+    public function onCancel(TalkEvent $event)
+    {
+        $this->notify($event);
+    }
+
     private function getUserName()
     {
         $token = $this->tokenStorage->getToken();
@@ -72,9 +77,12 @@ class TalkSlackNotificationListener
         $payload->setIconEmoji('space_invader');
         
         $prefix = ":new:";
-        if ($event->getType() == TalkEvents::UPDATE) {
+        if (in_array(
+                $event->getType(), [TalkEvents::CANCEL, TalkEvents::UPDATE])) {
             $userName = $this->getUserName();
-            $prefix = sprintf('*UPDATED*%s:', ($userName) ? sprintf(' by *%s*', $userName) : '');
+            $prefix = sprintf('*%s*%s:',
+                TalkEvents::getName($event->getType()),
+                ($userName) ? sprintf(' by *%s*', $userName) : '');
         }
         $url = $this->router->generate('talk', ['id' => $talk->getId()], true);
         $message = sprintf('%s <%s|%s> [%s] %s',
