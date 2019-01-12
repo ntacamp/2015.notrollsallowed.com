@@ -62,7 +62,7 @@ class UserListener
         ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('Congratulations! You just registered to No Trolls Allowed 2018')
+            ->setSubject('Congratulations! You just registered to No Trolls Allowed 2019')
             ->setFrom('hi@notrollsallowed.com', 'No Trolls Allowed')
             ->setTo($user->getEmail())
             ->setBody($template, 'text/html')

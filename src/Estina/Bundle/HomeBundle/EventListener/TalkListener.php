@@ -75,7 +75,7 @@ EOT;
             return;
         }
 
-        $subject = 'NTA2018 confirmation';
+        $subject = 'NTA2019 confirmation';
 
         $template = $this->templating->render('email_confirmation.html.twig');
 
