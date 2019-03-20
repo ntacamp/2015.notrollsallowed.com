@@ -1,8 +1,8 @@
 parameters:
     database_driver:   pdo_mysql
-    database_host:     127.0.0.1
+    database_host:     vagrant
     database_port:     ~
-    database_name:     symfony
+    database_name:     ntacamp
     database_user:     root
     database_password: ~
 
@@ -19,6 +19,7 @@ parameters:
 
     slack_api_token:   ~
     registration_deadline: '2019-07-07'
+    registration_start: '2019-04-01'
     ntacamp_date: 'July 24-28'
 
     social_hashtag_enabled: true

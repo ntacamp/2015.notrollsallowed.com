@@ -52,6 +52,10 @@
                     Event date:<br>
                     <b>{{ ntacamp_date }}</b><br>
                     <br>
+                    Registration starts:<br>
+                    <b>{{ registration_start|date("Y-m-d") }}</b><br>
+
+                    <br>
                     Registration deadline:<br>
                     <b>{{ registration_deadline|date("Y-m-d") }}</b> 
                 </blockquote>
@@ -114,7 +118,7 @@
                     {{ form_end(form) }}
                 {% else %}
                 <p>
-                Registration is over. If you have any questions <a href="{{ path('page_contacts') }}">contact us</a>.
+                Registration is not open. If you have any questions <a href="{{ path('page_contacts') }}">contact us</a>.
                 </p>
                 {% endif %}
             </div>

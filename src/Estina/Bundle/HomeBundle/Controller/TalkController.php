@@ -85,8 +85,11 @@ class TalkController extends Controller
     {
         $lazy_registration = $request->query->has('iamlazystudent');
         $deadline = $this->getParameter('registration_deadline');
+        $registrationStart = $this->getParameter('registration_start');
 
-        if (strtotime(date("Y-m-d")) <= strtotime($deadline) || $lazy_registration) {
+        if ((strtotime(date("Y-m-d")) <= strtotime($deadline) &&
+            strtotime(date("Y-m-d")) >= strtotime($registrationStart))
+            || $lazy_registration) {
             return true;
         }
 
