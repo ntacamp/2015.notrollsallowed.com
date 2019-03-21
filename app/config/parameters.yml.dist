@@ -19,6 +19,7 @@ parameters:
 
     slack_api_token:   ~
     registration_deadline: '2019-07-07'
+    registration_start: '2019-04-01'
     ntacamp_date: 'July 24-28'
 
     social_hashtag_enabled: true
