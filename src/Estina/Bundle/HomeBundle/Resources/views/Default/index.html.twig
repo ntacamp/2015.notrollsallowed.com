@@ -10,12 +10,12 @@
             <h1>No Trolls Allowed 2019</h1>
             <h3>The One Hackercamp of Lithuania</h3>
             <h2>{{ ntacamp_date }}</h2>
+
             {% if "now"|date("Y-m-d") > registration_deadline %}
                 <p><strong>Registration is closed.</strong></p>
             {% elseif "now"|date('Y-m-d') < registration_start %}
                 <p><strong>Registration is not open yet.</strong></p>
             {% else %}
-                <br><br>
                 <a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Register here</a>
             {% endif %}
             
