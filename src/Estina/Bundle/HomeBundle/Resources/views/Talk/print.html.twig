@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Print</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Ubuntu:400,400i,500,700" rel="stylesheet">
+        <style>
+        body, h1, h2, table, td {
+            font-family: Roboto;
+        }
+        .talk {
+            width: 50em;
+            height: 9em;
+            padding: 0.9em 1em;
+            border: 3px dotted grey;
+            margin-bottom: 5px;
+        }
+        .talk h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            height: 2.1em;
+            display: box;
+        }
+        .talk h1 span {
+            font-size: 28px;
+            font-weight: normal;
+        }
+        .talk h2 {
+            font-size: 24px;
+            font-weight: normal;
+            text-align: right;
+        }
+        .pagebreak {
+            page-break-before: always;
+        }
+
+        .header h1 {
+            font-size: 120px;
+            margin-top: 2em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>{{ track }}</h1>
+        </div>
+        <div class="pagebreak"></div>
+
+        {% set c = 0 %}
+        {% for talk in entities %}
+            <div class="talk">
+                {% set title = talk.title %}
+                {% if talk.title|length > 80 %}
+                    {% set title = title|slice(0, 80) ~ '...' %}
+                {% endif %}
+                <h1>{{ talk|talk_emoji|raw }} {{ title }} <span class="language">[{{ talk.language }}]</span></h1>
+                <h2>{{ talk.user.name }}</h2>
+            </div>
+            {% if c == 5 %}
+                <div class="pagebreak"></div>
+                {% set c = 0 %}
+            {% else %}
+                {% set c = c+1 %}
+            {% endif %}
+
+        {% endfor %}
+        </table>
+    </body>
+</html>

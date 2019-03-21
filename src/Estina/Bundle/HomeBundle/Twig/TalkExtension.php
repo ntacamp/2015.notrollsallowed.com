@@ -18,6 +18,7 @@ class TalkExtension extends \Twig_Extension
     {
         return array(
             new \Twig_SimpleFilter('talk_status', [$this, 'getTalkStatus']),
+            new \Twig_SimpleFilter('talk_emoji', [$this, 'getTalkEmoji']),
             new \Twig_SimpleFilter('talk_status_color', [$this, 'getTalkStatusColor']),
         );
     }
@@ -54,6 +55,14 @@ class TalkExtension extends \Twig_Extension
         ];
 
         return $this->mapValue($talk->getStatus(), $map);;
+    }
+
+
+    public function getTalkEmoji()
+    {
+        $response = file_get_contents('https://ranmoji.herokuapp.com/emojis/api/v.1.0/');
+        $data = json_decode($response, true);
+        return $data['emoji'];
     }
 
     private function mapValue($status, $map)

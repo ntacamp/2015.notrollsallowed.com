@@ -146,6 +146,27 @@ class TalkController extends Controller
     }
 
     /**
+     * Lists all Talk entities in printable format
+     *
+     * @Route("/print/{id}", name="talk_list_print")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     * @Template()
+     */
+    public function printAction($id = 1)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $track = $em->getRepository('EstinaHomeBundle:Track')->find($id);
+        $entities = $em->getRepository('EstinaHomeBundle:Talk')->findByTrackForPrinting($track);
+
+        return array(
+            'track' => $track,
+            'entities' => $entities,
+        );
+    }
+
+    /**
      * List personal talks.
      * @Security("has_role('ROLE_USER')")
      * @Template()
