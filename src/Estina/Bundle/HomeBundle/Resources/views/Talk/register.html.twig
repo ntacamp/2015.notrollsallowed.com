@@ -1,5 +1,5 @@
 {% extends "EstinaHomeBundle::page-liquid.html.twig" %}
-
+{% trans_default_domain 'translations' %}
 {% form_theme form _self %}
 
 {%- block form_label -%}
@@ -24,7 +24,7 @@
     {%- endif -%}
 {%- endblock form_label -%}
 
-{% block title %}Registration{% endblock %}
+{% block title %}{{ 'registration.text.title'|trans }}{% endblock %}
 
 {% block javascripts %}
     {% javascripts
@@ -38,25 +38,25 @@
 
 <div class="row registration">
     <div class="col-md-10 col-md-offset-1">
-        <h1>Registration</h1>
+        <h1>{{ 'registration.text.title'|trans }}</h1>
 
         <div class="row">
             <div class="col-md-8">
-                <h3>Register here to attend No Trolls Allowed 2019</h3>
+                <h3>{{ 'registration.text.title_long'|trans }}</h3>
                 <p>
-                NTA crew is reviewing your submissions within a few days. We will contact you with additional requests or recommendations if you need to clarify something, so please be patient.
+                {{ 'registration.text.description'|trans|raw }}
                 </p>
             </div>
             <div class="col-md-4">
                 <blockquote>
-                    Event date:<br>
+                    {{ 'registration.text.event_date'|trans }}<br>
                     <b>{{ ntacamp_date }}</b><br>
                     <br>
-                    Registration starts:<br>
+                    {{ 'registration.text.starts_on'|trans }}<br>
                     <b>{{ registration_start|date("Y-m-d") }}</b><br>
 
                     <br>
-                    Registration deadline:<br>
+                    {{ 'registration.text.ends_on'|trans }}<br>
                     <b>{{ registration_deadline|date("Y-m-d") }}</b> 
                 </blockquote>
             </div>

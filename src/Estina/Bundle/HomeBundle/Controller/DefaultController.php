@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
+use Symfony\Component\Translation\Translator;
 
 /**
  * DefaultController
@@ -30,9 +32,7 @@ class DefaultController extends Controller
      * @Route("/", name="home")
      * @Template()
      */
-    public function indexAction()
-    {   
-
+    public function indexAction() {
         $dir    = '../web/images/photos';
         $photos = scandir($dir);
 

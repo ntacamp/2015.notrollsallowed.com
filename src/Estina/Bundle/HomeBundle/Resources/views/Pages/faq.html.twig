@@ -1,192 +1,54 @@
 {% extends "EstinaHomeBundle::page.html.twig" %}
-
+{% trans_default_domain 'translations' %}
 {% block content %}
-<h1>FAQ</h1>
-<p>
-    No English translation yet.
-</p>
-<h3><em>Dažniausiai užduodami klausimai</em></h3>
+<h1>{{ 'faq.general.faq'|trans }}</h1>
 
-<ul>
-    <li><a href="#ka-reiskia">Ką reiškia pavadinimas "No Trolls Allowed"?</a></li>
-    <li><a href="#kas-yra-trolis">Kas yra trolis?</a></li>
-    <li><a href="#kiek-kainuoja-bilietas">Kiek kainuoja bilietas?</a></li>
-    <li><a href="#kokios-galimos-pranesimu-temos">Kokios galimos pranešimo temos?</a></li>
-    <li><a href="#kokia-turi-buti-pransimo-trukme">Kokia turi būti pranešimo trukmė?</a></li>
-    <li><a href="#pranesimo-kalba">Kokia kalba gali būti pranešimas?</a></li>
-    <li><a href="#ar-pranesimas-turi-buti-susijes-su-programavimu">Ar pranešimas turi būti susijęs su programavimu?</a></li>
-    <li><a href="#kuo-skiriasi-scenos">Kuo skiriasi scenos?</a></li>
-    <li><a href="#kiek-zmoniu-gali-organizuoti-dirbtuves">Kiek žmonių gali organizuoti dirbtuves?</a></li>
-    <li><a href="#galutine-programa">Kokia renginio programa?</a></li>
-    <li><a href="#ar-galima-atsivezti-seimyna">Ar galima atsivežti šeimyną?</a></li>
-    <li><a href="#ar-seimyna-irgi-privales-ruosti-pranesimus">Ar šeimyna irgi privalės ruošti pranešimus?</a></li>
-    <li><a href="#ar-bus-internetas">Ar bus internetas?</a></li>
-    <li><a href="#ar-bus-elektra">Ar bus elektra?</a></li>
-    <li><a href="#ar-bus-projektorius">Ar bus projektorius?</a></li>
-    <li><a href="#ar-reikia-tureti-savo-kompiuteri">Ar reikia turėti savo kompiuterį?</a></li>
-    <li><a href="#ar-bus-ko-valgyti">Ar bus ko valgyti?</a></li>
-    <li><a href="#kokius-daiktus-atsivezti">Kokius daiktus atsivežti?</a></li>
-    <li><a href="#kaip-atvykti">Kaip atvykti?</a></li>
-    <li><a href="#artimiausia-parduotuve">Kur yra artimiausia parduotuvė?</a></li>
-    <li><a href="#kaip-ikelti-nuotrauka">Kaip įkelti savo nuotrauką prie pranešimo?</a></li>
-    <li><a href="#kas-organizuoja-si-rengini">Kas organizuoja šį renginį?</a></li>
-    <li><a href="#turite-daugiau-klausimu">Turite daugiau klausimų?</a></li>
-</ul>
-
-<hr>
-
-<h2 id="ka-reiskia">Ką reiškia pavadinimas "No Trolls Allowed"?</h2>
-<p>Pavadinimas atspindi renginio pagrindinę mintį. Jokių trolių. Tik žmonės, kurie nori pasidalinti savo žiniomis ir pasisemti idėjų iš kitų.</p>
-
-<h2 id="kas-yra-trolis">Kas yra trolis?</h2>
-<p>Trolis yra mitologinė būtybė, tačiau čia omenyje turime internetinį trolį. Ištrauka iš <a href="http://lt.wikipedia.org/wiki/Trolis_(internete)">Wikipedia</a>:
-    <blockquote>Internete troliu vadinamas asmuo, kuris prisijungia prie susiformavusios bendruomenės, pvz., naujienų grupės ir skelbia kurstančias, grubias arba įžeidžiančias žinutes, siekdamas išprovokuoti kitus bendruomenės narius bei nutraukti normalią diskusijų eigą, sąmoningai sutrikdyti bendruomenės veiklą, sukiršinti jos narius. Tokie pasisakymai, pranešimai dar kitaip vadinami Troll, Troll-Post arba Troll-Posting.</blockquote>
-</p>
-
-<h2 id="kiek-kainuoja-bilietas">Kiek kainuoja bilietas?</h2>
-<p>Suvažiavimas dalyviams yra nemokamas, vienintelė dalyvavimo sąlyga - privalomas pranešimas. Tai tam tikra apsauga nuo trolių, siekiant, kad renginyje būtų ne tik klausytojai, bet ir pranešėjai.</p>
-
-<h2 id="kokios-galimos-pranesimu-temos">Kokios galimos pranešimo temos?</h2>
-<p>Temos gali būti kuo įvairiausios: nuo maisto ruošimo iki telepatinių metodų alaus butelių atidarymui. Rinkdamiesi pranešimo temą galvokite apie auditoriją. Ji gali būti labai įvairi. Nepamirškite, kad gali būti žmonių, kurie nedirba IT srityje. Žinoma, tai nereiškia, kad negalite ruošti techninių pranešimų, tačiau pasistenkite neapsiriboti tuo. Jei manote, kad neturite ką papasakoti, tikriausiai pamiršot, jog ką žinote jūs - nebūtinai žino ir visi kiti. Vienintelis prašymas: nepristatinėkit verslo idėjų, savo startupų ar komercinių pranešimų - renginys skirtas ne tam.</p>
-
-<h2 id="kokia-turi-buti-pransimo-trukme">Kokia turi būti pranešimo trukmė?</h2>
-<p>Pranešimui pristatyti skiriama 20 minučių + 10 minučių klausytojų klausimams ir diskusijoms.</p>
-
-<h2 id="pranesimo-kalba">Kokia kalba gali būti pranešimas?</h2>
-<p>Pagrindinė renginio ir pranešimų kalba - lietuvių. Visa renginio informacija
-(iškyrus pavadinimą) pateikiama lietuvių kalba. Bet jei norite savo pranešimą
-pristatyti kita kalba - prašom. Tik paminėkite apie tai pranešimo pavadinime ir
-aprašyme. Pavadinime pridėkite kalbos trumpinį, pvz. "[EN]".</p>
-
-<h2 id="ar-pranesimas-turi-buti-susijes-su-programavimu">Ar pranešimas turi būti susijęs su programavimu?</h2>
-<p>Ne. Pranešimas neprivalo būti susijęs su programavimu. Netgi rekomenduojama neapsiriboti siaura sritimi. Pavyzdžiui nerekomenduojama tema būtų konkrečios programavimo kalbos naujos versijos galimybės, nes tema bus aktuali palyginti siauram dalyvių ratui.</p>
-
-<h2 id="kuo-skiriasi-scenos">Kuo skiriasi scenos?</h2>
-<p>
-Registruodami pranešimą turėsite pasirinkti, kuriai scenai jį priskiriate.
-Scenos suskirstytos pagal temas, kad klausytojui būtų paprasčiau pasirinkti kur
-eiti klausyti. Kiekviena scena turi limitą, kuris nurodo, kiek pranešėjų galima
-sutalpinti. Šis limitas sukurtas tam, kad skirtingų temų pranešimų kiekis būtų
-subalansuotas. Žemiau pateikiam kiekvienos scenos aprašymus:
-</p>
-
-{% for track in tracks %}
-<h3>{{ track.title }}</h3>
-<p>
-{{ track.description|markdown }}
-</p>
+<h3><em>{{ 'faq.general.faq_full'|trans }}</em></h3>
+<h4>{{ 'faq.questions.groups.general'|trans }}</h4>
+        <ul>
+                {% for i in 1..13 %}
+                        <li><a href="#{{ ('faq.questions.general.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.general.question' ~ i ~ '.question')|trans }}</a></li>
+                {% endfor %}
+        </ul>
+<h4>{{ 'faq.questions.groups.presentations'|trans }}</h4>
+        <ul>
+                {% for i in 1..9 %}
+                        <li><a href="#{{ ('faq.questions.presentations.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.presentations.question' ~ i ~ '.question')|trans }}</a></li>
+                {% endfor %}
+        </ul>
+<h4>{{ 'faq.questions.groups.volunteering'|trans }}</h4>
+        <ul>
+                {% for i in 1..4 %}
+                        <li><a href="#{{ ('faq.questions.volunteering.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.volunteering.question' ~ i ~ '.question')|trans }}</a></li>
+                {% endfor %}
+        </ul>
+<h4>{{ 'faq.questions.groups.other'|trans }}</h4>
+        <ul>
+                {% for i in 1..2 %}
+                        <li><a href="#{{ ('faq.questions.other.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.other.question' ~ i ~ '.question')|trans }}</a></li>
+                {% endfor %}
+        </ul>
+        <hr>
+<h4>{{ 'faq.questions.groups.general'|trans }}</h4>
+{% for i in 1..13 %}
+<h2 id="{{ ('faq.questions.general.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.general.question' ~ i ~ '.question')|trans }}</h2>
+<p>{{ ('faq.questions.general.question' ~ i ~ '.answer')|trans|raw }}</p>
+{% endfor %}
+<h4>{{ 'faq.questions.groups.presentations'|trans }}</h4>
+{% for i in 1..9 %}
+        <h2 id="{{ ('faq.questions.presentations.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.presentations.question' ~ i ~ '.question')|trans }}</h2>
+        <p>{{ ('faq.questions.presentations.question' ~ i ~ '.answer')|trans|raw }}</p>
+{% endfor %}
+<h4>{{ 'faq.questions.groups.volunteering'|trans }}</h4>
+{% for i in 1..4 %}
+        <h2 id="{{ ('faq.questions.volunteering.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.volunteering.question' ~ i ~ '.question')|trans }}</h2>
+        <p>{{ ('faq.questions.volunteering.question' ~ i ~ '.answer')|trans|raw }}</p>
+{% endfor %}
+<h4>{{ 'faq.questions.groups.other'|trans }}</h4>
+{% for i in 1..2 %}
+        <h2 id="{{ ('faq.questions.other.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.other.question' ~ i ~ '.question')|trans }}</h2>
+        <p>{{ ('faq.questions.other.question' ~ i ~ '.answer')|trans|raw }}</p>
 {% endfor %}
 
-<h2 id="kiek-zmoniu-gali-organizuoti-dirbtuves">Kiek žmonių gali organizuoti dirbtuves?</h2>
-<p>
-Dirbtuvės dažniausiai reikalauja daugiau nei vieno žmogaus indėlio. Tad jas
-organizuoti leidžiama keliems dalyviams (šiuo atveju pranešimų skaityti
-nereikės jiems visiems).
-</p>
-
-
-<h2 id="galutine-programa">Kokia renginio programa?</h2>
-<p>
-No Trolls Allowed vyksta keturias dienas - nuo ketvirtadienio iki sekmadienio:
-
-<ul>
-    <li><strong>Trečiadienis</strong>: Atvykstam, statom palapines, susipažįstam ir bendraujam.</li>
-    <li><strong>Ketvirtadienis</strong>: Bendraujam toliau, užsiemam įvairiom veiklom.</li>
-    <li><strong>Penktadienis</strong>: Laukdami kitų dalyvių turim visą dieną! Programuojam, lituojam, konstruojam, veikiam ką norim. Tuo pačiu registruojam pranešimus. Dienos pabaigoje klausom pranešimų ir koncerto.</li>
-    <li><strong>Šeštadienis</strong>: Pranešimų diena. Kol turime jėgų - pristatėjame pranešimus. NTA 2013 metu, pranešimai buvo pristatinėjami iki 2 valandos nakties.</li>
-    <li><strong>Sekmadienis</strong>: Dirbtuvių diena. Dauguma palapinių skiriama dirbtuvėms. Jei lieka nepristatytų pranešimų - toliau tęsiame pranešimų sesijas. Vakare susitvarkom stovyklavietę, paspaudžiam vieni kitiems rankas ir išvykstame.</li>
-</ul>
-
-No Trolls Allowed pranešimų registracija organizuojama <a href="https://en.wikipedia.org/wiki/BarCamp#Structure_and_participatory_process" target="_blank">BarCamp principu</a>.
-Tai reiškia, kad dalyviai, atvykę į renginio vietą, patys pasirenka kada norės
-pristatinėti pranešimus. Pranešėjęs, iš likusių laisvų vietų turi pasirinkti
-jam tinkamiausią laiką ir įrašyti savo pranešimo temą. Dirbtuvių, kitų pramogų
-ir maisto tvarkaraščiai taip pat bus skelbiami renginio vietoje.
-</p>
-
-<h2 id="ar-galima-atsivezti-seimyna">Ar galima atsivežti šeimyną?</h2>
-<p>Netgi rekomenduojama! Pranešėjui leidžiama atsivežti šeimą arba vieną draugą. Apie renginį galvokite taip, kad lyg važiuotumėte į išvyką prie ežero. Žinoma, jei jūsų šeimos narys turi keturias kojas ir aštrius dantis, pasirūpinkite, kad kiti dalyviai galėtų jaustis patogiai.</p>
-
-<h2 id="ar-seimyna-irgi-privales-ruosti-pranesimus">Ar šeimyna irgi privalės ruošti pranešimus?</h2>
-<p>Būtų labai gerai, tačiau šiuo atveju galima padaryti išimtį. Jūsų šeimos nariams nereikės ruošti pristatymų.</p>
-
-<h2 id="ar-bus-internetas">Ar bus internetas?</h2>
-<p>Taip, bus. Prašom tausoti ir nesisiųsti sunkiasvorių failų.</p>
-
-<h2 id="ar-bus-elektra">Ar bus elektra?</h2>
-<p>Taip, elektra bus. Nepamirškite pasirūpinti ilgesniais prailgintuvais.</p>
-
-<h2 id="ar-bus-projektorius">Ar bus projektorius?</h2>
-<p>Taip. Kiekviena pranešimų scena bus aprūpinta projektoriumi.</p>
-
-<h2 id="ar-reikia-tureti-savo-kompiuteri">Ar reikia turėti savo kompiuterį?</h2>
-<p>Priklauso nuo jūsų pranešimo pobūdžio. Jeigu norėsit rodyti tik skaidres
-ir nenorit vežtis kompiuterio - jokių problemų, PDF ir PPS (Power Point)
-prezentacijas bus kaip parodyti.
-</p>
-
-<h2 id="ar-bus-ko-valgyti">Ar bus ko valgyti?</h2>
-<p>
-Puikių draugų ir rėmėjų dėka, renginio dalyviai turės galimybę mėgautis maistu.
-Tiesa, galutinis dalyvių skaičius nėra žinomas, puodai
-taip pat ne guminiai, tad nėra garantijos, kad maisto užteks visiems. Kažką 
-tikrai gausite, bet pasirūpinkite savimi, kad netektų badauti. Atsivežkite
-ką galėtumėte išsikepti ar pasišildyti ant laužo, taip pat gėrimų ir kitų
-užkandžių. 
-</p>
-
-<h2 id="kokius-daiktus-atsivezti">Kokius daiktus atsivežti?</h2>
-<p>Renginys vyks po atviru dangumi, tad nepamirškite tinkamai pasiruošti išgyvenimui. Siūlome pasiimti:</p>
-<ul>
-    <li>Palapinę, miegmaišį ir kitus jūsų patogiam poilsiui reikalingus dalykus.</li>
-    <li>Kompiuterį ir visus turimus gadget'us (taip, tai tas renginys, kur važiuojant į gamtą nereikia palikti kompiuterio namie).</li>
-    <li>Prailgintuvą (netgi ne vieną).</li>
-    <li>Maršrutizatorių, jei galvojate, kad jums jo gali prireikti, pvz. organizuosite kokias nors dirbtuves ar norėsite pažaisti tinkle.</li>
-    <li>Greitai negendančio maisto, gėrimų ir maisto ruošimo, bei saugojimo priemonių (šašlykinę, indų, šaltkrepšį). Rekomenduojama nesivežti stiklinės taros, nes nepatogu rinkti šukes iš pievos.</li>
-    <li>Malkų ir kepsninę.</li>
-    <li>Maišų šiukšlėms sudėti.</li>
-    <li>Aprangą tinkamą prognozuojamam orui (lietpaltis ir botai niekada nepamaišė).</li>
-    <li>Priemonių, atbaidančių vabzdžius ir kitus kenkėjus (ne žmones).</li>
-    <li>Žaidimų laisvalaikio praleidimui (galit ir kompiuterinių).</li>
-</ul>
-
-<h2 id="kaip-atvykti">Kaip atvykti?</h2>
-<p>Renginys vyks stovyklavietėje "Pusiasalis", esančioje 10km nuo Trakų.<br>
-    Vietos koordinatės: <strong>54.657602, 24.984814</strong><br>
-    Vietos puslapis: <a href="http://www.verube.lt/" target="_blank">www.verube.lt</a>
-    <ul>
-        <li><a target="_blank" href="https://www.google.lt/maps/dir/Vilnius/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6672052,25.0475178,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46dd93fb5c6408f5:0x400d18c70e9dc40!2m2!1d25.2796514!2d54.6871555!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Iš Vilniaus</a></li>
-        <li><a target="_blank" href="https://www.google.lt/maps/dir/Kaunas/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.7847771,24.1756336,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46e72270b167d343:0x614bd1e0c7378bbc!2m2!1d23.9035965!2d54.8985207!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Iš Kauno</a></li>
-        <li><a target="_blank" href="https://www.google.lt/maps/dir/Trakai/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6343367,24.9538191,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf374628607db:0xfe90f5881befe3d9!2m2!1d24.9346894!2d54.6379113!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Iš Trakų</a></li>
-    </ul>
-</p>
-
-<h2 id="artimiausia-parduotuve">Kur yra artimiausia parduotuvė?</h2>
-<p>
-    Renginio vietoje nebus pardavinėjamas maistas, gėrimai ar kiti produktai.
-    Mūsų žiniomis, artimiausia parduotuvė yra <a target="_blank" href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">už 5km Lentvaryje</a>.
-</p>
-
-<h2 id="kaip-ikelti-nuotrauka">Kaip įkelti savo nuotrauką prie pranešimo?</h2>
-<p>
-Pranešėjų nuotraukos imamos iš <a href="https://www.gravatar.com/">Gravatar</a>
-svetainės. Nuotrauka atpažįstama pagal el. pašto adresą, kurį įvedėte
-registruodami pranešimą. Jei dalyvis nėra užsiregistravęs minėtoje svetainėje,
-pagal tą patį el. pašto adresą sugeneruojamas mielas robotas iš
-<a href="http://www.robohash.org/">robohash.org</a>.
-</p>
-
-
-<h2 id="kas-organizuoja-si-rengini">Kas organizuoja šį renginį?</h2>
-<p>No Trolls Allowed organizuoja visi dalyvaujantys. O, kad dalyviai vienu metu
-    susirinktų toje pačioje vietoje, rūpinasi ne pelno siekianti organizacija 
-    <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.
-    <br>
-    Įmonės kodas: 303307623. <br>
-    Adresas: J. Galvydžio g. 5, LT-08236 Vilnius.
-</p>
-
-<h2 id="turite-daugiau-klausimu">Turite daugiau klausimų?</h2>
-<p>Turite daugiau klausimų? O gal norite kažką pasiūlyti, parekomenduoti ar prisidėti prie renginio organizavimo? Rašykite mums <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>.</p>
 
 {% endblock %}

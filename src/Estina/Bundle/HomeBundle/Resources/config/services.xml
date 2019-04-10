@@ -5,6 +5,9 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="home.core_listiner" class="Estina\Bundle\HomeBundle\EventListener\CoreListener">
+            <argument type="service" id="translator" />
+        </service>
         <service id="home.talk_listener" class="Estina\Bundle\HomeBundle\EventListener\TalkListener">
             <argument type="service" id="mailer" />
             <argument>%admin_email%</argument>

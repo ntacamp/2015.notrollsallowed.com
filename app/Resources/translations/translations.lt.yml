@@ -1,0 +1,194 @@
+header:
+    menu:
+        schedule: 'Tvarkaraštis'
+        volunteer: 'Tapk savanoriu'
+        contact_us: 'Kontaktai'
+        blog: 'Tinklaraštis'
+        login: 'Prisijungti'
+        talks: 'Pranešimai'
+        workshops: 'Dirbtuvės'
+        registration: 'Registracija'
+        about_nta: 'Apie NTA'
+        about: 'Apie'
+        faq: 'DUK'
+        logout: 'Atsijungti'
+        profile: 'Profilis'
+        my_presentation: 'Mano presentacijos'
+        admin_talks: 'Pranešimų administravimas'
+        language: 'Kalba'
+footer:
+    general:
+        follow_us: 'Sek mūsų naujienas'
+        contact_us: 'Parašyk mums'
+homepage:
+    title:
+        main: 'No Trolls Allowed 2019'
+        description: 'Vienintelis hackercamp’as Lietuvoje'
+    button:
+        register: 'Registruokis'
+        homepage.button.more: 'Sužinoti daugiau'
+    text:
+        registration_ended: 'Registracija baigta.'
+        registration_not_open: 'Registracija - jau netrukus!.'
+        about_title: 'Kas yra „No Trolls Allowed“?'
+        about_p1: 'Ar kada buvai tokioje vietoje, kurioje vienu metu gali pasigaminti raketą, išmokti spausti sūrį ir sudalyvauti jogos pamokoje? NTA yra būtent tokia vieta...'
+        about_p2: '„No Trolls Allowed“ yra metinis po atviru dangumi vykstantis susibūrimas, kur pomėgiai, menai ir technologijos susijungia į bendrą visumą. Visai nesvarbu, ar esi programuotojas, keliautojas, virtuvės šefas, muzikantas ar astronautas, čia rasime tau vietos. Mūsų akimis – kiekvienas yra šiek tiek geek’as.'
+        where: 'Kur?'
+        when: 'Kada?'
+        footer:
+            campground: 'Stovyklavietė'
+            campground_name: 'Pusiasalis'
+            campground_by: 'prie Skaisčio ežero, netoli Trakų.'
+            distance_from1: '10 km nuo Trakų'
+            distance_from2: '25 km nuo  Vilniaus'
+            distance_from3: '90 km nuo  Kauno'
+            coordinates: '54.657602, 24.984814'
+            we_arive: 'Atvykstame trečiadienį, išvykstame sekmadienį vakare'
+about:
+    text:
+        about: 'Apie'
+        nta: 'No Trolls Allowed'
+        about_nta: '– po atviru dangumi vykstantis renginys, siekiantis suburti įvairių pomėgių turinčius žmones. Įsivaizduok šimtus užsidegusių žmonių, susirinkusių į gamtą pasidalinti savo žiniomis ir atradimų džiaugsmu.'
+        pre_how_to_attend: 'Susibūrimas yra nemokamas, tačiau, kaip implikuoja pavadinimas, čia nelaukiami troliai. Tai reiškia, kad, norėdamas dalyvauti renginyje, turi prisidėti. Gera žinia yra ta, kad gali rinktis net iš 3 variantų:'
+        how_to_attend_opt1: '<strong>Pranešimas.</strong> Pranešimai – viso renginio esmė. Jie vyksta net tris dienas trijose scenose. Galėsi pasirinkti savo prezentacijos laiką, tad kuo anksčiau atvyksi į stovyklavietę, tuo daugiau pasirinkimo galimybių turėsi! Tik nepamiršk, kad renginio tikslas – pasidalinti savo pomėgiais ir žiniomis, tad siūlome atsiriboti nuo nuobodžių, su darbu susijusių temų ar reklaminių pranešimų!'
+        how_to_attend_opt2: '<strong>Dirbtuvės.</strong> Tinka viskas – nuo meninės veiklos (piešimo, šokių ar karatė pamokų) iki technologijų (raketų, genetiškai suprogramuotų robotų ar kosminių šunų). Nėra jokių apribojimų, tad išlaisvink savo fantaziją! Tiesa, dirbtuves gali organizuoti keli žmonės, tad čiupk draugą ir parodykit mums ką nors neįtikėtino!'
+        how_to_attend_opt3: '<strong>Savanoriavimas.</strong> Prisijungdamas prie mūsų šaunios komandos kaip savanoris, neabejotinai gausi papildomų privalumų. Tačiau svarbu nepamiršti, kad papildomos naudos turi savo kainą – atsakomybę.'
+        policy_about_foreigners: 'Svarstai, ar renginyje gali dalyvauti svečiai iš kitų šalių? Žinoma! Esame globali bendruomenė, tad mielai priimsime ir norinčius pristatyti savo pomėgius kitomis kalbomis (geriausia anglų k.). Ir nors dauguma pranešimų vyks lietuvių kalba, iš patirties galime pasakyti, kad daugumai visai nesunku po pranešimo į klausimus atsakyti ar padiskutuoti anglų kalba.'
+        mail_us: 'Turi klausimų? Brūkštelk mums į '
+        fb_us: ' arba Facebook’ą.'
+        nta_history_title: 'Trumpa „No Tolls Allowed“ istorija'
+        nta_history: '<p>Viskas pasidėjo vėlyvą 2013 m. pavasarį, kuomet būrys bendraminčių sugalvojo, kad vasaros metu būtų smagu susirinkti kur nors gamtoje. O kad praleistas laikas būtų naudingesnis – paruošti ir pristatyti vienas kitam pranešimus. Kodėl gi nepasikvietus ir daugiau kompanijos? Puiku, bet kaip užtikrinti, kad nesusirinks vien tik klausytojai, kaip pritraukti daugiau pranešėjų? Štai taip ir gimė pagrindinė renginio taisyklė – kiekvienas dalyvis turi paruošti pranešimą bet kokia tema, kuri, jo manymu, būtų įdomi kitiems.</p><p>Kaip sekėsi? Puikiai! Festivalio dalyviai okupavo Molėtuose esančio Lenktinio ežero pakrantę, per porą festivalio dienų 70 dalyvių spėjo pristatyti 38 pranešimus, išsivirti alaus bei sriubos, pabendrauti, pasidalinti patirtimi ir, žinoma, puikiai praleisti laiką. Didžiulis pasisekimas ir puikūs dalyvių atsiliepimai vertė galvoti apie ateinančius metus.</p><p>Žinia apie renginį skriejo iš lūpų į lūpas, tad 2014 m. renginyje jau dalyvavo apie 300 žmonių, o pranešimų skaičius viršijo visą 100! Be pranešimų taip pat vyko litavimo, programavimo, LEGO robotų kūrimo, stalo žaidimų ir kitos dirbtuvės.</p><p>2015 m. NTA tapo tikru hackercamp’u.</p><p>2016 m. pirmąkart suburta savanorių komanda, kurios dėka renginys tapo dar geresnis!</p><p>Na, o sekančiais metais renginys ir toliau augo. Pastaruosius kelerius metus dalyvių skaičius viršijo net 400!</p><p>Kas toliau? Sudalyvauk ir pamatyk savo akimis!</p>'
+faq:
+    general:
+        faq: 'DUK'
+        faq_full: 'Dažniausiai užduodami klausimai'
+    questions:
+        groups:
+            general: 'Bendra informacija'
+            presentations: 'Apie pranešimus ir dirbtuves'
+            volunteering: 'Apie savanoriavimą'
+            other: 'Kiti klausimai'
+        general:
+            question1:
+                question: 'Ką reiškia pavadinimas „No Trolls Allowed“?'
+                slug: 'what-is-nta'
+                answer: 'TPavadinimas atspindi renginio pagrindinę mintį – jokių trolių. Čia laukiami tik žmonės, kurie nori pasidalinti savo žiniomis ir pasisemti idėjų iš kitų.'
+            question2:
+                question: 'Kas yra trolis?'
+                slug: 'what-is-troll'
+                answer: 'Čia turime omenyje internetinį trolį. </br>Ištrauka iš Wikipedia:<p><italic>Internete troliu vadinamas asmuo, kuris prisijungia prie susiformavusios bendruomenės, pvz., naujienų grupės ir skelbia kurstančias, grubias arba įžeidžiančias žinutes, siekdamas išprovokuoti kitus bendruomenės narius bei nutraukti normalią diskusijų eigą, sąmoningai sutrikdyti bendruomenės veiklą, sukiršinti jos narius. Tokie pasisakymai, pranešimai dar kitaip vadinami Troll, Troll-Post arba Troll-Posting.</italic></p>'
+            question3:
+                question: 'Kiek kainuoja bilietas?'
+                slug: 'ticket-cost'
+                answer: 'Suvažiavimas dalyviams yra nemokamas, vienintelė dalyvavimo sąlyga – prisidėti prie renginio vienu iš trijų būdų: pristatyti pranešimą, suorganizuoti dirbtuves, tapti savanoriu. Tai tam tikra apsauga nuo trolių, siekiant, kad renginyje dalyvautų ne tik klausytojai.'
+            question4:
+                question: 'Kokia renginio programa?'
+                slug: 'event-agenda'
+                answer: '<ul><li><strong>Trečiadienis:</strong> Atvykstam, statom palapines, susipažįstam ir bendraujam.</li><li><strong>Ketvirtadienis:</strong> Bendraujam toliau, užsiimam įvairiom veiklom.</li><li><strong>Penktadienis:</strong> Programuojam, lituojam, konstruojam, veikiam ką norim. Pradedama pranešimų registracija ir pirmųjų pranešimų pristatymai. Dienos pabaigoje šėlstam koncerte.</li><li><strong>Šeštadienis:</strong> Pranešimų diena. Kol turime jėgų – pristatėjame pranešimus. Ankstesniais metais pranešimai buvo pristatinėjami net iki 2 valandos nakties!</li><li><strong>Sekmadienis:</strong> Dirbtuvių diena. Dauguma palapinių skiriama dirbtuvėms. Jei lieka nepristatytų pranešimų – toliau tęsiame pranešimų sesijas. Vakare susitvarkom stovyklavietę, paspaudžiam vieni kitiems rankas ir išvykstame.</li></ul><p>„No Trolls Allowed“ pranešimų registracija organizuojama BarCamp principu. Tai reiškia, kad dalyviai, atvykę į renginio vietą, patys pasirenka, kada norės pristatinėti pranešimą. Pranešėjęs iš likusių laisvų vietų turi pasirinkti jam tinkamiausią laiką ir įrašyti savo pranešimo temą. Dirbtuvių, kitų pramogų ir maisto tvarkaraščiai taip pat skelbiami renginio vietoje.</p>'
+            question5:
+                question: 'Ar bus internetas?'
+                slug: 'wi-fi'
+                answer: 'Taip. Vienintelis prašymas – nesisiųsti sunkiasvorių failų.'
+            question6:
+                question: 'Ar bus elektros?'
+                slug: 'electricity'
+                answer: 'Taip. Nepamiršk pasirūpinti ilgesniais prailgintuvais.'
+            question7:
+                question: 'Ar bus ko valgyti?'
+                slug: 'food'
+                answer: 'Puikių draugų ir rėmėjų dėka renginio dalyviai turės galimybę mėgautis maistu. Tiesa, galutinis dalyvių skaičius nėra žinomas, puodai taip pat ne guminiai, tad nėra garantijos, kad maisto užteks visiems. Kažką tikrai gausi, bet pasirūpink savimi, kad netektų badauti. Atsivežk, ką galėtum išsikepti ar pasišildyti ant laužo, taip pat gėrimų ir kitų užkandžių.'
+            question8:
+                question: 'Kokių daiktų atsivežti?'
+                slug: 'what-to-bring'
+                answer: 'Renginys vyks po atviru dangumi, tad nepamiršk tinkamai pasiruošti išgyvenimui. Siūlome pasiimti:<ul><li>Palapinę, miegmaišį ir kitus patogiam poilsiui reikalingus daiktus.</li><li>Kompiuterį ir visus turimus gadget`us (taip, tai tas renginys, kur važiuojant į gamtą nereikia palikti kompiuterio namie).</li><li>Prailgintuvą (netgi ne vieną).</li><li>Maršrutizatorių, jei galvoji, kad jo gali prireikti, pvz., organizuosi kokias nors dirbtuves ar norėsi pažaisti tinkle.</li><li>Greitai negendančio maisto, gėrimų ir maisto ruošimo bei saugojimo priemonių (šašlykinę, indų, šaltkrepšį). Rekomenduojama nesivežti stiklinės taros, nes nepatogu rinkti šukes iš pievos.</li><li>Maišų šiukšlėms sudėti.</li><li>Aprangą tinkamą prognozuojamam orui (lietpaltis ir botai niekada nepamaišė).</li><li>Priemonių, atbaidančių vabzdžius ir kitus kenkėjus (ne žmones).</li><li>Žaidimų laisvalaikio praleidimui (galit ir kompiuterinių).</li></ul>'
+            question9:
+                question: 'Kaip atvykti?'
+                slug: 'how-to-come'
+                answer: 'Renginys vyksta stovyklavietėje „Pusiasalis“, esančioje 10km nuo Trakų.</br>Vietos koordinatės: 54.657602, 24.984814</br>Vietos puslapis: <a href="http://www.verube.lt">www.verube.lt</a></br><ul><li><a href="https://www.google.lt/maps/dir/Vilnius/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6672052,25.0475178,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46dd93fb5c6408f5:0x400d18c70e9dc40!2m2!1d25.2796514!2d54.6871555!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Vilniaus</a></li><li><a href="https://www.google.lt/maps/dir/Kaunas/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.7847771,24.1756336,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46e72270b167d343:0x614bd1e0c7378bbc!2m2!1d23.9035965!2d54.8985207!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Kauno</a></li><li><a href="https://www.google.lt/maps/dir/Trakai/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6343367,24.9538191,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf374628607db:0xfe90f5881befe3d9!2m2!1d24.9346894!2d54.6379113!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Trakų</a></li></ul>'
+            question10:
+                question: 'Where is the nearest supermarket?'
+                slug: 'nearest-supermarket'
+                answer: 'Renginio vietoje nebus pardavinėjamas maistas, gėrimai ar kiti produktai. Mūsų žiniomis, artimiausia parduotuvė yra <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">už 5 km Lentvaryje.</a>'
+            question11:
+                question: 'Ar galima atsivežti šeimyną?'
+                slug: 'who-to-bring'
+                answer: 'Netgi rekomenduojama! Pranešėjui leidžiama atsivežti šeimą arba vieną draugą. Apie renginį galvok taip, lyg važiuotum į išvyką prie ežero. Žinoma, jei tavo šeimos narys turi keturias kojas ir aštrius dantis, pasirūpink, kad kiti dalyviai galėtų jaustis patogiai. Nepamiršk, kad stovyklavietėje būna ir vaikų.'
+            question12:
+                question: 'Ar šeimyna irgi privalės ruošti pranešimą?'
+                slug: 'family-or-friends-responsibilities'
+                answer: 'Būtų labai gerai, tačiau, jei pranešimą ar dirbtuves rengi pats, turi galimybę pasikviesti šeimą su savimi – jie galės mėgautis renginiu be papildomų atsakomybių.'
+            question13:
+                question: 'Kas organizuoja šį renginį?'
+                slug: 'organizers'
+                answer: '„No Trolls Allowed“ organizuoja visi dalyvaujantieji. O kad dalyviai vienu metu susirinktų toje pačioje vietoje, rūpinasi ne pelno siekianti organizacija <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Įmonės kodas: 303307623</br>Adresas: J. Galvydžio g. 5, LT-08236 Vilnius.'
+        presentations:
+            question1:
+                question: 'Kokios galimos pranešimo temos?'
+                slug: 'presentation-topics'
+                answer: 'Temos gali būti kuo įvairiausios: nuo maisto ruošimo iki telepatinių metodų alaus butelių atidarymui. Rinkdamasis pranešimo temą galvok apie auditoriją – ji gali būti labai įvairi. Nepamiršk, kad gali būti žmonių, kurie nedirba IT srityje. Žinoma, tai nereiškia, kad negali ruošti techninių pranešimų, tačiau pasistenk neapsiriboti tuo. Jei manai, kad neturi, ką papasakoti, tikriausiai pamiršai, jog ką žinai tu – nebūtinai žino ir visi kiti. Vienintelis prašymas: nepristatinėk verslo idėjų, savo startup’ų ar komercinių pranešimų – renginys skirtas ne tam.'
+            question2:
+                question: 'Kokia turi būti pranešimo trukmė?'
+                slug: 'time-given'
+                answer: 'Pranešimui ir klausytojų klausimams skiriama 30 min.'
+            question3:
+                question: 'Kokia kalba gali būti pranešimas?'
+                slug: 'talk-language'
+                answer: 'Pagrindinė renginio ir pranešimų kalba – lietuvių, tačiau nėra jokių ribojimų pranešimams kitomis kalbomis. Tau tereikia paminėkite apie tai pranešimo pavadinime ir aprašyme. Tiesiog pavadinime pridėk kalbos trumpinį, pvz., [EN].'
+            question4:
+                question: 'Ar pranešimas turi būti susijęs su programavimu?'
+                slug: 'programming-topics'
+                answer: 'Ne. Netgi rekomenduojama neapsiriboti siaura sritimi. Pavyzdžiui, nerekomenduojama tema būtų konkrečios programavimo kalbos naujos versijos galimybės, nes tema bus aktuali palyginti siauram dalyvių ratui.'
+            question5:
+                question: 'Kuo skiriasi scenos?'
+                slug: 'stages'
+                answer: 'Registruodamas pranešimą turėsi pasirinkti, kuriai scenai jį priskiri. Scenos suskirstytos pagal temas, kad klausytojui būtų paprasčiau pasirinkti, kur eiti klausyti pranešimų. Kiekviena scena turi limitą, kuris nurodo, kiek pranešėjų galima sutalpinti. Šis limitas skirtas tam, kad skirtingų temų pranešimų kiekis būtų subalansuotas. Žemiau pateikiam kiekvienos scenos aprašymus:<ul><li><strong>Digital</strong> – viskas, kas susiję su kompiuteriais, programavimu ir kitais IT dalykais</li><li><strong>Analog</strong> – viskas apie visas kitas technologijas, neturinčias nieko bendra su skaitmeniniu pasauliu</li><li><strong>/dev/random</strong> – visa kita: menai, gyvenimo būdas ir t.t.</li></ul>'
+            question6:
+                question: 'Kiek žmonių gali organizuoti dirbtuves?'
+                slug: 'workshop-organisers'
+                answer: 'Dirbtuvės dažniausiai reikalauja daugiau nei vieno žmogaus indėlio, tad jas organizuoti leidžiama keliems dalyviams. Šiuo atveju pranešimų skaityti nereikės jiems visiems.'
+            question7:
+                question: 'Ar bus projektorius?'
+                slug: 'projectors'
+                answer: 'Taip. Kiekviena pranešimų scena bus aprūpinta projektoriumi.'
+            question8:
+                question: 'Are reikia turėti savo kompiuterį?'
+                slug: 'computers'
+                answer: 'Priklauso nuo pranešimo pobūdžio. Jeigu norėsi rodyti tik skaidres ir nenori vežtis kompiuterio – jokių problemų, PDF ir PPT prezentacijas bus kaip parodyti.'
+            question9:
+                question: 'Kaip įkelti savo nuotrauką prie pranešimo?'
+                slug: 'photo-upload'
+                answer: 'Pranešėjų nuotraukos imamos iš  <a href="https://www.gravatar.com/">Gravatar</a> svetainės. Nuotrauka atpažįstama pagal el. pašto adresą, kurį įvedei registruodamas pranešimą. Jei dalyvis nėra užsiregistravęs minėtoje svetainėje, pagal tą patį el. pašto adresą sugeneruojamas mielas robotas iš <a href="http://www.robohash.org/">robohash.org</a>.'
+        volunteering:
+            question1:
+                question: 'Ką daro savanoriai?'
+                slug: 'volunteer-job'
+                answer: 'Savanoriai yra dalis mūsų šaunios komandos, padedantys pasirūpinti sklandžia renginio eiga. Savanoriai daro įvairiausius darbus: padeda su logistika, dalyvių registracija renginio metu, scenų priežiūra, stovyklavietės infrastruktūra ir t.t. Patirtis, bilietas į renginį, NTA marškinėliai ir nauji draugai – tai tik keli privalumai, nusprendusiems savanoriauti!'
+            question2:
+                question: 'Kokios bus mano atsakomybės?'
+                slug: 'responsibilities'
+                answer: 'Savanoriai skirstomi į kelias komandas: nuo bendros stovyklavietės tvarkos iki rūpinimosi scenomis ir infodesk’u. Pildydamas savanorio anketą, galėsi pasirinkti dominančias sritis, mes pasistengsime atsižvelgti į tavo norus, tačiau turime įspėti – yra galimybė, kad negalėsime įgyvendinti visų savanorių norų. Tačiau viena garantuojame – kiekviena savanorio pozicija turi savų privalumų!'
+            question3:
+                question: 'Kokie reikalavimai savanoriams?'
+                slug: 'requirements-for-volunteering'
+                answer: 'Norint tapti savanoriu, reikalingi keli dalykai. Pirma, turi būti ne jaunesnis nei 20 m. amžiaus, kad galėtum savimi tinkamai pasirūpinti :) Antra, turi galėti dalyvauti visomis renginio dienomis – nuo trečiadienio/ketvirtadienio iki sekmadienio. Tai vienintelis būdas patirti tikrąją NTA dvasią! Taip pat tikimės, kad esi atsakingas ir moki dirbti komandoje!'
+            question4:
+                question: 'Ar turėsiu laisvo laiko renginyje?'
+                slug: 'free-time'
+                answer: 'Kiekvienas savanoris turės savo atsakomybes ir tvarkaraštį, kuriame tikrai bus numatyta ir laisvo laiko! Taigi nesijaudink, nereikės vien tik dirbti, savo laisvu laiku galėsi klausytis įdomių pranešimų ir sudalyvauti dirbtuvėse.'
+        other:
+            question1:
+                question: 'Noriu būti rėmėjas arba kitaip prisidėti prie renginio gerovės. Ką daryti?'
+                slug: 'sponsorship'
+                answer: 'Savo pasiūlymus siųsk mums el. paštu <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>, aptarsime, kaip vieni kitiems galime būti naudingi.'
+            question2:
+                question: 'Turi daugiau klausimų?'
+                slug: 'other-questions'
+                answer: 'Jei turi daugiau klausimų, pasiūlymų, rekomendacijų ar nori prisidėti prie renginio organizavimo, rašyk mums <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>'
+registration:
+    text:
+        title: 'Registracija'
+        title_long: 'Registruok savo pranešimą/dirbtuves į NTA 2019'
+        description: 'NTA komanda peržiūrės tavo informaciją per kelias dienas. Jeigu reikės papildomų patikslinimų, susisieksime, tad būk kantrus.'
+        event_date: 'Renginio data:'
+        starts_on: 'Registracijos pradžia:'
+        ends_on: 'Registracijos pabaiga:'
