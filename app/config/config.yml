@@ -24,6 +24,10 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+    translator:
+        paths:
+            - '%kernel.root_dir%/Resources/translations'
+        fallbacks: [en]
 
 # Twig Configuration
 twig:

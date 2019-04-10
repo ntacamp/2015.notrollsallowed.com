@@ -1,6 +1,8 @@
 estina_home:
     resource: "@EstinaHomeBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix: /{_locale}
+    requirements:
+        _locale:  en|lt
 logout:
     path:   /logout
