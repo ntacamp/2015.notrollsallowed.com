@@ -3,6 +3,6 @@ estina_home:
     type:     annotation
     prefix: /{_locale}
     requirements:
-        _locale:  en|lt
+        _locale:  |en|lt
 logout:
     path:   /logout
