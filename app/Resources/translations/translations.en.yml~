@@ -1,0 +1,194 @@
+header:
+    menu:
+        schedule: 'Schedule'
+        volunteer: 'Volunteer!'
+        contact_us: 'Contact us'
+        blog: 'BLOG'
+        login: 'Login'
+        talks: 'Presentations'
+        workshops: 'Workshops'
+        registration: 'Registration'
+        about_nta: 'About NTA'
+        about: 'About'
+        faq: 'FAQ'
+        logout: 'logout'
+        profile: 'Profile'
+        my_presentation: 'My presentations'
+        admin_talks: 'Talks administration'
+        language: 'Language'
+footer:
+    general:
+        follow_us: 'Follow us'
+        contact_us: 'Contact us!'
+homepage:
+    title:
+        main: 'No Trolls Allowed 2019'
+        description: 'The only hacker camp in Lithuania'
+    button:
+        register: 'Register here'
+        more: 'Find out more'
+    text:
+        registration_ended: 'Registration is closed.'
+        registration_not_open: 'Registration is coming soon.'
+        about_title: 'What is No Trolls Allowed?'
+        about_p1: 'Have you ever been in a place where you can build an actual rocket, learn to make cheese and do a yoga class all at once? Well, NTA is the place.'
+        about_p2: 'No Trolls Allowed is an annual open-air hacker camp where hobbies and arts meet technology and awesomeness. It does not matter if you are a programmer, a traveler, a chef, a musician or an astronaut — we will find a spot for you. As far as we see it, everyone is a hacker.'
+        where: 'Where?'
+        when: 'When?'
+        footer:
+            campground: 'Campground'
+            campground_name: 'Pusiasalis'
+            campground_by: 'by the Skaistis lake, near Trakai town.'
+            distance_from1: '10 km from Trakai'
+            distance_from2: '25 km from  Vilnius'
+            distance_from3: '90 km from  Kaunas'
+            coordinates: '54.657602, 24.984814'
+            we_arive: 'We arrive on Wednesday, and leave on Sunday evening'
+about:
+    text:
+        about: 'About'
+        nta: 'No Trolls Allowed'
+        about_nta: 'is an open-air gathering of hobbies, arts and technology that welcomes hackers of any nature. Imagine hundreds of passionate people gathering in the woods to share their knowledge and their joy of discovery.'
+        pre_how_to_attend: 'The camp is free in every sense of the word: from free drinks and food to freedom of speech. However, as the name suggests, we aren’t very fond of trolls, which means you have to bring something in. That being said, your ticket to the camp is your participation. The good news is that the form of participation is entirely up to you, so feel free to choose one of the following:'
+        how_to_attend_opt1: '<strong>Do a presentation.</strong> It’s the key of the entire gathering, presentations take place on three different stages for three days. You`ll have an opportunity to choose the most convenient time and stage for you if the slot is not taken yet (the earlier you come to the camp, the more chances you have). Just remember, you are here to share your passion and awesome things you know, so we ask you not to talk about boring job stuff you do every day and definitely no commercial presentations.'
+        how_to_attend_opt2: '<strong>Do a workshop.</strong> Whether it’s related to art — drawing, dancing or karate, or to technology — rockets, genetically engineered monsters or space dogs, you’re very welcome to go nuts here. Workshops can be done by several people, so take a friend and do something awesome!'
+        how_to_attend_opt3: '<strong>Volunteer.</strong> By joining our awesome crew you receive a bunch of cool perks but at the same time it’s important not to forget that where there’s power, there’s also responsibility.'
+        policy_about_foreigners: 'If you’re wondering whether the camp welcomes international guests as well, no worries. We are a global community and open to those who want to share something they love in a presentation or a workshop in any language (of course English is preferred). And even though the majority of presentations are in Lithuanian, our experience shows that it’s easy for most to switch to English for Q&A and/or discussion.'
+        mail_us: 'If you have any other questions, just drop us a line at '
+        fb_us: ' or say Hi on Facebook.'
+        nta_history_title: 'Short history of No Trolls Allowed'
+        nta_history: '<p>It all started in the Spring of 2013. A group of like-minds had an idea to get together somewhere in the nature in a summer time. To make this time even more useful, at the same time everyone could prepare presentations to tell each other something interesting. Then why not invite more people? Good idea, but.. how to make sure not only listeners gather and we have enough speakers? Well, this is how the main rule of NTA came up — every participant of the event has to prepare a presentation that would be interesting to others. </p><p>How did the first event go? It took place near Moletai, 70 people participated, 38 presentations were made, other fun stuff like beer brewing also happened. Positive comments from the participants made us think about the following year. </p><p>So in 2014 already 300 people participated and there were over 100 presentations. Plus, there were such cool workshops as soldering, programming, creation of LEGO robots, board-games, etc. </p><p>In 2015 NTA became a real hacker camp.</p><p>In 2016 for the first time a team of volunteers was formed to help us supervise the fast-growing event!</p><p>In the following years the event grew even bigger. For the past few years the number of participants exceeded 400! </p><p>What’s next? Come and see for yourself! </p>'
+faq:
+    general:
+        faq: 'FAQ'
+        faq_full: 'Frequently asked questions'
+    questions:
+        groups:
+            general: 'General info'
+            presentations: 'About presentations and workshops'
+            volunteering: 'About volunteering'
+            other: 'Other questions'
+        general:
+            question1:
+                question: 'What does "No Trolls Allowed" mean?'
+                slug: 'what-is-nta'
+                answer: 'The name represents the main idea of the event — no trolls wanted here. Only people who want to share their knowledge and learn something from others.'
+            question2:
+                question: 'What is a troll?'
+                slug: 'what-is-troll'
+                answer: 'We refer to an internet troll here. According to Wikipedia, <p><italic>In Internet slang, a troll is a person who starts quarrels or upsets people on the Internet to distract and sow discord by posting inflammatory and digressive, extraneous, or off-topic messages in an online community (such as a newsgroup, forum, chat room, or blog) with the intent of provoking readers into displaying emotional responses and normalizing tangential discussion, whether for the troll`s amusement or a specific gain.</italic></p>'
+            question3:
+                question: 'How much does a ticket cost?'
+                slug: 'ticket-cost'
+                answer: 'NTA is free of charge, the only condition of participation is to do either a presentation, a workshop or become a volunteer. It’s kind of a precaution from trolls to make sure not only listeners attend the event.'
+            question4:
+                question: 'What is the agenda of the event?'
+                slug: 'event-agenda'
+                answer: '<strong>Wednesday.</strong> Gathering, setting up the tents, getting to know each other.</br><strong>Thursday.</strong> Continue getting to know each other, do various activities.</br><strong>Friday.</strong> Registration of the presentations starts. We listen to first presentations and at the end of the day we’re partying at a concert. </br><strong>Saturday.</strong> Whole day of presentations. In the previous events, presentations lasted until 2 AM, so get energised during the day!</br><strong>Sunday.</strong> Most of the tents are dedicated to workshops. If there are some presentations remaining, we continue with them. In the evening, we clean up the campsite, say goodbye and go home. </br></br>Registration of presentations is organised based on <a href="https://en.wikipedia.org/wiki/BarCamp#Structure_and_participatory_process"> BarCamp principle</a>. It means that the speakers in the campsite choose when they want to do the presentation by themselves. You can choose from any slot available. Timetables of workshops, food and other activities are also available at the campsite.'
+            question5:
+                question: 'Will there be a Wi-Fi?'
+                slug: 'wi-fi'
+                answer: 'Yes. We just ask you not to download large files.'
+            question6:
+                question: 'Will there be electricity?'
+                slug: 'electricity'
+                answer: 'Yes. Don’t forget to take care of an extension cord.'
+            question7:
+                question: 'Will there be something to eat?'
+                slug: 'food'
+                answer: 'Thanks to our amazing friends and sponsors there is always some food. However, be aware that since the final number of participants may vary, there is no guarantee that there’s enough food for everyone. So please don’t forget to take care of yourself too — bring something to grill (there’s always equipment for that), take some snacks and drinks, and you’ll be just fine!'
+            question8:
+                question: 'What things do I need to bring?'
+                slug: 'what-to-bring'
+                answer: 'NTA is an open-air event so don’t forget to prepare well for a few days in the nature. We suggest taking these things:</br><ul><li>a tent, a sleeping bag and other things for you to feel comfortable in the woods</li><li>a computer and other similar gadgets (don’t forget your chargers!)</li><li>an extension cord</li><li>a router if you think you might need it for a workshop or gaming</li><li>food, drinks and things to store/prepare them in, like grill, dishes, cooling bag, etc. Please be considerate of others and don’t bring any kind of glass with you</li><li>trash bags</li><li>appropriate clothing depending on the weather forecast (rain boots and a raincoat are always a smart choice!)</li><li>insect repellents</li><li>games</li></ul>'
+            question9:
+                question: 'How to get to the campsite?'
+                slug: 'how-to-come'
+                answer: 'The event takes place at a campsite “Pusiasalis” which is 10 km from Trakai.</br>Exact coordinates are 54.657602, 24.984814</br>Website for more info: <a href="http://www.verube.lt">www.verube.lt</a></br>How to get from:</br><ul><li><a href="https://www.google.lt/maps/dir/Vilnius/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6672052,25.0475178,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46dd93fb5c6408f5:0x400d18c70e9dc40!2m2!1d25.2796514!2d54.6871555!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Vilnius</a></li><li><a href="https://www.google.lt/maps/dir/Kaunas/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.7847771,24.1756336,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46e72270b167d343:0x614bd1e0c7378bbc!2m2!1d23.9035965!2d54.8985207!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Kaunas</a></li><li><a href="https://www.google.lt/maps/dir/Trakai/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6343367,24.9538191,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf374628607db:0xfe90f5881befe3d9!2m2!1d24.9346894!2d54.6379113!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Trakai</a></li></ul>'
+            question10:
+                question: 'Where is the nearest supermarket?'
+                slug: 'nearest-supermarket'
+                answer: 'At the campsite, you won’t be able to buy food or drinks and the nearest supermarket is <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">5 km away, in Lentvaris. </a>'
+            question11:
+                question: 'Can I bring my family?'
+                slug: 'who-to-bring'
+                answer: 'Anyone doing a presentation or a workshop can bring their family or a friend. Think of NTA as a picnic or camping in the nature. However, if your family member has four legs and sharp teeth, make sure other participants will be able to enjoy the event too. Also, be aware that there are small kids on camp.'
+            question12:
+                question: 'Will my family members also have to make a presentation or a workshop?'
+                slug: 'family-or-friends-responsibilities'
+                answer: 'It would be perfect if they could, but you can use your +1 card and let them enjoy the event without any additional responsibilities.'
+            question13:
+                question: 'Who is an organiser of the event?'
+                slug: 'organizers'
+                answer: 'NTA is organised by all the participants. But for gathering everyone in one place a responsible party is a non-profit organisation <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Company code: 303307623</br>Address: J. Galvydžio g. 5, LT-08236 Vilnius.'
+        presentations:
+            question1:
+                question: 'What are the possible presentation topics?'
+                slug: 'presentation-topics'
+                answer: 'Topics can vary: from food preparation to telepathic methods to open beer bottles. When choosing a presentation topic think about the audience which can also be very different. Don’t forget that there can be people who do not work in the IT sector. However, this doesn’t mean you can’t prepare any technical presentations but try not to limit yourselves to that. If you think that you don’t have anything to talk about, you’ve probably forgotten that things you know might not be familiar to others. The only request — don’t present business ideas, your startups or anything commercial. '
+            question2:
+                question: 'How long should a presentation take?'
+                slug: 'time-given'
+                answer: 'Your presentation and Q&A from the audience should take 30 minutes.'
+            question3:
+                question: 'In what language can I do a presentation?'
+                slug: 'talk-language'
+                answer: 'The main event language is Lithuanian, however, there are no restrictions to do a presentation in another language (English is preferred, of course). If you want to do a presentation in another language, just specify the language next to your topic, e.g., by adding [EN].'
+            question4:
+                question: 'Does a presentation have to be related to programming?'
+                slug: 'programming-topics'
+                answer: 'No. We recommend not to limit yourselves to a narrow area as our audience is very different and you may want to make your presentation interesting to as wide audience as possible.'
+            question5:
+                question: 'What’s the difference among the stages?'
+                slug: 'stages'
+                answer: 'When registering your presentation you will have to choose a stage. Stages are divided according to the topics so that the listeners could easily choose which stage to choose based on their interest. Every stage has a limit of speakers to have a balance of different topics. Here are short descriptions of each stage: </br><ul><li><strong>Digital:</strong> everything about computers, programming and other hardcore IT stuff</li><li><strong>Analog:</strong> everything about all other technologies, not related to digital world</li><li><strong>/dev/random:</strong> everything that’s remaining — arts, lifestyle, etc.</li></ul>'
+            question6:
+                question: 'How many people can organise a workshop?'
+                slug: 'workshop-organisers'
+                answer: 'Workshops usually require more input so they can be organised by several people. In this case, none of them will have to do a presentation.'
+            question7:
+                question: 'Will there be a projector?'
+                slug: 'projectors'
+                answer: 'Yes, every stage where presentations take place has a projector.'
+            question8:
+                question: 'Do I need to bring my own laptop?'
+                slug: 'computers'
+                answer: 'Depends on your presentation. If you’ll be showing only slides and don’t want to bring your computer, no problem — PDF and PPT presentations will work on our laptops.'
+            question9:
+                question: 'How do I upload my photo next to my presentation?'
+                slug: 'photo-upload'
+                answer: 'Speakers’ photos are automatically taken from <a href="https://www.gravatar.com/">Gravatar</a> website. The photo is recognised based on your email address that you entered when registering your presentation. If a speaker is not registered on the mentioned website, a cute robot is generated from <a href="http://www.robohash.org/">robohash.org</a>.'
+        volunteering:
+            question1:
+                question: 'What do volunteers do at the event?'
+                slug: 'volunteer-job'
+                answer: 'Volunteers are a part of our cool crew helping to implement smooth organisation and supervision of the event. Volunteers do various kinds of things: help with logistics, registration of the speakers and presentations, stages, campsite infrastructure, etc. Experience, a ticket to the camp, a collectible NTA t-shirt and new friends are just some of the perks that they get when choosing to volunteer!'
+            question2:
+                question: 'What will my responsibilities be?'
+                slug: 'responsibilities'
+                answer: 'There are a few different teams of volunteers: from general camp supervision to taking care of presentation stages or info-desk. You will be able to choose your preferred activities in the volunteer registration form and we will try to take your choices into consideration, however, be aware that we might not be able to grant everyone’s wishes. Nevertheless, we can guarantee you that each position has its own perks!'
+            question3:
+                question: 'What are the requirements for volunteers?'
+                slug: 'requirements-for-volunteering'
+                answer: 'There are a few things needed for you to be a volunteer. First, you have to be over 20 years old to be able to take care of yourself :) Secondly, you should be able to participate in the entire event – from Wednesday/Thursday till Sunday. It’s the only way to experience NTA as it’s meant to! Other than that, we hope you have a strong sense of responsibility and are a team player!'
+            question4:
+                question: 'Will I have some free time to enjoy the event?'
+                slug: 'free-time'
+                answer: 'Every volunteer has their responsibilities and work timetable which definitely includes some free time! So don’t worry, it won’t all be just work, you’ll definitely be able to listen to some cool presentations and participate in workshops on your free time.'
+        other:
+            question1:
+                question: 'What do I have to do if I want to be a sponsor or offer any other support?'
+                slug: 'sponsorship'
+                answer: 'Drop us an email at <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a> with your suggestions and let’s discuss how we can help each other. '
+            question2:
+                question: 'Have other questions?'
+                slug: 'other-questions'
+                answer: 'In case you have more questions, suggestions, recommendations or want to join event organisation, write us a letter: <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>'
+registration:
+    text:
+        title: 'Registration'
+        title_long: 'Register your presentation or workshop for NTA 2019'
+        description: 'NTA crew is going to review your submission within a few days.</br>We will contact you with additional requests or recommendations in case some clarifications are needed, so please be patient.'
+        event_date: 'Event date:'
+        starts_on: 'Start of registration:'
+        ends_on: 'End of registration:'
