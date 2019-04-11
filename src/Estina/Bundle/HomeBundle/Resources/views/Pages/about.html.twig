@@ -1,72 +1,58 @@
-{% extends "EstinaHomeBundle::page.html.twig" %}
+{% extends "EstinaHomeBundle::page-wide.html.twig" %}
+{% trans_default_domain 'translations' %}
+{% block content %}
+<div class="about-page">
+		
+    <h1>{{ 'about.text.about'|trans }} {{ 'about.text.nta'|trans }}</h1>
 
-{% block content  %}
-    <h1>Apie <em>hacker camp</em></h1>
+	<div class="hacker">
+		<h4>hacker</h4>
+		<strong>/ˈhakə/</strong>
 
-    <p>No Trolls Allowed - po atviru dangumi vykstantis renginys, siekiantis suburti
-        įvairių pomėgių turinčius žmones. Čia laukiami progamuotojai, įvairaus plauko geek'ai,
-        mokslininkai, konstruktoriai, artistai, menininkai ir kitų sričių specialistai,
-        galintys ir norintys pasidalinti savo žiniomis. Norite sudalyvauti? Pasiimkite
-        savo šeimyną, maisto, gėrimų, bei palapinę viskam sutalpinti ir atvažiuokite!</p>
+		<p>
+			<small>noun</small><br>
+			<small>noun: <strong>hacker</strong>; plural noun: <strong>hackers</strong></small>
+		</p>
+
+		<ol>
+			<li class="strike">a person who uses computers to gain unauthorized access to data.</li>
+			<li>a person who uses nonconventional methods or tools to achieve something awesome.</li>
+		</ol>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			
+		    <p><strong>{{ 'about.text.nta'|trans }}</strong> {{ 'about.text.about_nta'|trans }}</p>
+			
+			<p>
+				<img src="/images/professions.png" alt="Professions">
+			</p>
+		    
+
+		    <p>{{ 'about.text.pre_how_to_attend'|trans }}
+		    </p>
+
+		    <ul>
+		    	<li>{{ 'about.text.how_to_attend_opt1'|trans|raw }}</li>
+		    	<li>{{ 'about.text.how_to_attend_opt2'|trans|raw }}</li>
+		    	<li>{{ 'about.text.how_to_attend_opt3'|trans|raw }}</li>
+		    </ul>
+
+		    <p>{{ 'about.text.policy_about_foreigners'|trans }}</p>
+
+			<p> {{ 'about.text.mail_us'|trans }} <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>{{ 'about.text.fb_us'|trans }}</p>
+
+			<h2>{{ 'about.text.nta_history_title'|trans }}</h2>
+			{{ 'about.text.nta_history'|trans|raw }}
+
+			<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNoTrollsAllowed%2F&tabs=messages&width=500&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1796467907334809" width="500" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 
-    <h2>Kaip viskas prasidėjo?</h2>
-    <p>
-        Vėlyvą 2013-ųjų metų pavasarį, būrys bendraminčių sugalvojo, kad
-        vasaros metu būtų smagu susirinkti kur nors gamtoje. O kad praleistas
-        laikas būtų naudingesnis, paruošti ir pristatyti vienas kitam
-        pranešimus. Tuo pačiu pagalvojo, kad būtų smagu neapsiriboti vien
-        tik sava kompanija ir pakviesti daugiau žmonių. Bet kaip užtikrinti,
-        kad nesusirinks vien tik klausytojai? Kaip pritraukti daugiau
-        pranešėjų? Taip ir buvo sugalvota pagrindinė renginio taisyklė:
-    </p>
+		</div>
+	</div>
 
-    <h3>Pagrindinė renginio taisyklė</h3>
-    <blockquote>
-        <p>Kiekvienas dalyvis turi paruošti pranešimą bet kokia tema, kuri, jo
-        manymu, būtų įdomi kitiems.</p>
-    </blockquote>
 
-    <h2>No Trolls Allowed 2013</h2>
-    <p>
-        Patvirtinus renginio formatą buvo imtasi darbų: kuriamas puslapis
-        registracijai, ieškoma tinkanti vieta, rėmėjai, skleidžiama informacija
-        ir kviečiami dalyviai. Galiausiai renginys įvyko! Festivalio dalyviai
-        okupavo Molėtuose esančio Lenktinio ežero pakrantę, įsirengė palapinyną
-        bei iš savo susivežtos įrangos sukonstravo dvi scenas. Nors oras
-        nebuvo daug žadantis, tie, kurie išdrįso atvykti - nepasigailėjo. Per
-        porą festivalio dienų 70 dalyvių spėjo pristatyti 38 pranešimus,
-        išsivirti alaus bei sriubos, pabendrauti, pasidalinti patirtimi ir,
-        žinoma, puikiai praleisti laiką. Didžiulis pasisekimas ir puikūs
-        dalyvių atsiliepimai vertė galvoti apie ateinančius metus.
-    </p>
 
-    <h2>No Trolls Allowed 2014</h2>
-    <p>
-        Šį kartą pasiruošti renginiui buvo daugiau laiko. Parinkta vieta leido
-        sutalpinti didesnį dalyvių kiekį. Žinia apie renginį skriejo iš lūpų į
-        lūpas, tad ir dalyvių susirinko daugiau. Iš viso 2014-ųjų metų
-        renginyje spėjo pabūvoti apie 300 žmonių. O pranešimų skaičius viršijo
-        visą 100! Negana to, vyko litavimo, programavimo, LEGO robotų kūrimo,
-        stalo žaidimų ir kitos dirbtuvės. Buvo visko - rimtų diskusijų, nerimtų
-        pokalbių, dainų, laužų, maudynių ir šašlykų.
-    </p>
-
-    <h2>No Trolls Allowed 2015</h2>
-    <p>
-        NTA tapo tikru hackercamp'u.
-    </p>
-
-    <h2>No Trolls Allowed 2016</h2>
-    <p>Po puikiai pavykusių pirmųjų trijų renginių, nekilo jokių abejonių, kad
-       No Trolls Allowed 2016 taip pat įvyks! Pirmą kartą suburta savanorių
-       komanda, kurios dėka renginys tapo dar geresnis! Turėjom net 4 scenas,
-       bei <em>maker'ių</em> palapinę.
-    </p>
-
-    <h2>No Trolls Allowed 2017</h2>
-    <p>Penktasis renginys jau ne už kalnų. Sudalyvauk ir tu, ir padaryk
-       renginį dar geresniu!
-    </p>
-
+</div>
 {% endblock %}

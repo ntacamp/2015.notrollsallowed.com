@@ -1,5 +1,5 @@
 {% extends "EstinaHomeBundle::layout.html.twig" %}
-
+{% trans_default_domain 'translations' %}
 {% block body %}
 
     <div class="hello">
@@ -7,16 +7,16 @@
             <br>
             <br>
             <br>
-            <h1>No Trolls Allowed 2019</h1>
-            <h3>The One Hackercamp of Lithuania</h3>
+            <h1>{{ 'homepage.title.main'|trans }}</h1>
+            <h3>{{ 'homepage.title.description'|trans }}</h3>
             <h2>{{ ntacamp_date }}</h2>
 
             {% if "now"|date("Y-m-d") > registration_deadline %}
-                <p><strong>Registration is closed.</strong></p>
+                <p><strong>{{'homepage.text.registration_ended'|trans}}</strong></p>
             {% elseif "now"|date('Y-m-d') < registration_start %}
-                <p><strong>Registration is not open yet.</strong></p>
+                <p><strong>{{ 'homepage.text.registration_not_open'|trans}}</strong></p>
             {% else %}
-                <a href="{{ path('talk_register') }}" class="btn btn-info btn-register">Register here</a>
+                <a href="{{ path('talk_register') }}" class="btn btn-info btn-register"> {{ 'homepage.button.register'|trans }}</a>
             {% endif %}
             
             <br>&nbsp;
@@ -143,15 +143,13 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 wrapper">
 
-                    <h2 class="text-center">What is No Trolls Allowed?</h2>
+                    <h2 class="text-center">{{ 'homepage.text.about_title'|trans }}</h2>
 
-                    <p>Have you ever been in a place where you can build an actual rocket, practice your cheese making skills and do a yoga class all at once? Well, NTA camp is the place.</p>
+                    <p>{{ 'homepage.text.about_p1'|trans}}</p>
                     
-                    <p>No Trolls Allowed is an annual open-air hackercamp where hobbies and arts meet technology and awesomeness. It does not matter if you are programmer, traveler, chef, musician or astronaut - we will find a spot for you. In our own eyes, everyone is a hacker.</p>
+                    <p>{{ 'homepage.text.about_p2'|trans}}</p>
 
-                    <p>The camp is family friendly so bring everybody ;)</p>
-
-                    <p><a href="{{ path('page_about_en') }}" class="btn cta">Find out more &raquo;</a></p>
+                    <p><a href="{{ path('page_about') }}" class="btn cta">{{ 'homepage.button.more'|trans }}</a></p>
 
                 </div> 
             </div>
@@ -174,23 +172,23 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2595258521733!2d24.9828927138781!3d54.658727588496276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ddf35646b86bb9%3A0x1b3be18955776075!2sPusiasalis!5e1!3m2!1sen!2slt!4v1532258638825" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-5">
-                    <h2><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span> Where?</h2>
+                    <h2><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span> {{ 'homepage.text.where'|trans }}</h2>
                     <p>
-                        Campground <a href="https://www.facebook.com/pusiasalis/">Pusiasalis</a> by the Skaistis lake, near Trakai town.
+                        {{ 'homepage.text.footer.campground'|trans }} <a href="https://www.facebook.com/pusiasalis/">{{ 'homepage.text.footer.campground_name'|trans }}</a> {{ 'homepage.text.footer.campground_by'|trans }}
                         <ul>
-                            <li>10 km from Trakai</li>
-                            <li>25 km from  Vilnius</li>
-                            <li>90 km from  Kaunas</li>
-                            <li>54.657602, 24.984814</li>
+                            <li>{{ 'homepage.text.footer.distance_from1'|trans }}</li>
+                            <li>{{ 'homepage.text.footer.distance_from2'|trans }}</li>
+                            <li>{{ 'homepage.text.footer.distance_from3'|trans }}</li>
+                            <li>{{ 'homepage.text.footer.coordinates'|trans }}</li>
                         </ul>
                     </p>
 
                     <br>
 
-                    <h2><span class="glyphicon glyphicon-time" aria-hidden="true"></span> When?</h2>
+                    <h2><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ 'homepage.text.when'|trans }}</h2>
                     <p>
                         {{ ntacamp_date }}<br>
-                        <small><span class="text-muted">We arrive on Wednesday, and leave on Sunday evening</span></small>
+                        <small><span class="text-muted">{{ 'homepage.text.footer.we_arive'|trans }}</span></small>
                     </p>
                 </div>
             </div>

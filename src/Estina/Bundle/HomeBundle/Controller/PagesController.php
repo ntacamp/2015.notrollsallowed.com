@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Translation\Translator;
 
 /**
  * Static pages
@@ -13,20 +14,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class PagesController extends Controller
 {
     /**
-     * English page
-     *
-     * @Route("/about", name="page_about_en")
-     * @Template()
-     */
-    public function aboutEnAction()
-    {
-        return [];
-    }
-
-    /**
      * About page
      *
-     * @Route("/apie", name="page_about")
+     * @Route("/about", name="page_about")
      * @Template()
      */
     public function aboutAction()
@@ -48,18 +38,13 @@ class PagesController extends Controller
     /**
      * FAQ
      *
-     * @Route("/duk", name="page_faq")
+     * @Route("/faq", name="page_faq")
      * @Template()
      */
     public function faqAction()
     {
-        $repo = $this->getDoctrine()->getRepository(
-            'Estina\Bundle\HomeBundle\Entity\Track');
-        $tracks = $repo->findTracks();
 
-        return [
-            'tracks' => $tracks
-        ];
+        return [];
     }
 
     /**

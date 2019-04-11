@@ -38,7 +38,7 @@
         <meta property="og:image:width" content="310">
         <meta property="og:image:height" content="300">
     </head>
-
+    {% trans_default_domain 'translations' %}
     <body data-controller="{{ getControllerName() }}"
           data-action="{{ getActionName() }}">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -56,7 +56,7 @@
 
                 <div class="pull-right hidden-xs hidden-sm">
                     {% if not is_granted("ROLE_USER") %}
-                        <a href="{{ path('login_route') }}" class="navbar-btn btn">Login</a>
+                        <a href="{{ path('login_route') }}" class="navbar-btn btn">{{ 'header.menu.login'|trans }}</a>
                     {% else %}
                         <ul class="nav navbar-default navbar-nav">
                             <li class="dropdown">
@@ -64,14 +64,14 @@
                                     <strong>{{ app.user }}</strong> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ path('user_profile') }}">My presentations</a></li>
-                                    <li><a href="{{ path('user_profile_edit') }}">Profile</a></li>
+                                    <li><a href="{{ path('user_profile') }}">{{ 'header.menu.my_presentation'|trans }}</a></li>
+                                    <li><a href="{{ path('user_profile_edit') }}">{{ 'header.menu.profile'|trans }}</a></li>
                                     {% if is_granted("ROLE_ADMIN") %}
                                     <li class="divider"></li>
-                                        <li><a href="{{ path('talk_list') }}">Pranešimų administravimas</a></li>
+                                        <li><a href="{{ path('talk_list') }}">{{ 'header.menu.admin_talks' }}</a></li>
                                     {% endif %}
                                     <li class="divider"></li>
-                                    <li><a href="{{ path('logout') }}"><em>Logout</em></a></li>
+                                    <li><a href="{{ path('logout') }}"><em>{{ 'header.menu.logout'|trans }}</em></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -81,35 +81,41 @@
                 <div class="collapse navbar-collapse" id="nta-navbar">
                     <ul class="nav navbar-default navbar-nav">
                         {% if not is_granted("ROLE_USER") %}
-                            <li class="visible-xs visible-sm"><a href="{{ path('login_route') }}">Login</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('login_route') }}">{{ 'header.menu.login'|trans }}</a></li>
                         {% else %}
-                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile') }}">My presentations</a></li>
-                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile_edit') }}">Profile</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile') }}">{{ 'header.menu.my_presentation'|trans }}</a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('user_profile_edit') }}">{{ 'header.menu.profile'|trans }}</a></li>
                             <li class="divider"></li>
-                            <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>Logout</em></a></li>
+                            <li class="visible-xs visible-sm"><a href="{{ path('logout') }}"><em>{{ 'header.menu.logout'|trans }}</em></a></li>
                         {% endif %}
                         <li class="divider"></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About NTA<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'header.menu.about_nta'|trans }}<b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('page_about') }}">Apie (LT)</i></a></li>
-                                <li><a href="{{ path('page_about_en') }}">About (EN)</a></li>
-                                <li><a href="{{ path('page_faq') }}">FAQ (LT)</a></li>
+                                <li><a href="{{ path('page_about') }}">{{ 'header.menu.about'|trans }}</i></a></li>
+                                <li><a href="{{ path('page_faq') }}">{{ 'header.menu.faq'|trans }}</a></li>
                             </ul>
                         </li>
                         {% if "now"|date("Y-m-d") <= registration_deadline %}
-                        <li><a href="{{ path('talk_register') }}">Registration</a></li>
+                        <li><a href="{{ path('talk_register') }}">{{ 'header.menu.registration'|trans }}</a></li>
                         {% endif %}
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedule<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'header.menu.schedule'|trans }}<b class="caret"></b></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ path('talks') }}">Presentations</a></li>
-                                <li><a href="{{ path('workshops') }}">Workshops</a></li>
+                                <li><a href="{{ path('talks') }}">{{ 'header.menu.talks'|trans }}</a></li>
+                                <li><a href="{{ path('workshops') }}">{{ 'header.menu.workshops'|trans }}</a></li>
                             </ul>
                         </li>
-                        <li><a href="https://goo.gl/forms/ViU1FcTIvdghuhwv1" target="_blank">Volunteer!</a></li>
-                        <li><a href="{{ path('page_contacts') }}">Contact Us</a></li>
-                        <li><a href="http://blog.notrollsallowed.com/">BLOG</a></li>
+                        <li><a href="https://goo.gl/forms/ViU1FcTIvdghuhwv1" target="_blank">{{ 'header.menu.volunteer'|trans }}</a></li>
+                        <li><a href="{{ path('page_contacts') }}">{{ 'header.menu.contact_us'|trans }}</a></li>
+                        <li><a href="http://blog.notrollsallowed.com/">{{ 'header.menu.blog'|trans }}</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'header.menu.language'|trans }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/lt">LT</a></li>
+                                <li><a href="/en">EN</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -124,7 +130,7 @@
                         <a href="{{ path('home') }}"><img src="{{ asset('images/logo.png') }}"><br>No Trolls Allowed</a>
                     </div>
                     <dl class="footer-nav">
-                        <dt class="nav-title">Follow us</dt>
+                        <dt class="nav-title">{{ 'footer.general.follow_us'|trans }}</dt>
                         
                         <dd class="nav-item">
                             <a href="https://github.com/ntacamp">GitHub</a>
@@ -137,7 +143,7 @@
                         </dd>
                     </dl>
                     <dl class="footer-nav">
-                        <dt class="nav-title">Contact us!</dt>
+                        <dt class="nav-title">{{ 'footer.general.contact_us'|trans }}</dt>
                         <dd class="nav-item">
                             <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>
                         </dd>
