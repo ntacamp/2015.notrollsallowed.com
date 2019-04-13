@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="hello">
-        <div class="container text-center">
+        <!-- <div class="container text-center">
             <br>
             <br>
             <br>
@@ -20,7 +20,7 @@
             {% endif %}
             
             <br>&nbsp;
-        </div>
+        </div> -->
     </div>
 {#
     <div class="sponsors">
@@ -141,7 +141,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 wrapper">
+                <div class="col-md-6 wrapper">
+                    <div class="visual"></div>
+                </div>
+                <div class="col-md-6 wrapper">
 
                     <h2 class="text-center">{{ 'homepage.text.about_title'|trans }}</h2>
 
@@ -149,7 +152,13 @@
                     
                     <p>{{ 'homepage.text.about_p2'|trans}}</p>
 
-                    <p><a href="{{ path('page_about') }}" class="btn cta">{{ 'homepage.button.more'|trans }}</a></p>
+                    {% if "now"|date("Y-m-d") > registration_deadline %}
+                        <p class="cta-container"><strong>{{'homepage.text.registration_ended'|trans}}</strong></p>
+                    {% elseif "now"|date('Y-m-d') < registration_start %}
+                        <p class="cta-container"><strong>{{ 'homepage.text.registration_not_open'|trans}}</strong></p>
+                    {% else %}
+                        <p class="cta-container"><a href="{{ path('talk_register') }}" class="btn btn-primary btn-register"> {{ 'homepage.button.register'|trans }}</a></p>
+                    {% endif %}
 
                 </div> 
             </div>
