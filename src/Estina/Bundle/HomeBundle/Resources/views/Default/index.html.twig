@@ -2,26 +2,7 @@
 {% trans_default_domain 'translations' %}
 {% block body %}
 
-    <div class="hello">
-        <!-- <div class="container text-center">
-            <br>
-            <br>
-            <br>
-            <h1>{{ 'homepage.title.main'|trans }}</h1>
-            <h3>{{ 'homepage.title.description'|trans }}</h3>
-            <h2>{{ ntacamp_date }}</h2>
-
-            {% if "now"|date("Y-m-d") > registration_deadline %}
-                <p><strong>{{'homepage.text.registration_ended'|trans}}</strong></p>
-            {% elseif "now"|date('Y-m-d') < registration_start %}
-                <p><strong>{{ 'homepage.text.registration_not_open'|trans}}</strong></p>
-            {% else %}
-                <a href="{{ path('talk_register') }}" class="btn btn-info btn-register"> {{ 'homepage.button.register'|trans }}</a>
-            {% endif %}
-            
-            <br>&nbsp;
-        </div> -->
-    </div>
+    <div class="hello"></div>
 {#
     <div class="sponsors">
         <div class="container text-center">
@@ -141,7 +122,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6 wrapper">
+                <div class="col-md-6 hidden-xs wrapper">
                     <div class="visual"></div>
                 </div>
                 <div class="col-md-6 wrapper">

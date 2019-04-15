@@ -339,12 +339,42 @@ h2 {
 @media only screen and (max-width : 768px) {
 
 	.hello {
-		background-position: center center;
+		background-size: contain;
+		height: 30vh;
+		background-image: url(/images/hero-bg-min.png);
+		background-color: #fff;
+		margin: 60px 40px 0;
+
+		&:before {
+		    position: fixed;
+		    left: 0;
+		    right: 0;
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+	.about .wrapper .cta-container {
+	    text-align: center;
+	}
+
+	.navbar-default {
+		height: auto;
+	}
+
+	.navbar-fixed-top .navbar-collapse {
+		max-height: none;
+	}
+
+	.navbar-default .navbar-toggle {
+		margin: 13px 10px;
 	}
 
 	.navbar-default .navbar-brand {
 		.logo-title {
-			margin: -2px 0;
+			margin: 2px 0;
 			width: 200px;
 			height: auto;
 		}
