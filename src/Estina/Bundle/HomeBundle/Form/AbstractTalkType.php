@@ -11,7 +11,9 @@ abstract class AbstractTalkType extends AbstractType
 {
     protected $tshirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
 
-    protected $tshirtModels = ['unisex', 'women'];
+    protected $tshirtModels = ['registration.form.tshirt_unisex', 'registration.form.tshirt_women'];
+    protected $talkTypes = ['registration.form.type_presentation', 'registration.form.type_workshop',
+        'registration.form.type_other'];
 
     /**
      * @param FormBuilderInterface $builder
@@ -21,42 +23,35 @@ abstract class AbstractTalkType extends AbstractType
     {
         $builder
             ->add('type', 'choice', [
-                'label' => 'What do you want to do?',
-                'choices' => Talk::getTypesMap(),
+                'label' => 'registration.form.type',
+                'choices' => array_combine(Talk::getTypesMap(), $this->talkTypes),
             ])
             ->add('title', 'text', [
-                'label' => 'Name of your activity',
+                'label' => 'registration.form.name',
             ])
             ->add('language', 'choice', [
-                'label' => 'Activity language',
+                'label' => 'registration.form.language',
                 'choices' => ['LT' => 'LT', 'EN' => 'EN'],
             ])
             ->add('description', 'textarea', [
-                'label' => 'Activity description',
+                'label' => 'registration.form.description',
             ])
             ->add('requirements', 'textarea', [
-                'label' => 'Requirements for attendees (if any)',
+                'label' => 'registration.form.requirements',
                 'required' => false,
             ])
             ->add('comments', 'textarea', [
-                'label' => 'Comments/special requests',
+                'label' => 'registration.form.comments',
                 'required' => false,
             ])
             ->add('tshirtModel', 'choice', [
-                'label' => 'T-shirt model',
-                'choices' => array_combine(
-                    $this->tshirtModels, array_map("ucfirst", $this->tshirtModels)),
+                'label' => 'registration.form.tshirt',
+                'choices' =>  array_combine($this->tshirtModels, $this->tshirtModels),
             ])
             ->add('tshirtSize', 'choice', [
-                'label' => 'T-shirt size',
+                'label' => 'registration.form.tshirt_size',
                 'choices' => array_combine($this->tshirtSizes, $this->tshirtSizes),
             ])
-            ->add('question1', 'text', [
-                'label' => 'Tell us something interesting about you',
-            ])
-            // ->add('question2', 'text', [
-            //     'label' => 'How can you contribute to No Trolls Allowed event?',
-            // ])
         ;
     }
 
