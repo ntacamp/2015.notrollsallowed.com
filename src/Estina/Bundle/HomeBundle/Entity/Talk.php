@@ -29,13 +29,14 @@ class Talk
     /** Talk has been requested for changes by admins */
     const STATUS_CHANGES_REQUESTED = 'requested';
 
-    private static $types = ['presentation', 'discussion', 'workshop', 'other'];
+    private static $types = ['presentation', 'workshop', 'other'];
 
     /**
      * @return array
      */
     public static function getTypesMap() {
-        return array_combine(self::$types, array_map("ucfirst", self::$types));
+
+        return self::$types;
     }
     
     /**
