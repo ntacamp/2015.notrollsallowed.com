@@ -18,6 +18,9 @@
     <h1>Presentations</h1>
 
     <div class="row schedule">
+        {% if tracks|length == 0 %}
+            <p>There are no confirmed presentations yet.</p>
+        {% endif %}
         {% for index, track in tracks  %}
             <div class="col-md-4 track {{ macros.track_class(index) }}">
                 <h2>{{ track.title }}</h2>
