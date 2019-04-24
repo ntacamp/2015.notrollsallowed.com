@@ -1,5 +1,4 @@
 {% extends "EstinaHomeBundle::page-liquid.html.twig" %}
-{% trans_default_domain 'translations' %}
 {% form_theme form _self %}
 
 {%- block form_label -%}
@@ -72,22 +71,19 @@
 
                         <div id="estina_bundle_homebundle_registertalk">
 
-                            <h4>Something about yourself</h4>
+                            <h4>{{ 'registration.form.tellus_header'|trans }}</h4>
                             {% if form.user is defined %}
                                 {{ form_row(form.user.name) }}
                                 {{ form_row(form.user.email) }}
                                 {{ form_row(form.user.phone) }}
-                                {{ form_row(form.question1) }}
-                                <small>This will be your ice-breaker, so make it short, like <i>"I don't wear socks on Sundays"</i> or 
-                                <i>"I am huge Star Wars fan"</i></small>
                                 {{ form_rest(form.user) }}
                             {% endif %}
                             
-                            <h4>How do you want to participate?</h4>
-                            <p>Your participation is your commitment and ticket to the camp. It's easiest to take something you are passioned about and share that with everyone.</p>
+                            <h4>{{ 'registration.form.participation_header'|trans }}</h4>
+                            <p>{{ 'registration.form.participation_terms'|trans }}</p>
                             {{ form_row(form.type) }}
                             {{ form_row(form.title) }}
-                            <small> "TBA" and similar registrations are forwarded to /dev/null track.</small>
+                            <small>{{ 'registration.form.tba_terms'|trans }}</small>
                             {{ form_row(form.language) }}
 
                             <div class="form-group">
@@ -97,7 +93,7 @@
                                 })}}
                                 {{ form_errors(form.description) }}
                                 <span class="text-note">
-                                    <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> is supported
+                                    {{ 'registration.form.markdown'|trans|raw }}
                                 </span>
                             </div>
 
@@ -110,15 +106,15 @@
                             {{ form_row(form.requirements) }}
                             {{ form_row(form.comments) }}
                             
-                            <h4>And bonus...</h4>
-                            <p>We will try to make awesome t-shirts that you will be proud to wear in every occasion.</p>
+                            <h4>{{ 'registration.form.bonus_header'|trans }}</h4>
+                            <p>{{ 'registration.form.tshirt_bonus'|trans }}</p>
                             {{ form_rest(form) }}
 
                         </div>
                     {{ form_end(form) }}
                 {% else %}
                 <p>
-                Registration is not open. If you have any questions <a href="{{ path('page_contacts') }}">contact us</a>.
+
                 </p>
                 {% endif %}
             </div>

@@ -120,7 +120,7 @@ class TalkController extends Controller
             'method' => 'POST',
         ]);
 
-        $form->add('submit', 'submit', array('label' => 'Register'));
+        $form->add('submit', 'submit', array('label' => 'registration.form.register'));
 
         return $form;
     }
