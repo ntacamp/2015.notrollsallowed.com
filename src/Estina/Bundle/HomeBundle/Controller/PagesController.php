@@ -22,6 +22,17 @@ class PagesController extends Controller
     public function aboutAction()
     {
         return [];
+    }    
+
+    /**
+     * Privacy page
+     *
+     * @Route("/privacy", name="page_privacy")
+     * @Template()
+     */
+    public function privacyAction()
+    {
+        return [];
     }
 
     /**

@@ -2,58 +2,72 @@
 {% block body %}
 
     <div class="hello"></div>
-{#
+
     <div class="sponsors">
         <div class="container text-center">
-            <h2>Main sponsors</h2><br>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row"> 
-                        <div class="col-md-4 text-center">
-                            <a href="http://www.tesonet.lt" style="line-height: 130px">
-                                <img src="images/tesonet.png" alt="Tesonet">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="http://www.helis.lt" style="line-height: 130px">
-                                <img src="images/seohelis.png" alt="Helis">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="http://www.nfq.lt" style="line-height: 130px">
-                                <img src="images/nfq.png" alt="NFQ">
-                            </a>
-                        </div>
-                    </div>
+            <h2>{{ 'homepage.sponsors.gold'|trans }}</h2>
+            <div class="row"> 
+                <div class="col-md-12 text-center">
+                    <a href="http://www.tesonet.lt">
+                        <img src="/images/sponsors/tesonet.png" alt="Tesonet">
+                    </a>
                 </div>
             </div>
-            <br><br><br>
-
-            <h2>Sponsors</h2>
             <br>
+            <br>
+
+            <h2>{{ 'homepage.sponsors.silver'|trans }}</h2>
             <div class="row">  
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row">              
                         <div class="col-md-4 text-center" >
-                            <a href="http://www.estina.com">
-                                <img src="images/estina.png" alt="Estina" class="img-responsive">
+                            <a href="http://www.instarem.com">
+                                <img src="/images/sponsors/instarem.png" alt="Instarem" class="img-responsive">
                             </a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="http://www.visma.lt">
-                                <img src="images/visma.png" alt="Visma" class="img-responsive">
+                            <a href="http://www.nfq.lt">
+                                <img src="/images/sponsors/nfq.png" alt="NFQ" class="img-responsive">
                             </a>
                         </div>
                         <div class="col-md-4 text-center">
-                            <a href="https://www.hostinger.lt/">
-                                <img src="images/logo_hostinger.png" alt="Hostinger" class="img-responsive">
+                            <a href="https://www.wix.com/">
+                                <img src="/images/sponsors/wix.png" alt="Wix" class="img-responsive">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <br><br><br>
-            <br><br><br>
+            <br>
+            <br>
+            <br>
+            <div class="row">  
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">              
+                        <div class="col-md-12 text-center" >
+                            <a href="http://www.estina.com">
+                                <img src="/images/sponsors/estina.png" alt="Estina" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>{{ 'homepage.sponsors.bronze'|trans }}</h2>
+            <div class="row">  
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">              
+                        <div class="col-md-12 text-center" >
+                            <a href="http://www.visma.com">
+                                <img src="/images/sponsors/visma.png" alt="Visma" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {#
 
             <h2>Friends</h2>
             <div class="row text-center">
@@ -110,15 +124,13 @@
                 </div>
             </div>
 
-
             <br><br>
+    #}
         </div>
     </div>
 
-    #}
 
     <div id="about" class="event-details about">
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6 hidden-xs wrapper">
@@ -143,25 +155,60 @@
                 </div> 
             </div>
         </div>
-        
-        <div class="container gallery">
-            <div class="list">
-                {% for photo in photos %}
-                    <img src="/images/photos/{{ photo }}" alt="">
-                {% endfor %}
+    </div>
+
+    <div class="hackercamp">
+        <div class="container">
+            <div class="row">
+                <h2>{{ 'homepage.text.hacker'|trans}}</h2>
+                <div class="col-md-8">
+                    <div class="hacker">{{ 'homepage.text.hacker.translation'|trans|raw}}</div>
+                </div>
+                <div class="col-md-4 desc">
+                    <p>{{ 'homepage.text.hacker.description'|trans}}</p>
+                </div> 
             </div>
         </div>
+    </div>
 
+    <div class="participation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>{{ 'homepage.text.participation'|trans}}</h2>
+                    <p>{{ 'homepage.text.participation.description'|trans}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/participation-presentation.png" alt="Presentation" class="img-responsive">
+                    <h3>{{ 'homepage.text.participation.presentation'|trans}}</h3>
+                    <p>{{ 'homepage.text.participation.presentation.desc'|trans}}</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/participation-workshop.png" alt="Workshop" class="img-responsive">
+                    <h3>{{ 'homepage.text.participation.workshop'|trans}}</h3>
+                    <p>{{ 'homepage.text.participation.workshop.desc'|trans}}</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/participation-volunteers.png" alt="Volunteer" class="img-responsive">
+                    <h3>{{ 'homepage.text.participation.volunteer'|trans}}</h3>
+                    <p>{{ 'homepage.text.participation.volunteer.desc'|trans}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="event-details where" id="vieta">
+        
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2595258521733!2d24.9828927138781!3d54.658727588496276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ddf35646b86bb9%3A0x1b3be18955776075!2sPusiasalis!5e1!3m2!1sen!2slt!4v1532258638825" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2595258521733!2d24.9828927138781!3d54.658727588496276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ddf35646b86bb9%3A0x1b3be18955776075!2sPusiasalis!5e1!3m2!1sen!2slt!4v1532258638825" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-                <div class="col-md-5">
-                    <h2><span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span> {{ 'homepage.text.where'|trans }}</h2>
+                <div class="col-md-5 col-md-offset-7 overlay">
+                    <h2>{{ 'homepage.text.where'|trans }}</h2>
                     <p>
                         {{ 'homepage.text.footer.campground'|trans }} <a href="https://www.facebook.com/pusiasalis/">{{ 'homepage.text.footer.campground_name'|trans }}</a> {{ 'homepage.text.footer.campground_by'|trans }}
                         <ul>
@@ -171,15 +218,20 @@
                             <li>{{ 'homepage.text.footer.coordinates'|trans }}</li>
                         </ul>
                     </p>
-
-                    <br>
-
-                    <h2><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ 'homepage.text.when'|trans }}</h2>
-                    <p>
-                        {{ ntacamp_date }}<br>
-                        <small><span class="text-muted">{{ 'homepage.text.footer.we_arive'|trans }}</span></small>
-                    </p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery">    
+        <div class="container">
+            <div class="row text-center">
+                <h2>{{ 'homepage.text.gallery'|trans}}</h2>
+            </div>
+            <div class="list">
+                {% for photo in photos %}
+                    <img src="/images/photos/{{ photo }}" alt="">
+                {% endfor %}
             </div>
         </div>
     </div>
