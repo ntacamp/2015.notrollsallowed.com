@@ -215,12 +215,107 @@ h2 {
 	}
 }
 
+.hackercamp {
+	background: #85d5d2;
+
+	h2 {
+		margin: 50px 15px 10px;
+		font-weight: 600;
+	}
+	
+	p, li {
+		font-size: 16px;
+	}
+
+	.hacker {
+		margin-bottom: 60px;
+	}
+
+	.desc {
+		p {
+			margin: 40px 0;
+		}
+	}
+}
+
+.participation {
+    background: #ffffff;
+    text-align: center;
+    padding: 40px 0 60px;
+	
+	h2 {
+		font-weight: 600;
+	}
+
+	h3 + p {
+		padding: 0 15px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	img {
+	    margin-top: 50px;
+	    width: 240px;
+	    height: 220px;
+	    display: inline-block;
+	    object-fit: contain;
+	}
+}
+
 .where {
-	padding-bottom: 50px;
+	padding: 0;
+	position: relative;
+
+	.map {
+		height: 80vh;
+
+		iframe {
+			height: 100%;
+		}
+	}
+
+	.container {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		pointer-events: none;
+
+		.overlay {
+			background: #00a0b0;
+			pointer-events: all;
+			color: #fff;
+			opacity: 0.85;
+			margin-top: 50px;
+			padding: 50px;
+    		font-size: 14px;
+    		box-shadow: 3px 3px 0 0 #ffffff;
+
+			h2 {
+				color: #fff;
+				margin: 0;
+				font-weight: 400;
+				margin: 0 0 15px;
+			}
+
+			p {
+				font-size: 16px;
+			}
+
+			a {
+				color: #fff;
+				font-weight: 600;
+			}
+		}
+	}
 }
 
 .about {
-	background: #fff;
+    background: #fff;
+    margin: 0;
+    padding: 50px 0 70px;
 
 	.wrapper {
 		
@@ -286,24 +381,31 @@ h2 {
 			margin-top: 30px;
 		}
 	}
+}
 
-	.gallery {
-		margin: 50px 0 0;
+.gallery {
+	background: #fff;
+
+	h2 {
+		margin: 80px 0 30px;
+	}
+
+	.container {
 		padding: 0;
 		width: auto;
 		overflow: hidden;
+	}
 
-		.list {
-			margin: 0 -5px;
-		}
+	.list {
+		margin: 0 -5px;
+	}
 
-		img {
-		    height: 250px;
-		    width: calc(25% - 10px);
-		    float: left;
-		    object-fit: cover;
-		    margin: 5px;
-		}
+	img {
+	    height: 250px;
+	    width: calc(25% - 10px);
+	    float: left;
+	    object-fit: cover;
+	    margin: 5px;
 	}
 }
 
@@ -320,7 +422,6 @@ h2 {
 }
 
 .about-page {
-
 }
 
 .welcome-page {
@@ -414,20 +515,46 @@ h2 {
 	}
 
 	.about {
-
 		.wrapper {
 			padding: 0 50px;
     		width: 100%;
 		}
+	}
 
-		.gallery {
-			img {
-				height: 150px;
-		    	width: calc(50% - 10px);
+	.hackercamp {
+		.desc {
+			p {
+				margin-top: -20px;
+			}
+		}
+	}
 
-		    	&:nth-child(n + 9) {
-		    		display: none;
-		    	}
+	.participation {
+		h3 {
+			font-size: 22px;
+    		font-weight: 500;
+		}
+	}
+
+	.gallery {
+		img {
+			height: 150px;
+	    	width: calc(50% - 10px);
+
+	    	&:nth-child(n + 9) {
+	    		display: none;
+	    	}
+		}
+	}
+
+	.where {
+		.container {
+			position: initial;
+			transform: none;
+			margin: 0;
+
+			.overlay {
+				margin: 0;
 			}
 		}
 	}

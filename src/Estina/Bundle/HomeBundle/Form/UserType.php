@@ -29,13 +29,13 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', [
-            'label' => 'Full name',
+            'label' => 'user.fullname',
         ]);
         $builder->add('email', 'email', [
-            'label' => 'Email',
+            'label' => 'user.email',
         ]);
         $builder->add('phone', 'text', [
-            'label' => 'Phone number',
+            'label' => 'user.phone',
         ]);
         
         if ($this->addAdditionalFields) {
@@ -91,7 +91,7 @@ class UserType extends AbstractType
                 'homepage', 
                 'url',
                 [
-                    'label' => 'Asmeninio puslapio URL',
+                    'label' => 'user.homepage_url',
                     'required' => false
                 ]
             );

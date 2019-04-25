@@ -17,6 +17,9 @@ header.menu.language: Kalba
 footer.general.follow_us: 'Sek mūsų naujienas'
 footer.general.contact_us: 'Parašyk mums'
 footer.menu.privacy: 'Privatumo politika'
+homepage.sponsors.gold: 'Generalinis rėmėjas'
+homepage.sponsors.silver: 'Pagrindiniai rėmėjai'
+homepage.sponsors.bronze: 'Rėmėjai'
 homepage.title.main: 'No Trolls Allowed 2019'
 homepage.title.description: 'Vienintelis hackercamp’as Lietuvoje'
 homepage.button.register: Registruotis
@@ -28,6 +31,18 @@ homepage.text.about_p1: 'Ar kada buvai tokioje vietoje, kurioje vienu metu gali 
 homepage.text.about_p2: '„No Trolls Allowed“ yra metinis po atviru dangumi vykstantis susibūrimas, kur pomėgiai, menai ir technologijos susijungia į bendrą visumą. Visai nesvarbu, ar esi programuotojas, keliautojas, virtuvės šefas, muzikantas ar astronautas, čia rasime tau vietos. Mūsų akimis – kiekvienas yra šiek tiek geek’as.'
 homepage.text.where: 'Kur?'
 homepage.text.when: 'Kada?'
+homepage.text.hacker: 'Kodėl hackercamp’as?'
+homepage.text.hacker.description: 'Mums hakeris yra tas žmogus, kuris nori laužyti standartus tam, kad sukurtų kažką ypatinga. Tikime, kad tokią supergalią – technologijose, moksle ar mene – turi kiekvienas. Tad jei užsiimi kažkuo neįprastu ir nori tuo pasidalinti su kitais, NTA – tinkamiausia vieta.'
+homepage.text.hacker.translation: '<h4>hakeris</h4><strong>/ˈha-ke-ris/</strong><p><small>daiktavardis</small><br><small>daiktavardis: <strong>hakeris</strong>; daugiskaitos daiktavardis: <strong>hakeriai</strong></small></p><ol><li class="strike">kalbininkai pataria vartoti terminą „programišius“ arba „programavimo aistruolis“</li><li>žmogus turintis pašaukimą savo sričiai ir joje taikantis nestandartines praktikas.</li></ol>'
+homepage.text.participation: 'Kaip dalyvauti?'
+homepage.text.participation.description: 'Kaip turbūt supratai iš „No Trolls Allowed” pavadinimo, troliai šiame renginyje – nepageidaujami. Tai reiškia, kad norėdamas dalyvauti turi kažkaip prisidėti. Tavo bilietas į hackercamp’ą – prisidėjimas viena iš šių formų:'
+homepage.text.participation.presentation: 'Pranešimas'
+homepage.text.participation.presentation.desc: 'Pasidalink savo pomėgiais. Visai nesvarbu, ar tai bus sėkmės istorija, kaip tau pavyko pasigaminti robotą, ar patarimai, kur iškylauti laukinėje gamtoje.'
+homepage.text.participation.workshop: 'Dirbtuvės'
+homepage.text.participation.workshop.desc: 'Pasidalink savo žiniomis, įtraukdamas kitus į realią veiklą. Nuo meninių užsiėmimų kaip piešimas ar karatė iki technologijų kaip raketos ar kosmosas.'
+homepage.text.participation.volunteer: 'Savanoriavimas'
+homepage.text.participation.volunteer.desc: 'Prisijunk prie mūsų šaunios komandos ir padėk užtikrinti sklandžią renginio eigą. Nuo dalyvių registracijos iki tvarkos stovyklavietėje. Yra ir papildomų privalumų!'
+homepage.text.gallery: 'Ko tikėtis...'
 homepage.text.footer.campground: Stovyklavietė
 homepage.text.footer.campground_name: Pusiasalis
 homepage.text.footer.campground_by: 'prie Skaisčio ežero, netoli Trakų.'
@@ -37,7 +52,7 @@ homepage.text.footer.distance_from3: '90 km nuo  Kauno'
 homepage.text.footer.coordinates: '54.657602, 24.984814'
 homepage.text.footer.we_arive: 'Atvykstame trečiadienį, išvykstame sekmadienį vakare'
 about.text.about: Apie
-about.text.nta: '„No Trolls Allowed”'
+about.text.nta: '„No Trolls Allowed“'
 about.text.about_nta: '– po atviru dangumi vykstantis renginys, siekiantis suburti įvairių pomėgių turinčius žmones. Įsivaizduok šimtus užsidegusių žmonių, susirinkusių į gamtą pasidalinti savo žiniomis ir atradimų džiaugsmu.'
 about.text.pre_how_to_attend: 'Susibūrimas yra nemokamas, tačiau, kaip implikuoja pavadinimas, čia nelaukiami troliai. Tai reiškia, kad, norėdamas dalyvauti renginyje, turi prisidėti. Gera žinia yra ta, kad gali rinktis net iš 3 variantų:'
 about.text.how_to_attend_opt1: '<strong>Pranešimas.</strong> Pranešimai – viso renginio esmė. Jie vyksta net tris dienas trijose scenose. Galėsi pasirinkti savo prezentacijos laiką, tad kuo anksčiau atvyksi į stovyklavietę, tuo daugiau pasirinkimo galimybių turėsi! Tik nepamiršk, kad renginio tikslas – pasidalinti savo pomėgiais ir žiniomis, tad siūlome atsiriboti nuo nuobodžių, su darbu susijusių temų ar reklaminių pranešimų!'
@@ -56,7 +71,7 @@ faq.questions.groups.volunteering: 'Apie savanoriavimą'
 faq.questions.groups.other: 'Kiti klausimai'
 faq.questions.general.question1.question: 'Ką reiškia pavadinimas „No Trolls Allowed“?'
 faq.questions.general.question1.slug: what-is-nta
-faq.questions.general.question1.answer: 'TPavadinimas atspindi renginio pagrindinę mintį – jokių trolių. Čia laukiami tik žmonės, kurie nori pasidalinti savo žiniomis ir pasisemti idėjų iš kitų.'
+faq.questions.general.question1.answer: 'Pavadinimas atspindi renginio pagrindinę mintį – jokių trolių. Čia laukiami tik žmonės, kurie nori pasidalinti savo žiniomis ir pasisemti idėjų iš kitų.'
 faq.questions.general.question2.question: 'Kas yra trolis?'
 faq.questions.general.question2.slug: what-is-troll
 faq.questions.general.question2.answer: 'Čia turime omenyje internetinį trolį. </br>Ištrauka iš Wikipedia:<p><italic>Internete troliu vadinamas asmuo, kuris prisijungia prie susiformavusios bendruomenės, pvz., naujienų grupės ir skelbia kurstančias, grubias arba įžeidžiančias žinutes, siekdamas išprovokuoti kitus bendruomenės narius bei nutraukti normalią diskusijų eigą, sąmoningai sutrikdyti bendruomenės veiklą, sukiršinti jos narius. Tokie pasisakymai, pranešimai dar kitaip vadinami Troll, Troll-Post arba Troll-Posting.</italic></p>'
@@ -81,7 +96,7 @@ faq.questions.general.question8.answer: 'Renginys vyks po atviru dangumi, tad ne
 faq.questions.general.question9.question: 'Kaip atvykti?'
 faq.questions.general.question9.slug: how-to-come
 faq.questions.general.question9.answer: 'Renginys vyksta stovyklavietėje „Pusiasalis“, esančioje 10km nuo Trakų.</br>Vietos koordinatės: 54.657602, 24.984814</br>Vietos puslapis: <a href="http://www.verube.lt">www.verube.lt</a></br><ul><li><a href="https://www.google.lt/maps/dir/Vilnius/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6672052,25.0475178,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46dd93fb5c6408f5:0x400d18c70e9dc40!2m2!1d25.2796514!2d54.6871555!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Vilniaus</a></li><li><a href="https://www.google.lt/maps/dir/Kaunas/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.7847771,24.1756336,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46e72270b167d343:0x614bd1e0c7378bbc!2m2!1d23.9035965!2d54.8985207!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Kauno</a></li><li><a href="https://www.google.lt/maps/dir/Trakai/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6343367,24.9538191,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf374628607db:0xfe90f5881befe3d9!2m2!1d24.9346894!2d54.6379113!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">iš Trakų</a></li></ul>'
-faq.questions.general.question10.question: 'Where is the nearest supermarket?'
+faq.questions.general.question10.question: 'Kur yra artimiausia parduotuvė?'
 faq.questions.general.question10.slug: nearest-supermarket
 faq.questions.general.question10.answer: 'Renginio vietoje nebus pardavinėjamas maistas, gėrimai ar kiti produktai. Mūsų žiniomis, artimiausia parduotuvė yra <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">už 5 km Lentvaryje.</a>'
 faq.questions.general.question11.question: 'Ar galima atsivežti šeimyną?'
@@ -144,3 +159,30 @@ registration.text.description: 'NTA komanda peržiūrės tavo informaciją per k
 registration.text.event_date: 'Renginio data:'
 registration.text.starts_on: 'Registracijos pradžia:'
 registration.text.ends_on: 'Registracijos pabaiga:'
+registration.form.type: 'Pasirink veiklą'
+registration.form.type_presentation: 'Pranešimas'
+registration.form.type_workshop: 'Dirbtuvės'
+registration.form.type_other: 'Kita'
+registration.form.name:  'Veiklos pavadinimas'
+registration.form.language:  'Veiklos kalba'
+registration.form.description:  'Veiklos aprašymas'
+registration.form.requirements:  'Reikalavimai dalyviams (jei yra)'
+registration.form.comments:  'Komentarai/specialūs poreikiai'
+registration.form.tshirt:  'Marškinėlių modelis'
+registration.form.tshirt_size:  'Marškinėlių dydis'
+registration.form.tshirt_unisex:  'unisex'
+registration.form.tshirt_women:  'moteriški'
+registration.form.tellus_header:  'Apie tave'
+registration.form.participation_header:  'Dalyvavimo forma'
+registration.form.not_open:  'Registracija šiuo metu nevyksta. Jei turi klausimų, <a href="/en/kontaktai">susisiek su mumis</a>.'
+registration.form.bonus_header:  'Dar šis tas'
+registration.form.tba_terms:  '„Patikslinsiu“, „Dar nežinau“ ir panašūs pranešimai nukreipiami į /dev/null. Kitaip tariant – jie nebus patvirtinti, kol nepatikslinsi visos informacijos.'
+registration.form.participation_terms:  'Tavo bilietas į renginį – pranešimas arba dirbtuvės. Siūlome rinkis tokią temą, kuria labiausiai domiesi pats ir gali pasidalinti su kitais.'
+registration.form.tellus_header_terms: 'Mums rūpi tavo privatumo apsauga, todėl tavo asmeninė informacija su mumis – saugi! Daugiau informacijos, kaip renkame, naudojame ir saugome tavo asmens duomenis, <a href="https://www.freeprivacypolicy.com/privacy/view/e4eb2a4c17840bb8a30ba04683ec821b">rasi mūsų privatumo politikoje.</a>'
+registration.form.tshirt_bonus:  'Pasistengsime tau pagaminti labai fainus NTA marškinėlius, tad pasirink dydį.'
+registration.form.markdown:  'Palaikomas <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.'
+registration.form.register: Registruotis
+user.fullname: Vardas, pavardė
+user.email: El.pašto adresas
+user.phone: Telefonas
+user.homepage_url: Asmeninio puslapio URL
