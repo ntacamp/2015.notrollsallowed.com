@@ -1,7 +1,7 @@
 {% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
-    <h1>Workshops & Events</h1>
+    <h1>{{ "header.menu.workshops"|trans }}</h1>
 
     <div class="row schedule">
         {% set count = 0 %}
@@ -31,7 +31,7 @@
 
         {% if count == 0 %}
             <div class="col-md-12">
-                <p>No events registered yet.</p>
+                <p>{{ "workshops.text.no_workshops_yet"|trans }}</p>
             </div>
         {% endif %}
     </div>

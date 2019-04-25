@@ -1,30 +1,15 @@
 {% extends "EstinaHomeBundle::page.html.twig" %}
 
 {% block content %}
-    <h1>Contact us</h1>
-    <p>Drop us a line if you have any questions or want to join our crew ;)</p>
+    <h1>{{ "header.menu.contact_us"|trans }}</h1>
+    <p>{{ "contacts.text.contact_us"|trans }}</p>
 
-    <ul>
-        <li>Email: <strong><a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a> - the best way to reach us out.</strong>
-        </li>
-        <li>Follow <strong><a href="http://www.twitter.com/ntacamp">@ntacamp</a></strong> - news and info about event.
-        </li>
-        <li>Like <strong><a href="https://www.facebook.com/NoTrollsAllowed">NoTrollsAllowed Facebook</a></strong> to keep up with the hype.
-        </li>
-        <li><strong><a href="https://ntacamp.slack.com/">NTA @ Slack</a></strong> - hot topics on organizing the camp.
-        </li>
-        <li>IRC: <strong>#ntacamp</strong> @ Freenode - if you want to say hello.</li>
-    </ul>
+    {{ "contacts.list.contacts"|trans|raw }}
 
+    <h2>{{ "contacts.title.for_sponsors"|trans }}</h2>
+    <p>{{ "contacts.text.for_sponsors"|trans|raw }}</p>
 
-    <h2>For sponsors</h2>
-    <p>Want to have your input at event or give a hand organizing it?<br>
-       Have hot ideas how to make NTA more awesome?<br/>
-       Contact us any time with any means provided above!</p>
-
-    <h2>Event is organized by</h2>
-    <p><a href="http://usergroups.lt/">NGO Programmers (VšĮ "Programuotojai")</a><br>
-    Entity code: 303307623<br/>
-    Address: J. Galvydžio g. 5, LT-08236, Vilnius, Lithuania</p>
+    <h2>{{ "contacts.title.organized_by"|trans }}</h2>
+    <p>{{ "contacts.text.organizers"|trans|raw }}</p>
 
 {% endblock %}

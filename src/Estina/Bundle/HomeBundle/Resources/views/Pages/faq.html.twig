@@ -28,22 +28,22 @@
                 {% endfor %}
         </ul>
         <hr>
-<h4>{{ 'faq.questions.groups.general'|trans }}</h4>
+<h1>{{ 'faq.questions.groups.general'|trans }}</h1>
 {% for i in 1..13 %}
 <h2 id="{{ ('faq.questions.general.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.general.question' ~ i ~ '.question')|trans }}</h2>
 <p>{{ ('faq.questions.general.question' ~ i ~ '.answer')|trans|raw }}</p>
 {% endfor %}
-<h4>{{ 'faq.questions.groups.presentations'|trans }}</h4>
+<h1>{{ 'faq.questions.groups.presentations'|trans }}</h1>
 {% for i in 1..9 %}
         <h2 id="{{ ('faq.questions.presentations.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.presentations.question' ~ i ~ '.question')|trans }}</h2>
         <p>{{ ('faq.questions.presentations.question' ~ i ~ '.answer')|trans|raw }}</p>
 {% endfor %}
-<h4>{{ 'faq.questions.groups.volunteering'|trans }}</h4>
+<h1>{{ 'faq.questions.groups.volunteering'|trans }}</h1>
 {% for i in 1..4 %}
         <h2 id="{{ ('faq.questions.volunteering.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.volunteering.question' ~ i ~ '.question')|trans }}</h2>
         <p>{{ ('faq.questions.volunteering.question' ~ i ~ '.answer')|trans|raw }}</p>
 {% endfor %}
-<h4>{{ 'faq.questions.groups.other'|trans }}</h4>
+<h1>{{ 'faq.questions.groups.other'|trans }}</h1>
 {% for i in 1..2 %}
         <h2 id="{{ ('faq.questions.other.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.other.question' ~ i ~ '.question')|trans }}</h2>
         <p>{{ ('faq.questions.other.question' ~ i ~ '.answer')|trans|raw }}</p>
