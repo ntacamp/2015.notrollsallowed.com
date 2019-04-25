@@ -21,8 +21,8 @@ security:
             anonymous: ~
             http_basic: ~
             form_login:
-                login_path: /login
-                check_path: /login_check
+                login_path: login_route
+                check_path: login_check
                 default_target_path: user_profile
                 csrf_parameter: _token
             logout:
