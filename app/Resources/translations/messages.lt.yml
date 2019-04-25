@@ -4,7 +4,7 @@ header.menu.contact_us: Kontaktai
 header.menu.blog: Tinklaraštis
 header.menu.login: Prisijungti
 header.menu.talks: Pranešimai
-header.menu.workshops: Dirbtuvės
+header.menu.workshops: 'Dirbtuvės ir renginiai'
 header.menu.registration: Registracija
 header.menu.about_nta: 'Apie NTA'
 header.menu.about: Apie
@@ -33,12 +33,12 @@ homepage.text.where: 'Kur?'
 homepage.text.when: 'Kada?'
 homepage.text.hacker: 'Kodėl hackercamp’as?'
 homepage.text.hacker.description: 'Mums hakeris yra tas žmogus, kuris nori laužyti standartus tam, kad sukurtų kažką ypatinga. Tikime, kad tokią supergalią – technologijose, moksle ar mene – turi kiekvienas. Tad jei užsiimi kažkuo neįprastu ir nori tuo pasidalinti su kitais, NTA – tinkamiausia vieta.'
-homepage.text.hacker.translation: '<h4>hakeris</h4><strong>/ˈha-ke-ris/</strong><p><small>daiktavardis</small><br><small>daiktavardis: <strong>hakeris</strong>; daugiskaitos daiktavardis: <strong>hakeriai</strong></small></p><ol><li class="strike">kalbininkai pataria vartoti terminą „programišius“ arba „programavimo aistruolis“</li><li>žmogus turintis pašaukimą savo sričiai ir joje taikantis nestandartines praktikas.</li></ol>'
+homepage.text.hacker.translation: '<h4>hakeris</h4><strong>/ˈha-ke-ris/</strong><p><small>daiktavardis</small><br><small>daiktavardis: <strong>hakeris</strong>; daugiskaitos daiktavardis: <strong>hakeriai</strong></small></p><ol><li class="strike">kalbininkai pataria vartoti terminą „programišius“ arba „programavimo aistruolis“</li><li>žmogus, turintis pašaukimą savo sričiai ir joje taikantis nestandartines praktikas.</li></ol>'
 homepage.text.participation: 'Kaip dalyvauti?'
 homepage.text.participation.description: 'Kaip turbūt supratai iš „No Trolls Allowed” pavadinimo, troliai šiame renginyje – nepageidaujami. Tai reiškia, kad norėdamas dalyvauti turi kažkaip prisidėti. Tavo bilietas į hackercamp’ą – prisidėjimas viena iš šių formų:'
 homepage.text.participation.presentation: 'Pranešimas'
 homepage.text.participation.presentation.desc: 'Pasidalink savo pomėgiais. Visai nesvarbu, ar tai bus sėkmės istorija, kaip tau pavyko pasigaminti robotą, ar patarimai, kur iškylauti laukinėje gamtoje.'
-homepage.text.participation.workshop: 'Dirbtuvės'
+homepage.text.participation.workshop: 'Dirbtuvės ir renginiai'
 homepage.text.participation.workshop.desc: 'Pasidalink savo žiniomis, įtraukdamas kitus į realią veiklą. Nuo meninių užsiėmimų kaip piešimas ar karatė iki technologijų kaip raketos ar kosmosas.'
 homepage.text.participation.volunteer: 'Savanoriavimas'
 homepage.text.participation.volunteer.desc: 'Prisijunk prie mūsų šaunios komandos ir padėk užtikrinti sklandžią renginio eigą. Nuo dalyvių registracijos iki tvarkos stovyklavietėje. Yra ir papildomų privalumų!'
@@ -186,3 +186,11 @@ user.fullname: Vardas, pavardė
 user.email: El.pašto adresas
 user.phone: Telefonas
 user.homepage_url: Asmeninio puslapio URL
+talks.text.no_talks_yet: 'Kol kas nėra jokių pranešimų.'
+workshops.text.no_workshops_yet: 'Kol kas nėra jokių renginių.'
+contacts.title.organized_by: 'Renginį organizuoja'
+contacts.text.organizers: '<a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Įmonės kodas: 303307623</br>Adresas: J. Galvydžio g. 5, LT-08236 Vilnius.'
+contacts.title.for_sponsors: 'Rėmėjams'
+contacts.text.for_sponsors: 'Nori prisidėti prie renginio?</br>Turi minčių, kaip NTA padaryti dar geresniu?</br>Susisiek su mumis aukščiau nurodytomis priemonėmis!'
+contacts.text.contact_us: 'Susisiek su mumis, jei turi klausimų ar nori prisijungti prie komandos!'
+contacts.list.contacts: '<ul><li><strong><a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a></strong> - lengviausias būdas mus pasiekti.</li><li><strong><a href="http://www.twitter.com/ntacamp">@ntacamp Twitter’yje</a></strong> - naujausia informacija apie renginį.</li><li><strong><a href="https://www.facebook.com/NoTrollsAllowed">NoTrollsAllowed Facebook’e</a></strong> - naujausia informacija apie renginį.</li><li><strong><a href="https://ntacamp.slack.com/">NTA @ Slack</a></strong> - viskas apie renginio organizavimą.</li><li>IRC: <strong>#ntacamp</strong> @ Freenode - jei nori pasisveikinti.</li></ul>'

@@ -15,11 +15,11 @@
 {% import _self as macros %}
 
 {% block content %}
-    <h1>Presentations</h1>
+    <h1>{{ "header.menu.talks"|trans }}</h1>
 
     <div class="row schedule">
         {% if tracks|length == 0 %}
-            <p>There are no confirmed presentations yet.</p>
+            <p>{{ "talks.text.no_talks_yet"|trans }}</p>
         {% endif %}
         {% for index, track in tracks  %}
             <div class="col-md-4 track {{ macros.track_class(index) }}">
