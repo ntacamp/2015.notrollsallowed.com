@@ -72,6 +72,7 @@
                         <div id="estina_bundle_homebundle_registertalk">
 
                             <h4>{{ 'registration.form.tellus_header'|trans }}</h4>
+                            <p>{{ 'registration.form.disclaimer'|trans|raw }}</p>
                             {% if form.user is defined %}
                                 {{ form_row(form.user.name) }}
                                 {{ form_row(form.user.email) }}
@@ -105,6 +106,7 @@
 
                             {{ form_row(form.requirements) }}
                             {{ form_row(form.comments) }}
+                            {{ form_row(form.question1) }}
                             
                             <h4>{{ 'registration.form.bonus_header'|trans }}</h4>
                             <p>{{ 'registration.form.tshirt_bonus'|trans }}</p>

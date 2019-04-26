@@ -64,14 +64,6 @@ class UserType extends AbstractType
                 ]
             );
             $builder->add(
-                'gplus', 
-                'url',
-                [
-                    'label' => 'Google+ URL',
-                    'required' => false
-                ]
-            );
-            $builder->add(
                 'linkedin', 
                 'url',
                 [

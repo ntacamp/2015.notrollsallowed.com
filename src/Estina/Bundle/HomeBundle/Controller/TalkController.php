@@ -397,7 +397,7 @@ class TalkController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Save'));
+        $form->add('submit', 'submit', array('label' => 'global.save'));
 
         return $form;
     }

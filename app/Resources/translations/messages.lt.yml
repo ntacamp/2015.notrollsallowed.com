@@ -1,3 +1,5 @@
+global.back: Atgal
+global.save: Išsaugoti
 header.menu.schedule: Tvarkaraštis
 header.menu.volunteer: 'Tapk savanoriu'
 header.menu.contact_us: Kontaktai
@@ -11,7 +13,7 @@ header.menu.about: Apie
 header.menu.faq: DUK
 header.menu.logout: Atsijungti
 header.menu.profile: Profilis
-header.menu.my_presentation: 'Mano presentacijos'
+header.menu.my_presentation: 'Mano veiklos'
 header.menu.admin_talks: 'Pranešimų administravimas'
 header.menu.language: Kalba
 footer.general.follow_us: 'Sek mūsų naujienas'
@@ -182,10 +184,23 @@ registration.form.tellus_header_terms: 'Mums rūpi tavo privatumo apsauga, todė
 registration.form.tshirt_bonus:  'Pasistengsime tau pagaminti labai fainus NTA marškinėlius, tad pasirink dydį.'
 registration.form.markdown:  'Palaikomas <a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a>.'
 registration.form.register: Registruotis
+registration.form.disclaimer: 'Mums rūpi tavo privatumo apsauga, todėl tavo asmeninė informacija su mumis – saugi! Daugiau informacijos, kaip renkame, naudojame ir saugome tavo asmens duomenis, <a href="https://www.freeprivacypolicy.com/privacy/view/e4eb2a4c17840bb8a30ba04683ec821b">rasi mūsų privatumo politikoje.</a>'
+registration.form.camp_date_1: 'Liepos 24-tą'
+registration.form.camp_date_2: 'Liepos 25-tą'
+registration.form.camp_date_3: 'Liepos 26-tą'
+registration.form.camp_date_4: 'Liepos 27-tą'
+registration.form.camp_date_5: 'Liepos 28-tą'
+registration.form.question1: 'Kada planuoji atvykti į NTA?'
 user.fullname: Vardas, pavardė
 user.email: El.pašto adresas
+user.password: Slaptažodis
 user.phone: Telefonas
 user.homepage_url: Asmeninio puslapio URL
+user.button.login: 'Prisijungti'
+user.link.forgot_password: 'Pamiršai slaptažodį?'
+user.header.main: 'Prisijungimas'
+user.profile.my_activities: 'Mano veikos'
+user.edit.main.header: 'Redaguoti profilį'
 talks.text.no_talks_yet: 'Kol kas nėra jokių pranešimų.'
 workshops.text.no_workshops_yet: 'Kol kas nėra jokių renginių.'
 contacts.title.organized_by: 'Renginį organizuoja'
@@ -194,3 +209,14 @@ contacts.title.for_sponsors: 'Rėmėjams'
 contacts.text.for_sponsors: 'Nori prisidėti prie renginio?</br>Turi minčių, kaip NTA padaryti dar geresniu?</br>Susisiek su mumis aukščiau nurodytomis priemonėmis!'
 contacts.text.contact_us: 'Susisiek su mumis, jei turi klausimų ar nori prisijungti prie komandos!'
 contacts.list.contacts: '<ul><li><strong><a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a></strong> - lengviausias būdas mus pasiekti.</li><li><strong><a href="http://www.twitter.com/ntacamp">@ntacamp Twitter’yje</a></strong> - naujausia informacija apie renginį.</li><li><strong><a href="https://www.facebook.com/NoTrollsAllowed">NoTrollsAllowed Facebook’e</a></strong> - naujausia informacija apie renginį.</li><li><strong><a href="https://ntacamp.slack.com/">NTA @ Slack</a></strong> - viskas apie renginio organizavimą.</li><li>IRC: <strong>#ntacamp</strong> @ Freenode - jei nori pasisveikinti.</li></ul>'
+talk.form.speaker: Pranešėjas
+talk.form.language: Kalba
+talk.form.scene: Scena
+talk.form.activity: Veikla
+talk.form.description: Aprašymas
+talk.form.requirements: Reikalavimai dalyvaujantiems
+talk.edit.title: Redaguoti registraciją
+talk.edit.field.created: Užregistruota
+talk.edit.field.updated: Atnaujinta
+talk.edit.cancel: Atšaukti registraciją
+talk.edit.restore: Atstatyti registraciją
