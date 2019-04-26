@@ -14,7 +14,8 @@ abstract class AbstractTalkType extends AbstractType
     protected $tshirtModels = ['registration.form.tshirt_unisex', 'registration.form.tshirt_women'];
     protected $talkTypes = ['registration.form.type_presentation', 'registration.form.type_workshop',
         'registration.form.type_other'];
-
+    protected $campDates = ['registration.form.camp_date_1', 'registration.form.camp_date_2', 'registration.form.camp_date_3',
+        'registration.form.camp_date_4', 'registration.form.camp_date_5'];
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -43,6 +44,10 @@ abstract class AbstractTalkType extends AbstractType
             ->add('comments', 'textarea', [
                 'label' => 'registration.form.comments',
                 'required' => false,
+            ])
+            ->add('question1', 'choice', [
+                'label' => 'registration.form.question1',
+                'choices' => array_combine($this->campDates, $this->campDates),
             ])
             ->add('tshirtModel', 'choice', [
                 'label' => 'registration.form.tshirt',

@@ -13,7 +13,7 @@
           <!-- Table -->
           <table class="table">
               <tr>
-                  <td><strong>Speaker</strong></td>
+                  <td><strong>{{ 'talk.form.speaker'|trans }}</strong></td>
                   <td>
                     {% if talk.organizer %}
                     {{ talk.organizer }} 
@@ -30,9 +30,6 @@
                     {% if talk.user.facebook %}
                         <a href="{{ talk.user.facebook }}"><img src="{{ asset('images/icon_facebook.png') }}" alt=""></a>
                     {% endif %}
-                    {% if talk.user.gplus %}
-                        <a href="{{ talk.user.gplus }}"><img src="{{ asset('images/icon_gplus.png') }}" alt=""></a>
-                    {% endif %}
                     {% if talk.user.linkedin %}
                         <a href="{{ talk.user.linkedin }}"><img src="{{ asset('images/icon_linkedin.png') }}" alt=""></a>
                     {% endif %}
@@ -45,19 +42,19 @@
                   </td>
               </tr>
               <tr>
-                  <td><strong>Language</strong></td>
+                  <td><strong>{{ 'talk.form.language'|trans }}</strong></td>
                   <td>{{ talk.language }}</td>
               </tr>
               <tr>
-                  <td><strong>Stage</strong></td>
+                  <td><strong>{{ 'talk.form.scene'|trans }}</strong></td>
                   <td>{{ talk.track }}</td>
               </tr>
               <tr>
-                  <td><strong>Type</strong></td>
-                  <td>{{ talk.type|capitalize }}</td>
+                  <td><strong>{{ 'talk.form.activity'|trans }}</strong></td>
+                  <td>{{ ('registration.form.type_' ~ talk.type)|trans }}</td>
               </tr>
           </table>
-          <div class="panel-heading">Description</div>
+          <div class="panel-heading">{{ 'talk.form.description'|trans }}</div>
           <div class="panel-body">
             {{ talk.description|markdown }}
           </div>

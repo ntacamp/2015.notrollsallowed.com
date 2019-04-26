@@ -12,12 +12,12 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
-        <h1>Edit Registration details</h1>
+        <h1>{{ 'talk.edit.title'|trans }}</h1>
 
         {% if is_granted("ROLE_ADMIN") %}
-            <a href="{{ path('talk_list') }}">&laquo; Back</a>
+            <a href="{{ path('talk_list') }}">&laquo; {{ 'global.back'|trans }}</a>
         {% else %}
-            <a href="{{ path('user_profile') }}">&laquo; Back</a>
+            <a href="{{ path('user_profile') }}">&laquo; {{ 'global.back'|trans }}</a>
         {% endif %}
 
         <div class="row">
@@ -30,21 +30,21 @@
             </div>
             <div class="col-md-4">
                 <blockquote>
-                    Speaker:<br>
+                    {{ 'talk.form.speaker'|trans }}:<br>
                     <b>{{ entity.user }}</b><br>
                     <br>
-                    Email:<br>
+                    {{ 'user.email'|trans }}:<br>
                     <b>{{ entity.user.email }}</b><br>
                     <br>
                 </blockquote>
             </div>
             <div class="col-md-4">
                 <blockquote>
-                    Created:<br>
+                    {{ 'talk.edit.field.created'|trans }}:<br>
                     <b>{{ entity.createdon|date("Y-m-d H:i") }}</b><br>
                     {% if entity.createdon != entity.updatedat %}
                     <br>
-                    Updated:<br>
+                    {{ 'talk.edit.field.updated'|trans }}:<br>
                     <b>{{ entity.updatedat|date("Y-m-d H:i") }}</b> 
                     {% endif %}
                 </blockquote>
@@ -82,15 +82,15 @@
                     {{ form_rest(edit_form) }}
                     <div class="form-group">
                         {{ form_widget(edit_form.submit, {
-                            'label': 'Išsaugoti',
+                            'label': 'global.save',
                             'attr': {'class': 'btn btn-primary btn-lg pull-right'}
                         })}}
                         {% if entity.isCancelled %}
-                            <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">Restore talk. I want to participate!!!</a>
+                            <a href="{{ path('talk_restore', {'id': entity.id }) }}" class="navbar-btn btn btn-success">{{ 'talk.edit.restore'|trans }}</a>
                         {% else %}
-                            <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">Cancel talk</a>
+                            <a href="{{ path('talk_cancel', {'id': entity.id }) }}" class="navbar-btn btn btn-danger">{{ 'talk.edit.cancel'|trans }}</a>
                         {% endif %}
-                        <a href="{{ path('user_profile') }}" class="navbar-btn btn">Back</a>
+                        <a href="{{ path('user_profile') }}" class="navbar-btn btn">{{ 'global.back'|trans }}</a>
                     </div>
                     {{ form_rest(edit_form) }}
                 </div>

@@ -1,7 +1,7 @@
 {% extends "EstinaHomeBundle::page.html.twig" %}
 
 {% block content %}
-    <h1>Login</h1>
+    <h1>{{ 'user.header.main'|trans }}</h1>
 
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData) }}</div>
@@ -9,13 +9,13 @@
 
     <form action="{{ path('login_check') }}" method="post">
 
-        {{ form_row(loginForm._username, { 'label': 'E-mail' }) }}
-        {{ form_row(loginForm._password, { 'label': 'Password' }) }}
+        {{ form_row(loginForm._username) }}
+        {{ form_row(loginForm._password) }}
         {{ form_rest(loginForm) }}
 
         <div>
-            <button type="submit" class="btn btn-info">Login</button>
-            <small><a href="{{ path('user_password_reset') }}">Forgot password?</a></small>
+            <button type="submit" class="btn btn-info">{{ 'user.button.login'|trans }}</button>
+            <small><a href="{{ path('user_password_reset') }}">{{ 'user.link.forgot_password'|trans }}</a></small>
         </div>
 
     </form>

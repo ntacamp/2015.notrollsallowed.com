@@ -1,3 +1,5 @@
+global.back: Back
+global.save: Save
 header.menu.schedule: Schedule
 header.menu.volunteer: Volunteer!
 header.menu.contact_us: 'Contact us'
@@ -11,7 +13,7 @@ header.menu.about: About
 header.menu.faq: FAQ
 header.menu.logout: logout
 header.menu.profile: Profile
-header.menu.my_presentation: 'My presentations'
+header.menu.my_presentation: 'My activities'
 header.menu.admin_talks: 'Talks administration'
 header.menu.language: Language
 footer.general.follow_us: 'Follow us'
@@ -182,10 +184,23 @@ registration.form.tellus_header_terms: 'Don’t worry, your personal information
 registration.form.tshirt_bonus:  'We will try to make an awesome t-shirt for you that you’d be proud to wear on every occasion.'
 registration.form.markdown:  '<a href="http://en.wikipedia.org/wiki/Markdown#Example" target="_blank">Markdown</a> is supported'
 registration.form.register: Register
+registration.form.disclaimer: 'Don’t worry, your personal information is secure with us! <a href="https://www.freeprivacypolicy.com/privacy/view/e4eb2a4c17840bb8a30ba04683ec821b">Read our privacy policy</a> to find out more on how we collect, use, protect or otherwise handle your Personal Data.'
+registration.form.camp_date_1: 'July 24th'
+registration.form.camp_date_2: 'July 25th'
+registration.form.camp_date_3: 'July 26th'
+registration.form.camp_date_4: 'July 27th'
+registration.form.camp_date_5: 'July 28th'
+registration.form.question1: 'When are you planning to arrive at NTA?'
 user.fullname: Full name
 user.email: E-mail address
+user.password: Password
 user.phone: Phone number
 user.homepage_url: Personal homepage URL
+user.button.login: Log in
+user.header.main: 'Login'
+user.link.forgot_password: 'Forgot password?'
+user.profile.my_activities: 'My activities'
+user.edit.main.header: 'Edit user profile'
 talks.text.no_talks_yet: 'No presentations registered yet.'
 workshops.text.no_workshops_yet: 'No events registered yet.'
 contacts.title.organized_by: 'Event is organized by'
@@ -194,3 +209,14 @@ contacts.title.for_sponsors: 'For sponsors'
 contacts.text.for_sponsors: 'Want to have your input at event or give a hand organizing it?<br>Have hot ideas how to make NTA more awesome?<br/>Contact us any time with any means provided above!'
 contacts.text.contact_us: 'Drop us a line if you have any questions or want to join our crew ;)'
 contacts.list.contacts: '<ul><li>Email: <strong><a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a> - the best way to reach us out.</strong></li><li>Follow <strong><a href="http://www.twitter.com/ntacamp">@ntacamp</a></strong> - news and info about event.</li><li>Like <strong><a href="https://www.facebook.com/NoTrollsAllowed">NoTrollsAllowed Facebook</a></strong> to keep up with the hype.</li><li><strong><a href="https://ntacamp.slack.com/">NTA @ Slack</a></strong> - hot topics on organizing the camp.</li><li>IRC: <strong>#ntacamp</strong> @ Freenode - if you want to say hello.</li></ul>'
+talk.form.speaker: Speaker
+talk.form.language: Language
+talk.form.scene: Stage
+talk.form.activity: Activity
+talk.form.description: Description
+talk.form.requirements: Requirements for attendees
+talk.edit.title: Edit registration details
+talk.edit.field.created: Created
+talk.edit.field.updated: Updated
+talk.edit.cancel: Cancel registration
+talk.edit.restore: 'Restore talk. I want to participate!!!'
