@@ -17,6 +17,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User implements UserInterface, \Serializable
 {
+    protected $availableLocales = ['en', 'lt'];
     /**
      * @var integer
      *
@@ -158,6 +159,13 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="role", type="string", length=64)
      */
     private $role = 'ROLE_USER';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=2)
+     */
+    private $locale = 'en';
 
     /**
      * Get id
@@ -613,4 +621,25 @@ class User implements UserInterface, \Serializable
     {
         return $this->role;
     }
+
+    /**
+     * @return string
+     */
+    public function getLocale()
+    {
+        return empty($this->locale) ? 'en': $this->locale;
+    }
+
+    /**
+     * @param string $locale
+     */
+    public function setLocale($locale)
+    {
+        if (!in_array($locale, $this->availableLocales)) {
+            $locale = 'en';
+        }
+        $this->locale = $locale;
+    }
+
+
 }

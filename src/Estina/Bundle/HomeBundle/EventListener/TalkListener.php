@@ -12,12 +12,14 @@ class TalkListener
     protected $mailer;
     protected $adminEmail;
     protected $templating;
+    protected $translator;
 
-    public function __construct($mailer, $adminEmail, $templating)
+    public function __construct($mailer, $adminEmail, $templating, $translator)
     {
         $this->mailer = $mailer;
         $this->adminEmail = $adminEmail;
         $this->templating = $templating;
+        $this->translator = $translator;
     }
 
     /**
@@ -74,8 +76,8 @@ EOT;
         if (null === $this->adminEmail) {
             return;
         }
-
-        $subject = 'NTA2019 confirmation';
+        $this->translator->setLocale($talk->getUser()->getLocale());
+        $subject = $this->translator->trans('email.confirmation.subject');
 
         $template = $this->templating->render('email_confirmation.html.twig');
 

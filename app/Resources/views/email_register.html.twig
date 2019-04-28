@@ -188,24 +188,16 @@
                 <table>
                     <tr>
                         <td>
-                            <p>Hello there,</p>
-                            <p>
-                            Congratulations! You just registered to the No Trolls Allowed 2019!<br />
-                            We are going to review your request soon and confirm it or contact you with
-                            necessary information.<br />
+                            {{ 'email.registration.body'|trans|raw }}
+                            {{ 'user.email'|trans }}: <b>{{ email }}</b><br />
+                            {{ 'user.password'|trans }}: <b>{{ password }}</b>
                             </p>
 
-                            <p>
-                            You can login to edit your registration details of check status.<br />
-                            Here are your login credentials:<br>
-                            E-mail: <b>{{ email }}</b><br />
-                            Password: <b>{{ password }}</b>
-                            </p>
-
-                            <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="http://2019.notrollsallowed.com/login" class="btn-primary" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 2; color: #FFF; text-decoration: none; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 25px; background: #348eda; margin: 0 10px 0 0; padding: 0; border-color: #348eda; border-style: solid; border-width: 10px 20px;">Log in</a></p>
+                            <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;"><a href="{{ path('login_route') }}" class="btn-primary" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 2; color: #FFF; text-decoration: none; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 25px; background: #348eda; margin: 0 10px 0 0; padding: 0; border-color: #348eda; border-style: solid; border-width: 10px 20px;">{{ 'user.button.login'|trans }}</a></p>
                             <p>
                                 <a href="http://twitter.com/ntacamp">@ntacamp</a> |
-                                <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a>
+                                <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a> |
+                                <a href="https://medium.com/@ntacamp">Blog</a>
                             </p>
                         </td>
                         <td>

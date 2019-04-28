@@ -5,28 +5,17 @@
     <div class="welcome-page">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>Welcome aboard!</h1>
-                <h2>We got all what we need for now, so you can relax open a cold one.</h2>
-
-                <p>
-                    Now we will review if your registration fits our community standards and let you know via email. 
-                    This could take a while, so please be patient.
-                </p>
-
-                <p>
-                    You can log in to make changes or check status of your registration. The temporary password was sent to your email.
-                </p>
+                {{ 'registration.success.text'|trans|raw }}
 
                 <p class="text-center">
                     <br>
-                    <a href="{{ path('login_route') }}" class="btn btn-primary btn-lg">Log in</a>
+                    <a href="{{ path('login_route') }}" class="btn btn-primary btn-lg">{{ 'user.button.login'|trans }}</a>
                     <br>
                 </p>
 
                 <p>
                     <br>
-                    If you have any questions, don't be shy and drop us a line at
-                    <a href="mailto:{{ admin_email }}">{{ admin_email }}</a> or check out our <a href="https://www.facebook.com/NoTrollsAllowed/" target="_blank">Facebook page</a> for more info.
+                <p> {{ 'about.text.mail_us'|trans }} <a href="mailto:hi@notrollsallowed.com">hi@notrollsallowed.com</a>{{ 'registration.success.follow_us'|trans|raw }}
                 </p>
             </div>
         </div>
