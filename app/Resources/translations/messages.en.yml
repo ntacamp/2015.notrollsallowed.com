@@ -191,6 +191,8 @@ registration.form.camp_date_3: 'July 26th'
 registration.form.camp_date_4: 'July 27th'
 registration.form.camp_date_5: 'July 28th'
 registration.form.question1: 'When are you planning to arrive at NTA?'
+registration.success.text: '<h1>Welcome aboard!</h1><h2>We’ve got all we need for now, so you can relax and crack open a cold one.</h2><p>We will now review whether your registration fits our community standards and let you know via email. This could take a while, so please be patient.</p><p>You can log in to make changes or check status of your registration. The temporary password has been sent to your email.</p>'
+registration.success.follow_us: ' or check out our <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a> page and <a href="https://medium.com/@ntacamp">Blog</a> for more information.'
 user.fullname: Full name
 user.email: E-mail address
 user.password: Password
@@ -220,3 +222,13 @@ talk.edit.field.created: Created
 talk.edit.field.updated: Updated
 talk.edit.cancel: Cancel registration
 talk.edit.restore: 'Restore talk. I want to participate!!!'
+email.confirmation.subject: 'Your NTA 2019 registration has been confirmed'
+email.confirmation.body: '<p>Hey there,</p><p>good news — your registration to No Trolls Allowed is now confirmed! <br />In case you are not able to participate, please cancel your registration.<br /></p>'
+email.password_reset.subject: 'Password reset'
+email.password_reset.body: '<p>Hello,</p><p>here’s your new password:'
+email.registration.subject: 'Woohoo! Your NTA 2019 registration has been received'
+email.registration.body: '<p>Hello there,</p><p>congratulations, you’ve just registered to No Trolls Allowed 2019!<br />We are going to review your registration soon and either confirm it right away or contact you for more details.<br /></p><p>You can log in to edit your registration or check its status.<br />Your login details:<br>'
+password.reset.title: 'Password reset'
+password.reset.button: 'Reset'
+password.reset.success.text: 'Please check your mailbox, we’ve sent you something.'
+password.reset.error.text: '<p>We couldn`t deliver new password to the email you have registered. <br>Please try again.<br> If problem persists - please <a href="mailto:hi@notrollsallowed.com">let us know</a>.</p>'

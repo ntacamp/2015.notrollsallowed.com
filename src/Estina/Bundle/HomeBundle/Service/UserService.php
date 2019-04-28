@@ -19,14 +19,18 @@ class UserService
      */
     private $em;
 
+    private $translator;
+
     /**
      * @param UserPasswordEncoder $encoder
      * @param EntityManager $em
+     * @param $translator
      */
-    function __construct(UserPasswordEncoder $encoder, EntityManager $em)
+    function __construct(UserPasswordEncoder $encoder, EntityManager $em, $translator)
     {
         $this->encoder = $encoder;
         $this->em = $em;
+        $this->translator = $translator;
     }
 
     /**
@@ -62,6 +66,7 @@ class UserService
      */
     public function saveUser(User $entity)
     {
+        $entity->setLocale($this->translator->getLocale());
         $this->em->persist($entity);
         $this->em->flush();
     }

@@ -191,6 +191,8 @@ registration.form.camp_date_3: 'Liepos 26-tą'
 registration.form.camp_date_4: 'Liepos 27-tą'
 registration.form.camp_date_5: 'Liepos 28-tą'
 registration.form.question1: 'Kada planuoji atvykti į NTA?'
+registration.success.text: '<h1>Džiaugiamės, kad prisijungei!</h1><h2>NTA bilietas – jau beveik tavo rankoje, tad gali šiek tiek lengviau atsipūsti.</h2><p>Peržiūrėsime tavo registraciją ir įvertinę, ar ji atitinka mūsų bendruomenės standartus, pranešime el. paštu. Tai gali kiek užtrukti, todėl prašome šiek tiek kantrybės.</p><p>Norėdamas keisti registracijos informaciją ar peržiūrėti jos būseną, prisijunk. Laikiną slaptažodį tau išsiuntėme el. paštu.</p>'
+registration.success.follow_us: ', o visas svarbiausias naujienas sek mūsų <a href="https://www.facebook.com/NoTrollsAllowed">Facebook’e</a> ir <a href="https://medium.com/@ntacamp">Tinklaraštyje</a>.'
 user.fullname: Vardas, pavardė
 user.email: El.pašto adresas
 user.password: Slaptažodis
@@ -220,3 +222,13 @@ talk.edit.field.created: Užregistruota
 talk.edit.field.updated: Atnaujinta
 talk.edit.cancel: Atšaukti registraciją
 talk.edit.restore: Atstatyti registraciją
+email.confirmation.subject: 'Tavo registracija į NTA 2019 – patvirtinta'
+email.confirmation.body: '<p>Labas,</p><p>turim gerų žinių! Tavo registracija į „No Trolls Allowed“ – patvirtinta.<br />Jeigu negalėsi dalyvauti, prašome registraciją atšaukti.<br /></p>'
+email.password_reset.subject: 'Slaptažodžio atstatymas'
+email.password_reset.body: '<p>Labas,</p><p>tavo naujas slaptažodis:'
+email.registration.subject: 'Valio! Tavo registracija į NTA 2019 gauta'
+email.registration.body: '<p>Labas,</p><p>sveikiname užsiregistravus į „No Trolls Allowed 2019“!<br />Artimiausiu metu peržvelgę tavo registracijos detales, ją patvirtinsime arba susisieksime dėl daugiau informacijos.<br /></p><p>Norėdamas redaguoti registracijos informaciją arba patikrinti jos statusą, prisijunk.<br />Tavo prisijungimo duomenys:<br>'
+password.reset.title: 'Slaptažodžio atstatymas'
+password.reset.button: 'Atstatyti'
+password.reset.success.text: 'Pasitikrink savo el. pašto dėžutę – kai ką tau išsiuntėme.'
+password.reset.error.text: '<p>Nepavyko išsiųsti naujo slaptažodžio el. paštu, kuriuo registravaisi.<br>Pabandyk dar kartą.<br> Jei problema kartojasi – <a href="mailto:hi@notrollsallowed.com">susisiek su mumis</a>.</p>'

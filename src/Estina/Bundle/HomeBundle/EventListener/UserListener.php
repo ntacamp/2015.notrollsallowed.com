@@ -17,14 +17,18 @@ class UserListener
 
     protected $templating;
 
+    protected $translator;
+
     /**
      * @param $mailer
      * @param $templating
+     * @param $translator
      */
-    public function __construct($mailer, $templating)
+    public function __construct($mailer, $templating, $translator)
     {
         $this->mailer = $mailer;
         $this->templating = $templating;
+        $this->translator = $translator;
     }
 
     /**
@@ -33,6 +37,7 @@ class UserListener
     public function onPasswordReset(PasswordResetEvent $event)
     {
         $user = $event->getUser();
+        $this->translator->setLocale($user->getLocale());
 
         $template = $this->templating->render('email_password.html.twig', [
             'email' => $user->getEmail(),
@@ -40,7 +45,7 @@ class UserListener
         ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('Password reset')
+            ->setSubject($this->translator->trans('email.password_reset.subject'))
             ->setFrom('hi@notrollsallowed.com', 'No Trolls Allowed')
             ->setTo($user->getEmail())
             ->setBody($template, 'text/html')
@@ -55,6 +60,7 @@ class UserListener
     public function onRegistrationFinished(RegistrationEvent $event)
     {
         $user = $event->getUser();
+        $this->translator->setLocale($user->getLocale());
 
         $template = $this->templating->render('email_register.html.twig', [
             'email' => $user->getEmail(),
@@ -62,7 +68,7 @@ class UserListener
         ]);
 
         $message = \Swift_Message::newInstance()
-            ->setSubject('Congratulations! You just registered to No Trolls Allowed 2019')
+            ->setSubject($this->translator->trans('email.registration.subject'))
             ->setFrom('hi@notrollsallowed.com', 'No Trolls Allowed')
             ->setTo($user->getEmail())
             ->setBody($template, 'text/html')
