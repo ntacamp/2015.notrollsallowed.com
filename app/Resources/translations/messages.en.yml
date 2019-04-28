@@ -193,6 +193,7 @@ registration.form.camp_date_5: 'July 28th'
 registration.form.question1: 'When are you planning to arrive at NTA?'
 registration.success.text: '<h1>Welcome aboard!</h1><h2>We’ve got all we need for now, so you can relax and crack open a cold one.</h2><p>We will now review whether your registration fits our community standards and let you know via email. This could take a while, so please be patient.</p><p>You can log in to make changes or check status of your registration. The temporary password has been sent to your email.</p>'
 registration.success.follow_us: ' or check out our <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a> page and <a href="https://medium.com/@ntacamp">Blog</a> for more information.'
+registration.success: 'Activity has been registered successfully!'
 user.fullname: Full name
 user.email: E-mail address
 user.password: Password
@@ -203,6 +204,7 @@ user.header.main: 'Login'
 user.link.forgot_password: 'Forgot password?'
 user.profile.my_activities: 'My activities'
 user.edit.main.header: 'Edit user profile'
+user.edit.success: 'Your profile has been successfully updated!'
 talks.text.no_talks_yet: 'No presentations registered yet.'
 workshops.text.no_workshops_yet: 'No events registered yet.'
 contacts.title.organized_by: 'Event is organized by'
@@ -221,7 +223,13 @@ talk.edit.title: Edit registration details
 talk.edit.field.created: Created
 talk.edit.field.updated: Updated
 talk.edit.cancel: Cancel registration
-talk.edit.restore: 'Restore talk. I want to participate!!!'
+talk.edit.restore: 'Restore activity. I want to participate!!!'
+talk.edit.cancel.text: 'Are you sure you want to cancel this activity?'
+talk.edit.cancel.button: 'Cancel activity'
+talk.edit.cancel.success: 'Your activity has been cancelled.'
+talk.edit.restore.text: 'Are you sure you want to restore this activity?'
+talk.edit.restore.button: 'Restore activity'
+talk.edit.restore.success: 'Activity has been restored and is now waiting for confirmation'
 email.confirmation.subject: 'Your NTA 2019 registration has been confirmed'
 email.confirmation.body: '<p>Hey there,</p><p>good news — your registration to No Trolls Allowed is now confirmed! <br />In case you are not able to participate, please cancel your registration.<br /></p>'
 email.password_reset.subject: 'Password reset'

@@ -194,6 +194,7 @@ class TalkController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $translator = $this->get('translator');
             $user = $this->get('security.context')->getToken()->getUser();
             $entity->setUser($user);
             $em = $this->getDoctrine()->getManager();
@@ -201,7 +202,7 @@ class TalkController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'The Talk was registered successfully!'
+                $translator->trans('registration.success')
             );
             return $this->redirect($this->generateUrl('talk_new'));
         }
@@ -531,6 +532,7 @@ class TalkController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $translator = $this->get('translator');
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
@@ -547,7 +549,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'The Talk was canceled.'
+                $translator->trans('talk.edit.cancel.success')
             );
         }
 
@@ -596,7 +598,7 @@ class TalkController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('talk_cancel_confirm', array('id' => $id)))
             ->setMethod('PUT')
-            ->add('submit', 'submit', array('label' => 'Cancel the Talk'))
+            ->add('submit', 'submit', array('label' => 'talk.edit.cancel.button'))
             ->getForm()
         ;
     }
@@ -721,6 +723,7 @@ class TalkController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $translator = $this->get('translator');
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
@@ -742,7 +745,7 @@ class TalkController extends Controller
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'The Talk was restored and waiting for confirmation'
+                $translator->trans('talk.edit.restore.success')
             );
         }
 
@@ -761,7 +764,7 @@ class TalkController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('talk_restore_confirm', array('id' => $id)))
             ->setMethod('PUT')
-            ->add('submit', 'submit', array('label' => 'Restore the talk'))
+            ->add('submit', 'submit', array('label' => 'talk.edit.restore.button'))
             ->getForm()
         ;
     }

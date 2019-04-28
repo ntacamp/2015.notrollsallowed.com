@@ -99,11 +99,12 @@ class UserProfileController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $translator = $this->get('translator');
             $em->flush();
 
             $this->get('session')->getFlashBag()->set(
                 'success',
-                'Your profile has been successfully updated!'
+                $translator->trans('user.edit.success')
             );
 
             return $this->redirect($this->generateUrl('user_profile'));
