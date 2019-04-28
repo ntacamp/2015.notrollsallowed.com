@@ -193,6 +193,7 @@ registration.form.camp_date_5: 'Liepos 28-tą'
 registration.form.question1: 'Kada planuoji atvykti į NTA?'
 registration.success.text: '<h1>Džiaugiamės, kad prisijungei!</h1><h2>NTA bilietas – jau beveik tavo rankoje, tad gali šiek tiek lengviau atsipūsti.</h2><p>Peržiūrėsime tavo registraciją ir įvertinę, ar ji atitinka mūsų bendruomenės standartus, pranešime el. paštu. Tai gali kiek užtrukti, todėl prašome šiek tiek kantrybės.</p><p>Norėdamas keisti registracijos informaciją ar peržiūrėti jos būseną, prisijunk. Laikiną slaptažodį tau išsiuntėme el. paštu.</p>'
 registration.success.follow_us: ', o visas svarbiausias naujienas sek mūsų <a href="https://www.facebook.com/NoTrollsAllowed">Facebook’e</a> ir <a href="https://medium.com/@ntacamp">Tinklaraštyje</a>.'
+registration.success: 'Veikla sėkmingai užregistruota!'
 user.fullname: Vardas, pavardė
 user.email: El.pašto adresas
 user.password: Slaptažodis
@@ -203,6 +204,7 @@ user.link.forgot_password: 'Pamiršai slaptažodį?'
 user.header.main: 'Prisijungimas'
 user.profile.my_activities: 'Mano veiklos'
 user.edit.main.header: 'Redaguoti profilį'
+user.edit.success: 'Tavo profilis sėkmingai atnaujintas!'
 talks.text.no_talks_yet: 'Kol kas nėra jokių pranešimų.'
 workshops.text.no_workshops_yet: 'Kol kas nėra jokių renginių.'
 contacts.title.organized_by: 'Renginį organizuoja'
@@ -221,7 +223,13 @@ talk.edit.title: Redaguoti registraciją
 talk.edit.field.created: Užregistruota
 talk.edit.field.updated: Atnaujinta
 talk.edit.cancel: Atšaukti registraciją
-talk.edit.restore: Atstatyti registraciją
+talk.edit.restore: 'Grąžinti veiklą. Noriu dalyvauti!!!'
+talk.edit.cancel.text: 'Ar tikrai nori atšaukti šią veiklą?'
+talk.edit.cancel.button: 'Atšaukti veiklą'
+talk.edit.cancel.success: 'Tavo veikla atšaukta.'
+talk.edit.restore.text: 'Ar tikrai nori sugrąžinti šią veiklą?'
+talk.edit.restore.button: 'Sugrąžinti veiklą'
+talk.edit.restore.success: 'Veikla sugrąžinta, laukiama patvirtinimo'
 email.confirmation.subject: 'Tavo registracija į NTA 2019 – patvirtinta'
 email.confirmation.body: '<p>Labas,</p><p>turim gerų žinių! Tavo registracija į „No Trolls Allowed“ – patvirtinta.<br />Jeigu negalėsi dalyvauti, prašome registraciją atšaukti.<br /></p>'
 email.password_reset.subject: 'Slaptažodžio atstatymas'

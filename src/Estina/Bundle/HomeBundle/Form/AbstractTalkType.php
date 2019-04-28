@@ -14,8 +14,12 @@ abstract class AbstractTalkType extends AbstractType
     protected $tshirtModels = ['registration.form.tshirt_unisex', 'registration.form.tshirt_women'];
     protected $talkTypes = ['registration.form.type_presentation', 'registration.form.type_workshop',
         'registration.form.type_other'];
-    protected $campDates = ['registration.form.camp_date_1', 'registration.form.camp_date_2', 'registration.form.camp_date_3',
-        'registration.form.camp_date_4', 'registration.form.camp_date_5'];
+    protected $campDates = [
+        '07-24' => 'registration.form.camp_date_1',
+        '07-25' => 'registration.form.camp_date_2',
+        '07-26' => 'registration.form.camp_date_3',
+        '07-27' => 'registration.form.camp_date_4',
+        '07-28' => 'registration.form.camp_date_5'];
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -47,7 +51,7 @@ abstract class AbstractTalkType extends AbstractType
             ])
             ->add('question1', 'choice', [
                 'label' => 'registration.form.question1',
-                'choices' => array_combine($this->campDates, $this->campDates),
+                'choices' => $this->campDates,
             ])
             ->add('tshirtModel', 'choice', [
                 'label' => 'registration.form.tshirt',
