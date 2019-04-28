@@ -201,7 +201,7 @@ user.homepage_url: Asmeninio puslapio URL
 user.button.login: 'Prisijungti'
 user.link.forgot_password: 'Pamiršai slaptažodį?'
 user.header.main: 'Prisijungimas'
-user.profile.my_activities: 'Mano veikos'
+user.profile.my_activities: 'Mano veiklos'
 user.edit.main.header: 'Redaguoti profilį'
 talks.text.no_talks_yet: 'Kol kas nėra jokių pranešimų.'
 workshops.text.no_workshops_yet: 'Kol kas nėra jokių renginių.'
