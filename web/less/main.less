@@ -433,9 +433,47 @@ h2 {
 }
 
 .sponsors {
+
+	h2 {
+		margin-top: 15px;
+		margin-bottom: 25px;
+		font-size: 22px;
+		font-weight: 600;
+	}
+
+	.sponsor {
+	    margin: 0 0 30px;
+	    align-items: center;
+	    display: flex;
+	    height: 100px;
+	}
+
+	.gold {
+	    background: #fec10e;
+	    margin-right: 5%;
+	    margin-left: 3%;
+	    box-shadow: 3px 3px 0 0 #db366a;
+	}
+
+	.gold .sponsor {
+		max-width: 220px;
+		margin: 90px auto;
+
+		img {
+			max-height: initial;
+		}
+	}
+
+	.bronze .sponsor {
+	    max-width: 175px;
+	    margin: 90px auto;
+	}
+
+
 	img {
-		max-height: 100px;
-		margin: 0 auto;
+	    max-height: 80px;
+	    max-width: 100%;
+	    margin: 0 auto;
 	}
 }
 
@@ -558,6 +596,35 @@ h2 {
 				margin: 0;
 			}
 		}
+	}
+
+	.sponsors {
+		.gold {
+			margin-left: 0;
+    		margin-right: 0;
+    		margin-bottom: 30px;
+
+    		h2 {
+				margin: 0;
+				padding-top: 20px;
+    		}
+			
+			.sponsor {
+				margin: 0 auto;
+				height: auto;
+
+				img {
+					max-height: 150px;
+				}
+			}
+		}
+
+		.bronze {
+			.sponsor {
+				margin: 0 auto;
+			}
+		}
+
 	}
 }
 
