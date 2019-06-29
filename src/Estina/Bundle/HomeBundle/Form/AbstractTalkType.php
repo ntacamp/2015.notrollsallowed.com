@@ -11,7 +11,8 @@ abstract class AbstractTalkType extends AbstractType
 {
     protected $tshirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
 
-    protected $tshirtModels = ['registration.form.tshirt_unisex', 'registration.form.tshirt_women'];
+    protected $tshirtModels = ['unisex' => 'registration.form.tshirt_unisex',
+        'women' => 'registration.form.tshirt_women'];
     protected $talkTypes = ['registration.form.type_presentation', 'registration.form.type_workshop',
         'registration.form.type_other'];
     protected $campDates = [
@@ -55,7 +56,7 @@ abstract class AbstractTalkType extends AbstractType
             ])
             ->add('tshirtModel', 'choice', [
                 'label' => 'registration.form.tshirt',
-                'choices' =>  array_combine($this->tshirtModels, $this->tshirtModels),
+                'choices' =>  $this->tshirtModels,
             ])
             ->add('tshirtSize', 'choice', [
                 'label' => 'registration.form.tshirt_size',
