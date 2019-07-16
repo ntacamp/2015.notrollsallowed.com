@@ -1,6 +1,6 @@
 {% if (is_granted("ROLE_USER") and app.user.id == talk.user.id) or is_granted('ROLE_ADMIN') %}
 <div class="btn-group">
-    {% if is_granted("ROLE_ADMIN") and not talk.isAccepted and not talk.isCancelled %}
+    {% if is_granted("ROLE_ADMIN") and not talk.isCancelled %}
         <a href="{{ path('talk_schedule', {id: talk.id}) }}" class="btn btn-warning"><i class="glyphicon glyphicon-time"></i></a>
     {% endif %}
     <a href="{{ path('talk_edit', {id: talk.id}) }}" class="btn"><i class="glyphicon glyphicon-pencil"></i></a>

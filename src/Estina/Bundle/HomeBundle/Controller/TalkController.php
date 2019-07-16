@@ -328,6 +328,7 @@ class TalkController extends Controller
     public function scheduleSubmitAction($id, $day, $slot)
     {
         $em = $this->getDoctrine()->getManager();
+        /** @var Talk $entity */
         $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
 
         if (!$entity) {
@@ -337,8 +338,11 @@ class TalkController extends Controller
         if (!$this->isAllowedUpdate($entity)) {
             throw $this->createAccessDeniedException();
         }
+        $item = $entity->getSchedule();
+        if (!$item instanceof Schedule){
+            $item = new Schedule();
+        }
 
-        $item = new Schedule();
         $item->setDay($day);
         $item->setTime(new \DateTime($slot));
         $item->setType(Schedule::TYPE_TALK);
