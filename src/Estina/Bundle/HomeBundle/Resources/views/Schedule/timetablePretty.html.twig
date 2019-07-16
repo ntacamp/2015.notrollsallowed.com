@@ -14,33 +14,48 @@
         <table border=0 width=100%> 
             <thead>
                 <td>Time</td>
-                {% for track in day.tracks %}
-                    <td>{{ track }}</td>
-                {% endfor %}
+                <td>Presentation</td>
             </thead>
             <tbody>
             {% for time, row in day.rows  %}
                 <tr>
                     <td>{{ time }}</td>
+                    <td>
                     {% for talk in row %}
-                        <td>
+
                             {% if talk.title is defined %}
-                            <div class="panel panel-default">
+                            <div class="panel panel-default {{ talk.track.title|lower }}">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">{{ talk.title }}</h3>
                                 </div>
                                 {% if talk.author is defined %}
                                 <div class="panel-body">
-                                    {{ talk.author }}
+                                   <h3 class="panel-title">{{ talk.author }}</h3>
+                                    <div class="right" style="float:right;">
+                                        <div title="Add to Calendar" class="addeventatc">
+                                            Add
+                                            <span class="start">07/22/2019 08:00 AM</span>
+                                            <span class="end">07/22/2019 10:00 AM</span>
+                                            <span class="timezone">Europe/Vilnius</span>
+                                            <span class="title">{{ talk.title }}</span>
+                                            <span class="description">{{ talk.description }}</span>
+                                            <span class="location">{{ talk.track.title }}</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 {% endif %}
                             </div>
                             {% endif %}
-                        </td>
+
                     {% endfor %}
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 {% endblock %}

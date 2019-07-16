@@ -15,11 +15,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as Assert;
  *     errorPath="time",
  *     message="This time is already in use"
  * )
- * @Assert\UniqueEntity(
- *     fields={"talk"},
- *     errorPath="talk",
- *     message="This talk is already scheduled"
- * )
  */
 class Schedule
 {
@@ -37,7 +32,7 @@ class Schedule
 
     /**
      * Day number 1, 2, etc.
-     * @var \DateTime
+     * @var integer
      *
      * @ORM\Column(name="day", type="integer")
      */
@@ -58,6 +53,11 @@ class Schedule
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id")
      **/
     private $track;
+    /**
+     * @ORM\Column(name="track_id", type="integer")
+     */
+    private $track_id;
+
 
     /**
      * @var string
@@ -81,7 +81,7 @@ class Schedule
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Talk")
+     * @ORM\OneToOne(targetEntity="Talk", inversedBy="schedule")
      * @ORM\JoinColumn(name="talk_id", referencedColumnName="id")
      **/
     private $talk;
@@ -268,4 +268,21 @@ class Schedule
     {
         return $this->description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTrackId()
+    {
+        return $this->track_id;
+    }
+
+    /**
+     * @param mixed $track_id
+     */
+    public function setTrackId($track_id)
+    {
+        $this->track_id = $track_id;
+    }
+
 }

@@ -7,6 +7,18 @@ namespace Estina\Bundle\HomeBundle\Entity;
  */
 class ScheduleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTimesByDayAndTrack($day, $trackId)
+    {
+        $data = $this->findBy(['day' => $day, 'track_id' => $trackId]);
+        $return = [];
+        foreach ($data as $item) {
+            if (!in_array($item->getTime(), $return)) {
+                $return[] = $item->getTime();
+            }
+        }
+        return $return;
+    }
+
     public function findTimesByDay($day)
     {
         $data = $this->findBy(['day' => $day]);
