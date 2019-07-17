@@ -19,31 +19,27 @@
             <tbody>
             {% for time, row in day.rows  %}
                 <tr>
-                    <td>{{ time }}</td>
+                    <td style="vertical-align: top">{{ time }}</td>
                     <td>
                     {% for talk in row %}
 
                             {% if talk.title is defined %}
                             <div class="panel panel-default {{ talk.track.title|lower }}">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">{{ talk.title }}</h3>
+                                    <h3 class="panel-title" style="font-weight: bold">{{ talk.title }}</h3> <span style="font-size: 10px"> ({{ talk.author }})</span>
                                 </div>
-                                {% if talk.author is defined %}
-                                <div class="panel-body">
-                                   <h3 class="panel-title">{{ talk.author }}</h3>
+                                <div class="stage-name" style="padding-left:5px">{{ talk.track.title }}
                                     <div class="right" style="float:right;">
                                         <div title="Add to Calendar" class="addeventatc">
                                             Add
-                                            <span class="start">07/22/2019 08:00 AM</span>
-                                            <span class="end">07/22/2019 10:00 AM</span>
+                                            <span class="start">{{ time|date('m/d/Y g:i A') }}</span>
+                                            <span class="end">{{ time|date('m/d/Y g:i A') }}</span>
                                             <span class="timezone">Europe/Vilnius</span>
                                             <span class="title">{{ talk.title }}</span>
                                             <span class="description">{{ talk.description }}</span>
                                             <span class="location">{{ talk.track.title }}</span>
                                         </div>
-                                    </div>
-                                </div>
-                                {% endif %}
+                                    </div></div>
                             </div>
                             {% endif %}
 
