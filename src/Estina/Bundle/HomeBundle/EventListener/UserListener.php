@@ -52,6 +52,7 @@ class UserListener
         ;
 
         $this->mailer->send($message);
+                
     }
 
     /**

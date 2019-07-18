@@ -81,28 +81,44 @@ class ScheduleService
         return $timetable;
     }
 
-    public function getAvailableSlots(Track $track)
+    public function getAvailableSlots(Track $track, Schedule $currentItemSchedule)
     {
         $slotsInUse = $this->generate(null, $track);
         $days = Schedule::days();
 
         $slots = [];
+
         foreach ($days as $day) {
+
             $begin = new DateTime('10:00');
             $end = new DateTime('04:00');
             $end->add(new DateInterval('P1D'));
             $interval = new DateInterval('PT30M');
             $range = new DatePeriod($begin, $interval, $end);
+
             foreach ($range as $date) {
+
                 $time = $date->format('H:i');
 
                 if (isset($slotsInUse[$day]['rows'][$time]) && array_key_exists($track->getId(), $slotsInUse[$day]['rows'][$time])) {
+
+                    if (isset($currentItemSchedule)) {
+                        if ($currentItemSchedule->getTime()->format('H:i') == $time && $currentItemSchedule->getDay() == $day) {
+                            $slots[$day][] = (object) ['time' => $time, 'status' => 'current'];
+                            continue;
+                        }
+                    }
+
+                    $slots[$day][] = (object) ['time' => $time, 'status' => 'busy'];
                     continue;
                 }
+
                 if (array_key_exists($time . '!!', $slotsInUse[$day]['rows'])) {
+                    $slots[$day][] = (object) ['time' => $time, 'status' => 'busy'];
                     continue;
                 }
-                $slots[$day][] = $time;
+
+                $slots[$day][] = (object) ['time' => $time, 'status' => 'available'];
             }
         }
 

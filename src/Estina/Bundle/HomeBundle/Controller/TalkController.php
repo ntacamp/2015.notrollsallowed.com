@@ -313,7 +313,7 @@ class TalkController extends Controller
         return array(
             'entity'      => $entity,
             'availableSlots' => $this->get('home.schedule_service')
-                ->getAvailableSlots($entity->getTrack()),
+                ->getAvailableSlots($entity->getTrack(), $entity->getSchedule()),
         );
     }
 

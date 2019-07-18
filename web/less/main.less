@@ -437,6 +437,48 @@ h2 {
 .about-page {
 }
 
+.schedule-page {
+
+	.days {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+		
+
+	.slots {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		.day a {
+		    display: block;
+		    background: rgba(140, 193, 82, 0.5);
+		    padding: 5px;
+		    box-sizing: border-box;
+		    color: #434a54;
+		    margin: 5px 5px 0 0;
+
+		    &.busy {
+		    	background: hsla(354, 67%, 56%, 0.26);
+		    	pointer-events: none;
+		    }
+
+		    &.current {
+		    	background: #428bca;
+		    	color: #fff;
+
+		    	&:hover {
+					background: darken(#428bca, 15%);
+		    	}
+		    }
+
+		    &:hover {
+		    	background: #8cc152;
+		    }
+		}
+	}
+
+}
+
 .welcome-page {
 	h2 {
 		padding: 0;

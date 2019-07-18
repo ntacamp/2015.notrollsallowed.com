@@ -57,8 +57,10 @@ class UserController extends Controller
         $form = $this->createForm(new PasswordResetType());
 
         if($request->isMethod('POST')) {
+
             $form->handleRequest($request);
             $user = $service->resetPassword($form->getData()['email']);
+
             if ($user instanceof User) {
                 $event = new PasswordResetEvent($user);
                 $this->get('event_dispatcher')
