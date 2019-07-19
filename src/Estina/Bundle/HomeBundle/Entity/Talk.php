@@ -180,6 +180,11 @@ class Talk
     private $track;
 
     /**
+     * @ORM\OneToOne(targetEntity="Schedule", mappedBy="talk")
+     **/
+    private $schedule;
+
+    /**
      * If speaker/organizer is not the same unit as author, this field can be
      * used to override author.
      *
@@ -640,4 +645,22 @@ class Talk
     
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
+    /**
+     * @param Schedule $schedule
+     */
+    public function setSchedule($schedule)
+    {
+        $this->schedule = $schedule;
+    }
+
+
 }

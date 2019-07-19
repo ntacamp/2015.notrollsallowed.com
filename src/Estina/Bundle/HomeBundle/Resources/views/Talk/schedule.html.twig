@@ -1,7 +1,7 @@
 {% extends "EstinaHomeBundle::page-liquid.html.twig" %}
 
 {% block content -%}
-<div class="row">
+<div class="row schedule-page">
     <div class="col-md-10 col-md-offset-1">
         <h1>Schedule Presentation</h1>
 
@@ -38,13 +38,28 @@
                 </blockquote>
             </div>
         </div>
-
-        {% for dayNo, slots in availableSlots %}
-            <h3>Day #{{ dayNo }}</h3>
-            {% for slot in slots %}
-                <a href="{{ path('talk_schedule_submit', {'id': entity.id, 'day': dayNo, 'slot': slot}) }}">{{ slot }}</a>&nbsp; 
+        
+        <div class="days">
+            
+            {% for dayNo, slots in availableSlots %}         
+                <h3>Day #{{ dayNo }}</h3>
             {% endfor %}
-        {% endfor %}
+            
+        </div>
+        
+        <div class="slots">
+            {% for dayNo, slots in availableSlots %}
+                <div class="day">
+                    {% for slot in slots %}
+
+                        <a class="{{slot.status}}" href="{{ path('talk_schedule_submit', {'id': entity.id, 'day': dayNo, 'slot': slot.time}) }}">{{ slot.time }}</a>
+
+                    {% endfor %}
+                </div>
+            {% endfor %}  
+        </div>
+
+
     </div>
 </div>
 

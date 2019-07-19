@@ -9,8 +9,9 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Stage</th>
-                <th>Createdon</th>
-                <th>Updatedat</th>
+                <th>Scheduled time</th>
+                <th>Created on</th>
+                <th>Updated at</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -25,6 +26,11 @@
                     <br><a href="mailto:{{ entity.user.email}}">{{ entity.user.email }}</a>
                 </td>
                 <td>{{ entity.track }}</td>
+                <td>
+                    {%  if entity.schedule %}
+                    {{ 'day ' ~ entity.schedule.day ~ ' time ' ~ entity.schedule.time|date('H:i:s') }}
+                    {% endif %}
+                </td>
                 <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
