@@ -43,14 +43,16 @@ $(function() {
 		$('[data-track="' + trackId + '"]').parent().toggleClass('active');
 	}
 
-	function setData(data) {
+	function setData(data, noFilter) {
 
 		var template = $('#talk-template').html();
 		var container = $('.talks');
 
-		data = data.filter(function(item) {
-			return activeTracks.indexOf(item.trackId) !== -1;
-		})
+		if (!noFilter) {
+			data = data.filter(function(item) {
+				return activeTracks.indexOf(item.trackId) !== -1;
+			})
+		}
 
 		data.sort(function(a, b) {
 
@@ -135,10 +137,12 @@ $(function() {
 				return favorites.indexOf(talk.id) !== -1;
 			})
 
-			setData(data || []);
+			setData(data || [], true);
 
 			$('[data-track]').parent().removeClass('active');
 			$('[data-track="fav"]').parent().addClass('active');
+
+			activeTracks = [];
 
 			return;
 		} 
