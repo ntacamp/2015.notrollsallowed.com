@@ -456,6 +456,13 @@ h2 {
 [data-controller="schedule"] .schedule .nav ul li a {
   color: #fff;
   padding: 0 10px;
+  line-height: 60px;
+  display: inline-block;
+}
+[data-controller="schedule"] .schedule .nav ul li a.fav {
+  min-width: 60px;
+  text-align: center;
+  font-size: 22px;
 }
 [data-controller="schedule"] .schedule h2 {
   padding: 0 0 5px;
@@ -491,21 +498,29 @@ h2 {
   line-height: 1;
   color: #da4353;
 }
+[data-controller="schedule"] .schedule .talk .time {
+  cursor: pointer;
+  transition: opacity 0.15 ease-in;
+}
 [data-controller="schedule"] .schedule .talk .time.active {
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time.active a {
+[data-controller="schedule"] .schedule .talk .time.active i {
   color: #da4353;
+}
+[data-controller="schedule"] .schedule .talk .time:hover {
+  opacity: 0.8;
 }
 [data-controller="schedule"] .schedule .talk .time span {
   font-size: 18px;
 }
-[data-controller="schedule"] .schedule .talk .time a {
+[data-controller="schedule"] .schedule .talk .time i {
   color: #fff;
   display: block;
   text-align: center;
   font-size: 24px;
   margin: 5px 0;
+  font-style: normal;
 }
 .welcome-page h2 {
   padding: 0;

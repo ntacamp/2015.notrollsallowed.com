@@ -509,8 +509,16 @@ h2 {
 					}
 
 			    	a {
-			    		color: #fff;
-			    		padding: 0 10px;
+					    color: #fff;
+					    padding: 0 10px;
+					    line-height: 60px;
+					    display: inline-block;
+
+					    &.fav {
+							min-width: 60px;
+							text-align: center;
+							font-size: 22px;
+					    }
 			    	}
 			    }
 			}
@@ -560,25 +568,32 @@ h2 {
 			}
 
 			.time {
+				cursor: pointer;
+				transition: opacity 0.15 ease-in;
 
 				&.active {
 					color: #da4353;
 
-					a {
+					i {
 						color: #da4353;
 					}
+				}
+
+				&:hover {
+					opacity: 0.8;
 				}
 
 				span {
 					font-size: 18px;
 				}
 
-				a {
+				i {
 					color: #fff;
 					display: block;
 				    text-align: center;
 				    font-size: 24px;
 				    margin: 5px 0;
+				    font-style: normal;
 				}
 			}
 		}
