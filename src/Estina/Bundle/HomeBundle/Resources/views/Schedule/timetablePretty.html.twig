@@ -1,9 +1,12 @@
 {% extends "EstinaHomeBundle::page-wide.html.twig" %}
 
 {% block content %}
-    <h1>Schedule</h1>
 
-    <ul>
+<div class="schedule">
+    
+    {# <h1>Schedule</h1> #}
+
+    {# <ul>
     {% for day in days %}
         <li><a href="{{ path('timetable', {'day': day}) }}">Day {{ day }}</a></li>
     {% endfor %}
@@ -49,9 +52,45 @@
             {% endfor %}
             </tbody>
         </table>
-    {% endfor %}
+    {% endfor %} #}
+    
+    <div class="nav">
+        <ul>
+            <li class="active"><a href="">Analog</a></li>
+            <li class="active"><a href="">Digital</a></li>
+            <li><a href="">/dev/random</a></li>
+            <li><a href="">Workshops</a></li>
+            <li><a href="">★</a></li>
+        </ul>
+    </div>
+
+    <div class="talks"></div>
+
+</div>
+
+<script id="talk-template" type="text/html">
+    <div class="row talk" data-id="{id}">
+        
+        <div class="col-xs-2 avatar">
+            <img src="{authorAvatar}" alt="">
+        </div>
+
+        <div class="col-xs-8 meta">
+            <h3>{title}</h3>
+            <div class="author">{author}</div>
+            <div class="track">{trackTitle}</div>
+        </div>
+
+        <div class="col-xs-2 time">
+            <span>{time}</span>
+            <a href="">★</a>
+        </div>
+        
+    </div>
+</script>
+
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <script type="text/javascript" src='/js/schedule.js' async defer></script>
 {% endblock %}

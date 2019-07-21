@@ -35,4 +35,5 @@ class TalkRepository extends \Doctrine\ORM\EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
 }

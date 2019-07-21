@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Schedule, workshops and talks.
@@ -85,5 +86,23 @@ class ScheduleController extends Controller
             'timetable' => $this->get('home.schedule_service')->generate($day),
             'days' => $days,
         ];
+    }
+
+    /**
+     * @Route("/timetable/json", name="timetable-json")
+     */
+    public function timetableJsonAction()
+    {
+        
+
+        $days = Schedule::days();
+        $timetable = $this->get('home.schedule_service')->generateJson();
+
+        $response = [
+            'timetable' => $timetable,
+        ];
+
+        return new JsonResponse($timetable);
+
     }
 }

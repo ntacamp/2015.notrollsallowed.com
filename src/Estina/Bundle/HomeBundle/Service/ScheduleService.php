@@ -8,6 +8,7 @@ use DateTime;
 use Doctrine\ORM\EntityManager;
 use Estina\Bundle\HomeBundle\Entity\Schedule;
 use Estina\Bundle\HomeBundle\Entity\Track;
+use Estina\Bundle\HomeBundle\Twig\GravatarExtension;
 
 class ScheduleService
 {
@@ -29,11 +30,13 @@ class ScheduleService
         $tracks = $this->getTrackRepository()->findTracksByType(Track::TYPE_TALK);
         $timetable = [];
         $days = Schedule::days();
+        
         if ($day) {
             $days = [$day];
         }
         
         $repo = $this->getRepository();
+
         foreach ($days as $day) {
             if (null !== $trackArg) {
                 $times = $repo->findTimesByDayAndTrack($day, $trackArg->getId());
@@ -54,11 +57,13 @@ class ScheduleService
                     $scheduleGlobalEntries = $repo->findBy(
                         ['day' => $day, 'track' => null, 'time' => $time]
                     );
+
                     if (!empty($scheduleEntries)) {
                         foreach ($scheduleEntries as $entry) {
                             $rows[$time->format('H:i')][$track->getId()] = $this->scheduleToRow($entry);
                         }
                     }
+
                     if (!empty($scheduleGlobalEntries)) {
                         foreach ($scheduleGlobalEntries as $entry) {
                             $rows[$time->format('H:i') . ' !!'][$track->getId()] = $this->scheduleToRow($entry);
@@ -68,9 +73,11 @@ class ScheduleService
                     if (empty($scheduleEntries) && empty($scheduleGlobalEntries)) {
                         $rows[$time->format('H:i')][$track->getId()] = ['track' => null];
                     }
+
                     ksort($rows);                     
                 }
             }
+
             $timetable[$day] = [
                 'title' => $day,
                 'tracks' => $tracks,
@@ -81,7 +88,65 @@ class ScheduleService
         return $timetable;
     }
 
-    public function getAvailableSlots(Track $track, Schedule $currentItemSchedule)
+    public function generateJson()
+    {
+        $tracks = $this->getTrackRepository()->findTracksByType(Track::TYPE_TALK);
+        $timetable = [];
+        $days = Schedule::days();
+        
+        $repo = $this->getRepository();
+
+        foreach ($days as $day) {
+
+
+            $times = $repo->findTimesByDay($day);
+            $rows = [];
+
+            foreach ($times as $time) {
+
+                /** @var Track $track */
+                foreach ($tracks as $track) {
+
+                    $scheduleEntries = $repo->findBy(
+                        ['day' => $day, 'track' => $track, 'time' => $time]
+                    );
+
+                    if (!empty($scheduleEntries)) {
+
+                        foreach ($scheduleEntries as $entry) {
+                            
+
+                            
+                            $talk = $this->scheduleToJson($entry);
+                            $talk['day'] = $day;
+                            $talk['time'] = $time->format('H:i');
+
+                            array_push($timetable, $talk);
+                        }
+
+                    }
+
+                    // if (!empty($scheduleGlobalEntries)) {
+                    //     foreach ($scheduleGlobalEntries as $entry) {
+                    //         $rows[$time->format('H:i') . ' !!'][$track->getId()] = $this->scheduleToRow($entry);
+                    //     }
+                    // }
+
+                    if (empty($scheduleEntries) && empty($scheduleGlobalEntries)) {
+                        $rows[$time->format('H:i')][$track->getId()] = ['track' => null];
+                    }
+
+                    ksort($rows);                     
+                }
+            }
+            
+            // $timetable[$day] = $rows;
+        }
+
+        return $timetable;
+    }
+
+    public function getAvailableSlots(Track $track, Schedule $currentItemSchedule = null)
     {
         $slotsInUse = $this->generate(null, $track);
         $days = Schedule::days();
@@ -132,6 +197,23 @@ class ScheduleService
             'description' => $schedule->getTalk() ? $schedule->getTalk()->getDescription() : $schedule->getDescription(),
             'track' => $schedule->getTrack(),
             'author' => $schedule->getTalk() ? $schedule->getTalk()->getUser()->getName() : '',
+
+        ];
+    }
+
+    private function scheduleToJson(Schedule $schedule)
+    {
+        
+        $gravatar = new GravatarExtension();
+
+        return [
+            'id' => $schedule->getTalk()->getId(),
+            'title' => $schedule->getTalk()->getTitle(),
+            'description' => $schedule->getTalk() ? $schedule->getTalk()->getDescription() : $schedule->getDescription(),
+            'trackId' => $schedule->getTrack()->getId(),
+            'trackTitle' => $schedule->getTrack()->getTitle(),
+            'author' => $schedule->getTalk() ? $schedule->getTalk()->getUser()->getName() : '',
+            'authorAvatar' => $gravatar->getGravatarImage($schedule->getTalk()->getUser()->getEmail()),
         ];
     }
 

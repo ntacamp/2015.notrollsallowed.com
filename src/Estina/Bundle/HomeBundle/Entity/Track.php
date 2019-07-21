@@ -243,4 +243,5 @@ class Track
     {
         $this->talks->removeElement($talk);
     }
+
 }
