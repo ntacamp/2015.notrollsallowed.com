@@ -62,6 +62,7 @@ body * {
 body > .navbar {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
   opacity: 1;
+  transition: top 0.15s ease-in;
 }
 h2 {
   font-size: 30px;
@@ -431,12 +432,18 @@ h2 {
 [data-action="timetablePretty"] {
   background: #434a54;
 }
+[data-action="timetablePretty"] > .navbar {
+  position: absolute;
+}
 [data-action="timetablePretty"] article {
   padding: 0;
 }
 [data-action="timetablePretty"] .schedule {
   margin-top: 15px;
   padding: 0 5px;
+}
+[data-action="timetablePretty"] .schedule .nav {
+  background: #434a54;
 }
 [data-action="timetablePretty"] .schedule .nav ul {
   display: flex;
@@ -473,16 +480,20 @@ h2 {
 [data-action="timetablePretty"] .schedule .talk {
   color: #fff;
   text-align: left;
-  margin-bottom: 15px;
+  margin: 0 0 30px;
   height: auto;
   padding: 0 10px;
 }
 [data-action="timetablePretty"] .schedule .talk h3 {
   margin: 0;
 }
+[data-action="timetablePretty"] .schedule .talk .avatar {
+  padding: 0 10px 0 0;
+}
 [data-action="timetablePretty"] .schedule .talk .avatar img {
   height: auto;
   border: 0;
+  background: rgba(255, 255, 255, 0.2);
 }
 [data-action="timetablePretty"] .schedule .talk .meta {
   padding: 0;
@@ -493,6 +504,8 @@ h2 {
 [data-action="timetablePretty"] .schedule .talk .meta .author {
   margin: 3px 0;
   line-height: 1;
+  font-size: 16px;
+  opacity: 0.5;
 }
 [data-action="timetablePretty"] .schedule .talk .meta .track {
   line-height: 1;
@@ -500,7 +513,9 @@ h2 {
 }
 [data-action="timetablePretty"] .schedule .talk .time {
   cursor: pointer;
-  transition: opacity 0.15 ease-in;
+  transition: opacity 0.15s ease-in;
+  padding: 0;
+  text-align: center;
 }
 [data-action="timetablePretty"] .schedule .talk .time.active {
   color: #da4353;
@@ -521,6 +536,17 @@ h2 {
   font-size: 24px;
   margin: 5px 0;
   font-style: normal;
+}
+body.fixed .schedule {
+  padding-top: 75px;
+}
+body.fixed .schedule .nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  padding: 5px 5px 0;
+  z-index: 100;
 }
 .welcome-page h2 {
   padding: 0;

@@ -19,6 +19,7 @@ body {
     > .navbar {
 		box-shadow: 0 0 10px 0px rgba(0,0,0,0.1);
 		opacity: 1;
+		transition: top 0.15s ease-in;
     }
 }
 
@@ -483,6 +484,10 @@ h2 {
 	// background: #191819;
 	background: #434a54;
 
+	> .navbar {
+		position: absolute;
+	}
+
 	article {
 		padding: 0;
 	}
@@ -492,6 +497,8 @@ h2 {
 		padding: 0 5px;
 
 		.nav {
+			background: #434a54;
+
 			ul {
 				display: flex;
 			    justify-content: space-between;
@@ -533,19 +540,22 @@ h2 {
 
 		.talk {
 			color: #fff;
-			text-align: left;
-			margin-bottom: 15px;
-			height: auto;
-			padding: 0 10px;
+		    text-align: left;
+		    margin: 0 0 30px;
+		    height: auto;
+		    padding: 0 10px;
 
 			h3 {
 				margin: 0;
 			}
 
 			.avatar {
+				padding: 0 10px 0 0;
+
 				img {
 					height: auto;
 					border: 0;
+					background: rgba(255,255,255,0.2);
 				}
 			}
 
@@ -558,7 +568,9 @@ h2 {
 
 				.author {
 					margin: 3px 0;
-					line-height: 1;
+				    line-height: 1;
+				    font-size: 16px;
+				    opacity: 0.5;
 				}
 
 				.track {
@@ -569,7 +581,9 @@ h2 {
 
 			.time {
 				cursor: pointer;
-				transition: opacity 0.15 ease-in;
+				transition: opacity 0.15s ease-in;
+				padding: 0;
+				text-align: center;
 
 				&.active {
 					color: #da4353;
@@ -598,6 +612,23 @@ h2 {
 			}
 		}
 	}
+}
+
+body.fixed {
+
+	.schedule {
+		padding-top: 75px;
+
+		.nav {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			left: 0;
+			padding: 5px 5px 0;
+			z-index: 100;
+		}
+	}
+
 }
 
 .welcome-page {

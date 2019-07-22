@@ -1,0 +1,19 @@
+{
+  "name": "No Trolls Allowed 2019",
+  "short_name": "NTA 2019",
+  "icons": [{
+      "src": "/images/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "/images/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/lt/timetable/1",
+  "scope": "/",
+  "externals": ["/"],
+  "display": "fullscreen",
+  "background_color": "#434a54",
+  "theme_color": "#434a54"
+}
