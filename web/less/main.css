@@ -432,6 +432,32 @@ h2 {
 [data-action="timetablePretty"] {
   background: #434a54;
 }
+@media screen and (min-width: 992px) {
+  [data-action="timetablePretty"] article .schedule .nav {
+    margin-top: 25px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul {
+    justify-content: left;
+    margin-bottom: 25px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul li {
+    margin-right: 15px;
+    height: 45px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul li a {
+    line-height: 45px;
+    display: block;
+    padding: 0 40px;
+  }
+  [data-action="timetablePretty"] article .schedule .talks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-action="timetablePretty"] article .schedule h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
 [data-action="timetablePretty"] > .navbar {
   position: absolute;
 }
@@ -537,16 +563,18 @@ h2 {
   margin: 5px 0;
   font-style: normal;
 }
-body.fixed .schedule {
-  padding-top: 75px;
-}
-body.fixed .schedule .nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  left: 0;
-  padding: 5px 5px 0;
-  z-index: 100;
+@media screen and (max-width: 991px) {
+  body.fixed article .schedule {
+    padding-top: 75px;
+  }
+  body.fixed article .schedule .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding: 5px 5px 0;
+    z-index: 100;
+  }
 }
 .welcome-page h2 {
   padding: 0;

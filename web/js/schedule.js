@@ -17,7 +17,7 @@ $(function() {
 	};
 
 	var favorites = JSON.parse(localStorage.favorites || '[]')
-	var activeTracks = JSON.parse(localStorage.activeTracks || '[1, 2]');
+	var activeTracks = JSON.parse(localStorage.activeTracks || '[1, 2, 3]');
 	var cachedData = [];
 
 
