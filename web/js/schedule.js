@@ -125,7 +125,7 @@ $(function() {
 		cachedData = data;
 	});
 
-	$('.nav li a').click(function(event) {
+	$('.schedule .nav li a').click(function(event) {
 
 		event.preventDefault();
 

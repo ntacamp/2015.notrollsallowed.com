@@ -428,93 +428,93 @@ h2 {
 .schedule-page .slots .day a:hover {
   background: #8cc152;
 }
-[data-controller="schedule"] {
+[data-action="timetablePretty"] {
   background: #434a54;
 }
-[data-controller="schedule"] article {
+[data-action="timetablePretty"] article {
   padding: 0;
 }
-[data-controller="schedule"] .schedule {
+[data-action="timetablePretty"] .schedule {
   margin-top: 15px;
   padding: 0 5px;
 }
-[data-controller="schedule"] .schedule .nav ul {
+[data-action="timetablePretty"] .schedule .nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
   line-height: 60px;
 }
-[data-controller="schedule"] .schedule .nav ul li {
+[data-action="timetablePretty"] .schedule .nav ul li {
   border-bottom: 3px solid #da4353;
   background: rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
 }
-[data-controller="schedule"] .schedule .nav ul li.active {
+[data-action="timetablePretty"] .schedule .nav ul li.active {
   background: #da4353;
 }
-[data-controller="schedule"] .schedule .nav ul li a {
+[data-action="timetablePretty"] .schedule .nav ul li a {
   color: #fff;
   padding: 0 10px;
   line-height: 60px;
   display: inline-block;
 }
-[data-controller="schedule"] .schedule .nav ul li a.fav {
+[data-action="timetablePretty"] .schedule .nav ul li a.fav {
   min-width: 60px;
   text-align: center;
   font-size: 22px;
 }
-[data-controller="schedule"] .schedule h2 {
+[data-action="timetablePretty"] .schedule h2 {
   padding: 0 0 5px;
   color: #fff;
   font-size: 22px;
   font-weight: 400;
 }
-[data-controller="schedule"] .schedule .talk {
+[data-action="timetablePretty"] .schedule .talk {
   color: #fff;
   text-align: left;
   margin-bottom: 15px;
   height: auto;
   padding: 0 10px;
 }
-[data-controller="schedule"] .schedule .talk h3 {
+[data-action="timetablePretty"] .schedule .talk h3 {
   margin: 0;
 }
-[data-controller="schedule"] .schedule .talk .avatar img {
+[data-action="timetablePretty"] .schedule .talk .avatar img {
   height: auto;
   border: 0;
 }
-[data-controller="schedule"] .schedule .talk .meta {
+[data-action="timetablePretty"] .schedule .talk .meta {
   padding: 0;
 }
-[data-controller="schedule"] .schedule .talk .meta h1 {
+[data-action="timetablePretty"] .schedule .talk .meta h1 {
   margin: 0;
 }
-[data-controller="schedule"] .schedule .talk .meta .author {
+[data-action="timetablePretty"] .schedule .talk .meta .author {
   margin: 3px 0;
   line-height: 1;
 }
-[data-controller="schedule"] .schedule .talk .meta .track {
+[data-action="timetablePretty"] .schedule .talk .meta .track {
   line-height: 1;
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time {
+[data-action="timetablePretty"] .schedule .talk .time {
   cursor: pointer;
   transition: opacity 0.15 ease-in;
 }
-[data-controller="schedule"] .schedule .talk .time.active {
+[data-action="timetablePretty"] .schedule .talk .time.active {
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time.active i {
+[data-action="timetablePretty"] .schedule .talk .time.active i {
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time:hover {
+[data-action="timetablePretty"] .schedule .talk .time:hover {
   opacity: 0.8;
 }
-[data-controller="schedule"] .schedule .talk .time span {
+[data-action="timetablePretty"] .schedule .talk .time span {
   font-size: 18px;
 }
-[data-controller="schedule"] .schedule .talk .time i {
+[data-action="timetablePretty"] .schedule .talk .time i {
   color: #fff;
   display: block;
   text-align: center;
