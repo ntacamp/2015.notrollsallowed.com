@@ -34,29 +34,38 @@ self.addEventListener('fetch', event => {
     const getCustomResponsePromise = async function() {
         
         try {
-            //Try to get the cached response
-            const cachedResponse = await caches.match(event.request)
-
-            if (cachedResponse) {
-                //Return the cached response if present
-                return cachedResponse
-            }
-
-            //Get the network response if no cached response is present
-            const netResponse = await fetch(event.request)
 
             //Here, we add the network response to the cache
             let cache = await caches.open(CACHE_NAME)
 
-            //We must provide a clone of the response here
-            cache.put(event.request, netResponse.clone())
+            return fetch(event.request)
+            .then(function(response) {
 
-            //return the network response
-            return netResponse
+                //We must provide a clone of the response here
+                cache.put(event.request, response.clone())
+
+                return response;
+            })
+            .catch(async function(response) {
+                // return caches.match(event.request)
+
+                const cachedResponse = await caches.match(event.request)
+
+                if (cachedResponse) {
+                    //Return the cached response if present
+                    return cachedResponse
+                } else {
+                    return response;
+                }
+            })
+
 
         } catch (err) {
+
             console.error(`Error ${err}`)
-            throw err
+            
+            return fetch(event.request)
+
         }
     }
 
