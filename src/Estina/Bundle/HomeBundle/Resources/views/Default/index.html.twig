@@ -1,7 +1,11 @@
 {% extends "EstinaHomeBundle::layout.html.twig" %}
 {% block body %}
 
-    <div class="hello"></div>
+    <div class="hello">
+        <div class="container text-center">
+                <a href="{{ path('timetable') }}" class="btn btn-info btn-register" style="margin-top:300px;"> {{ 'live.schedule'|trans }}</a>
+        </div>
+    </div>
 
     <div class="sponsors">
         <div class="container text-center">
@@ -198,7 +202,7 @@
                     <p>{{ 'homepage.text.about_p1'|trans}}</p>
                     
                     <p>{{ 'homepage.text.about_p2'|trans}}</p>
-
+                    <p class="cta-container"><a href="{{ path('talk_register') }}" class="btn btn-primary btn-register"> {{ 'homepage.button.register'|trans }}</a></p>
                     {% if "now"|date("Y-m-d") > registration_deadline %}
                         <p class="cta-container"><strong>{{'homepage.text.registration_ended'|trans}}</strong></p>
                     {% elseif "now"|date('Y-m-d') < registration_start %}

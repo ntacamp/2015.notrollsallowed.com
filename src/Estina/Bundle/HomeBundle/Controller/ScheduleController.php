@@ -71,7 +71,7 @@ class ScheduleController extends Controller
 
     /**
      *
-     * @Route("/timetable/{day}", name="timetable", defaults={"day" = 1}, requirements={"day" = "\d+"})
+     * @Route("/app/{day}", name="timetable", defaults={"day" = 1}, requirements={"day" = "\d+"})
      * @Template()
      */
     public function timetablePrettyAction($day)
