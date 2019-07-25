@@ -68,4 +68,15 @@ class PagesController extends Controller
     {
         return [];
     }
+
+    /**
+     * Taisykles
+     *
+     * @Route("/terms", name="page_terms")
+     * @Template()
+     */
+    public function termsAction()
+    {
+        return [];
+    }
 }

@@ -62,6 +62,7 @@ body * {
 body > .navbar {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
   opacity: 1;
+  transition: top 0.15s ease-in;
 }
 h2 {
   font-size: 30px;
@@ -428,99 +429,152 @@ h2 {
 .schedule-page .slots .day a:hover {
   background: #8cc152;
 }
-[data-controller="schedule"] {
+[data-action="timetablePretty"] {
   background: #434a54;
 }
-[data-controller="schedule"] article {
+@media screen and (min-width: 992px) {
+  [data-action="timetablePretty"] article .schedule .nav {
+    margin-top: 25px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul {
+    justify-content: left;
+    margin-bottom: 25px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul li {
+    margin-right: 15px;
+    height: 45px;
+  }
+  [data-action="timetablePretty"] article .schedule .nav ul li a {
+    line-height: 45px;
+    display: block;
+    padding: 0 40px;
+  }
+  [data-action="timetablePretty"] article .schedule .talks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  [data-action="timetablePretty"] article .schedule h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+[data-action="timetablePretty"] > .navbar {
+  position: absolute;
+}
+[data-action="timetablePretty"] article {
   padding: 0;
 }
-[data-controller="schedule"] .schedule {
+[data-action="timetablePretty"] .schedule {
   margin-top: 15px;
   padding: 0 5px;
 }
-[data-controller="schedule"] .schedule .nav ul {
+[data-action="timetablePretty"] .schedule .nav {
+  background: #434a54;
+}
+[data-action="timetablePretty"] .schedule .nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
   line-height: 60px;
 }
-[data-controller="schedule"] .schedule .nav ul li {
+[data-action="timetablePretty"] .schedule .nav ul li {
   border-bottom: 3px solid #da4353;
   background: rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
 }
-[data-controller="schedule"] .schedule .nav ul li.active {
+[data-action="timetablePretty"] .schedule .nav ul li.active {
   background: #da4353;
 }
-[data-controller="schedule"] .schedule .nav ul li a {
+[data-action="timetablePretty"] .schedule .nav ul li a {
   color: #fff;
   padding: 0 10px;
   line-height: 60px;
   display: inline-block;
 }
-[data-controller="schedule"] .schedule .nav ul li a.fav {
+[data-action="timetablePretty"] .schedule .nav ul li a.fav {
   min-width: 60px;
   text-align: center;
   font-size: 22px;
 }
-[data-controller="schedule"] .schedule h2 {
+[data-action="timetablePretty"] .schedule h2 {
   padding: 0 0 5px;
   color: #fff;
   font-size: 22px;
   font-weight: 400;
 }
-[data-controller="schedule"] .schedule .talk {
+[data-action="timetablePretty"] .schedule .talk {
   color: #fff;
   text-align: left;
-  margin-bottom: 15px;
+  margin: 0 0 30px;
   height: auto;
   padding: 0 10px;
 }
-[data-controller="schedule"] .schedule .talk h3 {
+[data-action="timetablePretty"] .schedule .talk h3 {
   margin: 0;
 }
-[data-controller="schedule"] .schedule .talk .avatar img {
+[data-action="timetablePretty"] .schedule .talk .avatar {
+  padding: 0 10px 0 0;
+}
+[data-action="timetablePretty"] .schedule .talk .avatar img {
   height: auto;
   border: 0;
+  background: rgba(255, 255, 255, 0.2);
 }
-[data-controller="schedule"] .schedule .talk .meta {
+[data-action="timetablePretty"] .schedule .talk .meta {
   padding: 0;
 }
-[data-controller="schedule"] .schedule .talk .meta h1 {
+[data-action="timetablePretty"] .schedule .talk .meta h1 {
   margin: 0;
 }
-[data-controller="schedule"] .schedule .talk .meta .author {
+[data-action="timetablePretty"] .schedule .talk .meta .author {
   margin: 3px 0;
   line-height: 1;
+  font-size: 16px;
+  opacity: 0.5;
 }
-[data-controller="schedule"] .schedule .talk .meta .track {
+[data-action="timetablePretty"] .schedule .talk .meta .track {
   line-height: 1;
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time {
+[data-action="timetablePretty"] .schedule .talk .time {
   cursor: pointer;
-  transition: opacity 0.15 ease-in;
+  transition: opacity 0.15s ease-in;
+  padding: 0;
+  text-align: center;
 }
-[data-controller="schedule"] .schedule .talk .time.active {
+[data-action="timetablePretty"] .schedule .talk .time.active {
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time.active i {
+[data-action="timetablePretty"] .schedule .talk .time.active i {
   color: #da4353;
 }
-[data-controller="schedule"] .schedule .talk .time:hover {
+[data-action="timetablePretty"] .schedule .talk .time:hover {
   opacity: 0.8;
 }
-[data-controller="schedule"] .schedule .talk .time span {
+[data-action="timetablePretty"] .schedule .talk .time span {
   font-size: 18px;
 }
-[data-controller="schedule"] .schedule .talk .time i {
+[data-action="timetablePretty"] .schedule .talk .time i {
   color: #fff;
   display: block;
   text-align: center;
   font-size: 24px;
   margin: 5px 0;
   font-style: normal;
+}
+@media screen and (max-width: 991px) {
+  body.fixed article .schedule {
+    padding-top: 75px;
+  }
+  body.fixed article .schedule .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding: 5px 5px 0;
+    z-index: 100;
+  }
 }
 .welcome-page h2 {
   padding: 0;

@@ -37,6 +37,15 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="310">
         <meta property="og:image:height" content="300">
+        
+        <link rel="manifest" href="/public/manifest.json">
+        <link rel="apple-touch-icon" href="/images/logo192.png">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#434a54">
+        <meta name="apple-mobile-web-app-title" content="No Trolls Allowed">
+        <meta name="theme-color" content="#434a54" />
+
     </head>
     <body data-controller="{{ getControllerName() }}"
           data-action="{{ getActionName() }}">
@@ -142,6 +151,9 @@
                         </dd>
                         <dd class="nav-item">
                             <a href="{{ path('page_privacy') }}">{{ 'footer.menu.privacy'|trans }}</a>
+                        </dd>
+                        <dd class="nav-item">
+                            <a href="{{ path('page_terms') }}">{{ 'footer.menu.terms'|trans }}</a>
                         </dd>
                     </dl>
                     <dl class="footer-nav">

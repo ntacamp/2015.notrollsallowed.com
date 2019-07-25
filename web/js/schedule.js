@@ -1,23 +1,23 @@
 $(function() {
 
 	String.prototype.interpolate = function (o) {
-	    return this.replace(/{([^{}]*)}/g,
-	        function (a, b) {
-	            var r = o[b];
-	            return typeof r === 'string' || typeof r === 'number' ? r : a;
-	        }
-	    );
+		return this.replace(/{([^{}]*)}/g,
+			function (a, b) {
+				var r = o[b];
+				return typeof r === 'string' || typeof r === 'number' ? r : a;
+			}
+			);
 	};
 
 	Array.prototype.groupBy = function(key) {
-	  return this.reduce(function(rv, x) {
-	    (rv[x[key]] = rv[x[key]] || []).push(x);
-	    return rv;
-	  }, {});
+		return this.reduce(function(rv, x) {
+			(rv[x[key]] = rv[x[key]] || []).push(x);
+			return rv;
+		}, {});
 	};
 
 	var favorites = JSON.parse(localStorage.favorites || '[]')
-	var activeTracks = JSON.parse(localStorage.activeTracks || '[1, 2]');
+	var activeTracks = JSON.parse(localStorage.activeTracks || '[1, 2, 3]');
 	var cachedData = [];
 
 
@@ -65,7 +65,7 @@ $(function() {
 		var days = data.groupBy('day');
 
 		container.empty();
-		
+
 		Object.keys(days).forEach(function(day) {
 
 			container.append('<h2>Day ' + day + '</h2>')
@@ -117,7 +117,18 @@ $(function() {
 		}
 
 		localStorage.favorites = JSON.stringify(favorites);
-		
+	}
+
+	function scrollListener(event) {
+
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (scrollTop > 60) {
+			document.body.classList.add('fixed')
+		} else {
+			document.body.classList.remove('fixed')
+		}
+
 	}
 
 	$.getJSON('/lt/timetable/json', function( data ) {
@@ -125,7 +136,7 @@ $(function() {
 		cachedData = data;
 	});
 
-	$('.nav li a').click(function(event) {
+	$('.schedule .nav li a').click(function(event) {
 
 		event.preventDefault();
 
@@ -148,8 +159,10 @@ $(function() {
 		} 
 
 		toggleTrack(track);
-
 	})
+
+
+	window.addEventListener('scroll', scrollListener);
 
 })
 
