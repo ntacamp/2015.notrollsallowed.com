@@ -145,6 +145,13 @@ h2 {
 .hello .container h1 {
   margin: 15vh 0 50px;
 }
+.hello .container .info-container {
+  display: inline-block;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  margin-top: 195px;
+}
 .hello .container .btn-register {
   text-shadow: none;
   background: #da4d5b;
@@ -154,9 +161,14 @@ h2 {
   line-height: 60px;
   padding: 0 30px;
   transition: background 0.35s ease-in;
+  position: relative;
 }
 .hello .container .btn-register:hover {
   background: #b52634;
+}
+.hello .container .btn-register:before {
+  content: "";
+  position: absolute;
 }
 .panel .panel-default .digital {
   background-color: greenyellow;
@@ -618,9 +630,16 @@ h2 {
   .hello {
     background-size: contain;
     height: 30vh;
-    background-image: url(/images/hero-bg-min.png);
+    background-image: none;
     background-color: #fff;
-    margin: 60px 40px 0;
+    margin: 60px 0 0;
+  }
+  .hello .container .info-container {
+    margin: 10px 0 0;
+    padding: 20px 0;
+  }
+  .hello .container .info-container .btn-register {
+    font-size: 18px;
   }
   .hello:before {
     position: fixed;

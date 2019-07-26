@@ -10,7 +10,7 @@
       "sizes": "512x512",
       "type": "image/png"
     }],
-  "start_url": "/lt/timetable/1",
+  "start_url": "/lt/app",
   "scope": "/",
   "externals": ["/"],
   "display": "fullscreen",

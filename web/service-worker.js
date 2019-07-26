@@ -23,7 +23,7 @@ const CACHE_NAME = 'nta-cache-v1';
 this.addEventListener('install', async function() {
     const cache = await caches.open(CACHE_NAME);
     cache.addAll([
-        '/lt/timetable/1',
+        '/lt/app',
     ])
 })
 
