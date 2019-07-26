@@ -18,7 +18,7 @@
 'use strict';
 
 // CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'nta-cache-v1';
+const CACHE_NAME = 'nta-cache-v2';
 
 this.addEventListener('install', async function() {
     const cache = await caches.open(CACHE_NAME);
