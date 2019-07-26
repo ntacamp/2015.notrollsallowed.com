@@ -28,7 +28,12 @@
                 <td>{{ entity.track }}</td>
                 <td>
                     {%  if entity.schedule %}
-                    {{ 'day ' ~ entity.schedule.day ~ ' time ' ~ entity.schedule.time|date('H:i:s') }}
+                        {{ 'day ' ~ entity.schedule.day ~ ' time ' ~ entity.schedule.time|date('H:i:s') }}
+
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a href="{{ path('talk_unschedule', {id: entity.id}) }}" class="btn btn-danger" onclick="return alert('Are you sure?');"><i class="glyphicon glyphicon-ban-circle"></i></a>
+                        {% endif %}
+
                     {% endif %}
                 </td>
                 <td>{% if entity.createdOn %}{{ entity.createdOn|date('Y-m-d H:i:s') }}{% endif %}</td>

@@ -318,6 +318,40 @@ class TalkController extends Controller
     }
 
     /**
+     * Remove talk from schedule
+     *
+     * @Route("/{id}/unschedule", name="talk_unschedule")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     * @Template()
+     */
+    public function unscheduleAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        /** @var Talk $entity */
+        $entity = $em->getRepository('EstinaHomeBundle:Talk')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Talk entity.');
+        }
+
+        if (!$this->isAllowedUpdate($entity)) {
+            throw $this->createAccessDeniedException();
+        }
+
+        $item = $entity->getSchedule();
+        $em->remove($item);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->set(
+            'success',
+            'Talk has been removed from schedule'
+        );
+
+        return $this->redirect($this->generateUrl('talk_list'));
+    }
+
+    /**
      * Put talk on schedule
      *
      * @Route("/{id}/schedule/slot/{day}/{slot}", name="talk_schedule_submit")
