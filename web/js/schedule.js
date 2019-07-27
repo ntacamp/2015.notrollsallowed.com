@@ -9,6 +9,10 @@ $(function() {
 			);
 	};
 
+	String.prototype.replaceAt = function(index, replacement) {
+	    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+	}
+
 	Array.prototype.groupBy = function(key) {
 		return this.reduce(function(rv, x) {
 			(rv[x[key]] = rv[x[key]] || []).push(x);
@@ -20,10 +24,21 @@ $(function() {
 	var activeTracks = JSON.parse(localStorage.activeTracks || '[1, 2, 3]');
 	var cachedData = [];
 
+	var eventDates = {
+		'1': new Date('2019-07-26'),
+		'2': new Date('2019-07-27'),
+		'3': new Date('2019-07-28'),
+	}
+
 
 	activeTracks.forEach(function(trackId) {
 		$('[data-track="' + trackId + '"]').parent().addClass('active');
 	})
+
+	function scrollToAnchor(aid){
+	    var aTag = $("[name='"+ aid +"']");
+	    $('html,body').animate({scrollTop: aTag.offset().top},'fast');
+	}
 
 	function toggleTrack(trackId) {
 
@@ -56,10 +71,21 @@ $(function() {
 
 		data.sort(function(a, b) {
 
-			var aTime = parseInt((a.day + a.time).replace(':', ''));
-			var bTime = parseInt((b.day + b.time).replace(':', ''));
+			var aHour = a.time.replace(':', '');
+			var bHour = b.time.replace(':', '');
 
-			return aTime - bTime;
+			if (aHour.startsWith('0')) {
+				aHour = aHour.replaceAt(0, '3');
+			}
+
+			if (bHour.startsWith('0')) {
+				bHour = bHour.replaceAt(0, '3');
+			}
+
+			var aTime = a.day + aHour;
+			var bTime = b.day + b.time;
+
+			return parseInt(aTime) - parseInt(bTime);
 		})
 
 		var days = data.groupBy('day');
@@ -68,7 +94,7 @@ $(function() {
 
 		Object.keys(days).forEach(function(day) {
 
-			container.append('<h2>Day ' + day + '</h2>')
+			container.append('<h2 name="day' + day + '">Day ' + day + '</h2>')
 
 			days[day].forEach(function(talk) {
 
@@ -91,6 +117,14 @@ $(function() {
 
 			})
 		})
+
+		var dayIndex = Object.keys(eventDates).find(function(day) {
+			var today = new Date()
+			return (today.toDateString() === eventDates[day].toDateString());
+		})
+
+		scrollToAnchor('day' + dayIndex);
+		
 	} 
 
 	function toggleFavorite(talkId) {
@@ -108,6 +142,8 @@ $(function() {
 			favorites.push(talk.id);
 
 			$('.talk[data-id="' + talkId + '"] .time').addClass('active');
+
+
 
 		} else {
 
