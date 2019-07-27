@@ -83,7 +83,7 @@ $(function() {
 			}
 
 			var aTime = a.day + aHour;
-			var bTime = b.day + b.time;
+			var bTime = b.day + bHour;
 
 			return parseInt(aTime) - parseInt(bTime);
 		})
