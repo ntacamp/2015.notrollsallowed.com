@@ -25,9 +25,11 @@ $(function() {
 	var cachedData = [];
 
 	var eventDates = {
-		'1': new Date('2019-07-26'),
-		'2': new Date('2019-07-27'),
-		'3': new Date('2019-07-28'),
+		'1': new Date('2020-07-22'),
+		'2': new Date('2020-07-23'),
+		'3': new Date('2020-07-24'),
+		'4': new Date('2020-07-25'),
+		'5': new Date('2020-07-26'),
 	}
 
 
