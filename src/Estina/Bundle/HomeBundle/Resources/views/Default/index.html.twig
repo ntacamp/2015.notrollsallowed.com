@@ -1,195 +1,19 @@
 {% extends "EstinaHomeBundle::layout.html.twig" %}
 {% block body %}
 
-    <div class="hello">
-        <div class="container text-center">
-                <div class="info-container">
-                    <a href="{{ path('timetable') }}" class="btn btn-info btn-register"> {{ 'live.schedule'|trans }}</a> 
-                </div>
+    
+    <div class="gallery">    
+        <div class="container">
+            <div class="row text-center">
+                <h2>{{ 'homepage.text.gallery'|trans}}</h2>
+            </div>
+            <div class="list">
+                {% for photo in photos %}
+                    <img src="/images/photos/{{ photo }}" alt="">
+                {% endfor %}
+            </div>
         </div>
     </div>
-
-    <div class="sponsors">
-        <div class="container text-center">
-            
-            <div class="row">
-
-                <div class="col-md-3 col-md-offset-1 gold">
-                    <h2>{{ 'homepage.sponsors.gold'|trans }}</h2>
-                    <a href="http://www.tesonet.lt" class="sponsor">
-                        <img src="/images/sponsors/tesonet.png" alt="Tesonet" class="img-responsive">
-                    </a>
-                </div>
-
-                <div class="col-md-5">
-                    <h2>{{ 'homepage.sponsors.silver'|trans }}</h2>
-                    <div class="row">              
-                        <div class="col-md-4 text-center col-xs-6" >
-                            <a href="https://www.instarem.com" class="sponsor">
-                                <img src="/images/sponsors/instarem.png" alt="Instarem" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center col-xs-6">
-                            <a href="https://www.nfq.lt" class="sponsor">
-                                <img src="/images/sponsors/nfq.png" alt="NFQ" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center col-xs-6">
-                            <a href="https://www.wix.com/" class="sponsor">
-                                <img src="/images/sponsors/wix.png" alt="Wix" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center col-xs-6" >
-                            <a href="https://www.estina.com" class="sponsor">
-                                <img src="/images/sponsors/estina.png" alt="Estina" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center col-xs-6">
-                            <a href="https://www.hostinger.com/" class="sponsor">
-                                <img src="/images/sponsors/hostinger.png" alt="Hostinger" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center col-xs-hidden" ></div>
-                        <div class="col-md-4 text-center col-xs-6" >
-                            <a href="https://www.shift4.com/" class="sponsor">
-                                <img src="/images/sponsors/shift4.png" alt="Shift4" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 bronze">
-                    <h2>{{ 'homepage.sponsors.bronze'|trans }}</h2>
-                    <a href="https://www.visma.lt" class="sponsor">
-                        <img src="/images/sponsors/visma.png" alt="Visma" class="img-responsive">
-                    </a>
-                </div>
-            </div>
-
-         <!--    <h2>{{ 'homepage.sponsors.gold'|trans }}</h2>
-            <div class="row"> 
-                <div class="col-md-12 text-center">
-                    <a href="http://www.tesonet.lt">
-                        <img src="/images/sponsors/tesonet.png" alt="Tesonet">
-                    </a>
-                </div>
-            </div>
-            <br>
-            <br>
-
-            <h2>{{ 'homepage.sponsors.silver'|trans }}</h2>
-            <div class="row">  
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">              
-                        <div class="col-md-4 text-center" >
-                            <a href="http://www.instarem.com">
-                                <img src="/images/sponsors/instarem.png" alt="Instarem" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="http://www.nfq.lt">
-                                <img src="/images/sponsors/nfq.png" alt="NFQ" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <a href="https://www.wix.com/">
-                                <img src="/images/sponsors/wix.png" alt="Wix" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class="row">  
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">              
-                        <div class="col-md-12 text-center" >
-                            <a href="http://www.estina.com">
-                                <img src="/images/sponsors/estina.png" alt="Estina" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
- -->
-          <!--   <h2>{{ 'homepage.sponsors.bronze'|trans }}</h2>
-            <div class="row">  
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">              
-                        <div class="col-md-12 text-center" >
-                            <a href="http://www.visma.com">
-                                <img src="/images/sponsors/visma.png" alt="Visma" class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            {#
-
-            <h2>Friends</h2>
-            <div class="row text-center">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">
-                        <div class="col-md-3 text-center">
-                            <a href="http://www.technariumas.lt">
-                                <img src="images/technarium.png" alt="Technariumas">
-                            </a>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <a href="http://www.makerspace.lt">
-                                <img src="images/makerspace.png" alt="Makerspace">
-                            </a>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <a href="https://www.bite.lt/">
-                                <img src="images/logo_bite.png" alt="Makerspace">
-                            </a>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <a href="https://www.facebook.com/algirdas.stonys">
-                                <img src="images/draugas.png" alt="Algirdas Stonys">
-                            </a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-3 text-center">
-                            <a href="http://www.ito.lt">
-                                <img src="images/ito.png" alt="ITO">
-                            </a>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <a href="https://www.telesoftas.lt/">
-                                <img src="images/telesoftas.png" alt="Telesoftas">
-                            </a>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <a href="http://www.rikis.lt">
-                                <img src="images/rikis.png" alt="Rikis">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-            <div class="row text-center">
-                <div class="col-md-4" style="line-height: 150px;">
-                    <a href="http://www.bite.lt/">
-                    <img src="images/bite.png" alt="Bite" style="width: 150px;">
-                    </a>
-                </div>
-            </div>
-
-            <br><br>
-    #}
-        </div>
-    </div>
-
 
     <div id="about" class="event-details about">
         <div class="container">
@@ -256,43 +80,6 @@
                     <h3>{{ 'homepage.text.participation.volunteer'|trans}}</h3>
                     <p>{{ 'homepage.text.participation.volunteer.desc'|trans}}</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="event-details where" id="vieta">
-        
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2595258521733!2d24.9828927138781!3d54.658727588496276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ddf35646b86bb9%3A0x1b3be18955776075!2sPusiasalis!5e1!3m2!1sen!2slt!4v1532258638825" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-md-offset-7 overlay">
-                    <h2>{{ 'homepage.text.where'|trans }}</h2>
-                    <p>
-                        {{ 'homepage.text.footer.campground'|trans }} <a href="https://www.facebook.com/pusiasalis/">{{ 'homepage.text.footer.campground_name'|trans }}</a> {{ 'homepage.text.footer.campground_by'|trans }}
-                        <ul>
-                            <li>{{ 'homepage.text.footer.distance_from1'|trans }}</li>
-                            <li>{{ 'homepage.text.footer.distance_from2'|trans }}</li>
-                            <li>{{ 'homepage.text.footer.distance_from3'|trans }}</li>
-                            <li>{{ 'homepage.text.footer.coordinates'|trans }}</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="gallery">    
-        <div class="container">
-            <div class="row text-center">
-                <h2>{{ 'homepage.text.gallery'|trans}}</h2>
-            </div>
-            <div class="list">
-                {% for photo in photos %}
-                    <img src="/images/photos/{{ photo }}" alt="">
-                {% endfor %}
             </div>
         </div>
     </div>

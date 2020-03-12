@@ -45,15 +45,7 @@ homepage.text.participation.workshop: 'Do a workshop'
 homepage.text.participation.workshop.desc: 'Pass on your wisdom by involving everyone in a hands-on activity. From arts like drawing or karate to technology like rockets or space dogs. The crazier, the better!'
 homepage.text.participation.volunteer: 'Volunteer'
 homepage.text.participation.volunteer.desc: 'Join our awesome crew to help us make sure the event goes smoothly. From hosting the speakers to taking care of campsite infrastructure. Volunteering comes with cool perks!'
-homepage.text.gallery: 'What to expect...'
-homepage.text.footer.campground: Campground
-homepage.text.footer.campground_name: Pusiasalis
-homepage.text.footer.campground_by: 'by the Skaistis lake, near Trakai town.'
-homepage.text.footer.distance_from1: '10 km from Trakai'
-homepage.text.footer.distance_from2: '25 km from  Vilnius'
-homepage.text.footer.distance_from3: '90 km from  Kaunas'
-homepage.text.footer.coordinates: '54.657602, 24.984814'
-homepage.text.footer.we_arive: 'We arrive on Wednesday, and leave on Sunday evening'
+homepage.text.gallery: 'What to expect in No Trolls Allowed 2020...'
 about.text.about: About
 about.text.nta: 'No Trolls Allowed'
 about.text.about_nta: 'is an open-air gathering of hobbies, arts and technology that welcomes hackers of any nature. Imagine hundreds of passionate people gathering in the woods to share their knowledge and their joy of discovery.'
@@ -96,21 +88,18 @@ faq.questions.general.question7.answer: 'Thanks to our amazing friends and spons
 faq.questions.general.question8.question: 'What things do I need to bring?'
 faq.questions.general.question8.slug: what-to-bring
 faq.questions.general.question8.answer: 'NTA is an open-air event so don’t forget to prepare well for a few days in the nature. We suggest taking these things:</br><ul><li>a tent, a sleeping bag and other things for you to feel comfortable in the woods</li><li>a computer and other similar gadgets (don’t forget your chargers!)</li><li>an extension cord</li><li>a router if you think you might need it for a workshop or gaming</li><li>food, drinks and things to store/prepare them in, like grill, dishes, cooling bag, etc. Please be considerate of others and don’t bring any kind of glass with you</li><li>trash bags</li><li>appropriate clothing depending on the weather forecast (rain boots and a raincoat are always a smart choice!)</li><li>insect repellents</li><li>games</li></ul>'
-faq.questions.general.question9.question: 'How to get to the campsite?'
-faq.questions.general.question9.slug: how-to-come
-faq.questions.general.question9.answer: 'The event takes place at a campsite “Pusiasalis” which is 10 km from Trakai.</br>Exact coordinates are 54.657602, 24.984814</br>Website for more info: <a href="http://www.verube.lt">www.verube.lt</a></br>How to get from:</br><ul><li><a href="https://www.google.lt/maps/dir/Vilnius/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6672052,25.0475178,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46dd93fb5c6408f5:0x400d18c70e9dc40!2m2!1d25.2796514!2d54.6871555!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Vilnius</a></li><li><a href="https://www.google.lt/maps/dir/Kaunas/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.7847771,24.1756336,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46e72270b167d343:0x614bd1e0c7378bbc!2m2!1d23.9035965!2d54.8985207!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Kaunas</a></li><li><a href="https://www.google.lt/maps/dir/Trakai/Verubė+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/@54.6343367,24.9538191,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf374628607db:0xfe90f5881befe3d9!2m2!1d24.9346894!2d54.6379113!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664?hl=lt">Trakai</a></li></ul>'
-faq.questions.general.question10.question: 'Where is the nearest supermarket?'
-faq.questions.general.question10.slug: nearest-supermarket
-faq.questions.general.question10.answer: 'At the campsite, you won’t be able to buy food or drinks and the nearest supermarket is <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">5 km away, in Lentvaris. </a>'
-faq.questions.general.question11.question: 'Can I bring my family?'
-faq.questions.general.question11.slug: who-to-bring
-faq.questions.general.question11.answer: 'Anyone doing a presentation or a workshop can bring their family or a friend. Think of NTA as a picnic or camping in the nature. However, if your family member has four legs and sharp teeth, make sure other participants will be able to enjoy the event too. Also, be aware that there are small kids on camp.'
-faq.questions.general.question12.question: 'Will my family members also have to make a presentation or a workshop?'
-faq.questions.general.question12.slug: family-or-friends-responsibilities
-faq.questions.general.question12.answer: 'It would be perfect if they could, but you can use your +1 card and let them enjoy the event without any additional responsibilities.'
-faq.questions.general.question13.question: 'Who is an organiser of the event?'
-faq.questions.general.question13.slug: organizers
-faq.questions.general.question13.answer: 'NTA is organised by all the participants. But for gathering everyone in one place a responsible party is a non-profit organisation <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Company code: 303307623</br>Address: J. Galvydžio g. 5, LT-08236 Vilnius.'
+faq.questions.general.question9.question: 'Where is the nearest supermarket?'
+faq.questions.general.question9.slug: nearest-supermarket
+faq.questions.general.question9.answer: 'At the campsite, you won’t be able to buy food or drinks and the nearest supermarket is <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">5 km away, in Lentvaris. </a>'
+faq.questions.general.question10.question: 'Can I bring my family?'
+faq.questions.general.question10.slug: who-to-bring
+faq.questions.general.question10.answer: 'Anyone doing a presentation or a workshop can bring their family or a friend. Think of NTA as a picnic or camping in the nature. However, if your family member has four legs and sharp teeth, make sure other participants will be able to enjoy the event too. Also, be aware that there are small kids on camp.'
+faq.questions.general.question11.question: 'Will my family members also have to make a presentation or a workshop?'
+faq.questions.general.question11.slug: family-or-friends-responsibilities
+faq.questions.general.question11.answer: 'It would be perfect if they could, but you can use your +1 card and let them enjoy the event without any additional responsibilities.'
+faq.questions.general.question12.question: 'Who is an organiser of the event?'
+faq.questions.general.question12.slug: organizers
+faq.questions.general.question12.answer: 'NTA is organised by all the participants. But for gathering everyone in one place a responsible party is a non-profit organisation <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Company code: 303307623</br>Address: J. Galvydžio g. 5, LT-08236 Vilnius.'
 faq.questions.presentations.question1.question: 'What are the possible presentation topics?'
 faq.questions.presentations.question1.slug: presentation-topics
 faq.questions.presentations.question1.answer: 'Topics can vary: from food preparation to telepathic methods to open beer bottles. When choosing a presentation topic think about the audience which can also be very different. Don’t forget that there can be people who do not work in the IT sector. However, this doesn’t mean you can’t prepare any technical presentations but try not to limit yourselves to that. If you think that you don’t have anything to talk about, you’ve probably forgotten that things you know might not be familiar to others. The only request — don’t present business ideas, your startups or anything commercial. '
@@ -135,9 +124,6 @@ faq.questions.presentations.question7.answer: 'Yes, every stage where presentati
 faq.questions.presentations.question8.question: 'Do I need to bring my own laptop?'
 faq.questions.presentations.question8.slug: computers
 faq.questions.presentations.question8.answer: 'Depends on your presentation. If you’ll be showing only slides and don’t want to bring your computer, no problem — PDF and PPT presentations will work on our laptops.'
-faq.questions.presentations.question9.question: 'How do I upload my photo next to my presentation?'
-faq.questions.presentations.question9.slug: photo-upload
-faq.questions.presentations.question9.answer: 'Speakers’ photos are automatically taken from <a href="https://www.gravatar.com/">Gravatar</a> website. The photo is recognised based on your email address that you entered when registering your presentation. If a speaker is not registered on the mentioned website, a cute robot is generated from <a href="http://www.robohash.org/">robohash.org</a>.'
 faq.questions.volunteering.question1.question: 'What do volunteers do at the event?'
 faq.questions.volunteering.question1.slug: volunteer-job
 faq.questions.volunteering.question1.answer: 'Volunteers are a part of our cool crew helping to implement smooth organisation and supervision of the event. Volunteers do various kinds of things: help with logistics, registration of the speakers and presentations, stages, campsite infrastructure, etc. Experience, a ticket to the camp, a collectible NTA t-shirt and new friends are just some of the perks that they get when choosing to volunteer!'
