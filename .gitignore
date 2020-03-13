@@ -8,8 +8,8 @@ app/cache/.gitkeep
 app/logs/.gitkeep
 /build/
 /vendor/
-/bin/
 /composer.phar
 /web/css/compiled
 .idea/
 /web/js/compiled
+/.docker/data/*

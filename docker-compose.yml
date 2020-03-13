@@ -1,0 +1,53 @@
+version: '3'
+services:
+    nginx:
+        build: .docker/nginx
+        container_name: nta-nginx
+        ports:
+          - 8080:80
+          - 8081:81
+        volumes:
+          - .:/srv/www/default:cached
+          - .docker/nginx/conf.d:/etc/nginx/conf.d/
+          - ./var/log/nginx:/var/log/nginx
+        depends_on:
+          - php
+
+    mysql:
+        image: mysql:5.7
+        command: "--default-authentication-plugin=mysql_native_password --sql_mode=''"
+        container_name: nta-mysql
+        ports:
+            - 3307:3306
+        volumes:
+            - .:/srv/www/default:cached
+            - .docker/data/db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: super_secret_root
+            MYSQL_DATABASE: ntacamp
+            MYSQL_USER: ntacamp
+            MYSQL_PASSWORD: ntacamp_2020
+
+    php:
+        build: .docker/php
+        expose:
+          - '9000'
+        container_name: nta-php
+        volumes:
+          - ~/.ssh:/home/dev/.ssh:cached
+          - ~/.composer/auth.json:/home/dev/.composer/auth.json:cached
+          - .:/srv/www/default:cached
+          - ./var/log/php-fpm:/var/log/php-fpm
+        depends_on:
+          - mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: nta-phpmyadmin
+        environment:
+          PMA_HOST: mysql
+          PMA_PORT: 3306
+        ports:
+            - 8089:80
+        links:
+            - mysql

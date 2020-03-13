@@ -1,0 +1,2 @@
+#!/bin/bash
+docker exec -i -u root nta-mysql mysql -u root -psuper_secret_root ntacamp < $1
