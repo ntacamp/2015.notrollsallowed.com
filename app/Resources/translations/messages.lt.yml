@@ -88,18 +88,15 @@ faq.questions.general.question7.answer: 'Puikių draugų ir rėmėjų dėka reng
 faq.questions.general.question8.question: 'Kokių daiktų atsivežti?'
 faq.questions.general.question8.slug: what-to-bring
 faq.questions.general.question8.answer: 'Renginys vyks po atviru dangumi, tad nepamiršk tinkamai pasiruošti išgyvenimui. Siūlome pasiimti:<ul><li>Palapinę, miegmaišį ir kitus patogiam poilsiui reikalingus daiktus.</li><li>Kompiuterį ir visus turimus gadget`us (taip, tai tas renginys, kur važiuojant į gamtą nereikia palikti kompiuterio namie).</li><li>Prailgintuvą (netgi ne vieną).</li><li>Maršrutizatorių, jei galvoji, kad jo gali prireikti, pvz., organizuosi kokias nors dirbtuves ar norėsi pažaisti tinkle.</li><li>Greitai negendančio maisto, gėrimų ir maisto ruošimo bei saugojimo priemonių (šašlykinę, indų, šaltkrepšį). Rekomenduojama nesivežti stiklinės taros, nes nepatogu rinkti šukes iš pievos.</li><li>Maišų šiukšlėms sudėti.</li><li>Aprangą tinkamą prognozuojamam orui (lietpaltis ir botai niekada nepamaišė).</li><li>Priemonių, atbaidančių vabzdžius ir kitus kenkėjus (ne žmones).</li><li>Žaidimų laisvalaikio praleidimui (galit ir kompiuterinių).</li></ul>'
-faq.questions.general.question9.question: 'Kur yra artimiausia parduotuvė?'
-faq.questions.general.question9.slug: nearest-supermarket
-faq.questions.general.question9.answer: 'Renginio vietoje nebus pardavinėjamas maistas, gėrimai ar kiti produktai. Mūsų žiniomis, artimiausia parduotuvė yra <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">už 5 km Lentvaryje.</a>'
-faq.questions.general.question10.question: 'Ar galima atsivežti šeimyną?'
-faq.questions.general.question10.slug: who-to-bring
-faq.questions.general.question10.answer: 'Netgi rekomenduojama! Pranešėjui leidžiama atsivežti šeimą arba vieną draugą. Apie renginį galvok taip, lyg važiuotum į išvyką prie ežero. Žinoma, jei tavo šeimos narys turi keturias kojas ir aštrius dantis, pasirūpink, kad kiti dalyviai galėtų jaustis patogiai. Nepamiršk, kad stovyklavietėje būna ir vaikų.'
-faq.questions.general.question11.question: 'Ar šeimyna irgi privalės ruošti pranešimą?'
-faq.questions.general.question11.slug: family-or-friends-responsibilities
-faq.questions.general.question11.answer: 'Būtų labai gerai, tačiau, jei pranešimą ar dirbtuves rengi pats, turi galimybę pasikviesti šeimą su savimi – jie galės mėgautis renginiu be papildomų atsakomybių.'
-faq.questions.general.question12.question: 'Kas organizuoja šį renginį?'
-faq.questions.general.question12.slug: organizers
-faq.questions.general.question12.answer: '„No Trolls Allowed“ organizuoja visi dalyvaujantieji. O kad dalyviai vienu metu susirinktų toje pačioje vietoje, rūpinasi ne pelno siekianti organizacija <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Įmonės kodas: 303307623</br>Adresas: J. Galvydžio g. 5, LT-08236 Vilnius.'
+faq.questions.general.question9.question: 'Ar galima atsivežti šeimyną?'
+faq.questions.general.question9.slug: who-to-bring
+faq.questions.general.question9.answer: 'Netgi rekomenduojama! Pranešėjui leidžiama atsivežti šeimą arba vieną draugą. Apie renginį galvok taip, lyg važiuotum į išvyką prie ežero. Žinoma, jei tavo šeimos narys turi keturias kojas ir aštrius dantis, pasirūpink, kad kiti dalyviai galėtų jaustis patogiai. Nepamiršk, kad stovyklavietėje būna ir vaikų.'
+faq.questions.general.question10.question: 'Ar šeimyna irgi privalės ruošti pranešimą?'
+faq.questions.general.question10.slug: family-or-friends-responsibilities
+faq.questions.general.question10.answer: 'Būtų labai gerai, tačiau, jei pranešimą ar dirbtuves rengi pats, turi galimybę pasikviesti šeimą su savimi – jie galės mėgautis renginiu be papildomų atsakomybių.'
+faq.questions.general.question11.question: 'Kas organizuoja šį renginį?'
+faq.questions.general.question11.slug: organizers
+faq.questions.general.question11.answer: '„No Trolls Allowed“ organizuoja visi dalyvaujantieji. O kad dalyviai vienu metu susirinktų toje pačioje vietoje, rūpinasi ne pelno siekianti organizacija <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Įmonės kodas: 303307623</br>Adresas: J. Galvydžio g. 5, LT-08236 Vilnius.'
 faq.questions.presentations.question1.question: 'Kokios galimos pranešimo temos?'
 faq.questions.presentations.question1.slug: presentation-topics
 faq.questions.presentations.question1.answer: 'Temos gali būti kuo įvairiausios: nuo maisto ruošimo iki telepatinių metodų alaus butelių atidarymui. Rinkdamasis pranešimo temą galvok apie auditoriją – ji gali būti labai įvairi. Nepamiršk, kad gali būti žmonių, kurie nedirba IT srityje. Žinoma, tai nereiškia, kad negali ruošti techninių pranešimų, tačiau pasistenk neapsiriboti tuo. Jei manai, kad neturi, ką papasakoti, tikriausiai pamiršai, jog ką žinai tu – nebūtinai žino ir visi kiti. Vienintelis prašymas: nepristatinėk verslo idėjų, savo startup’ų ar komercinių pranešimų – renginys skirtas ne tam.'

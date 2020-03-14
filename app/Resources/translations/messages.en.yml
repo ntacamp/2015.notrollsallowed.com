@@ -88,18 +88,15 @@ faq.questions.general.question7.answer: 'Thanks to our amazing friends and spons
 faq.questions.general.question8.question: 'What things do I need to bring?'
 faq.questions.general.question8.slug: what-to-bring
 faq.questions.general.question8.answer: 'NTA is an open-air event so don’t forget to prepare well for a few days in the nature. We suggest taking these things:</br><ul><li>a tent, a sleeping bag and other things for you to feel comfortable in the woods</li><li>a computer and other similar gadgets (don’t forget your chargers!)</li><li>an extension cord</li><li>a router if you think you might need it for a workshop or gaming</li><li>food, drinks and things to store/prepare them in, like grill, dishes, cooling bag, etc. Please be considerate of others and don’t bring any kind of glass with you</li><li>trash bags</li><li>appropriate clothing depending on the weather forecast (rain boots and a raincoat are always a smart choice!)</li><li>insect repellents</li><li>games</li></ul>'
-faq.questions.general.question9.question: 'Where is the nearest supermarket?'
-faq.questions.general.question9.slug: nearest-supermarket
-faq.questions.general.question9.answer: 'At the campsite, you won’t be able to buy food or drinks and the nearest supermarket is <a href="https://www.google.lt/maps/dir/Verub%C4%97+-+kaimo+turizmo+stovykla,+Dvaro+g.,+21142/Maxima+X,+prekybos+centras,+Maxima+LT,+Gele%C5%BEinkelio+gatv%C4%97,+Lentvaris/@54.647486,24.9857074,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x46ddf326dc8c9c37:0x23ff0510e2c8a97f!2m2!1d24.9811077!2d54.6568664!1m5!1m1!1s0x46ddf2a65a3e0773:0xbe6933a74c112f4e!2m2!1d25.0273003!2d54.6418449?hl=lt">5 km away, in Lentvaris. </a>'
-faq.questions.general.question10.question: 'Can I bring my family?'
-faq.questions.general.question10.slug: who-to-bring
-faq.questions.general.question10.answer: 'Anyone doing a presentation or a workshop can bring their family or a friend. Think of NTA as a picnic or camping in the nature. However, if your family member has four legs and sharp teeth, make sure other participants will be able to enjoy the event too. Also, be aware that there are small kids on camp.'
-faq.questions.general.question11.question: 'Will my family members also have to make a presentation or a workshop?'
-faq.questions.general.question11.slug: family-or-friends-responsibilities
-faq.questions.general.question11.answer: 'It would be perfect if they could, but you can use your +1 card and let them enjoy the event without any additional responsibilities.'
-faq.questions.general.question12.question: 'Who is an organiser of the event?'
-faq.questions.general.question12.slug: organizers
-faq.questions.general.question12.answer: 'NTA is organised by all the participants. But for gathering everyone in one place a responsible party is a non-profit organisation <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Company code: 303307623</br>Address: J. Galvydžio g. 5, LT-08236 Vilnius.'
+faq.questions.general.question9.question: 'Can I bring my family?'
+faq.questions.general.question9.slug: who-to-bring
+faq.questions.general.question9.answer: 'Anyone doing a presentation or a workshop can bring their family or a friend. Think of NTA as a picnic or camping in the nature. However, if your family member has four legs and sharp teeth, make sure other participants will be able to enjoy the event too. Also, be aware that there are small kids on camp.'
+faq.questions.general.question10.question: 'Will my family members also have to make a presentation or a workshop?'
+faq.questions.general.question10.slug: family-or-friends-responsibilities
+faq.questions.general.question10.answer: 'It would be perfect if they could, but you can use your +1 card and let them enjoy the event without any additional responsibilities.'
+faq.questions.general.question11.question: 'Who is an organiser of the event?'
+faq.questions.general.question11.slug: organizers
+faq.questions.general.question11.answer: 'NTA is organised by all the participants. But for gathering everyone in one place a responsible party is a non-profit organisation <a href="http://usergroups.lt/">VšĮ "Programuotojai"</a>.</br>Company code: 303307623</br>Address: J. Galvydžio g. 5, LT-08236 Vilnius.'
 faq.questions.presentations.question1.question: 'What are the possible presentation topics?'
 faq.questions.presentations.question1.slug: presentation-topics
 faq.questions.presentations.question1.answer: 'Topics can vary: from food preparation to telepathic methods to open beer bottles. When choosing a presentation topic think about the audience which can also be very different. Don’t forget that there can be people who do not work in the IT sector. However, this doesn’t mean you can’t prepare any technical presentations but try not to limit yourselves to that. If you think that you don’t have anything to talk about, you’ve probably forgotten that things you know might not be familiar to others. The only request — don’t present business ideas, your startups or anything commercial. '

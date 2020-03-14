@@ -5,7 +5,7 @@
 <h3><em>{{ 'faq.general.faq_full'|trans }}</em></h3>
 <h4>{{ 'faq.questions.groups.general'|trans }}</h4>
         <ul>
-                {% for i in 1..12 %}
+                {% for i in 1..11 %}
                         <li><a href="#{{ ('faq.questions.general.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.general.question' ~ i ~ '.question')|trans }}</a></li>
                 {% endfor %}
         </ul>
@@ -29,7 +29,7 @@
         </ul>
         <hr>
 <h1>{{ 'faq.questions.groups.general'|trans }}</h1>
-{% for i in 1..12 %}
+{% for i in 1..11 %}
 <h2 id="{{ ('faq.questions.general.question' ~ i ~ '.slug')|trans }}">{{ ('faq.questions.general.question' ~ i ~ '.question')|trans }}</h2>
 <p>{{ ('faq.questions.general.question' ~ i ~ '.answer')|trans|raw }}</p>
 {% endfor %}
