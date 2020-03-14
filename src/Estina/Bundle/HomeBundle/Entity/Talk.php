@@ -84,26 +84,6 @@ class Talk
     private $comments;
 
     /**
-     * @var string
-     *
-     * Optional question #1
-     *
-     * @ORM\Column(name="question1", type="string", length=300, nullable=true)
-     * @Assert\Length(max="300")
-     */
-    private $question1;
-
-    /**
-     * @var string
-     *
-     * Optional question #2
-     *
-     * @ORM\Column(name="question2", type="string", length=300, nullable=true)
-     * @Assert\Length(max="300")
-     */
-    private $question2;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_on", type="datetime")
@@ -138,22 +118,6 @@ class Talk
      * @ORM\Column(name="language", type="string", length=20, nullable=false)
      */
     private $language;
-
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @ORM\Column(name="tshirt_size", type="string", length=5, nullable=false)
-     */
-    private $tshirtSize;
-
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @ORM\Column(name="tshirt_model", type="string", length=10, nullable=false)
-     */
-    private $tshirtModel;
 
     /**
      * Talk type (workshop, presentation, etc.)
@@ -551,98 +515,6 @@ class Talk
     {
         $this->comments = $comments;
 
-        return $this;
-    }
-
-    /**
-     * Getter for tshirtSize
-     *
-     * @return string
-     */
-    public function getTshirtSize()
-    {
-        return $this->tshirtSize;
-    }
-
-    /**
-     * Setter for tshirtSize
-     *
-     * @param string $tshirtSize
-     * @return Talk
-     */
-    public function setTshirtSize($tshirtSize)
-    {
-        $this->tshirtSize = $tshirtSize;
-
-        return $this;
-    }
-
-    /**
-     * Getter for tshirtModel
-     *
-     * @return string
-     */
-    public function getTshirtModel()
-    {
-        return $this->tshirtModel;
-    }
-
-    /**
-     * Setter for tshirtModel
-     *
-     * @param string $tshirtModel
-     * @return Talk
-     */
-    public function setTshirtModel($tshirtModel)
-    {
-        $this->tshirtModel = $tshirtModel;
-
-        return $this;
-    }
-
-    /**
-     * Getter for question1
-     *
-     * @return string
-     */
-    public function getQuestion1()
-    {
-        return $this->question1;
-    }
-    
-    /**
-     * Setter for question1
-     *
-     * @param string $question1
-     * @return Talk
-     */
-    public function setQuestion1($question1)
-    {
-        $this->question1 = $question1;
-    
-        return $this;
-    }
-
-    /**
-     * Getter for question2
-     *
-     * @return string
-     */
-    public function getQuestion2()
-    {
-        return $this->question2;
-    }
-    
-    /**
-     * Setter for question2
-     *
-     * @param string $question2
-     * @return Talk
-     */
-    public function setQuestion2($question2)
-    {
-        $this->question2 = $question2;
-    
         return $this;
     }
 

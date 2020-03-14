@@ -50,7 +50,6 @@ TITLE:        {$talk->getTitle()} [{$talk->getLanguage()}]
 TYPE:         {$talk->getType()}
 REQUIREMENTS: {$talk->getRequirements()}
 COMMENTS:     {$talk->getComments()}
-QUESTION #1:  {$talk->getQuestion1()}
 
 {$talk->getDescription()}
 EOT;
