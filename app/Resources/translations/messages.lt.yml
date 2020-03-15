@@ -157,10 +157,6 @@ registration.form.language:  'Veiklos kalba'
 registration.form.description:  'Veiklos aprašymas'
 registration.form.requirements:  'Reikalavimai dalyviams (jei yra)'
 registration.form.comments:  'Komentarai/specialūs poreikiai'
-registration.form.tshirt:  'Marškinėlių modelis'
-registration.form.tshirt_size:  'Marškinėlių dydis'
-registration.form.tshirt_unisex:  'unisex'
-registration.form.tshirt_women:  'moteriški'
 registration.form.tellus_header:  'Apie tave'
 registration.form.participation_header:  'Dalyvavimo forma'
 registration.form.not_open:  'Registracija šiuo metu nevyksta. Jei turi klausimų, <a href="/en/kontaktai">susisiek su mumis</a>.'
@@ -177,6 +173,8 @@ registration.form.camp_date_2: 'Liepos 25-tą'
 registration.form.camp_date_3: 'Liepos 26-tą'
 registration.form.camp_date_4: 'Liepos 27-tą'
 registration.form.camp_date_5: 'Liepos 28-tą'
+registration.form.facebook_explain: 'Ši informacija mums reikalinga, kad galėtume tave pakviesti į uždarą No Trolls Allowed 2020 Facebook grupę, kur dalinsimės visa informacija apie artėjantį renginį. Jeigu nesi Facebook vartotojas - nesijaudink, visa svarbi informacija tave pasieks el. paštu.'
+registration.form.user_consent_text: No Trolls Allowed 2020 <a href="/lt/terms">renginio taisyklės</a>.
 registration.success.text: '<h1>Džiaugiamės, kad prisijungei!</h1><h2>NTA bilietas – jau beveik tavo rankoje, tad gali šiek tiek lengviau atsipūsti.</h2><p>Peržiūrėsime tavo registraciją ir įvertinę, ar ji atitinka mūsų bendruomenės standartus, pranešime el. paštu. Tai gali kiek užtrukti, todėl prašome šiek tiek kantrybės.</p><p>Norėdamas keisti registracijos informaciją ar peržiūrėti jos būseną, prisijunk. Laikiną slaptažodį tau išsiuntėme el. paštu.</p>'
 registration.success.follow_us: ', o visas svarbiausias naujienas sek mūsų <a href="https://www.facebook.com/NoTrollsAllowed">Facebook’e</a> ir <a href="https://medium.com/@ntacamp">Tinklaraštyje</a>.'
 registration.success: 'Veikla sėkmingai užregistruota!'
@@ -184,7 +182,9 @@ user.fullname: Vardas, pavardė
 user.email: El.pašto adresas
 user.password: Slaptažodis
 user.phone: Telefonas
-user.homepage_url: Asmeninio puslapio URL
+user.consent: Sutinku su renginio taisyklėmis
+user.volunteer: Aš norėčiau prisidėti prie renginio savanoriaudamas. Aš sutinku sunkiai dirbti nuo pat renginio pradžios iki paskutinės valandos, be miego ir be maisto. Aš suprantu, kad renginio kokybė priklauso nuo manęs.
+user.facebook_url: Facebook URL
 user.button.login: 'Prisijungti'
 user.link.forgot_password: 'Pamiršai slaptažodį?'
 user.header.main: 'Prisijungimas'

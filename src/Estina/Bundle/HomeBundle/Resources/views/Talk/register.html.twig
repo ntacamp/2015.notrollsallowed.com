@@ -77,7 +77,15 @@
                                 {{ form_row(form.user.name) }}
                                 {{ form_row(form.user.email) }}
                                 {{ form_row(form.user.phone) }}
-                                {{ form_rest(form.user) }}
+
+                                <div class="form-group">
+                                    {{ form_label(form.user.facebook) }}
+                                    {{ form_widget(form.user.facebook) }}
+                                    {{ form_errors(form.user.facebook) }}
+                                    <span class="text-note">
+                                        {{ 'registration.form.facebook_explain'|trans }}
+                                    </span>
+                                </div>
                             {% endif %}
                             
                             <h4>{{ 'registration.form.participation_header'|trans }}</h4>
@@ -107,6 +115,15 @@
                             {{ form_row(form.requirements) }}
                             {{ form_row(form.comments) }}
 
+                            <hr>
+                            
+                            {{ form_row(form.user.volunteer) }}
+                            {{ form_row(form.user.consent) }}
+
+                             <div class="form-group">
+                                <p>{{ 'registration.form.user_consent_text'|trans|raw }}</p>
+                            </div>
+                            <hr>
                             {{ form_rest(form) }}
 
                         </div>

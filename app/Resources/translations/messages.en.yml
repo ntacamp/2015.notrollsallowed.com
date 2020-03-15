@@ -154,10 +154,6 @@ registration.form.language:  'Activity language'
 registration.form.description:  'Activity description'
 registration.form.requirements:  'Requirements for attendees (if any)'
 registration.form.comments:  'Comments/special requests'
-registration.form.tshirt:  'T-shirt model'
-registration.form.tshirt_size:  'T-shirt size'
-registration.form.tshirt_unisex:  'unisex'
-registration.form.tshirt_women:  'women'
 registration.form.tellus_header:  'About you'
 registration.form.participation_header:  'Form of participation'
 registration.form.not_open:  'Registration is not open. If you have any questions <a href="/en/kontaktai">contact us</a>.'
@@ -174,6 +170,8 @@ registration.form.camp_date_2: 'July 25th'
 registration.form.camp_date_3: 'July 26th'
 registration.form.camp_date_4: 'July 27th'
 registration.form.camp_date_5: 'July 28th'
+registration.form.facebook_explain: "We need this information, because we will invite you to close No Trolls Allowed 2020 Facebook group, where you will get oportunity to get more details about upcoming event. If you are not the Facebook user - don't worry, all the necessary information will be delivered by email."
+registration.form.user_consent_text: No Trolls Allowed 2020 <a href="/en/terms">terms and conditions</a>.
 registration.success.text: '<h1>Welcome aboard!</h1><h2>We’ve got all we need for now, so you can relax and crack open a cold one.</h2><p>We will now review whether your registration fits our community standards and let you know via email. This could take a while, so please be patient.</p><p>You can log in to make changes or check status of your registration. The temporary password has been sent to your email.</p>'
 registration.success.follow_us: ' or check out our <a href="https://www.facebook.com/NoTrollsAllowed">Facebook</a> page and <a href="https://medium.com/@ntacamp">Blog</a> for more information.'
 registration.success: 'Activity has been registered successfully!'
@@ -181,7 +179,9 @@ user.fullname: Full name
 user.email: E-mail address
 user.password: Password
 user.phone: Phone number
-user.homepage_url: Personal homepage URL
+user.facebook_url: Facebook URL
+user.consent: Agree with terms and conditions
+user.volunteer: I would like to contribute to event as volunteer. And I agree to work hard from very beginning of the event till the very last hour without sleep nor food. I am aware that event quality depends on my contribution.
 user.button.login: Log in
 user.header.main: 'Login'
 user.link.forgot_password: 'Forgot password?'

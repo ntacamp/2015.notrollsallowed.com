@@ -77,48 +77,6 @@ class User implements UserInterface, \Serializable
     private $facebook;
 
     /**
-     * @var
-     *
-     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
-     */
-    private $twitter;
-
-    /**
-     * @var
-     *
-     * @ORM\Column(name="github", type="string", length=255, nullable=true)
-     */
-    private $github;
-
-    /**
-     * @var
-     *
-     * @ORM\Column(name="gplus", type="string", length=255, nullable=true)
-     */
-    private $gplus;
-
-    /**
-     * @var
-     *
-     * @ORM\Column(name="linkedin", type="string", length=255, nullable=true)
-     */
-    private $linkedin;
-
-    /**
-     * @var
-     *
-     * @ORM\Column(name="blog", type="string", length=255, nullable=true)
-     */
-    private $blog;
-    
-    /**
-     * @var
-     *
-     * @ORM\Column(name="homepage", type="string", length=255, nullable=true)
-     */
-    private $homepage;
-
-    /**
      * @var string
      *
      * @Assert\Length(min="4", max="24")
@@ -166,6 +124,20 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="locale", type="string", length=2)
      */
     private $locale = 'en';
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="consent", type="boolean")
+     */
+    private $consent = 0;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="volunteer", type="boolean")
+     */
+    private $volunteer = 0;
 
     /**
      * Get id
@@ -295,22 +267,6 @@ class User implements UserInterface, \Serializable
     public function setFacebook($facebook)
     {
         $this->facebook = $facebook;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTwitter()
-    {
-        return $this->twitter;
-    }
-
-    /**
-     * @param mixed $twitter
-     */
-    public function setTwitter($twitter)
-    {
-        $this->twitter = $twitter;
     }
 
     /**
@@ -479,126 +435,6 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * Set github
-     *
-     * @param string $github
-     *
-     * @return User
-     */
-    public function setGithub($github)
-    {
-        $this->github = $github;
-
-        return $this;
-    }
-
-    /**
-     * Get github
-     *
-     * @return string
-     */
-    public function getGithub()
-    {
-        return $this->github;
-    }
-
-    /**
-     * Set gplus
-     *
-     * @param string $gplus
-     *
-     * @return User
-     */
-    public function setGplus($gplus)
-    {
-        $this->gplus = $gplus;
-
-        return $this;
-    }
-
-    /**
-     * Get gplus
-     *
-     * @return string
-     */
-    public function getGplus()
-    {
-        return $this->gplus;
-    }
-
-    /**
-     * Set linkedin
-     *
-     * @param string $linkedin
-     *
-     * @return User
-     */
-    public function setLinkedin($linkedin)
-    {
-        $this->linkedin = $linkedin;
-
-        return $this;
-    }
-
-    /**
-     * Get linkedin
-     *
-     * @return string
-     */
-    public function getLinkedin()
-    {
-        return $this->linkedin;
-    }
-
-    /**
-     * Set blog
-     *
-     * @param string $blog
-     *
-     * @return User
-     */
-    public function setBlog($blog)
-    {
-        $this->blog = $blog;
-
-        return $this;
-    }
-
-    /**
-     * Get blog
-     *
-     * @return string
-     */
-    public function getBlog()
-    {
-        return $this->blog;
-    }
-
-    /**
-     * Set homepage
-     *
-     * @param string $homepage
-     *
-     * @return User
-     */
-    public function setHomepage($homepage)
-    {
-        $this->homepage = $homepage;
-
-        return $this;
-    }
-
-    /**
-     * Get homepage
-     *
-     * @return string
-     */
-    public function getHomepage()
-    {
-        return $this->homepage;
-    }
-
-    /**
      * Set role
      *
      * @param string $role
@@ -641,5 +477,43 @@ class User implements UserInterface, \Serializable
         $this->locale = $locale;
     }
 
+    /**
+     * @return boolean
+     */
+    public function getConsent()
+    {
+        return $this->consent;
+    }
 
+    /**
+     * @param boolean $consent
+     *
+     * @return self
+     */
+    public function setConsent($consent)
+    {
+        $this->consent = $consent;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getVolunteer()
+    {
+        return $this->volunteer;
+    }
+
+    /**
+     * @param boolean $volunteer
+     *
+     * @return self
+     */
+    public function setVolunteer($volunteer)
+    {
+        $this->volunteer = $volunteer;
+
+        return $this;
+    }
 }

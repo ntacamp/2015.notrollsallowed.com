@@ -41,7 +41,9 @@ class TalkListener
 PRANEŠĖJAS
 ===============================================================================
 {$talk->getUser()}
-{$talk->getUser()->getEmail()}
+EMAIL:        {$talk->getUser()->getEmail()}
+FB:           {$talk->getUser()->getFacebook()}
+VOLUNTEER:    {$talk->getUser()->getVolunteer()}
 
 ===============================================================================
 PRANEŠIMAS
