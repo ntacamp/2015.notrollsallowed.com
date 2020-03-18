@@ -120,6 +120,9 @@ faq.questions.presentations.question7.answer: 'Yes, every stage where presentati
 faq.questions.presentations.question8.question: 'Do I need to bring my own laptop?'
 faq.questions.presentations.question8.slug: computers
 faq.questions.presentations.question8.answer: 'Depends on your presentation. If you’ll be showing only slides and don’t want to bring your computer, no problem — PDF and PPT presentations will work on our laptops.'
+faq.questions.presentations.question9.question: How to change your photo in presentation list?'
+faq.questions.presentations.question9.slug: photo-upload
+faq.questions.presentations.question9.answer: 'Speaker pictures are loaded from <a href="https://www.gravatar.com/">Gravatar</a> site. Picture is identified by your registration email. If you do not have Gravatar, we'll generate cute robot for you using <a href="http://www.robohash.org/">robohash.org</a>.'
 faq.questions.volunteering.question1.question: 'What do volunteers do at the event?'
 faq.questions.volunteering.question1.slug: volunteer-job
 faq.questions.volunteering.question1.answer: 'Volunteers are a part of our cool crew helping to implement smooth organisation and supervision of the event. Volunteers do various kinds of things: help with logistics, registration of the speakers and presentations, stages, campsite infrastructure, etc. Experience, a ticket to the camp, a collectible NTA t-shirt and new friends are just some of the perks that they get when choosing to volunteer!'
